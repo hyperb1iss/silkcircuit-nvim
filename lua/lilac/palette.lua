@@ -2,24 +2,24 @@ local M = {}
 
 M.colors = {
   -- Base colors
-  bg = "#1a1626", -- Primary background - More purple tint
-  bg_dark = "#120f1c", -- Darker variant for contrast
-  bg_highlight = "#2d2640", -- Secondary background for UI elements - Purple tint
-  bg_visual = "#1d3b53", -- Selection background
+  bg = "#1e1a2e", -- Primary background - Deep purple base
+  bg_dark = "#16131f", -- Darker variant for contrast
+  bg_highlight = "#3b2d4f", -- Secondary background - Rich purple
+  bg_visual = "#44475a", -- Selection background - Purple tinted
 
-  fg = "#eeffff", -- Primary foreground
-  fg_dark = "#d6deeb", -- Default text, punctuation
-  fg_light = "#FBF5F3", -- Light accent text
-  fg_gutter = "#637777", -- Line numbers, comments
+  fg = "#f8f8f2", -- Primary foreground - Slightly warmer
+  fg_dark = "#e9d5ff", -- Default text - Light purple tint
+  fg_light = "#ffffff", -- Light accent text
+  fg_gutter = "#6272a4", -- Line numbers - Purple-blue
 
   -- Primary syntax colors
-  purple = "#bd93f9", -- Keywords, control flow - More vibrant
-  purple_dark = "#9d79d6", -- Deep purple
-  purple_muted = "#8b7c96", -- Muted purple for comments
+  purple = "#e135ff", -- Keywords - NEON PURPLE
+  purple_dark = "#b45bcf", -- Deep purple - More vibrant
+  purple_muted = "#9580ff", -- Muted purple - Still vibrant for comments
 
-  cyan = "#8be9fd", -- Operators, tags, properties - More vibrant
-  cyan_bright = "#a4ffff", -- Brighter cyan
-  cyan_light = "#9aedfe", -- Light cyan
+  cyan = "#80ffea", -- Neon cyan - More green tinted
+  cyan_bright = "#5fffff", -- Electric cyan
+  cyan_light = "#9ffcf9", -- Light neon cyan
 
   green = "#f1fa8c", -- Strings, variables - More yellow-green
   green_light = "#d9f5dd", -- Light green
@@ -30,18 +30,18 @@ M.colors = {
   blue_light = "#8EACE3", -- Light blue
   blue_gray = "#5f7e97", -- Blue gray
 
-  pink = "#ff79c6", -- Booleans, null - More vibrant pink
-  pink_bright = "#ff92d0", -- Bright pink - Even more vibrant
+  pink = "#ff00ff", -- PURE NEON MAGENTA
+  pink_bright = "#ff69ff", -- Hot pink - Maximum vibrance
 
   coral = "#F78C6C", -- Numbers
   red = "#ff6363", -- CSS selectors
   red_dark = "#d3423e", -- Dark red
   red_error = "#ec5f67", -- Error red
 
-  orange = "#ffcb8b", -- Classes, types
-  yellow = "#ecc48d", -- Golden yellow
-  yellow_bright = "#FFEB95", -- Bright yellow
-  yellow_light = "#faf39f", -- Light yellow
+  orange = "#ff6ac1", -- Pink-orange for classes
+  yellow = "#ffff80", -- Neon yellow
+  yellow_bright = "#ffffa5", -- Electric yellow
+  yellow_light = "#ffffcc", -- Soft neon yellow
 
   -- UI colors
   selection = "#1d3b53",
@@ -51,33 +51,38 @@ M.colors = {
   word_highlight_strong = "#2E3250",
 
   -- Special colors
-  diff_add = "#addb67ff",
-  diff_change = "#a2bffc",
-  diff_delete = "#EF535090",
-  diff_text = "#011627",
+  diff_add = "#50fa7b",
+  diff_change = "#ff79c6",
+  diff_delete = "#ff5555",
+  diff_text = "#44475a",
+
+  -- Glow effects (for special highlights)
+  glow_pink = "#ff00ff",
+  glow_purple = "#e135ff",
+  glow_cyan = "#00ffff",
 
   -- Additional grays
   gray = "#637777",
   gray_light = "#d7dbe0",
   gray_dark = "#5f7e97",
 
-  -- Terminal colors
-  terminal_black = "#14111F",
-  terminal_red = "#ff5874",
-  terminal_green = "#addb67",
-  terminal_yellow = "#ecc48d",
-  terminal_blue = "#82AAFF",
-  terminal_magenta = "#c792ea",
-  terminal_cyan = "#7fdbca",
-  terminal_white = "#d6deeb",
-  terminal_bright_black = "#637777",
-  terminal_bright_red = "#ff6363",
-  terminal_bright_green = "#addb67",
-  terminal_bright_yellow = "#FFEB95",
-  terminal_bright_blue = "#82b1ff",
-  terminal_bright_magenta = "#c792ea",
-  terminal_bright_cyan = "#6ae9f0",
-  terminal_bright_white = "#eeffff",
+  -- Terminal colors (matching Warp theme)
+  terminal_black = "#1e1a2e",
+  terminal_red = "#ff79c6",
+  terminal_green = "#f1fa8c",
+  terminal_yellow = "#ffff80",
+  terminal_blue = "#e135ff",
+  terminal_magenta = "#ff00ff",
+  terminal_cyan = "#80ffea",
+  terminal_white = "#f8f8f2",
+  terminal_bright_black = "#6272a4",
+  terminal_bright_red = "#ff5555",
+  terminal_bright_green = "#50fa7b",
+  terminal_bright_yellow = "#ffffa5",
+  terminal_bright_blue = "#bd93f9",
+  terminal_bright_magenta = "#ff69ff",
+  terminal_bright_cyan = "#5fffff",
+  terminal_bright_white = "#ffffff",
 
   -- Diagnostic colors
   error = "#ff5874",

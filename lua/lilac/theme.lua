@@ -99,16 +99,17 @@ function M.get_highlights(colors, opts)
   highlights.SpellRare = { undercurl = true, sp = colors.hint }
 
   -- Syntax highlights
-  highlights.Comment = apply_style({ fg = colors.comment }, "comments")
+  highlights.Comment = apply_style({ fg = colors.purple_muted, italic = true }, "comments")
   highlights.Constant = apply_style({ fg = colors.constant }, "constants")
-  highlights.String = apply_style({ fg = colors.string }, "strings")
+  highlights.String = apply_style({ fg = colors.pink_bright, italic = true }, "strings")
   highlights.Character = { fg = colors.string }
   highlights.Number = { fg = colors.number }
   highlights.Boolean = apply_style({ fg = colors.boolean }, "booleans")
   highlights.Float = { fg = colors.number }
 
   highlights.Identifier = { fg = colors.variable }
-  highlights.Function = apply_style({ fg = colors.func }, "functions")
+  highlights.Function =
+    apply_style({ fg = colors.glow_purple, bold = true, italic = true }, "functions")
 
   highlights.Statement = { fg = colors.keyword }
   highlights.Conditional = { fg = colors.keyword }

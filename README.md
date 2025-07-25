@@ -270,6 +270,50 @@ Compile the theme for faster startup:
 require("lilac").compile()
 ```
 
+### Lualine Integration
+
+Lilac includes a custom Lualine theme. To use it:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'lilac',
+    -- Other lualine options
+  }
+}
+```
+
+### Warp Terminal
+
+For the best experience with Warp terminal:
+
+1. Copy `extras/warp.yaml` to `~/.warp/themes/lilac.yaml`
+2. In Warp settings, go to Appearance > Themes
+3. Select "Lilac" from custom themes
+
+This provides matching colors and UI elements for a cohesive experience.
+
+### Rainbow Brackets
+
+Lilac supports rainbow bracket plugins that color-match your bracket pairs:
+
+```lua
+-- For rainbow-delimiters.nvim
+require('rainbow-delimiters.setup').setup {
+  -- Your config
+}
+
+-- For nvim-ts-rainbow
+require('nvim-treesitter.configs').setup {
+  rainbow = {
+    enable = true,
+    -- Use Lilac colors
+  }
+}
+```
+
+The theme provides neon colors for each nesting level, making it easy to match brackets in complex code.
+
 ## 🎯 Plugin Support
 
 Lilac includes carefully designed themes for:
