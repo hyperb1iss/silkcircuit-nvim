@@ -4,64 +4,74 @@ SilkCircuit integrates seamlessly with AstroNvim, just like any other community 
 
 ## Installation
 
-### Method 1: Simple (Recommended)
+Add these two lines to your AstroNvim configuration:
 
-Add this to your `lua/community.lua`:
+### 1. Add to `lua/community.lua`
 
 ```lua
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.colorscheme.catppuccin" }, -- your other colorschemes
-  { "silkcircuit/silkcircuit-nvim", name = "silkcircuit" }, -- add SilkCircuit
+  { "hyperb1iss/silkcircuit-nvim", name = "silkcircuit" },
+  -- your other plugins...
 }
 ```
 
-Then set it as your colorscheme in `lua/plugins/astroui.lua`:
+### 2. Set in `lua/plugins/astroui.lua`
 
 ```lua
 return {
   "AstroNvim/astroui",
-  ---@type AstroUIOpts
   opts = {
     colorscheme = "silkcircuit",
   },
 }
 ```
 
-### Method 2: With Customization
+That's it! Restart Neovim and enjoy your new theme.
 
-If you want to customize the theme, create `lua/plugins/silkcircuit.lua`:
+## Features
+
+SilkCircuit automatically integrates with all AstroNvim components:
+
+- ✨ Full integration with Telescope, Neo-tree, Alpha dashboard
+- 🎨 Custom statusline colors with vibrant mode indicators
+- 🌈 Rainbow delimiters with matching theme colors
+- 💡 LSP and diagnostic highlighting
+- 🔔 Notify, Which-key, and all other AstroNvim plugins
+
+## Customization
+
+Want to tweak the theme? Create `lua/plugins/silkcircuit.lua`:
 
 ```lua
 return {
-  "silkcircuit/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   name = "silkcircuit",
   opts = {
-    -- your custom options here
+    -- Your custom options
+    transparent = true,
     styles = {
       comments = { italic = true },
       keywords = { bold = true },
-      functions = { bold = true, italic = true },
     },
   },
 }
 ```
 
-That's it! SilkCircuit will automatically integrate with all your AstroNvim plugins.
+## Local Development
 
-## Features
+Using a local copy of SilkCircuit:
 
-- Full integration with all AstroNvim plugins
-- Automatic support for telescope, neo-tree, alpha dashboard, and more
-- Rainbow delimiters with cyberpunk colors
-- Optimized for readability with vibrant cyberpunk aesthetics
+```lua
+-- In lua/community.lua:
+return {
+  "AstroNvim/astrocommunity",
+  { dir = "~/path/to/silkcircuit-nvim", name = "silkcircuit" },
+}
+```
 
-## Supported Integrations
+## Troubleshooting
 
-All standard AstroNvim integrations are supported out of the box:
-
-- aerial, alpha, cmp, dap, gitsigns, illuminate, indent-blankline
-- lualine, mason, neo-tree, notify, semantic tokens, telescope
-- treesitter, which-key, window-picker, and many more!
-
-No additional configuration needed - it just works!
+- Run `:Lazy sync` after adding the theme
+- Ensure `colorscheme = "silkcircuit"` is set in astroui.lua
+- Check `:AstroNvimVersion` for compatibility (requires AstroNvim v4+)

@@ -1,15 +1,15 @@
-# ⚡ SilkCircuit: Femme Cyberpunk Neovim Theme
+# ⚡ SilkCircuit: A Vibrant Neovim Theme
 
 <div align="center">
 
-[![Neovim](https://img.shields.io/badge/Neovim-0.8+-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
-[![License](https://img.shields.io/badge/License-MIT-B48EAD?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/release/hyperb1iss/silkcircuit-nvim.svg?style=for-the-badge&logo=github&logoColor=white&color=e135ff)](https://github.com/hyperb1iss/silkcircuit-nvim/releases)
-[![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim/actions)
+[![Neovim](https://img.shields.io/badge/Neovim-0.8+-e135ff?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![License](https://img.shields.io/badge/License-MIT-ff79c6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
+[![GitHub Release](https://img.shields.io/github/release/hyperb1iss/silkcircuit-nvim.svg?style=for-the-badge&logo=github&logoColor=white&color=bd93f9)](https://github.com/hyperb1iss/silkcircuit-nvim/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?style=for-the-badge&logo=github-actions&logoColor=white&label=CI&color=50fa7b)](https://github.com/hyperb1iss/silkcircuit-nvim/actions)
 
-_Where silk meets circuit: A vibrant femme cyberpunk theme with neon purple glow and electric aesthetics_ 💜⚡
+_A high-contrast theme featuring vibrant purples, electric pinks, and glowing accents_ ✨
 
-[Installation](#-installation) • [Configuration](#-configuration) • [Features](#-features) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
+[Installation](#-installation) • [Features](#-features) • [Configuration](#-configuration) • [Plugin Support](#-plugin-support)
 
 </div>
 
@@ -19,40 +19,18 @@ _Where silk meets circuit: A vibrant femme cyberpunk theme with neon purple glow
 
 ## 🌟 Overview
 
-SilkCircuit is an evolution of femme cyberpunk aesthetics, blending the softness of silk with the electric energy of circuits. This meticulously crafted Neovim theme features neon purple glows, electric pinks, and synthwave vibes that create a stunning coding environment while maintaining excellent readability and semantic highlighting.
-
-**Originally inspired by the VSCode Lilac theme** by [Kush](https://marketplace.visualstudio.com/items?itemName=MHMKE.lilac) - evolved into its own unique aesthetic with maximum cyberpunk drama and femme energy.
+SilkCircuit is a carefully crafted Neovim colorscheme that combines vibrant colors with excellent readability. Featuring glowing purples, electric pinks, and bright cyans, it creates a visually striking coding environment while maintaining clarity and reducing eye strain.
 
 ## ✨ Features
 
-### 🎨 Visual Design
-
-- **Synthwave Color Palette**: Carefully selected colors that evoke the cyberpunk aesthetic
-- **Semantic Highlighting**: Colors chosen to enhance code comprehension
-- **High Contrast Elements**: Important syntax elements pop without being overwhelming
-- **Comfortable Dark Background**: Deep purple-black (#14111F) reduces eye strain
-
-### 🚀 Technical Features
-
-- **Tree-sitter Support**: Full integration with Neovim's advanced syntax highlighting
-- **LSP Integration**: Thoughtfully styled diagnostics and hints
-- **25+ Plugin Themes**: Native support for popular Neovim plugins
-- **Performance Optimized**: Lazy-loadable with compilation support
-- **Extensive Customization**: Override any aspect of the theme
-
-### 🔧 Developer Experience
-
-- **Terminal Colors**: Matching terminal palette for integrated experience
-- **Multiple Formats**: Includes themes for Alacritty, Kitty, WezTerm, and Windows Terminal
-- **Active Development**: Regular updates and community contributions
+- 🎨 **Vibrant Color Palette** - Eye-catching colors that make code elements distinct
+- 🌲 **Full Tree-sitter Support** - Advanced syntax highlighting with semantic tokens
+- 🔌 **40+ Plugin Integrations** - Native support for all popular Neovim plugins
+- 🚀 **Zero Configuration** - Works out of the box with sensible defaults
+- ⚙️ **Highly Customizable** - Tweak any aspect to match your preferences
+- 🖥️ **Terminal Themes Included** - Matching themes for popular terminal emulators
 
 ## 📦 Installation
-
-### Prerequisites
-
-- Neovim >= 0.8.0
-- `termguicolors` enabled (add `vim.opt.termguicolors = true` to your config)
-- Git (for plugin manager installation)
 
 ### Using [lazy.nvim](https://github.com/folke/lazy.nvim) (Recommended)
 
@@ -62,7 +40,6 @@ SilkCircuit is an evolution of femme cyberpunk aesthetics, blending the softness
   lazy = false,
   priority = 1000,
   config = function()
-    require("silkcircuit").setup()
     vim.cmd.colorscheme("silkcircuit")
   end,
 }
@@ -74,8 +51,7 @@ SilkCircuit is an evolution of femme cyberpunk aesthetics, blending the softness
 use {
   "hyperb1iss/silkcircuit-nvim",
   config = function()
-    require("silkcircuit").setup()
-    vim.cmd.colorscheme("silkcircuit")
+    vim.cmd("colorscheme silkcircuit")
   end
 }
 ```
@@ -84,195 +60,65 @@ use {
 
 ```vim
 Plug 'hyperb1iss/silkcircuit-nvim'
-
-" After plug#end()
-colorscheme lilac
+colorscheme silkcircuit
 ```
 
-### AstroNvim Installation
+## 🚀 AstroNvim
 
-SilkCircuit has **complete AstroNvim integration** with custom configs for enhanced cyberpunk vibes!
-
-**Quick Setup:**
-
-1. Copy the AstroNvim configs:
-
-   ```bash
-   # Copy plugin configurations
-   cp extras/astronvim/plugins/*.lua ~/.config/nvim/lua/plugins/
-
-   # Copy community config (optional)
-   cp extras/astronvim/community.lua ~/.config/nvim/lua/
-   ```
-
-2. Restart Neovim and run `:Lazy sync`
-
-**Manual Setup:**
+SilkCircuit integrates seamlessly with AstroNvim, just like any community colorscheme:
 
 ```lua
--- plugins/lilac.lua
+-- In your lua/community.lua file:
 return {
-  "hyperb1iss/silkcircuit-nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require("silkcircuit").setup({
-      -- AstroNvim optimized settings included
-    })
-  end,
+  "AstroNvim/astrocommunity",
+  { "hyperb1iss/silkcircuit-nvim", name = "silkcircuit" },
 }
-```
 
-```lua
--- plugins/astroui.lua
+-- In your lua/plugins/astroui.lua file:
 return {
   "AstroNvim/astroui",
   opts = {
     colorscheme = "silkcircuit",
-    -- Custom highlights and status config included
   },
 }
 ```
 
-**What you get:**
-
-- 🌈 Custom statusline with neon mode indicators
-- 📁 Neo-tree with cyberpunk styling
-- 🔍 Telescope with glowing borders
-- ⌨️ Which-Key popup theming
-- 📊 Dashboard with purple/pink aesthetics
-- 🌟 Complete LSP integration
-
-See `extras/astronvim/README.md` for full setup guide and customization options.
-
-### Local Installation
-
-For development or testing from a local directory:
-
-#### Using lazy.nvim
-
-```lua
-{
-  dir = "~/dev/silkcircuit-nvim",  -- Your local path
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require("silkcircuit").setup()
-    vim.cmd.colorscheme("silkcircuit")
-  end,
-}
-```
-
-#### Using packer.nvim
-
-```lua
-use {
-  "~/dev/silkcircuit-nvim",  -- Your local path
-  config = function()
-    require("silkcircuit").setup()
-    vim.cmd.colorscheme("silkcircuit")
-  end
-}
-```
-
-#### Manual Installation
-
-1. Clone to your local plugins directory:
-
-   ```bash
-   git clone https://github.com/hyperb1iss/silkcircuit-nvim.git \
-     ~/.local/share/nvim/site/pack/themes/start/silkcircuit-nvim
-   ```
-
-2. Or symlink your development directory:
-
-   ```bash
-   ln -s ~/dev/silkcircuit-nvim \
-     ~/.local/share/nvim/site/pack/themes/start/silkcircuit-nvim
-   ```
-
-3. Add to your Neovim config:
-
-   ```lua
-   vim.cmd.colorscheme("silkcircuit")
-   ```
-
-## 🚀 Quick Start
-
-After installation, add this minimal config to get started:
-
-```lua
--- Enable 24-bit colors
-vim.opt.termguicolors = true
-
--- Setup SilkCircuit theme
-require("silkcircuit").setup({
-  -- Leave empty for defaults or see Configuration section
-})
-
--- Apply the colorscheme
-vim.cmd.colorscheme("silkcircuit")
-```
-
-### Verify Installation
-
-Run `:checkhealth` in Neovim to verify:
-
-- Neovim version is 0.8.0+
-- `termguicolors` is enabled
-- Theme loads without errors
-
-You can also check the current colorscheme:
-
-```vim
-:echo g:colors_name
-" Should output: lilac
-```
+That's it! No additional configuration needed.
 
 ## ⚙️ Configuration
 
-SilkCircuit offers extensive customization options to match your preferences:
+### Default Setup
 
-### Basic Setup
+SilkCircuit works great out of the box, but you can customize it:
 
 ```lua
 require("silkcircuit").setup({
   transparent = false,     -- Enable transparent background
-  terminal_colors = true,  -- Set terminal colors
+  terminal_colors = true,  -- Configure terminal colors
   dim_inactive = false,    -- Dim inactive windows
+
   styles = {
     comments = { italic = true },
-    keywords = { italic = false },
-    functions = { bold = false },
+    keywords = { bold = true },
+    functions = { bold = true, italic = true },
     variables = {},
+    strings = { italic = true },
   },
-})
-```
 
-### Advanced Configuration
-
-```lua
-require("silkcircuit").setup({
-  -- Disable specific plugin integrations
   integrations = {
+    -- All integrations are enabled by default
     telescope = true,
-    nvimtree = true,
-    treesitter = true,
-    lsp = true,
-    -- ... see documentation for full list
+    neotree = true,
+    notify = true,
+    cmp = true,
+    -- See :h silkcircuit-integrations for full list
   },
-
-  -- Override specific highlight groups
-  on_highlights = function(highlights, colors)
-    highlights.Function = { fg = colors.cyan, bold = true }
-    highlights.Comment = { fg = colors.purple, italic = true }
-  end,
 })
 ```
 
 ### Transparent Background
 
-Perfect for showcasing your terminal background:
+For a sleek, transparent look:
 
 ```lua
 require("silkcircuit").setup({
@@ -280,225 +126,101 @@ require("silkcircuit").setup({
 })
 ```
 
-### Performance Optimization
+### Custom Highlights
 
-Compile the theme for faster startup:
-
-```lua
-require("silkcircuit").compile()
-```
-
-### Lualine Integration
-
-SilkCircuit includes a custom Lualine theme with neon mode indicators and synthwave aesthetics.
-
-**Basic setup:**
+Override any highlight group:
 
 ```lua
-require('lualine').setup {
-  options = {
-    theme = 'lilac',
-    globalstatus = true, -- Single statusline
-  }
-}
+require("silkcircuit").setup({
+  on_highlights = function(highlights, colors)
+    highlights.Function = { fg = colors.cyan, bold = true }
+    highlights.Comment = { fg = colors.gray, italic = true }
+  end,
+})
 ```
-
-**Epic cyberpunk setup:**
-Copy `extras/lualine-config.lua` to your config and modify as needed. This includes:
-
-- Animated mode indicators with glow effects
-- Custom separators and icons
-- LSP status with client names
-- Git integration with branch icons
-- Macro recording indicator
-- Time display (because cyberpunk)
-- Neon color transitions between modes
-
-```lua
--- Load the epic config
-require('lualine').setup(require('path.to.extras.lualine-config'))
-```
-
-### Warp Terminal
-
-For the best experience with Warp terminal:
-
-1. Copy `extras/warp.yaml` to `~/.warp/themes/lilac.yaml`
-2. In Warp settings, go to Appearance > Themes
-3. Select "SilkCircuit" from custom themes
-
-This provides matching colors and UI elements for a cohesive experience.
-
-### Rainbow Brackets
-
-SilkCircuit supports rainbow bracket plugins that color-match your bracket pairs:
-
-```lua
--- For rainbow-delimiters.nvim
-require('rainbow-delimiters.setup').setup {
-  -- Your config
-}
-
--- For nvim-ts-rainbow
-require('nvim-treesitter.configs').setup {
-  rainbow = {
-    enable = true,
-    -- Use SilkCircuit colors
-  }
-}
-```
-
-The theme provides neon colors for each nesting level, making it easy to match brackets in complex code.
 
 ## 🎯 Plugin Support
 
-SilkCircuit includes carefully designed themes for:
+SilkCircuit includes thoughtfully designed integrations for 40+ plugins:
+
+**Essential Plugins**
+
+- 🔭 Telescope
+- 🌳 Neo-tree / NvimTree
+- 💡 LSP & Diagnostics
+- 🔍 Treesitter
+- ✨ nvim-cmp
 
 **UI Enhancements**
 
-- Telescope - Fuzzy finder with custom borders
-- NvimTree / Neo-tree - File explorers
-- Which-Key - Keybinding display
-- Notify - Notifications
-- Noice - UI replacement
+- 💫 Lualine
+- 📑 BufferLine
+- 🔔 Notify
+- 🎯 Which-Key
+- 📊 Dashboard/Alpha
 
-**Editor Features**
+**Development Tools**
 
-- Tree-sitter - Advanced syntax highlighting
-- LSP - Diagnostics and code actions
-- nvim-cmp - Completion menus
-- GitSigns - Git integration
-- Indent-Blankline - Indentation guides
+- 🔀 Gitsigns
+- 🏃 Leap/Hop
+- 🌈 Rainbow Delimiters
+- 📝 Indent Blankline
+- 🐛 DAP (Debugger)
 
-**Status & Navigation**
+And many more! All integrations work automatically when the plugins are installed.
 
-- Lualine - Statusline (includes theme)
-- BufferLine - Buffer tabs
-- Dashboard / Alpha - Start screens
-- Leap / Hop - Motion plugins
+## 🎨 Terminal Support
+
+SilkCircuit includes matching themes for popular terminals:
+
+```bash
+# Copy the appropriate theme file from extras/
+cp extras/alacritty.toml ~/.config/alacritty/themes/silkcircuit.toml
+cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
+cp extras/wezterm.lua ~/.config/wezterm/colors/silkcircuit.lua
+```
 
 ## 🎨 Color Palette
 
-| Element | Color | Hex |
-|---------|-------|-----|
-| Background | ![#14111F](https://via.placeholder.com/15/14111F/14111F?text=+) | `#14111F` |
-| Foreground | ![#eeffff](https://via.placeholder.com/15/eeffff/eeffff?text=+) | `#eeffff` |
-| Purple | ![#c792ea](https://via.placeholder.com/15/c792ea/c792ea?text=+) | `#c792ea` |
-| Cyan | ![#7fdbca](https://via.placeholder.com/15/7fdbca/7fdbca?text=+) | `#7fdbca` |
-| Green | ![#addb67](https://via.placeholder.com/15/addb67/addb67?text=+) | `#addb67` |
-| Blue | ![#82AAFF](https://via.placeholder.com/15/82AAFF/82AAFF?text=+) | `#82AAFF` |
-| Pink | ![#ff5874](https://via.placeholder.com/15/ff5874/ff5874?text=+) | `#ff5874` |
-| Orange | ![#ffcb8b](https://via.placeholder.com/15/ffcb8b/ffcb8b?text=+) | `#ffcb8b` |
-
-## 📸 Screenshots
-
-<details>
-<summary>View more screenshots</summary>
-
-### Lua Development
-
-![Lua Screenshot](assets/screenshot-lua.png)
-
-### TypeScript with Telescope
-
-![TypeScript Screenshot](assets/screenshot-typescript.png)
-
-### Python with Diagnostics
-
-![Python Screenshot](assets/screenshot-python.png)
-
-</details>
-
-## 🛠️ Development
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
-cd silkcircuit-nvim
-
-# Install development dependencies
-make setup
-
-# Run tests
-make test
-
-# Format code
-make format
-
-# Lint code
-make lint
-```
-
-### Project Structure
-
-```
-silkcircuit-nvim/
-├── colors/              # Vim colorscheme files
-├── lua/lilac/           # Main theme implementation
-│   ├── init.lua        # Theme entry point
-│   ├── config.lua      # Configuration handling
-│   ├── palette.lua     # Color definitions
-│   ├── theme.lua       # Highlight groups
-│   └── integrations/   # Plugin-specific themes
-├── extras/             # Terminal emulator themes
-└── docs/               # Documentation
-```
+| Color | Hex | Preview |
+|-------|-----|---------|
+| Background | `#0a0a0f` | ![#0a0a0f](https://via.placeholder.com/20/0a0a0f/0a0a0f?text=+) |
+| Foreground | `#e0e0e0` | ![#e0e0e0](https://via.placeholder.com/20/e0e0e0/e0e0e0?text=+) |
+| Purple | `#e135ff` | ![#e135ff](https://via.placeholder.com/20/e135ff/e135ff?text=+) |
+| Pink | `#ff79c6` | ![#ff79c6](https://via.placeholder.com/20/ff79c6/ff79c6?text=+) |
+| Cyan | `#80ffea` | ![#80ffea](https://via.placeholder.com/20/80ffea/80ffea?text=+) |
+| Green | `#50fa7b` | ![#50fa7b](https://via.placeholder.com/20/50fa7b/50fa7b?text=+) |
+| Yellow | `#f1fa8c` | ![#f1fa8c](https://via.placeholder.com/20/f1fa8c/f1fa8c?text=+) |
+| Orange | `#ffb86c` | ![#ffb86c](https://via.placeholder.com/20/ffb86c/ffb86c?text=+) |
 
 ## 🔧 Troubleshooting
 
-### Common Issues
+**Theme not loading?**
 
-**Theme not found error**
+- Ensure Neovim version is 0.8.0 or higher
+- Add `vim.opt.termguicolors = true` to your config
+- Check that the plugin is installed: `:Lazy` or `:PackerStatus`
 
-```
-E185: Cannot find color scheme 'lilac'
-```
+**Colors look wrong?**
 
-- Ensure the plugin is installed and loaded before setting colorscheme
-- For lazy.nvim, use `lazy = false` and `priority = 1000`
-- Try `:Lazy sync` or `:PackerSync` to update
+- Verify your terminal supports true colors
+- Try a different terminal emulator
+- Check terminal color settings
 
-**Colors look wrong**
+**Need help?**
 
-- Ensure `termguicolors` is enabled: `:set termguicolors?`
-- Check your terminal supports 24-bit colors
-- Some terminals need specific configuration (see `extras/` directory)
-
-**Theme doesn't load in AstroNvim**
-
-- Make sure to update both the plugin file and `astroui.lua`
-- Run `:AstroUpdate` after adding the theme
-- Check `:AstroNvimVersion` for compatibility
-
-**Local installation not working**
-
-- Verify the path is correct: `:echo &runtimepath`
-- For symlinks, ensure they're not broken
-- Try absolute paths instead of `~` in plugin specs
-
-### Getting Help
-
-1. Check `:checkhealth` for diagnostics
-2. Review the [documentation](docs/)
-3. Search [existing issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
-4. Create a new issue with:
-   - Neovim version: `nvim --version`
-   - Config used to load theme
-   - Error messages
-   - Screenshots if visual issue
+- Run `:checkhealth` for diagnostics
+- Check [Issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
+- Create a new issue with your config and error messages
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-### Development Setup
+Contributions are welcome! Please feel free to submit issues and pull requests.
 
 ```bash
-# Clone for development
-git clone https://github.com/hyperb1iss/silkcircuit-nvim.git ~/dev/silkcircuit-nvim
-cd ~/dev/silkcircuit-nvim
+# Clone the repo
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
+cd silkcircuit-nvim
 
 # Install dev dependencies
 make setup
@@ -506,20 +228,11 @@ make setup
 # Run tests and linting
 make test
 make lint
-
-# Use your local version in Neovim
-# Add to lazy.nvim: { dir = "~/dev/silkcircuit-nvim" }
 ```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Original [VSCode Lilac Theme](https://marketplace.visualstudio.com/items) for the color palette inspiration
-- The Neovim community for continuous feedback and contributions
-- All contributors who have helped improve this theme
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## 💜 Author
 
@@ -528,5 +241,5 @@ Created by [Stefanie Jane](https://github.com/hyperb1iss) ([@hyperb1iss](https:/
 ---
 
 <div align="center">
-  <sub>Built with 💜 in Seattle</sub>
+  <sub>Built with 💜 for the Neovim community</sub>
 </div>
