@@ -31,7 +31,7 @@ function M.load(colors, opts)
     "flash",
     "rainbow_delimiters",
   }
-  
+
   for _, integration in ipairs(integrations) do
     if config.is_enabled(integration) then
       local ok, module = pcall(require, "lilac.integrations." .. integration)

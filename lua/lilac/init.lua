@@ -17,19 +17,19 @@ function M.load()
     vim.notify("lilac.nvim: termguicolors must be enabled", vim.log.levels.ERROR)
     return
   end
-  
+
   -- Reset highlighting
   vim.cmd("hi clear")
   if vim.fn.exists("syntax_on") then
     vim.cmd("syntax reset")
   end
-  
+
   -- Set theme name
   vim.g.colors_name = "lilac"
-  
+
   -- Apply theme
   theme.apply()
-  
+
   -- Set terminal colors if enabled
   if config.get().terminal_colors then
     theme.set_terminal_colors()

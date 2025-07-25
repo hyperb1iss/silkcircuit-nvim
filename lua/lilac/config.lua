@@ -2,10 +2,10 @@ local M = {}
 
 -- Default configuration
 M.defaults = {
-  transparent = false,       -- Enable transparent background
-  terminal_colors = true,    -- Configure terminal colors
-  dim_inactive = false,      -- Dim inactive windows
-  
+  transparent = false, -- Enable transparent background
+  terminal_colors = true, -- Configure terminal colors
+  dim_inactive = false, -- Dim inactive windows
+
   styles = {
     comments = { italic = true },
     keywords = { italic = false },
@@ -17,10 +17,10 @@ M.defaults = {
     types = {},
     constants = {},
   },
-  
+
   -- Custom highlight group overrides
   on_highlights = nil,
-  
+
   -- Plugin integrations (all enabled by default)
   integrations = {
     treesitter = true,

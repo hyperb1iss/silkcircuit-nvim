@@ -1,12 +1,12 @@
 local M = {}
 
-function M.highlights(colors, opts)
+function M.highlights(colors, _)
   return {
     CmpItemAbbr = { fg = colors.fg },
     CmpItemAbbrDeprecated = { fg = colors.gray, strikethrough = true },
     CmpItemAbbrMatch = { fg = colors.cyan, bold = true },
     CmpItemAbbrMatchFuzzy = { fg = colors.cyan, bold = true },
-    
+
     CmpItemKind = { fg = colors.purple },
     CmpItemKindText = { fg = colors.fg },
     CmpItemKindMethod = { fg = colors.blue },
@@ -33,23 +33,23 @@ function M.highlights(colors, opts)
     CmpItemKindEvent = { fg = colors.orange },
     CmpItemKindOperator = { fg = colors.cyan },
     CmpItemKindTypeParameter = { fg = colors.cyan },
-    
+
     CmpItemMenu = { fg = colors.gray },
-    
+
     -- Scrollbar
     PmenuSel = { bg = colors.selection },
     PmenuSbar = { bg = colors.bg_highlight },
     PmenuThumb = { bg = colors.gray },
-    
+
     -- Ghost text
     CmpGhostText = { fg = colors.gray, italic = true },
-    
+
     -- Copilot
     CmpItemKindCopilot = { fg = colors.cyan },
-    
+
     -- Codeium
     CmpItemKindCodeium = { fg = colors.cyan },
-    
+
     -- TabNine
     CmpItemKindTabNine = { fg = colors.cyan },
   }

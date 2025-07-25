@@ -11,7 +11,7 @@
 
 ```lua
 {
-  "bliss/lilac-nvim",
+  "hyperb1iss/lilac-nvim",
   lazy = false,    -- Load during startup
   priority = 1000, -- Load before other plugins
   config = function()
@@ -27,7 +27,7 @@
 
 ```lua
 use {
-  "bliss/lilac-nvim",
+  "hyperb1iss/lilac-nvim",
   config = function()
     require("lilac").setup({})
     vim.cmd("colorscheme lilac")
@@ -38,7 +38,7 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'bliss/lilac-nvim'
+Plug 'hyperb1iss/lilac-nvim'
 
 " After plug#end()
 colorscheme lilac
@@ -47,7 +47,7 @@ colorscheme lilac
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 
 ```vim
-call dein#add('bliss/lilac-nvim')
+call dein#add('hyperb1iss/lilac-nvim')
 
 " In your configuration
 colorscheme lilac
@@ -56,12 +56,14 @@ colorscheme lilac
 ### Manual Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/bliss/lilac-nvim.git \
+git clone https://github.com/hyperb1iss/lilac-nvim.git \
   ~/.local/share/nvim/site/pack/lilac/start/lilac-nvim
 ```
 
 2. Add to your Neovim configuration:
+
 ```lua
 vim.cmd.colorscheme("lilac")
 ```

@@ -1,0 +1,86 @@
+# Selene vim standard library definitions
+# This file defines the vim global for selene
+
+[vim]
+any = true
+
+[vim.api]
+any = true
+
+[vim.fn]
+any = true
+
+[vim.g]
+any = true
+
+[vim.b]
+any = true
+
+[vim.w]
+any = true
+
+[vim.t]
+any = true
+
+[vim.v]
+any = true
+
+[vim.o]
+any = true
+
+[vim.bo]
+any = true
+
+[vim.wo]
+any = true
+
+[vim.opt]
+any = true
+
+[vim.opt_local]
+any = true
+
+[vim.opt_global]
+any = true
+
+[vim.cmd]
+any = true
+
+[vim.keymap]
+any = true
+
+[vim.diagnostic]
+any = true
+
+[vim.lsp]
+any = true
+
+[vim.treesitter]
+any = true
+
+[vim.tbl_deep_extend]
+any = true
+
+[vim.tbl_isempty]
+any = true
+
+[vim.notify]
+any = true
+
+[vim.log]
+any = true
+
+[vim.log.levels]
+any = true
+
+[vim.schedule]
+any = true
+
+[vim.defer_fn]
+any = true
+
+[vim.loop]
+any = true
+
+[vim.inspect]
+any = true

@@ -1,0 +1,28 @@
+# Selene configuration for Lua linting
+std = "lua51+vim"
+
+[rules]
+# Style rules
+empty_if = "deny"
+if_same_then_else = "deny"
+ifs_same_cond = "deny"
+multiple_statements = "warn"
+unbalanced_assignments = "deny"
+
+# Code quality
+divide_by_zero = "deny"
+unused_variable = "warn"
+undefined_variable = "deny"
+shadowing = "warn"
+unscoped_variables = "warn"
+
+# Best practices
+high_cyclomatic_complexity = "warn"
+incorrect_standard_library_use = "warn"
+
+# Neovim-specific rules
+global_usage = "allow"
+
+[config]
+# Allow vim global
+extra_globals = ["vim", "jit", "bit"]

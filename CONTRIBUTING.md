@@ -5,6 +5,7 @@ First off, thank you for considering contributing to Lilac! It's people like you
 ## Code of Conduct
 
 By participating in this project, you are expected to uphold our Code of Conduct:
+
 - Be respectful and inclusive
 - Welcome newcomers and help them get started
 - Focus on what is best for the community
@@ -49,12 +50,14 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 ## Development Setup
 
 1. Clone your fork:
+
 ```bash
 git clone https://github.com/your-username/lilac-nvim.git
 cd lilac-nvim
 ```
 
 2. Create a test configuration:
+
 ```lua
 -- test/init.lua
 vim.opt.runtimepath:prepend(vim.fn.getcwd())
@@ -68,6 +71,7 @@ vim.cmd.colorscheme("lilac")
 ```
 
 3. Test your changes:
+
 ```bash
 nvim -u test/init.lua
 ```
@@ -82,17 +86,18 @@ nvim -u test/init.lua
 - Follow existing code style
 
 Example:
+
 ```lua
 local M = {}
 
 -- Clear, descriptive function name
 function M.apply_highlights(colors, opts)
   local highlights = {}
-  
+
   -- Group related highlights
   highlights.Normal = { fg = colors.fg, bg = colors.bg }
   highlights.Comment = { fg = colors.comment, italic = opts.italic_comments }
-  
+
   return highlights
 end
 
@@ -126,6 +131,7 @@ When adding or modifying colors:
 To add support for a new plugin:
 
 1. Create a new file in `lua/lilac/integrations/`:
+
 ```lua
 -- lua/lilac/integrations/plugin_name.lua
 local M = {}
@@ -142,6 +148,7 @@ return M
 ```
 
 2. Add the plugin to the integrations list in `lua/lilac/config.lua`:
+
 ```lua
 integrations = {
   -- ... existing integrations
@@ -184,6 +191,7 @@ Before submitting a PR:
 ## Questions?
 
 Feel free to open an issue for:
+
 - Questions about the codebase
 - Clarification on contribution process
 - Discussion about potential features

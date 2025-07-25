@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          # Install selene
+          wget -qO- https://github.com/Kampfkarren/selene/releases/latest/download/selene-linux.zip | busybox unzip -
+          chmod +x ./selene
+          sudo mv ./selene /usr/local/bin/
+
+          # Install stylua
+          wget -qO- https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip | busybox unzip -
+          chmod +x ./stylua
+          sudo mv ./stylua /usr/local/bin/
+
+      - name: Verify code quality
+        run: |
+          selene lua/
+          stylua --check lua/ colors/
+
+      - name: Install Neovim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Build release artifacts
+        run: |
+          # Create release directory
+          mkdir -p release
+
+          # Generate compiled theme
+          nvim --headless -u scripts/compile.lua +qa
+          cp cache/lilac_compiled.lua release/
+
+          # Package extras
+          tar -czf release/lilac-extras.tar.gz extras/
+
+          # Create source archive
+          git archive --format=tar.gz --prefix=lilac-nvim/ -o release/lilac-nvim-${{ github.ref_name }}.tar.gz HEAD
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          echo "# Changelog" > CHANGELOG_RELEASE.md
+          echo "" >> CHANGELOG_RELEASE.md
+          git log --pretty=format:"- %s (%h)" $(git describe --tags --abbrev=0 HEAD^)..HEAD >> CHANGELOG_RELEASE.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: CHANGELOG_RELEASE.md
+          files: |
+            release/lilac-nvim-${{ github.ref_name }}.tar.gz
+            release/lilac-extras.tar.gz
+            release/lilac_compiled.lua
+          draft: false
+          prerelease: false
