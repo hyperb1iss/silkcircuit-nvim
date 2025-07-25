@@ -1,50 +1,68 @@
 -- Lualine theme for Lilac colorscheme
--- Femme cyberpunk synthwave statusline
+-- EPIC femme cyberpunk synthwave statusline with MAXIMUM DRAMA
 
 local colors = require("lilac.palette").colors
 
 local lilac = {}
 
--- Normal mode - Purple glow
+-- Normal mode - Electric purple with glow effect
 lilac.normal = {
-  a = { bg = colors.purple, fg = colors.bg, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.purple },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  a = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
+  b = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.purple },
+  y = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
+  z = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
 }
 
--- Insert mode - Hot pink
+-- Insert mode - NEON PINK EXPLOSION
 lilac.insert = {
-  a = { bg = colors.pink, fg = colors.bg, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.pink },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  a = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
+  b = { bg = colors.pink, fg = colors.bg, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.pink },
+  y = { bg = colors.pink, fg = colors.bg, gui = "bold" },
+  z = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
 }
 
--- Visual mode - Neon cyan
+-- Visual mode - ELECTRIC CYAN VIBES
 lilac.visual = {
-  a = { bg = colors.cyan, fg = colors.bg, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.cyan },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  a = { bg = colors.glow_cyan, fg = colors.bg, gui = "bold" },
+  b = { bg = colors.cyan, fg = colors.bg, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.cyan },
+  y = { bg = colors.cyan, fg = colors.bg, gui = "bold" },
+  z = { bg = colors.glow_cyan, fg = colors.bg, gui = "bold" },
 }
 
--- Replace mode - Bright pink
+-- Replace mode - MAXIMUM PINK INTENSITY
 lilac.replace = {
   a = { bg = colors.pink_bright, fg = colors.bg, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.pink_bright },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  b = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.pink_bright },
+  y = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
+  z = { bg = colors.pink_bright, fg = colors.bg, gui = "bold" },
 }
 
--- Command mode - Electric purple
+-- Command mode - COMMANDING PURPLE PRESENCE
 lilac.command = {
   a = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.purple_dark },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  b = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.purple_dark },
+  y = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
+  z = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
 }
 
--- Terminal mode - Neon green
+-- Terminal mode - MATRIX GREEN GLOW
 lilac.terminal = {
   a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-  b = { bg = colors.bg_highlight, fg = colors.green },
-  c = { bg = colors.bg_dark, fg = colors.fg_dark },
+  b = { bg = colors.green_bright, fg = colors.bg, gui = "bold" },
+  c = { bg = colors.bg_highlight, fg = colors.fg_dark },
+  x = { bg = colors.bg_highlight, fg = colors.green },
+  y = { bg = colors.green_bright, fg = colors.bg, gui = "bold" },
+  z = { bg = colors.green, fg = colors.bg, gui = "bold" },
 }
 
 -- Inactive windows - Muted

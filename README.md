@@ -89,7 +89,23 @@ colorscheme lilac
 
 ### AstroNvim Installation
 
-For AstroNvim v3+, add to your `plugins/` directory:
+Lilac has **complete AstroNvim integration** with custom configs for enhanced cyberpunk vibes!
+
+**Quick Setup:**
+
+1. Copy the AstroNvim configs:
+
+   ```bash
+   # Copy plugin configurations
+   cp extras/astronvim/plugins/*.lua ~/.config/nvim/lua/plugins/
+
+   # Copy community config (optional)
+   cp extras/astronvim/community.lua ~/.config/nvim/lua/
+   ```
+
+2. Restart Neovim and run `:Lazy sync`
+
+**Manual Setup:**
 
 ```lua
 -- plugins/lilac.lua
@@ -99,33 +115,33 @@ return {
   priority = 1000,
   config = function()
     require("lilac").setup({
-      -- Your Lilac config here
+      -- AstroNvim optimized settings included
     })
   end,
 }
 ```
 
-Then update your `plugins/astroui.lua`:
-
 ```lua
 -- plugins/astroui.lua
 return {
   "AstroNvim/astroui",
-  ---@type AstroUIOpts
   opts = {
     colorscheme = "lilac",
+    -- Custom highlights and status config included
   },
 }
 ```
 
-For AstroNvim v4+, you can also add it to your community plugins:
+**What you get:**
 
-```lua
--- lua/community.lua
-return {
-  { "hyperb1iss/lilac-nvim" },
-}
-```
+- 🌈 Custom statusline with neon mode indicators
+- 📁 Neo-tree with cyberpunk styling
+- 🔍 Telescope with glowing borders
+- ⌨️ Which-Key popup theming
+- 📊 Dashboard with purple/pink aesthetics
+- 🌟 Complete LSP integration
+
+See `extras/astronvim/README.md` for full setup guide and customization options.
 
 ### Local Installation
 
@@ -272,15 +288,33 @@ require("lilac").compile()
 
 ### Lualine Integration
 
-Lilac includes a custom Lualine theme. To use it:
+Lilac includes a custom Lualine theme with neon mode indicators and synthwave aesthetics.
+
+**Basic setup:**
 
 ```lua
 require('lualine').setup {
   options = {
     theme = 'lilac',
-    -- Other lualine options
+    globalstatus = true, -- Single statusline
   }
 }
+```
+
+**Epic cyberpunk setup:**
+Copy `extras/lualine-config.lua` to your config and modify as needed. This includes:
+
+- Animated mode indicators with glow effects
+- Custom separators and icons
+- LSP status with client names
+- Git integration with branch icons
+- Macro recording indicator
+- Time display (because cyberpunk)
+- Neon color transitions between modes
+
+```lua
+-- Load the epic config
+require('lualine').setup(require('path.to.extras.lualine-config'))
 ```
 
 ### Warp Terminal
