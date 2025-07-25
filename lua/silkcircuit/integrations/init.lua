@@ -30,6 +30,10 @@ function M.load(colors, opts)
     "illuminate",
     "flash",
     "rainbow_delimiters",
+    "aerial",
+    "ufo",
+    "window_picker",
+    "markdown",
   }
 
   for _, integration in ipairs(integrations) do
