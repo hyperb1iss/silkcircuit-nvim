@@ -108,13 +108,17 @@ format:
 	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Formatting Code$(RESET)"
 	@echo ""
 	@echo "  $(CYAN)$(DOT)$(RESET) Running stylua..."
-	@if stylua --check lua/ colors/ >/dev/null 2>&1; then \
-		echo "  $(GREEN)$(CHECK)$(RESET) Lua code is properly formatted"; \
-	else \
-		echo "  $(YELLOW)$(DOT)$(RESET) Formatting Lua code..."; \
-		stylua lua/ colors/; \
-		echo "  $(GREEN)$(CHECK)$(RESET) Lua code formatted"; \
-	fi
+	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting Lua files..."
+	@find . -name "*.lua" -type f | xargs stylua
+	@echo "  $(GREEN)$(CHECK)$(RESET) Lua code formatted"
+	@echo ""
+	@echo "  $(CYAN)$(DOT)$(RESET) Fixing file endings..."
+	@find . -name "*.lua" -o -name "*.md" -type f | xargs -I {} sh -c 'tail -c1 {} | read -r _ || echo >> {}'
+	@echo "  $(GREEN)$(CHECK)$(RESET) File endings fixed"
+	@echo ""
+	@echo "  $(CYAN)$(DOT)$(RESET) Trimming trailing whitespace..."
+	@find . -name "*.lua" -o -name "*.md" -type f | xargs sed -i '' -e 's/[[:space:]]*$$//'
+	@echo "  $(GREEN)$(CHECK)$(RESET) Trailing whitespace removed"
 	@echo ""
 	@echo "  $(CYAN)$(DOT)$(RESET) Running markdownlint..."
 	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting markdown files..."
