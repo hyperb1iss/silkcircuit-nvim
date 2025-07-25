@@ -234,12 +234,12 @@ make lint
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## 💜 Author
-
-Created by [Stefanie Jane](https://github.com/hyperb1iss) ([@hyperb1iss](https://twitter.com/hyperb1iss))
-
 ---
 
 <div align="center">
-  <sub>Built with 💜 for the Neovim community</sub>
+
+Created by [Stefanie Jane 🌠](https://github.com/hyperb1iss)
+
+If you love SilkCircuit, [buy me a Monster Ultra Violet ⚡️](https://ko-fi.com/hyperb1iss)
+
 </div>
