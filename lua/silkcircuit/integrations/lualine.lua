@@ -99,7 +99,7 @@ end
 
 -- Lualine theme configuration
 function M.get_theme()
-  local colors = require("lilac.palette").colors
+  local colors = require("silkcircuit.palette").colors
 
   return {
     normal = {

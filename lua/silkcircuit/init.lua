@@ -1,9 +1,9 @@
 local M = {}
 
 -- Load modules
-local config = require("lilac.config")
-local theme = require("lilac.theme")
-local util = require("lilac.util")
+local config = require("silkcircuit.config")
+local theme = require("silkcircuit.theme")
+local util = require("silkcircuit.util")
 
 -- Setup function
 function M.setup(options)
@@ -14,7 +14,7 @@ end
 function M.load()
   -- Check if termguicolors is enabled
   if not vim.o.termguicolors then
-    vim.notify("lilac.nvim: termguicolors must be enabled", vim.log.levels.ERROR)
+    vim.notify("silkcircuit.nvim: termguicolors must be enabled", vim.log.levels.ERROR)
     return
   end
 
@@ -25,7 +25,7 @@ function M.load()
   end
 
   -- Set theme name
-  vim.g.colors_name = "lilac"
+  vim.g.colors_name = "silkcircuit"
 
   -- Apply theme
   theme.apply()
@@ -38,7 +38,7 @@ end
 
 -- Get color palette
 function M.get_colors()
-  return require("lilac.palette").colors
+  return require("silkcircuit.palette").colors
 end
 
 -- Compile theme for better performance

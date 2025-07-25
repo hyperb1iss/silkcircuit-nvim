@@ -1,12 +1,12 @@
--- Lualine theme for Lilac colorscheme
+-- Lualine theme for Silkcircuit colorscheme
 -- EPIC femme cyberpunk synthwave statusline with MAXIMUM DRAMA
 
-local colors = require("lilac.palette").colors
+local colors = require("silkcircuit.palette").colors
 
-local lilac = {}
+local silkcircuit = {}
 
 -- Normal mode - Electric purple with glow effect
-lilac.normal = {
+silkcircuit.normal = {
   a = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
   b = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -16,7 +16,7 @@ lilac.normal = {
 }
 
 -- Insert mode - NEON PINK EXPLOSION
-lilac.insert = {
+silkcircuit.insert = {
   a = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
   b = { bg = colors.pink, fg = colors.bg, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -26,7 +26,7 @@ lilac.insert = {
 }
 
 -- Visual mode - ELECTRIC CYAN VIBES
-lilac.visual = {
+silkcircuit.visual = {
   a = { bg = colors.glow_cyan, fg = colors.bg, gui = "bold" },
   b = { bg = colors.cyan, fg = colors.bg, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -36,7 +36,7 @@ lilac.visual = {
 }
 
 -- Replace mode - MAXIMUM PINK INTENSITY
-lilac.replace = {
+silkcircuit.replace = {
   a = { bg = colors.pink_bright, fg = colors.bg, gui = "bold" },
   b = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -46,7 +46,7 @@ lilac.replace = {
 }
 
 -- Command mode - COMMANDING PURPLE PRESENCE
-lilac.command = {
+silkcircuit.command = {
   a = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
   b = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -56,7 +56,7 @@ lilac.command = {
 }
 
 -- Terminal mode - MATRIX GREEN GLOW
-lilac.terminal = {
+silkcircuit.terminal = {
   a = { bg = colors.green, fg = colors.bg, gui = "bold" },
   b = { bg = colors.green_bright, fg = colors.bg, gui = "bold" },
   c = { bg = colors.bg_highlight, fg = colors.fg_dark },
@@ -66,10 +66,10 @@ lilac.terminal = {
 }
 
 -- Inactive windows - Muted
-lilac.inactive = {
+silkcircuit.inactive = {
   a = { bg = colors.bg_highlight, fg = colors.gray, gui = "bold" },
   b = { bg = colors.bg_dark, fg = colors.gray },
   c = { bg = colors.bg_dark, fg = colors.gray },
 }
 
-return lilac
+return silkcircuit

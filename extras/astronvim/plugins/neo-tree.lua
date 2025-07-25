@@ -3,9 +3,9 @@
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  dependencies = { "lilac" },
+  dependencies = { "silkcircuit" },
   opts = function(_, opts)
-    local lilac_colors = require("lilac.palette").colors
+    local silkcircuit_colors = require("silkcircuit.palette").colors
 
     return require("astrocore").extend_tbl(opts, {
       close_if_last_window = true,

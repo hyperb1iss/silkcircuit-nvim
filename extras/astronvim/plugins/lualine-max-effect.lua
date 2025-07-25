@@ -4,10 +4,10 @@
 
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "lilac-nvim" },
+  dependencies = { "silkcircuit-nvim" },
   event = "VeryLazy",
   opts = function()
-    local lilac_colors = require("lilac.palette").colors
+    local silkcircuit_colors = require("silkcircuit.palette").colors
 
     -- Custom components with MAXIMUM DRAMA
     local components = {
@@ -38,7 +38,7 @@ return {
       branch = {
         "branch",
         icon = "",
-        color = { fg = lilac_colors.glow_purple, gui = "bold" },
+        color = { fg = silkcircuit_colors.glow_purple, gui = "bold" },
         padding = { left = 1, right = 1 },
       },
 
@@ -52,7 +52,7 @@ return {
           unnamed = " [No Name]",
           newfile = " [New]",
         },
-        color = { fg = lilac_colors.pink, gui = "bold" },
+        color = { fg = silkcircuit_colors.pink, gui = "bold" },
       },
 
       -- Diagnostics with neon colors
@@ -66,10 +66,10 @@ return {
           hint = " ",
         },
         diagnostics_color = {
-          error = { fg = lilac_colors.error },
-          warn = { fg = lilac_colors.warning },
-          info = { fg = lilac_colors.info },
-          hint = { fg = lilac_colors.hint },
+          error = { fg = silkcircuit_colors.error },
+          warn = { fg = silkcircuit_colors.warning },
+          info = { fg = silkcircuit_colors.info },
+          hint = { fg = silkcircuit_colors.hint },
         },
       },
 
@@ -87,7 +87,7 @@ return {
           end
           return " " .. table.concat(names, ", ")
         end,
-        color = { fg = lilac_colors.cyan, gui = "italic" },
+        color = { fg = silkcircuit_colors.cyan, gui = "italic" },
         cond = function()
           return #vim.lsp.get_active_clients() > 0
         end,
@@ -102,7 +102,7 @@ return {
           return string.format("%3d%% %d/%d", percent, current, total)
         end,
         icon = "",
-        color = { fg = lilac_colors.purple_muted },
+        color = { fg = silkcircuit_colors.purple_muted },
       },
 
       -- Clock for cyberpunk vibes
@@ -111,7 +111,7 @@ return {
           return os.date("%H:%M")
         end,
         icon = "",
-        color = { fg = lilac_colors.yellow_bright, gui = "bold" },
+        color = { fg = silkcircuit_colors.yellow_bright, gui = "bold" },
       },
 
       -- Macro recording indicator
@@ -123,19 +123,19 @@ return {
           end
           return ""
         end,
-        color = { fg = lilac_colors.glow_pink, gui = "bold" },
+        color = { fg = silkcircuit_colors.glow_pink, gui = "bold" },
       },
 
       -- Search count
       searchcount = {
         "searchcount",
-        color = { fg = lilac_colors.orange, gui = "bold" },
+        color = { fg = silkcircuit_colors.orange, gui = "bold" },
       },
     }
 
     return {
       options = {
-        theme = "lilac",
+        theme = "silkcircuit",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         globalstatus = true,
@@ -188,8 +188,12 @@ return {
             "tabs",
             mode = 2,
             tabs_color = {
-              active = { fg = lilac_colors.bg, bg = lilac_colors.glow_purple, gui = "bold" },
-              inactive = { fg = lilac_colors.fg_dark, bg = lilac_colors.bg_highlight },
+              active = {
+                fg = silkcircuit_colors.bg,
+                bg = silkcircuit_colors.glow_purple,
+                gui = "bold",
+              },
+              inactive = { fg = silkcircuit_colors.fg_dark, bg = silkcircuit_colors.bg_highlight },
             },
           },
         },
@@ -202,7 +206,7 @@ return {
             function()
               return "▁▂▃▄▅▆▇█▇▆▅▄▃▂▁"
             end,
-            color = { fg = lilac_colors.purple_muted },
+            color = { fg = silkcircuit_colors.purple_muted },
           },
         },
       },

@@ -1,12 +1,12 @@
--- AstroNvim plugin configuration for Lilac theme
--- Place this in your ~/.config/nvim/lua/plugins/lilac.lua
+-- AstroNvim plugin configuration for SilkCircuit theme
+-- Place this in your ~/.config/nvim/lua/plugins/silkcircuit.lua
 
 return {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("lilac").setup({
+    require("silkcircuit").setup({
       -- AstroNvim optimized settings
       transparent = false,
       terminal_colors = true,

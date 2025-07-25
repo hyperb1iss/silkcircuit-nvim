@@ -8,8 +8,8 @@ return {
 
   -- Import Lilac theme from community (when available) or use custom
   {
-    "hyperb1iss/lilac-nvim",
-    name = "lilac",
+    "hyperb1iss/silkcircuit-nvim",
+    name = "silkcircuit",
     lazy = false,
     priority = 1000,
   },
@@ -17,7 +17,7 @@ return {
   -- Configure rainbow brackets with Lilac colors
   {
     "HiPhish/rainbow-delimiters.nvim",
-    dependencies = { "lilac" },
+    dependencies = { "silkcircuit" },
     config = function()
       local rainbow_delimiters = require("rainbow-delimiters")
 
@@ -46,9 +46,9 @@ return {
   -- Enhance Telescope with Lilac theme
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "lilac" },
+    dependencies = { "silkcircuit" },
     opts = function(_, opts)
-      local lilac_colors = require("lilac.palette").colors
+      local silkcircuit_colors = require("silkcircuit.palette").colors
       return require("astrocore").extend_tbl(opts, {
         defaults = {
           prompt_prefix = "  ",
@@ -75,7 +75,7 @@ return {
   -- Configure Neo-tree with Lilac styling
   {
     "nvim-neo-tree/neo-tree.nvim",
-    dependencies = { "lilac" },
+    dependencies = { "silkcircuit" },
     opts = {
       default_component_configs = {
         git_status = {

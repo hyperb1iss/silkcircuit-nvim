@@ -1,25 +1,27 @@
-# 🌸 Lilac: Synthwave Neovim Theme
+# ⚡ SilkCircuit: Femme Cyberpunk Neovim Theme
 
 <div align="center">
 
 [![Neovim](https://img.shields.io/badge/Neovim-0.8+-57A143?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 [![License](https://img.shields.io/badge/License-MIT-B48EAD?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/release/hyperb1iss/lilac-nvim.svg?style=for-the-badge&logo=github&logoColor=white&color=c792ea)](https://github.com/hyperb1iss/lilac-nvim/releases)
-[![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/lilac-nvim/ci.yml?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/hyperb1iss/lilac-nvim/actions)
+[![GitHub Release](https://img.shields.io/github/release/hyperb1iss/silkcircuit-nvim.svg?style=for-the-badge&logo=github&logoColor=white&color=e135ff)](https://github.com/hyperb1iss/silkcircuit-nvim/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim/actions)
 
-_A vibrant synthwave theme bringing cyberpunk aesthetics to your Neovim experience_ 💜
+_Where silk meets circuit: A vibrant femme cyberpunk theme with neon purple glow and electric aesthetics_ 💜⚡
 
 [Installation](#-installation) • [Configuration](#-configuration) • [Features](#-features) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
 
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/hyperb1iss/lilac-nvim/main/assets/lilac-preview.png" alt="Lilac Theme Preview" width="90%">
+  <img src="https://raw.githubusercontent.com/hyperb1iss/silkcircuit-nvim/main/assets/silkcircuit-preview.png" alt="SilkCircuit Theme Preview" width="90%">
 </div>
 
 ## 🌟 Overview
 
-Lilac is a meticulously crafted Neovim theme inspired by synthwave aesthetics and cyberpunk culture. Originally based on the VSCode Lilac theme, it brings vibrant purples, electric cyans, and neon pinks to your coding environment while maintaining excellent readability and semantic highlighting.
+SilkCircuit is an evolution of femme cyberpunk aesthetics, blending the softness of silk with the electric energy of circuits. This meticulously crafted Neovim theme features neon purple glows, electric pinks, and synthwave vibes that create a stunning coding environment while maintaining excellent readability and semantic highlighting.
+
+**Originally inspired by the VSCode Lilac theme** by [Kush](https://marketplace.visualstudio.com/items?itemName=MHMKE.lilac) - evolved into its own unique aesthetic with maximum cyberpunk drama and femme energy.
 
 ## ✨ Features
 
@@ -56,12 +58,12 @@ Lilac is a meticulously crafted Neovim theme inspired by synthwave aesthetics an
 
 ```lua
 {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("lilac").setup()
-    vim.cmd.colorscheme("lilac")
+    require("silkcircuit").setup()
+    vim.cmd.colorscheme("silkcircuit")
   end,
 }
 ```
@@ -70,10 +72,10 @@ Lilac is a meticulously crafted Neovim theme inspired by synthwave aesthetics an
 
 ```lua
 use {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   config = function()
-    require("lilac").setup()
-    vim.cmd.colorscheme("lilac")
+    require("silkcircuit").setup()
+    vim.cmd.colorscheme("silkcircuit")
   end
 }
 ```
@@ -81,7 +83,7 @@ use {
 ### Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'hyperb1iss/lilac-nvim'
+Plug 'hyperb1iss/silkcircuit-nvim'
 
 " After plug#end()
 colorscheme lilac
@@ -89,7 +91,7 @@ colorscheme lilac
 
 ### AstroNvim Installation
 
-Lilac has **complete AstroNvim integration** with custom configs for enhanced cyberpunk vibes!
+SilkCircuit has **complete AstroNvim integration** with custom configs for enhanced cyberpunk vibes!
 
 **Quick Setup:**
 
@@ -110,11 +112,11 @@ Lilac has **complete AstroNvim integration** with custom configs for enhanced cy
 ```lua
 -- plugins/lilac.lua
 return {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("lilac").setup({
+    require("silkcircuit").setup({
       -- AstroNvim optimized settings included
     })
   end,
@@ -126,7 +128,7 @@ return {
 return {
   "AstroNvim/astroui",
   opts = {
-    colorscheme = "lilac",
+    colorscheme = "silkcircuit",
     -- Custom highlights and status config included
   },
 }
@@ -151,12 +153,12 @@ For development or testing from a local directory:
 
 ```lua
 {
-  dir = "~/dev/lilac-nvim",  -- Your local path
+  dir = "~/dev/silkcircuit-nvim",  -- Your local path
   lazy = false,
   priority = 1000,
   config = function()
-    require("lilac").setup()
-    vim.cmd.colorscheme("lilac")
+    require("silkcircuit").setup()
+    vim.cmd.colorscheme("silkcircuit")
   end,
 }
 ```
@@ -165,10 +167,10 @@ For development or testing from a local directory:
 
 ```lua
 use {
-  "~/dev/lilac-nvim",  -- Your local path
+  "~/dev/silkcircuit-nvim",  -- Your local path
   config = function()
-    require("lilac").setup()
-    vim.cmd.colorscheme("lilac")
+    require("silkcircuit").setup()
+    vim.cmd.colorscheme("silkcircuit")
   end
 }
 ```
@@ -178,21 +180,21 @@ use {
 1. Clone to your local plugins directory:
 
    ```bash
-   git clone https://github.com/hyperb1iss/lilac-nvim.git \
-     ~/.local/share/nvim/site/pack/themes/start/lilac-nvim
+   git clone https://github.com/hyperb1iss/silkcircuit-nvim.git \
+     ~/.local/share/nvim/site/pack/themes/start/silkcircuit-nvim
    ```
 
 2. Or symlink your development directory:
 
    ```bash
-   ln -s ~/dev/lilac-nvim \
-     ~/.local/share/nvim/site/pack/themes/start/lilac-nvim
+   ln -s ~/dev/silkcircuit-nvim \
+     ~/.local/share/nvim/site/pack/themes/start/silkcircuit-nvim
    ```
 
 3. Add to your Neovim config:
 
    ```lua
-   vim.cmd.colorscheme("lilac")
+   vim.cmd.colorscheme("silkcircuit")
    ```
 
 ## 🚀 Quick Start
@@ -203,13 +205,13 @@ After installation, add this minimal config to get started:
 -- Enable 24-bit colors
 vim.opt.termguicolors = true
 
--- Setup Lilac theme
-require("lilac").setup({
+-- Setup SilkCircuit theme
+require("silkcircuit").setup({
   -- Leave empty for defaults or see Configuration section
 })
 
 -- Apply the colorscheme
-vim.cmd.colorscheme("lilac")
+vim.cmd.colorscheme("silkcircuit")
 ```
 
 ### Verify Installation
@@ -229,12 +231,12 @@ You can also check the current colorscheme:
 
 ## ⚙️ Configuration
 
-Lilac offers extensive customization options to match your preferences:
+SilkCircuit offers extensive customization options to match your preferences:
 
 ### Basic Setup
 
 ```lua
-require("lilac").setup({
+require("silkcircuit").setup({
   transparent = false,     -- Enable transparent background
   terminal_colors = true,  -- Set terminal colors
   dim_inactive = false,    -- Dim inactive windows
@@ -250,7 +252,7 @@ require("lilac").setup({
 ### Advanced Configuration
 
 ```lua
-require("lilac").setup({
+require("silkcircuit").setup({
   -- Disable specific plugin integrations
   integrations = {
     telescope = true,
@@ -273,7 +275,7 @@ require("lilac").setup({
 Perfect for showcasing your terminal background:
 
 ```lua
-require("lilac").setup({
+require("silkcircuit").setup({
   transparent = true,
 })
 ```
@@ -283,12 +285,12 @@ require("lilac").setup({
 Compile the theme for faster startup:
 
 ```lua
-require("lilac").compile()
+require("silkcircuit").compile()
 ```
 
 ### Lualine Integration
 
-Lilac includes a custom Lualine theme with neon mode indicators and synthwave aesthetics.
+SilkCircuit includes a custom Lualine theme with neon mode indicators and synthwave aesthetics.
 
 **Basic setup:**
 
@@ -323,13 +325,13 @@ For the best experience with Warp terminal:
 
 1. Copy `extras/warp.yaml` to `~/.warp/themes/lilac.yaml`
 2. In Warp settings, go to Appearance > Themes
-3. Select "Lilac" from custom themes
+3. Select "SilkCircuit" from custom themes
 
 This provides matching colors and UI elements for a cohesive experience.
 
 ### Rainbow Brackets
 
-Lilac supports rainbow bracket plugins that color-match your bracket pairs:
+SilkCircuit supports rainbow bracket plugins that color-match your bracket pairs:
 
 ```lua
 -- For rainbow-delimiters.nvim
@@ -341,7 +343,7 @@ require('rainbow-delimiters.setup').setup {
 require('nvim-treesitter.configs').setup {
   rainbow = {
     enable = true,
-    -- Use Lilac colors
+    -- Use SilkCircuit colors
   }
 }
 ```
@@ -350,7 +352,7 @@ The theme provides neon colors for each nesting level, making it easy to match b
 
 ## 🎯 Plugin Support
 
-Lilac includes carefully designed themes for:
+SilkCircuit includes carefully designed themes for:
 
 **UI Enhancements**
 
@@ -413,8 +415,8 @@ Lilac includes carefully designed themes for:
 
 ```bash
 # Clone the repository
-git clone https://github.com/hyperb1iss/lilac-nvim.git
-cd lilac-nvim
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
+cd silkcircuit-nvim
 
 # Install development dependencies
 make setup
@@ -432,7 +434,7 @@ make lint
 ### Project Structure
 
 ```
-lilac-nvim/
+silkcircuit-nvim/
 ├── colors/              # Vim colorscheme files
 ├── lua/lilac/           # Main theme implementation
 │   ├── init.lua        # Theme entry point
@@ -480,7 +482,7 @@ E185: Cannot find color scheme 'lilac'
 
 1. Check `:checkhealth` for diagnostics
 2. Review the [documentation](docs/)
-3. Search [existing issues](https://github.com/hyperb1iss/lilac-nvim/issues)
+3. Search [existing issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
 4. Create a new issue with:
    - Neovim version: `nvim --version`
    - Config used to load theme
@@ -495,8 +497,8 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ```bash
 # Clone for development
-git clone https://github.com/hyperb1iss/lilac-nvim.git ~/dev/lilac-nvim
-cd ~/dev/lilac-nvim
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git ~/dev/silkcircuit-nvim
+cd ~/dev/silkcircuit-nvim
 
 # Install dev dependencies
 make setup
@@ -506,7 +508,7 @@ make test
 make lint
 
 # Use your local version in Neovim
-# Add to lazy.nvim: { dir = "~/dev/lilac-nvim" }
+# Add to lazy.nvim: { dir = "~/dev/silkcircuit-nvim" }
 ```
 
 ## 📄 License

@@ -1,6 +1,6 @@
 local M = {}
-local util = require("lilac.util")
-local config = require("lilac.config")
+local util = require("silkcircuit.util")
+local config = require("silkcircuit.config")
 
 -- Get highlights
 function M.get_highlights(colors, opts)
@@ -288,7 +288,7 @@ end
 
 -- Apply the theme
 function M.apply()
-  local palette = require("lilac.palette")
+  local palette = require("silkcircuit.palette")
   local opts = config.get()
   local highlights = M.get_highlights(palette.colors, opts)
 
@@ -296,13 +296,13 @@ function M.apply()
 
   -- Load plugin integrations
   if opts.integrations then
-    require("lilac.integrations").load(palette.colors, opts)
+    require("silkcircuit.integrations").load(palette.colors, opts)
   end
 end
 
 -- Set terminal colors
 function M.set_terminal_colors()
-  local colors = require("lilac.palette").colors
+  local colors = require("silkcircuit.palette").colors
 
   vim.g.terminal_color_0 = colors.terminal_black
   vim.g.terminal_color_1 = colors.terminal_red
