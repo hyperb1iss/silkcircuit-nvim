@@ -1,4 +1,4 @@
-# Lilac Color Palette
+# SilkCircuit Color Palette
 
 ## Primary Colors
 

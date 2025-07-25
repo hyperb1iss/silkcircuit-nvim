@@ -55,7 +55,7 @@ jobs:
 
       - name: Check theme loads
         run: |
-          nvim --headless -c "set rtp+=$(pwd)" -c "colorscheme lilac" -c "qa" || exit 1
+          nvim --headless -c "set rtp+=$(pwd)" -c "colorscheme silkcircuit" -c "qa" || exit 1
 
   documentation:
     name: Documentation
@@ -106,5 +106,5 @@ jobs:
         with:
           name: compiled-theme
           path: |
-            cache/lilac_compiled.lua
+            cache/silkcircuit_compiled.lua
             extras/

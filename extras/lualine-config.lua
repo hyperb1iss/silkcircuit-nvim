@@ -1,4 +1,4 @@
--- EPIC Lualine Configuration for Lilac Theme
+-- EPIC Lualine Configuration for SilkCircuit Theme
 -- This creates an absolutely stunning femme cyberpunk statusline!
 
 -- Custom separators for that synthwave look
@@ -129,7 +129,7 @@ local components = {
 -- The actual config
 return {
   options = {
-    theme = "lilac",
+    theme = "silkcircuit",
     section_separators = separators.slant,
     component_separators = separators.component,
     globalstatus = true, -- Single statusline for all windows

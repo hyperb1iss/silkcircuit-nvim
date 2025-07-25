@@ -1,4 +1,4 @@
--- Test initialization for Lilac theme
+-- Test initialization for SilkCircuit theme
 -- This file tests that the theme loads without errors
 
 -- Add the plugin to runtime path
@@ -9,15 +9,15 @@ vim.opt.termguicolors = true
 
 -- Test function
 local function test_theme()
-  local status_ok, lilac = pcall(require, "lilac")
+  local status_ok, silkcircuit = pcall(require, "silkcircuit")
   if not status_ok then
-    vim.api.nvim_err_writeln("Failed to load lilac module: " .. lilac)
+    vim.api.nvim_err_writeln("Failed to load silkcircuit module: " .. silkcircuit)
     vim.cmd("cquit 1")
     return
   end
 
   -- Test setup function
-  local setup_ok, err = pcall(lilac.setup, {
+  local setup_ok, err = pcall(silkcircuit.setup, {
     transparent = false,
     terminal_colors = true,
     dim_inactive = false,
@@ -28,13 +28,13 @@ local function test_theme()
   })
 
   if not setup_ok then
-    vim.api.nvim_err_writeln("Failed to setup lilac: " .. err)
+    vim.api.nvim_err_writeln("Failed to setup silkcircuit: " .. err)
     vim.cmd("cquit 1")
     return
   end
 
   -- Test loading colorscheme
-  local colorscheme_ok, err2 = pcall(vim.cmd.colorscheme, "lilac")
+  local colorscheme_ok, err2 = pcall(vim.cmd.colorscheme, "silkcircuit")
   if not colorscheme_ok then
     vim.api.nvim_err_writeln("Failed to load colorscheme: " .. err2)
     vim.cmd("cquit 1")
@@ -42,16 +42,16 @@ local function test_theme()
   end
 
   -- Verify theme is loaded
-  if vim.g.colors_name ~= "lilac" then
+  if vim.g.colors_name ~= "silkcircuit" then
     vim.api.nvim_err_writeln(
-      "Theme name mismatch: expected 'lilac', got '" .. (vim.g.colors_name or "nil") .. "'"
+      "Theme name mismatch: expected 'silkcircuit', got '" .. (vim.g.colors_name or "nil") .. "'"
     )
     vim.cmd("cquit 1")
     return
   end
 
   -- Test color palette access
-  local colors = lilac.get_colors()
+  local colors = silkcircuit.get_colors()
   if not colors or not colors.bg or not colors.fg then
     vim.api.nvim_err_writeln("Failed to get colors from theme")
     vim.cmd("cquit 1")
@@ -79,9 +79,9 @@ local function test_theme()
   end
 
   -- Test plugin integration loading
-  local integrations = require("lilac.integrations")
-  local palette = require("lilac.palette")
-  local config = require("lilac.config")
+  local integrations = require("silkcircuit.integrations")
+  local palette = require("silkcircuit.palette")
+  local config = require("silkcircuit.config")
 
   -- All tests passed
   print("All tests passed!")

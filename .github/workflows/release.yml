@@ -45,13 +45,13 @@ jobs:
 
           # Generate compiled theme
           nvim --headless -u scripts/compile.lua +qa
-          cp cache/lilac_compiled.lua release/
+          cp cache/silkcircuit_compiled.lua release/
 
           # Package extras
-          tar -czf release/lilac-extras.tar.gz extras/
+          tar -czf release/silkcircuit-extras.tar.gz extras/
 
           # Create source archive
-          git archive --format=tar.gz --prefix=lilac-nvim/ -o release/lilac-nvim-${{ github.ref_name }}.tar.gz HEAD
+          git archive --format=tar.gz --prefix=silkcircuit-nvim/ -o release/silkcircuit-nvim-${{ github.ref_name }}.tar.gz HEAD
 
       - name: Generate changelog
         id: changelog
@@ -65,8 +65,8 @@ jobs:
         with:
           body_path: CHANGELOG_RELEASE.md
           files: |
-            release/lilac-nvim-${{ github.ref_name }}.tar.gz
-            release/lilac-extras.tar.gz
-            release/lilac_compiled.lua
+            release/silkcircuit-nvim-${{ github.ref_name }}.tar.gz
+            release/silkcircuit-extras.tar.gz
+            release/silkcircuit_compiled.lua
           draft: false
           prerelease: false

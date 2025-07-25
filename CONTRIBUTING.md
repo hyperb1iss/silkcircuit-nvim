@@ -1,6 +1,6 @@
-# Contributing to Lilac Theme
+# Contributing to SilkCircuit Theme
 
-First off, thank you for considering contributing to Lilac! It's people like you that make Lilac such a great theme.
+First off, thank you for considering contributing to SilkCircuit! It's people like you that make SilkCircuit such a great theme.
 
 ## Code of Conduct
 
@@ -52,8 +52,8 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 1. Clone your fork:
 
 ```bash
-git clone https://github.com/your-username/lilac-nvim.git
-cd lilac-nvim
+git clone https://github.com/your-username/silkcircuit-nvim.git
+cd silkcircuit-nvim
 ```
 
 2. Create a test configuration:
@@ -63,11 +63,11 @@ cd lilac-nvim
 vim.opt.runtimepath:prepend(vim.fn.getcwd())
 vim.opt.termguicolors = true
 
-require("lilac").setup({
+require("silkcircuit").setup({
   -- Test configuration
 })
 
-vim.cmd.colorscheme("lilac")
+vim.cmd.colorscheme("silkcircuit")
 ```
 
 3. Test your changes:
@@ -130,10 +130,10 @@ When adding or modifying colors:
 
 To add support for a new plugin:
 
-1. Create a new file in `lua/lilac/integrations/`:
+1. Create a new file in `lua/silkcircuit/integrations/`:
 
 ```lua
--- lua/lilac/integrations/plugin_name.lua
+-- lua/silkcircuit/integrations/plugin_name.lua
 local M = {}
 
 function M.highlights(colors, opts)
@@ -147,7 +147,7 @@ end
 return M
 ```
 
-2. Add the plugin to the integrations list in `lua/lilac/config.lua`:
+2. Add the plugin to the integrations list in `lua/silkcircuit/config.lua`:
 
 ```lua
 integrations = {

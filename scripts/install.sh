@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Beautiful installer for Lilac theme
+# Beautiful installer for SilkCircuit theme
 
-# Colors matching Lilac theme
+# Colors matching SilkCircuit theme
 PURPLE='\033[38;2;199;146;234m'
 PINK='\033[38;2;255;88;116m'
 CYAN='\033[38;2;127;219;202m'
@@ -29,7 +29,7 @@ ARCH="$(uname -m)"
 # Print beautiful banner
 print_banner() {
         clear
-        echo -e "\n${PURPLE}${BOLD}Lilac Theme${RESET} ${GRAY}•${RESET} ${CYAN}Synthwave Dreams for Neovim${RESET}"
+        echo -e "\n${PURPLE}${BOLD}SilkCircuit Theme${RESET} ${GRAY}•${RESET} ${CYAN}Synthwave Dreams for Neovim${RESET}"
         echo -e "${GRAY}────────────────────────────────────────────${RESET}\n"
 }
 
@@ -135,12 +135,12 @@ install_with_plugin_manager() {
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
     {
-      "hyperb1iss/lilac-nvim",
+      "hyperb1iss/silkcircuit-nvim",
       lazy = false,
       priority = 1000,
       config = function()
-        require("lilac").setup()
-        vim.cmd.colorscheme("lilac")
+        require("silkcircuit").setup()
+        vim.cmd.colorscheme("silkcircuit")
       end,
     }
 EOF
@@ -151,10 +151,10 @@ EOF
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
     use {
-      "hyperb1iss/lilac-nvim",
+      "hyperb1iss/silkcircuit-nvim",
       config = function()
-        require("lilac").setup()
-        vim.cmd.colorscheme("lilac")
+        require("silkcircuit").setup()
+        vim.cmd.colorscheme("silkcircuit")
       end
     }
 EOF
@@ -164,18 +164,18 @@ EOF
                 echo -e "  ${CYAN}${DOT}${RESET} Add to your ${PURPLE}init.vim${RESET}:\n"
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
-    Plug 'hyperb1iss/lilac-nvim'
-    colorscheme lilac
+    Plug 'hyperb1iss/silkcircuit-nvim'
+    colorscheme silkcircuit
 EOF
                 echo -e "${RESET}"
                 ;;
         *)
                 echo -e "  ${CYAN}${DOT}${RESET} Manual installation:\n"
                 echo -e "  ${GRAY}1. Clone the repository:${RESET}"
-                echo -e "     ${DIM}git clone https://github.com/hyperb1iss/lilac-nvim.git \\${RESET}"
-                echo -e "     ${DIM}  ~/.local/share/nvim/site/pack/lilac/start/lilac-nvim${RESET}\n"
+                echo -e "     ${DIM}git clone https://github.com/hyperb1iss/silkcircuit-nvim.git \\${RESET}"
+                echo -e "     ${DIM}  ~/.local/share/nvim/site/pack/silkcircuit/start/silkcircuit-nvim${RESET}\n"
                 echo -e "  ${GRAY}2. Add to your config:${RESET}"
-                echo -e "     ${DIM}vim.cmd.colorscheme('lilac')${RESET}"
+                echo -e "     ${DIM}vim.cmd.colorscheme('silkcircuit')${RESET}"
                 ;;
         esac
 }
@@ -189,11 +189,11 @@ show_config_options() {
 
         # Transparent background
         echo -e "  ${GRAY}• Transparent background:${RESET}"
-        echo -e "    ${DIM}require('lilac').setup({ transparent = true })${RESET}\n"
+        echo -e "    ${DIM}require('silkcircuit').setup({ transparent = true })${RESET}\n"
 
         # Style options
         echo -e "  ${GRAY}• Style customization:${RESET}"
-        echo -e "    ${DIM}require('lilac').setup({"
+        echo -e "    ${DIM}require('silkcircuit').setup({"
         echo -e "      styles = {"
         echo -e "        comments = { italic = true },"
         echo -e "        keywords = { bold = true },"
@@ -202,7 +202,7 @@ show_config_options() {
 
         # Plugin integrations
         echo -e "  ${GRAY}• Disable plugin themes:${RESET}"
-        echo -e "    ${DIM}require('lilac').setup({"
+        echo -e "    ${DIM}require('silkcircuit').setup({"
         echo -e "      integrations = {"
         echo -e "        telescope = false,"
         echo -e "      }"
@@ -234,7 +234,7 @@ main() {
 
         # Welcome message with typing effect
         echo -ne "  ${CYAN}"
-        type_text "Welcome to the Lilac theme installer!" 0.02
+        type_text "Welcome to the SilkCircuit theme installer!" 0.02
         echo -e "${RESET}"
 
         sleep 0.5
@@ -263,8 +263,8 @@ main() {
         # Quick tips
         echo -e "${GRAY}  Quick tips:${RESET}"
         echo -e "  ${PURPLE}${DOT}${RESET} Run ${CYAN}:checkhealth${RESET} in Neovim to verify installation"
-        echo -e "  ${PURPLE}${DOT}${RESET} Use ${CYAN}:Lilac compile${RESET} for faster loading"
-        echo -e "  ${PURPLE}${DOT}${RESET} Visit ${BLUE}github.com/hyperb1iss/lilac-nvim${RESET} for docs\n"
+        echo -e "  ${PURPLE}${DOT}${RESET} Use ${CYAN}:SilkCircuit compile${RESET} for faster loading"
+        echo -e "  ${PURPLE}${DOT}${RESET} Visit ${BLUE}github.com/hyperb1iss/silkcircuit-nvim${RESET} for docs\n"
 }
 
 # Run the installer

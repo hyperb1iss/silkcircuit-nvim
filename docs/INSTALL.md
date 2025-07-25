@@ -11,14 +11,14 @@
 
 ```lua
 {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   lazy = false,    -- Load during startup
   priority = 1000, -- Load before other plugins
   config = function()
-    require("lilac").setup({
+    require("silkcircuit").setup({
       -- Your configuration here
     })
-    vim.cmd.colorscheme("lilac")
+    vim.cmd.colorscheme("silkcircuit")
   end,
 }
 ```
@@ -27,10 +27,10 @@
 
 ```lua
 use {
-  "hyperb1iss/lilac-nvim",
+  "hyperb1iss/silkcircuit-nvim",
   config = function()
-    require("lilac").setup({})
-    vim.cmd("colorscheme lilac")
+    require("silkcircuit").setup({})
+    vim.cmd("colorscheme silkcircuit")
   end
 }
 ```
@@ -38,19 +38,19 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'hyperb1iss/lilac-nvim'
+Plug 'hyperb1iss/silkcircuit-nvim'
 
 " After plug#end()
-colorscheme lilac
+colorscheme silkcircuit
 ```
 
 ### [dein.vim](https://github.com/Shougo/dein.vim)
 
 ```vim
-call dein#add('hyperb1iss/lilac-nvim')
+call dein#add('hyperb1iss/silkcircuit-nvim')
 
 " In your configuration
-colorscheme lilac
+colorscheme silkcircuit
 ```
 
 ### Manual Installation
@@ -58,14 +58,14 @@ colorscheme lilac
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/hyperb1iss/lilac-nvim.git \
-  ~/.local/share/nvim/site/pack/lilac/start/lilac-nvim
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git \
+  ~/.local/share/nvim/site/pack/silkcircuit/start/silkcircuit-nvim
 ```
 
 2. Add to your Neovim configuration:
 
 ```lua
-vim.cmd.colorscheme("lilac")
+vim.cmd.colorscheme("silkcircuit")
 ```
 
 ## Basic Setup
@@ -77,7 +77,7 @@ Add this to your `init.lua`:
 vim.opt.termguicolors = true
 
 -- Setup and load the colorscheme
-require("lilac").setup({
+require("silkcircuit").setup({
   transparent = false,
   terminal_colors = true,
   dim_inactive = false,
@@ -89,7 +89,7 @@ require("lilac").setup({
   },
 })
 
-vim.cmd.colorscheme("lilac")
+vim.cmd.colorscheme("silkcircuit")
 ```
 
 Or in `init.vim`:
@@ -99,19 +99,19 @@ Or in `init.vim`:
 set termguicolors
 
 " Load the colorscheme
-colorscheme lilac
+colorscheme silkcircuit
 ```
 
 ## Verify Installation
 
-After installation, you can verify that Lilac is properly installed:
+After installation, you can verify that SilkCircuit is properly installed:
 
 ```vim
-:colorscheme lilac
+:colorscheme silkcircuit
 :lua print(vim.g.colors_name)
 ```
 
-This should output `lilac`.
+This should output `silkcircuit`.
 
 ## Troubleshooting
 
@@ -132,7 +132,7 @@ Ensure the plugin is properly installed and loaded before trying to set the colo
 The transparent background feature requires your terminal to support transparency. Also ensure:
 
 ```lua
-require("lilac").setup({
+require("silkcircuit").setup({
   transparent = true,
 })
 ```

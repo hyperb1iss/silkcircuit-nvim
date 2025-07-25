@@ -1,6 +1,6 @@
 .PHONY: help setup test lint format clean install-hooks compile validate-colors
 
-# Colors matching Lilac theme
+# Colors matching SilkCircuit theme
 PURPLE := \033[38;2;199;146;234m
 PINK := \033[38;2;255;88;116m
 CYAN := \033[38;2;127;219;202m
@@ -21,7 +21,7 @@ STAR := ★
 # Default target
 help:
 	@echo ""
-	@echo "$(PURPLE)$(BOLD)Lilac Theme$(RESET) $(GRAY)•$(RESET) $(CYAN)Development Commands$(RESET)"
+	@echo "$(PURPLE)$(BOLD)SilkCircuit Theme$(RESET) $(GRAY)•$(RESET) $(CYAN)Development Commands$(RESET)"
 	@echo "$(GRAY)────────────────────────────────────$(RESET)"
 	@echo ""
 	@echo "  $(PURPLE)$(STAR) setup$(RESET)          $(GRAY)─$(RESET) Install development dependencies"

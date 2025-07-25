@@ -1,19 +1,19 @@
-# Lilac theme for Alacritty
+# SilkCircuit theme for Alacritty
 # Add this to your alacritty.yml configuration
 
 colors:
   primary:
     background: '#14111F'
     foreground: '#eeffff'
-    
+
   cursor:
     text: '#14111F'
     cursor: '#eeffff'
-    
+
   selection:
     text: '#eeffff'
     background: '#1d3b53'
-    
+
   normal:
     black:   '#14111F'
     red:     '#ff5874'
@@ -23,7 +23,7 @@ colors:
     magenta: '#c792ea'
     cyan:    '#7fdbca'
     white:   '#d6deeb'
-    
+
   bright:
     black:   '#637777'
     red:     '#ff6363'
@@ -33,7 +33,7 @@ colors:
     magenta: '#c792ea'
     cyan:    '#6ae9f0'
     white:   '#eeffff'
-    
+
   indexed_colors:
     - { index: 16, color: '#F78C6C' }  # Coral
     - { index: 17, color: '#ffcb8b' }  # Orange

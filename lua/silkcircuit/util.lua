@@ -248,9 +248,9 @@ function M.compile()
   if file then
     file:write(table.concat(lines, "\n"))
     file:close()
-    vim.notify("Lilac theme compiled successfully!", vim.log.levels.INFO)
+    vim.notify("SilkCircuit theme compiled successfully!", vim.log.levels.INFO)
   else
-    vim.notify("Failed to compile Lilac theme", vim.log.levels.ERROR)
+    vim.notify("Failed to compile SilkCircuit theme", vim.log.levels.ERROR)
   end
 end
 

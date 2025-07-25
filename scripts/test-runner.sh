@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Beautiful test runner for Lilac theme
+# Beautiful test runner for SilkCircuit theme
 
-# Colors matching Lilac theme
+# Colors matching SilkCircuit theme
 PURPLE='\033[38;2;199;146;234m'
 PINK='\033[38;2;255;88;116m'
 CYAN='\033[38;2;127;219;202m'
@@ -23,7 +23,7 @@ STAR="★"
 
 # Print header
 print_header() {
-        echo -e "\n${PURPLE}${BOLD}Lilac Theme${RESET} ${GRAY}•${RESET} ${CYAN}Test Runner${RESET}"
+        echo -e "\n${PURPLE}${BOLD}SilkCircuit Theme${RESET} ${GRAY}•${RESET} ${CYAN}Test Runner${RESET}"
         echo -e "${GRAY}──────────────────────────────────${RESET}\n"
 }
 
@@ -80,12 +80,12 @@ all_tests_passed=true
 # Test 1: Check file structure
 print_section "File Structure Check"
 files_to_check=(
-        "lua/lilac/init.lua"
-        "lua/lilac/config.lua"
-        "lua/lilac/palette.lua"
-        "lua/lilac/theme.lua"
-        "lua/lilac/util.lua"
-        "colors/lilac.lua"
+        "lua/silkcircuit/init.lua"
+        "lua/silkcircuit/config.lua"
+        "lua/silkcircuit/palette.lua"
+        "lua/silkcircuit/theme.lua"
+        "lua/silkcircuit/util.lua"
+        "colors/silkcircuit.lua"
 )
 
 for file in "${files_to_check[@]}"; do
@@ -154,7 +154,7 @@ print_section "Performance Check"
 echo -e "  ${CYAN}${DOT}${RESET} ${GRAY}Measuring theme load time...${RESET}"
 
 start_time=$(date +%s%N)
-nvim --headless -c "colorscheme lilac" -c "qa" 2>/dev/null
+nvim --headless -c "colorscheme silkcircuit" -c "qa" 2>/dev/null
 end_time=$(date +%s%N)
 load_time=$(((end_time - start_time) / 1000000))
 

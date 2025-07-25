@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Color validation script for Lilac theme.
+Color validation script for SilkCircuit theme.
 Ensures color consistency and validates hex values.
 """
 
@@ -8,7 +8,7 @@ import re
 import sys
 from pathlib import Path
 
-# ANSI color codes matching Lilac theme
+# ANSI color codes matching SilkCircuit theme
 class Colors:
     PURPLE = '\033[38;2;199;146;234m'  # #c792ea
     PINK = '\033[38;2;255;88;116m'     # #ff5874
@@ -47,7 +47,7 @@ REQUIRED_COLORS = {
 
 def print_header():
     """Print a beautiful header."""
-    print(f"\n{Colors.PURPLE}{Colors.BOLD}Lilac Theme{Colors.RESET} {Colors.GRAY}•{Colors.RESET} {Colors.CYAN}Color Palette Validator{Colors.RESET}")
+    print(f"\n{Colors.PURPLE}{Colors.BOLD}SilkCircuit Theme{Colors.RESET} {Colors.GRAY}•{Colors.RESET} {Colors.CYAN}Color Palette Validator{Colors.RESET}")
     print(f"{Colors.GRAY}{'─' * 40}{Colors.RESET}\n")
 
 def print_footer(success):
@@ -113,7 +113,7 @@ def check_color_consistency():
     """Check that colors are used consistently across files."""
     print_section("Color Consistency Check")
 
-    palette_file = Path('lua/lilac/palette.lua')
+    palette_file = Path('lua/silkcircuit/palette.lua')
     if not palette_file.exists():
         print_error(f"palette.lua not found at {palette_file}")
         return False
@@ -158,7 +158,7 @@ def check_color_consistency():
             print(f"    {format_color_display(name, palette_colors[name])}")
 
     # Check for color usage in theme files
-    theme_file = Path('lua/lilac/theme.lua')
+    theme_file = Path('lua/silkcircuit/theme.lua')
     if theme_file.exists():
         with open(theme_file, 'r') as f:
             theme_content = f.read()
@@ -179,7 +179,7 @@ def check_terminal_colors():
     """Validate terminal color definitions."""
     print_section("Terminal Colors Check")
 
-    palette_file = Path('lua/lilac/palette.lua')
+    palette_file = Path('lua/silkcircuit/palette.lua')
     content = open(palette_file, 'r').read()
 
     # Check for 16 terminal colors

@@ -1,15 +1,15 @@
-# 🌸 Lilac Theme - AstroNvim Integration
+# 🌸 SilkCircuit Theme - AstroNvim Integration
 
-Complete guide for integrating the Lilac theme with AstroNvim for maximum femme cyberpunk vibes!
+Complete guide for integrating the SilkCircuit theme with AstroNvim for maximum femme cyberpunk vibes!
 
 ## 🚀 Quick Setup
 
 ### Option 1: Plugin-based Setup (Recommended)
 
-1. **Add the theme plugin** - Copy `plugins/lilac.lua` to your AstroNvim config:
+1. **Add the theme plugin** - Copy `plugins/silkcircuit.lua` to your AstroNvim config:
 
    ```bash
-   cp extras/astronvim/plugins/lilac.lua ~/.config/nvim/lua/plugins/
+   cp extras/astronvim/plugins/silkcircuit.lua ~/.config/nvim/lua/plugins/
    ```
 
 2. **Configure AstroUI** - Copy `plugins/astroui.lua` to your config:
@@ -22,7 +22,7 @@ Complete guide for integrating the Lilac theme with AstroNvim for maximum femme 
 
 ### Option 2: Community Config
 
-1. **Update community.lua** - Add Lilac to your community imports:
+1. **Update community.lua** - Add SilkCircuit to your community imports:
 
    ```bash
    cp extras/astronvim/community.lua ~/.config/nvim/lua/
@@ -45,7 +45,7 @@ Complete guide for integrating the Lilac theme with AstroNvim for maximum femme 
 ### AstroNvim-Specific Integrations
 
 - ✨ **AstroUI** integration with custom highlights
-- 🌈 **StatusLine** with Lilac color scheme and neon mode indicators
+- 🌈 **StatusLine** with SilkCircuit color scheme and neon mode indicators
 - 📁 **Neo-tree** with femme cyberpunk styling
 - 🔍 **Telescope** with neon borders
 - ⌨️  **Which-Key** popup styling
@@ -56,7 +56,7 @@ Complete guide for integrating the Lilac theme with AstroNvim for maximum femme 
 
 ### Option 1: AstroNvim Default (Recommended)
 
-Uses AstroNvim's built-in Lualine integration with Lilac colors:
+Uses AstroNvim's built-in Lualine integration with SilkCircuit colors:
 
 - Automatic theme integration
 - Works with all AstroNvim features
@@ -93,7 +93,7 @@ Add to your `astroui.lua` configuration:
 
 ```lua
 highlights = {
-  lilac = {
+  silkcircuit = {
     -- Your custom highlights here
     ["@variable"] = { fg = "#ff79c6", italic = true },
     ["@function"] = { fg = "#e135ff", bold = true },
@@ -116,8 +116,8 @@ The theme automatically configures Lualine with:
 Enable transparent background:
 
 ```lua
--- In your lilac plugin config
-require("lilac").setup({
+-- In your silkcircuit plugin config
+require("silkcircuit").setup({
   transparent = true,
   -- other options...
 })
@@ -153,7 +153,7 @@ require("lilac").setup({
 
 ### Theme Not Loading
 
-1. Make sure `colorscheme = "lilac"` is set in `astroui.lua`
+1. Make sure `colorscheme = "silkcircuit"` is set in `astroui.lua`
 2. Check that the plugin is properly installed with `:Lazy`
 3. Restart Neovim completely
 
@@ -165,7 +165,7 @@ require("lilac").setup({
 
 ### Statusline Issues
 
-1. Make sure Lualine is using the "lilac" theme
+1. Make sure Lualine is using the "silkcircuit" theme
 2. Check that all dependencies are installed
 3. The theme should auto-configure Lualine
 
@@ -173,7 +173,7 @@ require("lilac").setup({
 
 For the complete experience, use the matching terminal themes:
 
-- **Warp**: Copy `extras/warp.yaml` to `~/.warp/themes/lilac.yaml`
+- **Warp**: Copy `extras/warp.yaml` to `~/.warp/themes/silkcircuit.yaml`
 - **Alacritty**: Use `extras/alacritty.yml`
 - **Kitty**: Use `extras/kitty.conf`
 
@@ -187,7 +187,7 @@ For the complete experience, use the matching terminal themes:
 
 ## 🎮 Keybindings
 
-AstroNvim's default keybindings work perfectly with Lilac:
+AstroNvim's default keybindings work perfectly with SilkCircuit:
 
 - `<leader>ft` - Telescope file finder (with neon borders)
 - `<leader>e` - Neo-tree toggle (cyberpunk file tree)

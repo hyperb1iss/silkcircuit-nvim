@@ -1,5 +1,5 @@
 -- Epic Neo-tree configuration for maximum cyberpunk file browser vibes
--- With Lilac theme integration for femme cyberpunk aesthetics
+-- With SilkCircuit theme integration for femme cyberpunk aesthetics
 
 return {
   "nvim-neo-tree/neo-tree.nvim",

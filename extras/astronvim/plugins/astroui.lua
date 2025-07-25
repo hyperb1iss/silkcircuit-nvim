@@ -1,23 +1,23 @@
--- AstroUI configuration for Lilac theme
+-- AstroUI configuration for SilkCircuit theme
 -- Place this in your ~/.config/nvim/lua/plugins/astroui.lua
 
 return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    -- Set Lilac as the colorscheme
+    -- Set SilkCircuit as the colorscheme
     colorscheme = "silkcircuit",
 
-    -- Configure highlights that integrate with Lilac theme
+    -- Configure highlights that integrate with SilkCircuit theme
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- AstroNvim specific UI elements with Lilac colors
+        -- AstroNvim specific UI elements with SilkCircuit colors
         Normal = { bg = "NONE" }, -- For transparency if desired
       },
 
       silkcircuit = { -- this table overrides highlights when silkcircuit is active
         -- Customize specific highlights for perfect integration
-        ["@variable"] = { fg = "#ff79c6" }, -- Use Lilac pink for variables
+        ["@variable"] = { fg = "#ff79c6" }, -- Use SilkCircuit pink for variables
         ["@function"] = { fg = "#e135ff", bold = true, italic = true }, -- Glowing purple functions
         ["@keyword"] = { fg = "#bd93f9", bold = true }, -- Purple keywords
         ["@string"] = { fg = "#ff92d0", italic = true }, -- Pink strings
@@ -27,7 +27,7 @@ return {
         StatusLine = { bg = "#3b2d4f" },
         StatusLineNC = { bg = "#1e1a2e" },
 
-        -- Telescope integration with Lilac colors
+        -- Telescope integration with SilkCircuit colors
         TelescopePromptBorder = { fg = "#ff00ff" },
         TelescopeResultsBorder = { fg = "#bd93f9" },
         TelescopePreviewBorder = { fg = "#80ffea" },
@@ -52,7 +52,7 @@ return {
 
     -- Status configuration for epic Lualine integration
     status = {
-      -- Use our custom Lilac Lualine theme
+      -- Use our custom SilkCircuit Lualine theme
       colorscheme = "silkcircuit",
 
       -- Separator styles for maximum cyberpunk vibes
@@ -64,7 +64,7 @@ return {
         path = "  ",
       },
 
-      -- Custom colors that integrate with Lilac theme
+      -- Custom colors that integrate with SilkCircuit theme
       colors = function(colors)
         local silkcircuit_colors = require("silkcircuit.palette").colors
         return {

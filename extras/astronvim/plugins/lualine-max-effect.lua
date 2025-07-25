@@ -1,4 +1,4 @@
--- MAXIMUM EFFECT Lualine configuration for AstroNvim + Lilac
+-- MAXIMUM EFFECT Lualine configuration for AstroNvim + SilkCircuit
 -- This replaces AstroNvim's default statusline with our EPIC custom one
 -- Only use this if you want MAXIMUM CYBERPUNK DRAMA
 

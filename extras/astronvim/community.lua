@@ -1,4 +1,4 @@
--- AstroNvim Community configuration for Lilac theme
+-- AstroNvim Community configuration for SilkCircuit theme
 -- Place this in your ~/.config/nvim/lua/community.lua
 
 return {
@@ -6,7 +6,7 @@ return {
   { import = "astrocommunity.pack.lua" }, -- Example: if you want Lua support
   { import = "astrocommunity.pack.typescript" }, -- Example: if you want TS support
 
-  -- Import Lilac theme from community (when available) or use custom
+  -- Import SilkCircuit theme from community (when available) or use custom
   {
     "hyperb1iss/silkcircuit-nvim",
     name = "silkcircuit",
@@ -14,7 +14,7 @@ return {
     priority = 1000,
   },
 
-  -- Configure rainbow brackets with Lilac colors
+  -- Configure rainbow brackets with SilkCircuit colors
   {
     "HiPhish/rainbow-delimiters.nvim",
     dependencies = { "silkcircuit" },
@@ -43,7 +43,7 @@ return {
     end,
   },
 
-  -- Enhance Telescope with Lilac theme
+  -- Enhance Telescope with SilkCircuit theme
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "silkcircuit" },
@@ -72,7 +72,7 @@ return {
     end,
   },
 
-  -- Configure Neo-tree with Lilac styling
+  -- Configure Neo-tree with SilkCircuit styling
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = { "silkcircuit" },

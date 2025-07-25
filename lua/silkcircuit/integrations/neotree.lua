@@ -2,47 +2,47 @@ local M = {}
 
 function M.highlights(colors, opts)
   return {
-    -- Main Neo-tree window with cyberpunk background
+    -- Main Neo-tree window with subtle background
     NeoTreeNormal = { fg = colors.fg, bg = opts.transparent and colors.none or colors.bg_dark },
     NeoTreeNormalNC = {
       fg = colors.fg_dark,
       bg = opts.transparent and colors.none or colors.bg_darker,
     },
-    NeoTreeWinSeparator = { fg = colors.glow_purple, bg = colors.none },
+    NeoTreeWinSeparator = { fg = colors.purple_muted, bg = colors.none },
     NeoTreeEndOfBuffer = { fg = colors.bg_dark },
 
-    -- Root directory with neon glow
-    NeoTreeRootName = { fg = colors.glow_purple, bold = true, italic = true },
+    -- Root directory with softer purple
+    NeoTreeRootName = { fg = colors.purple, bold = true, italic = true },
 
-    -- Git status with cyberpunk colors
-    NeoTreeGitAdded = { fg = colors.green, bold = true },
-    NeoTreeGitModified = { fg = colors.yellow_bright, bold = true },
-    NeoTreeGitDeleted = { fg = colors.glow_pink, bold = true },
-    NeoTreeGitRenamed = { fg = colors.glow_cyan, bold = true },
-    NeoTreeGitUntracked = { fg = colors.pink, italic = true },
+    -- Git status with softer colors
+    NeoTreeGitAdded = { fg = colors.green },
+    NeoTreeGitModified = { fg = colors.yellow },
+    NeoTreeGitDeleted = { fg = colors.pink },
+    NeoTreeGitRenamed = { fg = colors.cyan },
+    NeoTreeGitUntracked = { fg = colors.purple_muted, italic = true },
     NeoTreeGitIgnored = { fg = colors.gray, italic = true },
     NeoTreeGitConflict = { fg = colors.red, bold = true, bg = colors.red .. "20" },
     NeoTreeGitStaged = { fg = colors.green, bold = true },
     NeoTreeGitUnstaged = { fg = colors.orange, bold = true },
 
-    -- Tree structure with neon accents
+    -- Tree structure with softer accents
     NeoTreeIndentMarker = { fg = colors.purple_muted },
-    NeoTreeExpander = { fg = colors.glow_purple, bold = true },
+    NeoTreeExpander = { fg = colors.purple, bold = true },
     NeoTreeDimText = { fg = colors.gray },
 
-    -- Directories with femme purple styling
-    NeoTreeDirectoryIcon = { fg = colors.glow_purple, bold = true },
+    -- Directories with subtle purple styling
+    NeoTreeDirectoryIcon = { fg = colors.purple, bold = true },
     NeoTreeDirectoryName = { fg = colors.purple, bold = true },
 
-    -- Files with cyberpunk styling
+    -- Files with subtle styling
     NeoTreeFileName = { fg = colors.fg },
-    NeoTreeFileNameOpened = { fg = colors.glow_cyan, bold = true, italic = true },
+    NeoTreeFileNameOpened = { fg = colors.cyan, bold = true },
     NeoTreeSymbolicLinkTarget = { fg = colors.cyan, italic = true },
 
-    -- Floating windows with neon borders
-    NeoTreeFloatBorder = { fg = colors.glow_purple, bg = colors.none },
-    NeoTreeFloatTitle = { fg = colors.glow_pink, bold = true, bg = colors.bg_dark },
-    NeoTreeTitleBar = { fg = colors.glow_purple, bg = colors.bg_highlight, bold = true },
+    -- Floating windows with softer borders
+    NeoTreeFloatBorder = { fg = colors.purple, bg = colors.none },
+    NeoTreeFloatTitle = { fg = colors.pink, bold = true, bg = colors.bg_dark },
+    NeoTreeTitleBar = { fg = colors.purple, bg = colors.bg_highlight, bold = true },
 
     -- File icons and modifiers
     NeoTreeFileIcon = { fg = colors.cyan },
@@ -50,15 +50,15 @@ function M.highlights(colors, opts)
     NeoTreeBufferNumber = { fg = colors.purple_muted, italic = true },
     NeoTreeCursorLine = { bg = colors.bg_highlight },
 
-    -- Tabs with cyberpunk styling
-    NeoTreeTabActive = { fg = colors.bg, bg = colors.glow_purple, bold = true },
+    -- Tabs with softer styling
+    NeoTreeTabActive = { fg = colors.bg, bg = colors.purple, bold = true },
     NeoTreeTabInactive = { fg = colors.fg_dark, bg = colors.bg_highlight },
-    NeoTreeTabSeparatorActive = { fg = colors.glow_purple, bg = colors.glow_purple },
+    NeoTreeTabSeparatorActive = { fg = colors.purple, bg = colors.purple },
     NeoTreeTabSeparatorInactive = { fg = colors.bg_highlight, bg = colors.bg_highlight },
 
     -- Preview window
-    NeoTreePreviewBorder = { fg = colors.glow_cyan },
-    NeoTreePreviewTitle = { fg = colors.glow_cyan, bold = true },
+    NeoTreePreviewBorder = { fg = colors.cyan },
+    NeoTreePreviewTitle = { fg = colors.cyan, bold = true },
 
     -- Message and status
     NeoTreeMessage = { fg = colors.fg_dark, italic = true },
@@ -76,7 +76,7 @@ function M.highlights(colors, opts)
     NeoTreeDiagnosticHint = { fg = colors.hint },
 
     -- Filter and search
-    NeoTreeFilterTerm = { fg = colors.glow_pink, bold = true, italic = true },
+    NeoTreeFilterTerm = { fg = colors.pink, bold = true, italic = true },
     NeoTreeDotfile = { fg = colors.gray, italic = true },
 
     -- Special file types with cyberpunk colors
@@ -88,7 +88,7 @@ function M.highlights(colors, opts)
     NeoTreeLockFile = { fg = colors.orange },
 
     -- Enhanced folder states
-    NeoTreeFolderIcon = { fg = colors.glow_purple },
+    NeoTreeFolderIcon = { fg = colors.purple },
     NeoTreeFolderName = { fg = colors.purple },
     NeoTreeFolderEmpty = { fg = colors.purple_muted, italic = true },
 
@@ -96,8 +96,8 @@ function M.highlights(colors, opts)
     NeoTreeWindowsHidden = { fg = colors.gray, italic = true },
 
     -- Bookmarks and marks
-    NeoTreeBookmark = { fg = colors.glow_cyan, bold = true },
-    NeoTreeBookmarkIcon = { fg = colors.glow_cyan },
+    NeoTreeBookmark = { fg = colors.cyan, bold = true },
+    NeoTreeBookmarkIcon = { fg = colors.cyan },
   }
 end
 

@@ -1,12 +1,12 @@
-# Lilac Theme for Warp Terminal
+# SilkCircuit Theme for Warp Terminal
 # A vibrant femme cyberpunk synthwave theme
 #
 # Installation:
-# 1. Copy this file to ~/.warp/themes/lilac.yaml
+# 1. Copy this file to ~/.warp/themes/silkcircuit.yaml
 # 2. In Warp, go to Settings > Appearance > Themes
-# 3. Select "Lilac" from custom themes
+# 3. Select "SilkCircuit" from custom themes
 
-name: "Lilac"
+name: "SilkCircuit"
 accent: "#ff00ff"  # Neon magenta accent
 background: "#1e1a2e"  # Deep purple background
 details: darker
