@@ -10,14 +10,14 @@ from pathlib import Path
 
 # ANSI color codes matching SilkCircuit theme
 class Colors:
-    PURPLE = '\033[38;2;199;146;234m'  # #c792ea
-    PINK = '\033[38;2;255;88;116m'     # #ff5874
-    CYAN = '\033[38;2;127;219;202m'    # #7fdbca
-    GREEN = '\033[38;2;173;219;103m'   # #addb67
-    YELLOW = '\033[38;2;236;196;141m'  # #ecc48d
+    PURPLE = '\033[38;2;225;53;255m'   # #e135ff
+    PINK = '\033[38;2;255;0;255m'      # #ff00ff
+    CYAN = '\033[38;2;128;255;234m'    # #80ffea
+    GREEN = '\033[38;2;241;250;140m'   # #f1fa8c
+    YELLOW = '\033[38;2;255;255;128m'  # #ffff80
     BLUE = '\033[38;2;130;170;255m'    # #82AAFF
-    GRAY = '\033[38;2;99;119;119m'     # #637777
-    WHITE = '\033[38;2;238;255;255m'   # #eeffff
+    GRAY = '\033[38;2;98;114;164m'     # #6272a4
+    WHITE = '\033[38;2;248;248;242m'   # #f8f8f2
     RESET = '\033[0m'
     BOLD = '\033[1m'
 
@@ -35,14 +35,14 @@ HEX_COLOR_PATTERN = re.compile(r'#[0-9A-Fa-f]{6}(?:[0-9A-Fa-f]{2})?')
 
 # Core colors that should be present
 REQUIRED_COLORS = {
-    'bg': '#14111F',
-    'fg': '#eeffff',
-    'purple': '#c792ea',
-    'cyan': '#7fdbca',
-    'green': '#addb67',
+    'bg': '#1e1a2e',
+    'fg': '#f8f8f2',
+    'purple': '#e135ff',
+    'cyan': '#80ffea',
+    'green': '#f1fa8c',
     'blue': '#82AAFF',
-    'pink': '#ff5874',
-    'orange': '#ffcb8b',
+    'pink': '#ff00ff',
+    'orange': '#ff6ac1',
 }
 
 def print_header():
