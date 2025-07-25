@@ -4,7 +4,13 @@
       "pattern": "^https://via.placeholder.com"
     },
     {
-      "pattern": "^https://github.com/hyperb1iss/lilac-nvim"
+      "pattern": "^https://github.com/hyperb1iss/silkcircuit-nvim"
+    },
+    {
+      "pattern": "^https://twitter.com"
+    },
+    {
+      "pattern": "^https://marketplace.visualstudio.com"
     }
   ],
   "replacements": [

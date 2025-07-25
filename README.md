@@ -4,7 +4,7 @@
 
 [![Neovim](https://img.shields.io/badge/Neovim-0.8+-e135ff?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
 [![License](https://img.shields.io/badge/License-MIT-ff79c6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/release/hyperb1iss/silkcircuit-nvim.svg?style=for-the-badge&logo=github&logoColor=white&color=bd93f9)](https://github.com/hyperb1iss/silkcircuit-nvim/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/hyperb1iss/silkcircuit-nvim?style=for-the-badge&logo=github&logoColor=white&color=bd93f9)](https://github.com/hyperb1iss/silkcircuit-nvim)
 [![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?style=for-the-badge&logo=github-actions&logoColor=white&label=CI&color=50fa7b)](https://github.com/hyperb1iss/silkcircuit-nvim/actions)
 
 _A high-contrast theme featuring vibrant purples, electric pinks, and glowing accents_ ✨
