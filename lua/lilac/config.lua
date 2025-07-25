@@ -64,6 +64,10 @@ end
 
 -- Get the current configuration
 function M.get()
+  -- If setup hasn't been called, use defaults
+  if vim.tbl_isempty(M.options) then
+    M.options = M.defaults
+  end
   return M.options
 end
 

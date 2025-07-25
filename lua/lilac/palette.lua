@@ -2,9 +2,9 @@ local M = {}
 
 M.colors = {
   -- Base colors
-  bg = "#14111F", -- Primary background
-  bg_dark = "#0d0a14", -- Darker variant for contrast
-  bg_highlight = "#292633", -- Secondary background for UI elements
+  bg = "#1a1626", -- Primary background - More purple tint
+  bg_dark = "#120f1c", -- Darker variant for contrast
+  bg_highlight = "#2d2640", -- Secondary background for UI elements - Purple tint
   bg_visual = "#1d3b53", -- Selection background
 
   fg = "#eeffff", -- Primary foreground
@@ -13,25 +13,25 @@ M.colors = {
   fg_gutter = "#637777", -- Line numbers, comments
 
   -- Primary syntax colors
-  purple = "#c792ea", -- Keywords, control flow
-  purple_dark = "#7e57c2", -- Deep purple
-  purple_muted = "#697098", -- Muted purple for quotes
+  purple = "#bd93f9", -- Keywords, control flow - More vibrant
+  purple_dark = "#9d79d6", -- Deep purple
+  purple_muted = "#8b7c96", -- Muted purple for comments
 
-  cyan = "#7fdbca", -- Operators, tags, properties
-  cyan_bright = "#6ae9f0", -- Brighter cyan
-  cyan_light = "#57eaf1", -- Light cyan
+  cyan = "#8be9fd", -- Operators, tags, properties - More vibrant
+  cyan_bright = "#a4ffff", -- Brighter cyan
+  cyan_light = "#9aedfe", -- Light cyan
 
-  green = "#addb67", -- Strings, variables
+  green = "#f1fa8c", -- Strings, variables - More yellow-green
   green_light = "#d9f5dd", -- Light green
-  green_bright = "#31e1eb", -- Bright green
+  green_bright = "#50fa7b", -- Bright green
 
   blue = "#82AAFF", -- Constants, function calls
   blue_bright = "#82b1ff", -- Bright blue
   blue_light = "#8EACE3", -- Light blue
   blue_gray = "#5f7e97", -- Blue gray
 
-  pink = "#ff5874", -- Booleans, null
-  pink_bright = "#ff2c83", -- Bright pink
+  pink = "#ff79c6", -- Booleans, null - More vibrant pink
+  pink_bright = "#ff92d0", -- Bright pink - Even more vibrant
 
   coral = "#F78C6C", -- Numbers
   red = "#ff6363", -- CSS selectors
@@ -97,24 +97,24 @@ M.colors = {
 M.semantic = {
   -- Syntax
   keyword = M.colors.purple,
-  variable = M.colors.green,
-  string = M.colors.green,
-  number = M.colors.coral,
+  variable = M.colors.pink,
+  string = M.colors.pink_bright,
+  number = M.colors.purple_dark,
   boolean = M.colors.pink,
-  constant = M.colors.blue,
+  constant = M.colors.purple,
   func = M.colors.purple,
-  func_call = M.colors.blue,
+  func_call = M.colors.cyan,
   method = M.colors.purple,
-  class = M.colors.orange,
-  type = M.colors.orange,
+  class = M.colors.pink,
+  type = M.colors.purple_dark,
   operator = M.colors.cyan,
-  comment = M.colors.gray,
+  comment = M.colors.purple_muted,
   punctuation = M.colors.fg_dark,
-  bracket = M.colors.fg_dark,
-  tag = M.colors.cyan,
-  attribute = M.colors.green,
+  bracket = M.colors.purple,
+  tag = M.colors.pink,
+  attribute = M.colors.purple,
   property = M.colors.cyan,
-  parameter = M.colors.cyan,
+  parameter = M.colors.pink,
 
   -- UI
   border = M.colors.bg_highlight,

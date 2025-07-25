@@ -96,7 +96,9 @@ function M.highlight(group, opts)
     cmd = "hi! link " .. group .. " " .. opts.link
   end
 
-  vim.cmd(cmd)
+  -- Execute highlight command with error handling
+  -- Use silent! to suppress all output and errors
+  vim.cmd("silent! " .. cmd)
 end
 
 -- Load highlight groups
