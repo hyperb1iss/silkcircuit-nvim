@@ -118,7 +118,7 @@ M.semantic = {
   bracket = M.colors.purple,
   tag = M.colors.pink,
   attribute = M.colors.purple,
-  property = M.colors.cyan,
+  property = M.colors.cyan_bright, -- Bright cyan for YAML keys!
   parameter = M.colors.pink,
 
   -- UI
