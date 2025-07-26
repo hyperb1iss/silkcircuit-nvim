@@ -343,6 +343,9 @@ function M.get_highlights(colors, opts)
 
     -- Git commit specific
     highlights["@comment.warning.gitcommit"] = { fg = colors.yellow }
+    highlights["@text.gitcommit"] = { fg = colors.pink_bright }
+    highlights["@text.title.gitcommit"] = { fg = colors.pink_bright, bold = true }
+    highlights["@keyword.gitcommit"] = { fg = colors.purple }
     highlights["gitcommitSummary"] = { fg = colors.pink_bright, italic = true, bold = true }
     highlights["gitcommitOverflow"] = { fg = colors.red }
     highlights["gitcommitBlank"] = { fg = colors.red }
@@ -351,6 +354,17 @@ function M.get_highlights(colors, opts)
     highlights["gitcommitType"] = { fg = colors.purple, bold = true }
     highlights["gitcommitScope"] = { fg = colors.cyan_bright }
     highlights["gitcommitSubject"] = { fg = colors.pink }
+    highlights["gitcommitHeader"] = { fg = colors.purple }
+    highlights["gitcommitSelectedType"] = { fg = colors.cyan_bright }
+    highlights["gitcommitSelectedFile"] = { fg = colors.pink }
+    highlights["gitcommitDiscardedType"] = { fg = colors.red }
+    highlights["gitcommitDiscardedFile"] = { fg = colors.red }
+    highlights["gitcommitUntrackedFile"] = { fg = colors.yellow }
+    highlights["gitcommitOnBranch"] = { fg = colors.purple_muted }
+    highlights["gitcommitArrow"] = { fg = colors.cyan }
+    highlights["gitcommitFile"] = { fg = colors.pink }
+    highlights["gitcommitComment"] = { fg = colors.purple_muted, italic = true }
+    highlights["gitcommitText"] = { fg = colors.pink } -- Make commit message text pink!
 
     -- Language specific highlights
     -- Bash

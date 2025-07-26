@@ -2,6 +2,7 @@ local M = {}
 
 -- Default configuration
 M.defaults = {
+  variant = "neon", -- Theme variant: "neon" | "vibrant" | "soft"
   transparent = false, -- Enable transparent background
   terminal_colors = true, -- Configure terminal colors
   dim_inactive = false, -- Dim inactive windows

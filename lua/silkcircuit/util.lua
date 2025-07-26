@@ -172,8 +172,59 @@ function M.get_highlight_def(group, opts)
   return string.format('vim.cmd("hi %s %s")', group, table.concat(attrs, " "))
 end
 
+-- Hash a string using djb2 algorithm
+local function hash_string(str)
+  local hash = 5381
+  for i = 1, #str do
+    hash = ((hash * 33) + string.byte(str, i)) % 2 ^ 32
+  end
+  return string.format("%08x", hash)
+end
+
+-- Get hash of current configuration
+local function get_config_hash()
+  local config = require("silkcircuit.config").get()
+  local config_str = vim.inspect(config)
+
+  -- Include version and variant
+  local version = "1.0.0"
+  local variant = config.variant or "neon"
+
+  return hash_string(version .. config_str .. variant)
+end
+
+-- Check if compiled cache is valid
+local function is_cache_valid()
+  local cache_dir = vim.fn.stdpath("cache")
+  local hash_file = cache_dir .. "/silkcircuit_hash"
+  local compiled_file = cache_dir .. "/silkcircuit_compiled.lua"
+
+  -- Check if files exist
+  if vim.fn.filereadable(hash_file) == 0 or vim.fn.filereadable(compiled_file) == 0 then
+    return false
+  end
+
+  -- Read stored hash
+  local file = io.open(hash_file, "r")
+  if not file then
+    return false
+  end
+  local stored_hash = file:read("*a")
+  file:close()
+
+  -- Compare with current hash
+  return stored_hash == get_config_hash()
+end
+
 -- Compile theme to a file for faster loading
-function M.compile()
+function M.compile(force)
+  -- Check if compilation is needed
+  if not force and is_cache_valid() then
+    return true
+  end
+
+  local start_time = vim.loop.hrtime()
+
   local config = require("silkcircuit.config")
   local palette = require("silkcircuit.palette")
   local theme = require("silkcircuit.theme")
@@ -243,15 +294,81 @@ function M.compile()
     )
   end
 
-  -- Write to file
-  local file = io.open(vim.fn.stdpath("cache") .. "/silkcircuit_compiled.lua", "w")
+  -- Create the theme function
+  local theme_code = table.concat(lines, "\n")
+
+  -- Try to compile to bytecode
+  local success, theme_func = pcall(loadstring, theme_code)
+  if not success then
+    vim.notify("Failed to compile theme code: " .. tostring(theme_func), vim.log.levels.ERROR)
+    return false
+  end
+
+  local cache_dir = vim.fn.stdpath("cache")
+
+  -- Write bytecode if possible
+  local bytecode_file = cache_dir .. "/silkcircuit_compiled.luac"
+  if theme_func and string.dump then
+    local bytecode = string.dump(theme_func)
+    local file = io.open(bytecode_file, "wb")
+    if file then
+      file:write(bytecode)
+      file:close()
+    end
+  end
+
+  -- Always write the lua source as fallback
+  local file = io.open(cache_dir .. "/silkcircuit_compiled.lua", "w")
   if file then
-    file:write(table.concat(lines, "\n"))
+    file:write(theme_code)
     file:close()
-    vim.notify("SilkCircuit theme compiled successfully!", vim.log.levels.INFO)
+
+    -- Save hash
+    local hash_file = io.open(cache_dir .. "/silkcircuit_hash", "w")
+    if hash_file then
+      hash_file:write(get_config_hash())
+      hash_file:close()
+    end
+
+    local load_time = (vim.loop.hrtime() - start_time) / 1e6
+    vim.notify(string.format("SilkCircuit compiled in %.2fms!", load_time), vim.log.levels.INFO)
+    return true
   else
     vim.notify("Failed to compile SilkCircuit theme", vim.log.levels.ERROR)
+    return false
   end
+end
+
+-- Load compiled theme if available
+function M.load_compiled()
+  local cache_dir = vim.fn.stdpath("cache")
+  local bytecode_file = cache_dir .. "/silkcircuit_compiled.luac"
+  local lua_file = cache_dir .. "/silkcircuit_compiled.lua"
+
+  -- Try bytecode first
+  if vim.fn.filereadable(bytecode_file) == 1 then
+    local file = io.open(bytecode_file, "rb")
+    if file then
+      local bytecode = file:read("*a")
+      file:close()
+
+      local success, theme_func = pcall(loadstring, bytecode)
+      if success and theme_func then
+        local ok = pcall(theme_func)
+        if ok then
+          return true
+        end
+      end
+    end
+  end
+
+  -- Fall back to lua source
+  if vim.fn.filereadable(lua_file) == 1 then
+    local success = pcall(dofile, lua_file)
+    return success
+  end
+
+  return false
 end
 
 return M
