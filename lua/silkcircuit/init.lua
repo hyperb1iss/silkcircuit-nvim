@@ -40,6 +40,15 @@ function M.load()
     vim.defer_fn(function()
       util.compile()
     end, 100)
+  else
+    -- Compiled theme loaded successfully, but we still need to load integrations!
+    local palette = require("silkcircuit.palette")
+    local opts = config.get()
+
+    -- Load plugin integrations (this was missing!)
+    if opts.integrations then
+      require("silkcircuit.integrations").load(palette.colors, opts)
+    end
   end
 
   local load_time = (vim.loop.hrtime() - start_time) / 1e6
@@ -54,6 +63,9 @@ function M.load()
 
   -- Setup commands
   require("silkcircuit.commands").setup()
+
+  -- Setup glow mode
+  require("silkcircuit.glow").setup()
 end
 
 -- Get color palette

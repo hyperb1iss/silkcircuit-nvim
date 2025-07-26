@@ -106,47 +106,97 @@ M.colors = get_variant_colors()
     none = "NONE",
   }
 
--- Semantic color mappings
-M.semantic = {
-  -- Syntax
-  keyword = M.colors.purple,
-  variable = M.colors.pink,
-  string = M.colors.pink_bright,
-  number = M.colors.purple_dark,
-  boolean = M.colors.pink,
-  constant = M.colors.purple,
-  func = M.colors.purple,
-  func_call = M.colors.cyan,
-  method = M.colors.purple,
-  class = M.colors.pink,
-  type = M.colors.purple_dark,
-  operator = M.colors.cyan,
-  comment = M.colors.purple_muted,
-  punctuation = M.colors.fg_dark,
-  bracket = M.colors.purple,
-  tag = M.colors.pink,
-  attribute = M.colors.purple,
-  property = M.colors.cyan_bright, -- Bright cyan for YAML keys!
-  parameter = M.colors.pink,
+-- Update semantic mappings when colors change
+local function update_semantic()
+  local colors = M.colors
+  M.semantic = {
+    -- Syntax (consistent across all languages)
+    keyword = colors.purple,
+    variable = colors.pink,
+    string = colors.pink_bright,
+    number = colors.purple_dark,
+    boolean = colors.pink,
+    constant = colors.purple_dark,
+    func = colors.glow_purple,
+    func_call = colors.cyan,
+    method = colors.glow_purple,
+    class = colors.yellow,
+    type = colors.yellow,
+    operator = colors.cyan,
+    comment = colors.purple_muted,
+    punctuation = colors.fg_dark,
+    bracket = colors.purple,
+    tag = colors.pink,
+    attribute = colors.purple,
+    property = colors.cyan_bright,
+    parameter = colors.pink,
 
-  -- UI
-  border = M.colors.bg_highlight,
-  cursor_line = M.colors.bg_highlight,
-  line_number = M.colors.gray,
-  line_number_active = M.colors.fg_dark,
-  indent_guide = M.colors.bg_highlight,
-  indent_guide_active = M.colors.gray_dark,
+    -- Special syntax elements
+    namespace = colors.purple,
+    decorator = colors.green_bright,
+    annotation = colors.green_bright,
+    preprocessor = colors.pink_bright,
+    regex = colors.cyan_bright,
+    escape = colors.coral,
+    symbol = colors.cyan,
+    field = colors.cyan_bright,
 
-  -- Diagnostics
-  diag_error = M.colors.error,
-  diag_warning = M.colors.warning,
-  diag_info = M.colors.info,
-  diag_hint = M.colors.hint,
+    -- UI Elements
+    border = colors.cyan_bright,
+    border_alt = colors.purple,
+    cursor_line = colors.bg_highlight,
+    line_number = colors.gray,
+    line_number_active = colors.fg_light,
+    indent_guide = colors.bg_highlight,
+    indent_guide_active = colors.purple_muted,
+    fold = colors.purple_muted,
 
-  -- Diff
-  diff_add_bg = M.colors.diff_add,
-  diff_change_bg = M.colors.diff_change,
-  diff_delete_bg = M.colors.diff_delete,
-}
+    -- Selection and Search
+    selection = colors.selection,
+    selection_inactive = colors.selection_inactive,
+    search = colors.yellow,
+    search_current = colors.coral,
+    match = colors.pink,
+
+    -- Diagnostics (consistent everywhere)
+    diag_error = colors.error,
+    diag_warning = colors.warning,
+    diag_info = colors.info,
+    diag_hint = colors.hint,
+    diag_ok = colors.green_bright,
+
+    -- Diff (for all diff views)
+    diff_add = colors.git_add,
+    diff_change = colors.git_change,
+    diff_delete = colors.git_delete,
+    diff_add_bg = colors.diff_add,
+    diff_change_bg = colors.diff_change,
+    diff_delete_bg = colors.diff_delete,
+    diff_text = colors.diff_text,
+
+    -- Git
+    git_add = colors.git_add,
+    git_change = colors.git_change,
+    git_delete = colors.git_delete,
+    git_ignore = colors.gray,
+    git_untracked = colors.yellow,
+
+    -- Status indicators
+    info = colors.info,
+    success = colors.green_bright,
+    warning = colors.warning,
+    error = colors.error,
+    hint = colors.hint,
+
+    -- Special highlights
+    todo = colors.yellow,
+    note = colors.info,
+    hack = colors.warning,
+    fixme = colors.error,
+  }
+end
+
+-- Initialize semantic colors
+update_semantic()
 
 return M

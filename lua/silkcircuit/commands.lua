@@ -69,6 +69,12 @@ function M.setup()
       )
     end
   end, { desc = "Compile SilkCircuit theme for faster loading" })
+
+  -- Integration status command
+  vim.api.nvim_create_user_command("SilkCircuitIntegrations", function()
+    local integrations = require("silkcircuit.integrations")
+    integrations.debug()
+  end, { desc = "Show detected plugin integrations" })
 end
 
 return M

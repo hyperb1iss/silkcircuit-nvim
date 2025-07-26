@@ -24,7 +24,10 @@ M.defaults = {
 
   -- Plugin integrations (all enabled by default)
   integrations = {
-    -- Core integrations
+    -- Auto-detect plugins and load their integrations
+    auto_detect = true,
+
+    -- Core integrations (essential - always enabled)
     treesitter = true,
     lsp = true,
     native_lsp = { enabled = true }, -- Alias for lsp

@@ -55,50 +55,63 @@ end
 
 -- Apply highlight group
 function M.highlight(group, opts)
-  local cmd = "hi " .. group
-
-  if opts.fg then
-    cmd = cmd .. " guifg=" .. opts.fg
-  end
-
-  if opts.bg then
-    cmd = cmd .. " guibg=" .. opts.bg
-  end
-
-  if opts.sp then
-    cmd = cmd .. " guisp=" .. opts.sp
-  end
-
-  if opts.style then
-    local styles = {}
-    if type(opts.style) == "table" then
-      for _, style in ipairs(opts.style) do
-        table.insert(styles, style)
-      end
-    else
-      table.insert(styles, opts.style)
-    end
-
-    if #styles > 0 then
-      cmd = cmd .. " gui=" .. table.concat(styles, ",")
-    end
-  elseif opts.italic then
-    cmd = cmd .. " gui=italic"
-  elseif opts.bold then
-    cmd = cmd .. " gui=bold"
-  elseif opts.underline then
-    cmd = cmd .. " gui=underline"
-  elseif opts.undercurl then
-    cmd = cmd .. " gui=undercurl"
-  end
+  local cmd
 
   if opts.link then
     cmd = "hi! link " .. group .. " " .. opts.link
+  else
+    -- Use hi! (with bang) to force override any existing highlights
+    cmd = "hi! " .. group
+
+    if opts.fg then
+      cmd = cmd .. " guifg=" .. opts.fg
+    end
+
+    if opts.bg then
+      cmd = cmd .. " guibg=" .. opts.bg
+    end
+
+    if opts.sp then
+      cmd = cmd .. " guisp=" .. opts.sp
+    end
+
+    local gui_attrs = {}
+
+    if opts.style then
+      if type(opts.style) == "table" then
+        for _, style in ipairs(opts.style) do
+          table.insert(gui_attrs, style)
+        end
+      else
+        table.insert(gui_attrs, opts.style)
+      end
+    end
+
+    -- Collect individual attributes
+    if opts.italic then
+      table.insert(gui_attrs, "italic")
+    end
+    if opts.bold then
+      table.insert(gui_attrs, "bold")
+    end
+    if opts.underline then
+      table.insert(gui_attrs, "underline")
+    end
+    if opts.undercurl then
+      table.insert(gui_attrs, "undercurl")
+    end
+    if opts.strikethrough then
+      table.insert(gui_attrs, "strikethrough")
+    end
+
+    if #gui_attrs > 0 then
+      cmd = cmd .. " gui=" .. table.concat(gui_attrs, ",")
+    end
   end
 
   -- Execute highlight command with error handling
   -- Use silent! to suppress all output and errors
-  vim.cmd("silent! " .. cmd)
+  pcall(vim.cmd, "silent! " .. cmd)
 end
 
 -- Load highlight groups
@@ -139,7 +152,7 @@ function M.get_highlight_def(group, opts)
   local _ = { group } -- unused, kept for potential future use
 
   if opts.link then
-    return string.format('vim.cmd("hi! link %s %s")', group, opts.link)
+    return string.format('vim.cmd("silent! hi! link %s %s")', group, opts.link)
   end
 
   local attrs = {}
@@ -169,7 +182,7 @@ function M.get_highlight_def(group, opts)
     table.insert(attrs, "gui=undercurl")
   end
 
-  return string.format('vim.cmd("hi %s %s")', group, table.concat(attrs, " "))
+  return string.format('vim.cmd("silent! hi %s %s")', group, table.concat(attrs, " "))
 end
 
 -- Hash a string using djb2 algorithm

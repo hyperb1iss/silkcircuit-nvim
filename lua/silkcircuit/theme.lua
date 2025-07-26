@@ -4,6 +4,7 @@ local config = require("silkcircuit.config")
 
 -- Get highlights
 function M.get_highlights(colors, opts)
+  local sem = require("silkcircuit.palette").semantic
   local highlights = {}
 
   -- Merge user style preferences
@@ -27,7 +28,7 @@ function M.get_highlights(colors, opts)
   highlights.VertSplit = { fg = colors.bg_highlight }
   highlights.WinSeparator = { fg = colors.bg_highlight }
   highlights.FloatBorder =
-    { fg = colors.cyan_bright, bg = opts.transparent and colors.none or colors.bg_highlight }
+    { fg = sem.border, bg = opts.transparent and colors.none or colors.bg_highlight }
   highlights.FloatTitle =
     { fg = colors.pink, bg = opts.transparent and colors.none or colors.bg_highlight, bold = true }
   highlights.WinBar = { fg = colors.pink_bright }
@@ -63,19 +64,7 @@ function M.get_highlights(colors, opts)
   highlights.Selection = { bg = colors.selection }
   highlights.MatchParen = { fg = colors.pink, bold = true }
 
-  -- Diagnostics
-  highlights.DiagnosticError = { fg = colors.error }
-  highlights.DiagnosticWarn = { fg = colors.warning }
-  highlights.DiagnosticInfo = { fg = colors.info }
-  highlights.DiagnosticHint = { fg = colors.hint }
-  highlights.DiagnosticUnderlineError = { undercurl = true, sp = colors.error }
-  highlights.DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning }
-  highlights.DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info }
-  highlights.DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint }
-  highlights.DiagnosticVirtualTextError = { fg = colors.error, italic = true }
-  highlights.DiagnosticVirtualTextWarn = { fg = colors.warning, italic = true }
-  highlights.DiagnosticVirtualTextInfo = { fg = colors.info, italic = true }
-  highlights.DiagnosticVirtualTextHint = { fg = colors.hint, italic = true }
+  -- Diagnostics handled in integrations/native_lsp.lua
 
   -- Misc
   highlights.Directory = { fg = colors.blue }
@@ -109,25 +98,24 @@ function M.get_highlights(colors, opts)
   highlights.SpellRare = { undercurl = true, sp = colors.hint }
 
   -- Syntax highlights
-  highlights.Comment = apply_style({ fg = colors.purple_muted, italic = true }, "comments")
+  highlights.Comment = apply_style({ fg = sem.comment, italic = true }, "comments")
   highlights.SpecialComment = { fg = colors.purple_muted, italic = true, bold = true }
-  highlights.Constant = apply_style({ fg = colors.purple_dark }, "constants")
-  highlights.String = apply_style({ fg = colors.pink_bright, italic = true }, "strings")
+  highlights.Constant = apply_style({ fg = sem.constant }, "constants")
+  highlights.String = apply_style({ fg = sem.string, italic = true }, "strings")
   highlights.Character = { fg = colors.cyan_bright }
-  highlights.Number = { fg = colors.purple_dark }
-  highlights.Boolean = apply_style({ fg = colors.pink }, "booleans")
-  highlights.Float = { fg = colors.purple_dark }
+  highlights.Number = { fg = sem.number }
+  highlights.Boolean = apply_style({ fg = sem.boolean }, "booleans")
+  highlights.Float = { fg = sem.number }
 
-  highlights.Identifier = { fg = colors.pink }
-  highlights.Function =
-    apply_style({ fg = colors.glow_purple, bold = true, italic = true }, "functions")
+  highlights.Identifier = { fg = sem.variable }
+  highlights.Function = apply_style({ fg = sem.func, bold = true, italic = true }, "functions")
 
-  highlights.Statement = { fg = colors.purple }
-  highlights.Conditional = apply_style({ fg = colors.purple }, "conditionals")
-  highlights.Repeat = apply_style({ fg = colors.purple }, "loops")
+  highlights.Statement = { fg = sem.keyword }
+  highlights.Conditional = apply_style({ fg = sem.keyword }, "conditionals")
+  highlights.Repeat = apply_style({ fg = sem.keyword }, "loops")
   highlights.Label = { fg = colors.cyan_bright }
-  highlights.Operator = apply_style({ fg = colors.cyan }, "operators")
-  highlights.Keyword = apply_style({ fg = colors.purple }, "keywords")
+  highlights.Operator = apply_style({ fg = sem.operator }, "operators")
+  highlights.Keyword = apply_style({ fg = sem.keyword }, "keywords")
   highlights.Exception = { fg = colors.purple }
 
   highlights.PreProc = { fg = colors.pink_bright }
@@ -136,7 +124,7 @@ function M.get_highlights(colors, opts)
   highlights.Macro = { fg = colors.purple }
   highlights.PreCondit = { fg = colors.pink_bright }
 
-  highlights.Type = apply_style({ fg = colors.yellow }, "types")
+  highlights.Type = apply_style({ fg = sem.type }, "types")
   highlights.StorageClass = { fg = colors.yellow }
   highlights.Structure = { fg = colors.yellow }
   highlights.Typedef = { fg = colors.yellow }
@@ -180,24 +168,24 @@ function M.get_highlights(colors, opts)
   highlights.rainbow5 = { fg = colors.cyan_bright }
   highlights.rainbow6 = { fg = colors.pink }
 
-  -- TreeSitter highlights
-  if opts.integrations.treesitter then
+  -- TreeSitter highlights handled in integrations/treesitter.lua
+  if false then
     -- Identifiers
-    highlights["@variable"] = { fg = colors.variable }
+    highlights["@variable"] = { fg = sem.variable }
     highlights["@variable.builtin"] = { fg = colors.cyan }
-    highlights["@variable.parameter"] = { fg = colors.parameter }
-    highlights["@variable.member"] = { fg = colors.property }
+    highlights["@variable.parameter"] = { fg = sem.parameter }
+    highlights["@variable.member"] = { fg = sem.property }
 
-    highlights["@constant"] = apply_style({ fg = colors.constant }, "constants")
+    highlights["@constant"] = apply_style({ fg = sem.constant }, "constants")
     highlights["@constant.builtin"] = { fg = colors.blue }
     highlights["@constant.macro"] = { fg = colors.blue }
 
-    highlights["@module"] = { fg = colors.type }
-    highlights["@module.builtin"] = { fg = colors.type }
+    highlights["@module"] = { fg = sem.namespace }
+    highlights["@module.builtin"] = { fg = sem.namespace }
     highlights["@label"] = { fg = colors.purple }
 
     -- Literals
-    highlights["@string"] = apply_style({ fg = colors.pink_bright }, "strings") -- Hot pink strings!
+    highlights["@string"] = apply_style({ fg = sem.string }, "strings") -- Hot pink strings!
     highlights["@string.documentation"] = { fg = colors.string }
     highlights["@string.regexp"] = { fg = colors.cyan_bright }
     highlights["@string.escape"] = { fg = colors.coral }
@@ -210,32 +198,32 @@ function M.get_highlights(colors, opts)
     highlights["@character"] = { fg = colors.string }
     highlights["@character.special"] = { fg = colors.coral }
 
-    highlights["@boolean"] = apply_style({ fg = colors.boolean }, "booleans")
-    highlights["@number"] = { fg = colors.number }
-    highlights["@number.float"] = { fg = colors.number }
+    highlights["@boolean"] = apply_style({ fg = sem.boolean }, "booleans")
+    highlights["@number"] = { fg = sem.number }
+    highlights["@number.float"] = { fg = sem.number }
 
     -- Types
-    highlights["@type"] = apply_style({ fg = colors.type }, "types")
-    highlights["@type.builtin"] = { fg = colors.type }
-    highlights["@type.definition"] = { fg = colors.type }
+    highlights["@type"] = apply_style({ fg = sem.type }, "types")
+    highlights["@type.builtin"] = { fg = sem.type }
+    highlights["@type.definition"] = { fg = sem.type }
     highlights["@type.qualifier"] = { fg = colors.purple }
 
-    highlights["@attribute"] = { fg = colors.attribute }
-    highlights["@property"] = { fg = colors.cyan_bright } -- Make properties bright cyan
+    highlights["@attribute"] = { fg = sem.attribute }
+    highlights["@property"] = { fg = sem.property } -- Make properties bright cyan
 
     -- Functions
-    highlights["@function"] = apply_style({ fg = colors.func }, "functions")
-    highlights["@function.builtin"] = { fg = colors.func_call }
-    highlights["@function.call"] = { fg = colors.func_call }
+    highlights["@function"] = apply_style({ fg = sem.func }, "functions")
+    highlights["@function.builtin"] = { fg = sem.func_call }
+    highlights["@function.call"] = { fg = sem.func_call }
     highlights["@function.macro"] = { fg = colors.purple }
-    highlights["@function.method"] = apply_style({ fg = colors.method }, "functions")
-    highlights["@function.method.call"] = { fg = colors.func_call }
+    highlights["@function.method"] = apply_style({ fg = sem.method }, "functions")
+    highlights["@function.method.call"] = { fg = sem.func_call }
 
-    highlights["@constructor"] = { fg = colors.type }
-    highlights["@operator"] = apply_style({ fg = colors.operator }, "operators")
+    highlights["@constructor"] = { fg = sem.type }
+    highlights["@operator"] = apply_style({ fg = sem.operator }, "operators")
 
     -- Keywords
-    highlights["@keyword"] = apply_style({ fg = colors.keyword }, "keywords")
+    highlights["@keyword"] = apply_style({ fg = sem.keyword }, "keywords")
     highlights["@keyword.coroutine"] = { fg = colors.keyword }
     highlights["@keyword.function"] = { fg = colors.purple }
     highlights["@keyword.operator"] = { fg = colors.operator }
@@ -251,12 +239,12 @@ function M.get_highlights(colors, opts)
     highlights["@keyword.directive.define"] = { fg = colors.purple }
 
     -- Punctuation
-    highlights["@punctuation.delimiter"] = { fg = colors.punctuation }
-    highlights["@punctuation.bracket"] = { fg = colors.bracket }
-    highlights["@punctuation.special"] = { fg = colors.punctuation }
+    highlights["@punctuation.delimiter"] = { fg = sem.punctuation }
+    highlights["@punctuation.bracket"] = { fg = sem.bracket }
+    highlights["@punctuation.special"] = { fg = sem.punctuation }
 
     -- Comments
-    highlights["@comment"] = apply_style({ fg = colors.comment }, "comments")
+    highlights["@comment"] = apply_style({ fg = sem.comment }, "comments")
     highlights["@comment.documentation"] = apply_style({ fg = colors.comment }, "comments")
     highlights["@comment.error"] = { fg = colors.error }
     highlights["@comment.warning"] = { fg = colors.warning }
@@ -270,29 +258,31 @@ function M.get_highlights(colors, opts)
     highlights["@markup.strikethrough"] = { strikethrough = true }
     highlights["@markup.underline"] = { underline = true }
 
-    highlights["@markup.heading"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.1"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.2"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.3"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.4"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.5"] = { fg = colors.blue_bright, bold = true }
-    highlights["@markup.heading.6"] = { fg = colors.blue_bright, bold = true }
+    highlights["@markup.heading"] = { fg = colors.pink_bright, bold = true }
+    highlights["@markup.heading.1"] =
+      { fg = colors.pink_bright, bold = true, bg = colors.bg_highlight }
+    highlights["@markup.heading.2"] = { fg = colors.purple, bold = true }
+    highlights["@markup.heading.3"] = { fg = colors.cyan_bright, bold = true }
+    highlights["@markup.heading.4"] = { fg = colors.yellow, bold = true }
+    highlights["@markup.heading.5"] = { fg = colors.green_bright, bold = true }
+    highlights["@markup.heading.6"] = { fg = colors.coral, bold = true }
 
-    highlights["@markup.quote"] = { fg = colors.purple_muted, italic = true }
-    highlights["@markup.math"] = { fg = colors.green }
+    highlights["@markup.quote"] =
+      { fg = colors.purple_muted, bg = colors.bg_highlight, italic = true }
+    highlights["@markup.math"] = { fg = colors.green_bright }
     highlights["@markup.environment"] = { fg = colors.purple }
-    highlights["@markup.link"] = { fg = colors.cyan, underline = true }
-    highlights["@markup.link.label"] = { fg = colors.blue }
-    highlights["@markup.link.url"] = { fg = colors.cyan, underline = true }
-    highlights["@markup.raw"] = { fg = colors.cyan_light }
-    highlights["@markup.raw.block"] = { fg = colors.cyan_light }
-    highlights["@markup.list"] = { fg = colors.blue_bright }
-    highlights["@markup.list.checked"] = { fg = colors.green }
-    highlights["@markup.list.unchecked"] = { fg = colors.gray }
+    highlights["@markup.link"] = { fg = colors.cyan_bright, underline = true, bold = true }
+    highlights["@markup.link.label"] = { fg = colors.pink }
+    highlights["@markup.link.url"] = { fg = colors.cyan, underline = true, italic = true }
+    highlights["@markup.raw"] = { fg = colors.yellow, bg = colors.bg_highlight }
+    highlights["@markup.raw.block"] = { fg = colors.yellow, bg = colors.bg_dark }
+    highlights["@markup.list"] = { fg = colors.pink_bright }
+    highlights["@markup.list.checked"] = { fg = colors.green_bright, bold = true }
+    highlights["@markup.list.unchecked"] = { fg = colors.purple }
 
     -- Tags (HTML/JSX)
-    highlights["@tag"] = { fg = colors.tag }
-    highlights["@tag.attribute"] = { fg = colors.attribute }
+    highlights["@tag"] = { fg = sem.tag }
+    highlights["@tag.attribute"] = { fg = sem.attribute }
     highlights["@tag.delimiter"] = { fg = colors.cyan_bright }
 
     -- Diff
@@ -301,20 +291,20 @@ function M.get_highlights(colors, opts)
     highlights["@diff.delta"] = { fg = colors.git_change }
 
     -- Language specific
-    highlights["@lsp.type.namespace"] = { fg = colors.type }
-    highlights["@lsp.type.type"] = { fg = colors.type }
-    highlights["@lsp.type.class"] = { fg = colors.class }
-    highlights["@lsp.type.enum"] = { fg = colors.type }
+    highlights["@lsp.type.namespace"] = { fg = sem.namespace }
+    highlights["@lsp.type.type"] = { fg = sem.type }
+    highlights["@lsp.type.class"] = { fg = sem.class }
+    highlights["@lsp.type.enum"] = { fg = sem.type }
     highlights["@lsp.type.interface"] = { fg = colors.pink }
-    highlights["@lsp.type.struct"] = { fg = colors.type }
-    highlights["@lsp.type.parameter"] = { fg = colors.parameter }
-    highlights["@lsp.type.variable"] = { fg = colors.variable }
-    highlights["@lsp.type.property"] = { fg = colors.property }
-    highlights["@lsp.type.enumMember"] = { fg = colors.constant }
-    highlights["@lsp.type.function"] = { fg = colors.func }
-    highlights["@lsp.type.method"] = { fg = colors.method }
+    highlights["@lsp.type.struct"] = { fg = sem.type }
+    highlights["@lsp.type.parameter"] = { fg = sem.parameter }
+    highlights["@lsp.type.variable"] = { fg = sem.variable }
+    highlights["@lsp.type.property"] = { fg = sem.property }
+    highlights["@lsp.type.enumMember"] = { fg = sem.constant }
+    highlights["@lsp.type.function"] = { fg = sem.func }
+    highlights["@lsp.type.method"] = { fg = sem.method }
     highlights["@lsp.type.macro"] = { fg = colors.purple }
-    highlights["@lsp.type.decorator"] = { fg = colors.attribute }
+    highlights["@lsp.type.decorator"] = { fg = sem.decorator }
 
     -- Semantic tokens
     highlights["@lsp.type.boolean"] = { link = "@boolean" }
@@ -479,11 +469,16 @@ function M.apply()
   local opts = config.get()
   local highlights = M.get_highlights(palette.colors, opts)
 
+  -- Clear any existing autocmds that might interfere
+  vim.api.nvim_create_augroup("SilkCircuit", { clear = true })
+
   util.load_highlights(highlights)
 
   -- Load plugin integrations
   if opts.integrations then
     require("silkcircuit.integrations").load(palette.colors, opts)
+  else
+    vim.notify("SilkCircuit: integrations disabled in config", vim.log.levels.WARN)
   end
 end
 
