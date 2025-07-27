@@ -4,6 +4,7 @@ local M = {}
 local config = require("silkcircuit.config")
 local theme = require("silkcircuit.theme")
 local util = require("silkcircuit.util")
+local preferences = require("silkcircuit.preferences")
 
 -- Setup function
 function M.setup(options)
@@ -53,7 +54,7 @@ function M.load()
 
   local load_time = (vim.loop.hrtime() - start_time) / 1e6
   if load_time < 10 then -- Only show for fast loads
-    vim.notify(string.format("⚡ SilkCircuit loaded in %.2fms", load_time), vim.log.levels.INFO)
+    vim.notify(string.format("» SilkCircuit loaded in %.2fms", load_time), vim.log.levels.INFO)
   end
 
   -- Set terminal colors if enabled
@@ -66,6 +67,9 @@ function M.load()
 
   -- Setup glow mode
   require("silkcircuit.glow").setup()
+
+  -- Apply saved preferences
+  preferences.apply()
 end
 
 -- Get color palette

@@ -1,4 +1,5 @@
 local M = {}
+local preferences = require("silkcircuit.preferences")
 
 function M.setup()
   -- Check contrast command
@@ -9,9 +10,9 @@ function M.setup()
     local issues = color_utils.validate_theme_contrast(colors)
 
     if #issues == 0 then
-      vim.notify("✅ All colors pass WCAG AA contrast requirements!", vim.log.levels.INFO)
+      vim.notify("√ All colors pass WCAG AA contrast requirements!", vim.log.levels.INFO)
     else
-      vim.notify("⚠️  Contrast issues found:", vim.log.levels.WARN)
+      vim.notify("! Contrast issues found:", vim.log.levels.WARN)
       for _, issue in ipairs(issues) do
         local level = issue.severity == "error" and vim.log.levels.ERROR or vim.log.levels.WARN
         vim.notify("  " .. issue.message, level)
@@ -41,13 +42,16 @@ function M.setup()
     local config = require("silkcircuit.config")
     config.options.variant = variant
 
+    -- Save preference
+    preferences.set("variant", variant)
+
     -- Force palette reload
     package.loaded["silkcircuit.palette"] = nil
 
     -- Reload theme
     vim.cmd("colorscheme silkcircuit")
     vim.notify(
-      "Switched to '" .. variant .. "' variant! " .. variants.variants[variant].description,
+      "Switched to '" .. variant .. "' variant → " .. variants.variants[variant].description,
       vim.log.levels.INFO
     )
   end, {
@@ -64,7 +68,7 @@ function M.setup()
     local success = util.compile(true)
     if success then
       vim.notify(
-        "✅ Theme compiled successfully! Reload with :colorscheme silkcircuit",
+        "√ Theme compiled successfully! Reload with :colorscheme silkcircuit",
         vim.log.levels.INFO
       )
     end
