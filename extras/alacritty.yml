@@ -1,43 +1,44 @@
 # SilkCircuit theme for Alacritty
+# Electric Neovim theme with pure neon energy
 # Add this to your alacritty.yml configuration
 
 colors:
   primary:
-    background: '#14111F'
-    foreground: '#eeffff'
+    background: '#0a0a0f'
+    foreground: '#e0e0e0'
 
   cursor:
-    text: '#14111F'
-    cursor: '#eeffff'
+    text: '#0a0a0f'
+    cursor: '#e135ff'
 
   selection:
-    text: '#eeffff'
-    background: '#1d3b53'
+    text: '#e0e0e0'
+    background: '#44475a'
 
   normal:
-    black:   '#14111F'
-    red:     '#ff5874'
-    green:   '#addb67'
-    yellow:  '#ecc48d'
-    blue:    '#82AAFF'
-    magenta: '#c792ea'
-    cyan:    '#7fdbca'
-    white:   '#d6deeb'
+    black:   '#0a0a0f'
+    red:     '#ff79c6'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#bd93f9'
+    magenta: '#e135ff'
+    cyan:    '#80ffea'
+    white:   '#e0e0e0'
 
   bright:
-    black:   '#637777'
-    red:     '#ff6363'
-    green:   '#addb67'
-    yellow:  '#FFEB95'
-    blue:    '#82b1ff'
-    magenta: '#c792ea'
-    cyan:    '#6ae9f0'
-    white:   '#eeffff'
+    black:   '#6272a4'
+    red:     '#ff5555'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#bd93f9'
+    magenta: '#ff79c6'
+    cyan:    '#5fffff'
+    white:   '#ffffff'
 
   indexed_colors:
-    - { index: 16, color: '#F78C6C' }  # Coral
-    - { index: 17, color: '#ffcb8b' }  # Orange
-    - { index: 18, color: '#292633' }  # bg_highlight
-    - { index: 19, color: '#5f7e97' }  # blue_gray
-    - { index: 20, color: '#faf39f' }  # yellow_light
-    - { index: 21, color: '#ff869a' }  # pink_light
+    - { index: 16, color: '#ffb86c' }  # Orange
+    - { index: 17, color: '#f78c6c' }  # Coral
+    - { index: 18, color: '#14141a' }  # bg_highlight
+    - { index: 19, color: '#6272a4' }  # Purple-blue
+    - { index: 20, color: '#80ffea' }  # Neon cyan
+    - { index: 21, color: '#ff79c6' }  # Pink
