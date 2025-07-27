@@ -64,6 +64,7 @@ M.defaults = {
     -- Development tools
     lazy = true,
     mason = true,
+    mini = true,
     dap = true, -- Alias for nvim_dap
     dap_ui = true, -- Alias for nvim_dap_ui
     nvim_dap = true,

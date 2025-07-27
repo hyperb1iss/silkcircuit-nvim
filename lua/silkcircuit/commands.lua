@@ -79,6 +79,13 @@ function M.setup()
     local integrations = require("silkcircuit.integrations")
     integrations.debug()
   end, { desc = "Show detected plugin integrations" })
+
+  -- Register health check
+  vim.health = vim.health or require("health")
+  if vim.health then
+    -- Modern Neovim (0.9+)
+    require("silkcircuit.health")
+  end
 end
 
 return M

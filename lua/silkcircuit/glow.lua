@@ -195,13 +195,7 @@ function M.setup()
     desc = "Control SilkCircuit Glow Mode",
   })
 
-  -- Add keybinding suggestion
-  vim.defer_fn(function()
-    if not vim.g.silkcircuit_glow_suggested then
-      vim.g.silkcircuit_glow_suggested = true
-      print("» Tip: Try :SilkCircuitGlow to activate neon glow effects!")
-    end
-  end, 3000)
+  -- Removed startup tip message
 end
 
 return M

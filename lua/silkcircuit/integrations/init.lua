@@ -128,6 +128,16 @@ local plugin_mapping = {
   markdown = function()
     return true
   end, -- Always available for markdown files
+
+  -- mini.nvim modules
+  mini = function()
+    return pcall(require, "mini.base16")
+      or pcall(require, "mini.statusline")
+      or pcall(require, "mini.starter")
+      or pcall(require, "mini.tabline")
+      or pcall(require, "mini.files")
+      or pcall(require, "mini.pick")
+  end,
 }
 
 -- Check if a plugin is installed
@@ -155,6 +165,7 @@ local all_integrations = {
   "lualine",
   "markdown",
   "mason",
+  "mini",
   "native_lsp",
   "neotree",
   "noice",
