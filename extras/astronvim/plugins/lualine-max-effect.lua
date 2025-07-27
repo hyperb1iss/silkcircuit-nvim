@@ -1,6 +1,6 @@
--- MAXIMUM EFFECT Lualine configuration for AstroNvim + SilkCircuit
--- This replaces AstroNvim's default statusline with our EPIC custom one
--- Only use this if you want MAXIMUM CYBERPUNK DRAMA
+-- Enhanced Lualine configuration for AstroNvim + SilkCircuit
+-- This replaces AstroNvim's default statusline with our custom implementation
+-- Use this for a fully-featured, visually rich statusline experience
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -9,7 +9,7 @@ return {
   opts = function()
     local silkcircuit_colors = require("silkcircuit.palette").colors
 
-    -- Custom components with MAXIMUM DRAMA
+    -- Custom components with enhanced visual features
     local components = {
       -- Epic mode indicator with glow
       mode = {
@@ -34,7 +34,7 @@ return {
         padding = { left = 1, right = 1 },
       },
 
-      -- Git branch with cyberpunk icon
+      -- Git branch with distinctive icon
       branch = {
         "branch",
         icon = "",
@@ -105,7 +105,7 @@ return {
         color = { fg = silkcircuit_colors.purple_muted },
       },
 
-      -- Clock for cyberpunk vibes
+      -- Clock for productivity tracking
       clock = {
         function()
           return os.date("%H:%M")

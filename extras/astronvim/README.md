@@ -1,6 +1,6 @@
 # 🌸 SilkCircuit Theme - AstroNvim Integration
 
-Complete guide for integrating the SilkCircuit theme with AstroNvim for maximum femme cyberpunk vibes!
+Complete guide for integrating the SilkCircuit theme with AstroNvim for a neon-enhanced development experience!
 
 ## 🚀 Quick Setup
 
@@ -37,7 +37,7 @@ Complete guide for integrating the SilkCircuit theme with AstroNvim for maximum 
 - **Neon mode indicators** in the statusline
 - **Synthwave colors** throughout the interface
 - **Custom dashboard** with purple/pink ASCII art
-- **Enhanced Neo-tree** with cyberpunk file icons
+- **Enhanced Neo-tree** with neon file icons
 - **Glowing Telescope** borders and selections
 - **Rainbow brackets** with theme colors
 - **LSP diagnostics** with neon highlights
@@ -46,7 +46,7 @@ Complete guide for integrating the SilkCircuit theme with AstroNvim for maximum 
 
 - ✨ **AstroUI** integration with custom highlights
 - 🌈 **StatusLine** with SilkCircuit color scheme and neon mode indicators
-- 📁 **Neo-tree** with femme cyberpunk styling
+- 📁 **Neo-tree** with modern, colorful styling
 - 🔍 **Telescope** with neon borders
 - ⌨️  **Which-Key** popup styling
 - 📊 **Dashboard/Alpha** custom colors
@@ -67,7 +67,7 @@ Just use the default `astroui.lua` config and you're set!
 
 ### Option 2: MAXIMUM EFFECT Mode
 
-For maximum cyberpunk drama, use our custom Lualine config:
+For maximum visual impact, use our custom Lualine config:
 
 ```bash
 # Copy the epic config
@@ -77,7 +77,7 @@ cp extras/astronvim/plugins/lualine-max-effect.lua ~/.config/nvim/lua/plugins/
 This gives you:
 
 - ⏺ **Macro recording** indicator
-- 🕐 **Clock display** (cyberpunk essential)
+- 🕐 **Clock display** for productivity tracking
 - 🔍 **Search count** with highlighting
 - 📊 **Custom progress** formatting
 - 🌈 **Animated separators**
@@ -132,7 +132,7 @@ require("silkcircuit").setup({
 -- Includes neon borders and selection highlights
 ```
 
-### Neo-tree Cyberpunk Vibes
+### Neo-tree Visual Enhancement
 
 ```lua
 -- File tree with:
@@ -190,7 +190,7 @@ For the complete experience, use the matching terminal themes:
 AstroNvim's default keybindings work perfectly with SilkCircuit:
 
 - `<leader>ft` - Telescope file finder (with neon borders)
-- `<leader>e` - Neo-tree toggle (cyberpunk file tree)
+- `<leader>e` - Neo-tree toggle (colorful file tree)
 - `<leader>fh` - Telescope help (glowing interface)
 
-Enjoy your new femme cyberpunk AstroNvim setup! 💜✨
+Enjoy your new neon-lit AstroNvim setup with SilkCircuit! 💜✨

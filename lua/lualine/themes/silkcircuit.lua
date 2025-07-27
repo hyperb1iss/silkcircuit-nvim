@@ -1,11 +1,11 @@
 -- Lualine theme for Silkcircuit colorscheme
--- EPIC femme cyberpunk synthwave statusline with MAXIMUM DRAMA
+-- Neon-enhanced statusline with electric visual elements
 
 local colors = require("silkcircuit.palette").colors
 
 local silkcircuit = {}
 
--- Normal mode - Electric purple with glow effect
+-- Normal mode - Purple with vibrant accent
 silkcircuit.normal = {
   a = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
   b = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
@@ -15,7 +15,7 @@ silkcircuit.normal = {
   z = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
 }
 
--- Insert mode - NEON PINK EXPLOSION
+-- Insert mode - Neon pink glow
 silkcircuit.insert = {
   a = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
   b = { bg = colors.pink, fg = colors.bg, gui = "bold" },
@@ -25,7 +25,7 @@ silkcircuit.insert = {
   z = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
 }
 
--- Visual mode - ELECTRIC CYAN VIBES
+-- Visual mode - Electric cyan
 silkcircuit.visual = {
   a = { bg = colors.glow_cyan, fg = colors.bg, gui = "bold" },
   b = { bg = colors.cyan, fg = colors.bg, gui = "bold" },
@@ -35,7 +35,7 @@ silkcircuit.visual = {
   z = { bg = colors.glow_cyan, fg = colors.bg, gui = "bold" },
 }
 
--- Replace mode - MAXIMUM PINK INTENSITY
+-- Replace mode - Bright pink emphasis
 silkcircuit.replace = {
   a = { bg = colors.pink_bright, fg = colors.bg, gui = "bold" },
   b = { bg = colors.glow_pink, fg = colors.bg, gui = "bold" },
@@ -45,7 +45,7 @@ silkcircuit.replace = {
   z = { bg = colors.pink_bright, fg = colors.bg, gui = "bold" },
 }
 
--- Command mode - COMMANDING PURPLE PRESENCE
+-- Command mode - Deep purple accent
 silkcircuit.command = {
   a = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
   b = { bg = colors.glow_purple, fg = colors.bg, gui = "bold" },
@@ -55,7 +55,7 @@ silkcircuit.command = {
   z = { bg = colors.purple_dark, fg = colors.fg_light, gui = "bold" },
 }
 
--- Terminal mode - MATRIX GREEN GLOW
+-- Terminal mode - Green highlight
 silkcircuit.terminal = {
   a = { bg = colors.green, fg = colors.bg, gui = "bold" },
   b = { bg = colors.green_bright, fg = colors.bg, gui = "bold" },

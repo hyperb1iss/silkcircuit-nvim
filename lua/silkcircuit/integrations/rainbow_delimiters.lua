@@ -1,7 +1,7 @@
 local M = {}
 
 function M.highlights(colors, _)
-  -- Rainbow delimiters with neon colors for femme cyberpunk vibes
+  -- Rainbow delimiters with vibrant colors for visual distinction
   return {
     RainbowDelimiterRed = { fg = colors.pink },
     RainbowDelimiterYellow = { fg = colors.yellow_bright },

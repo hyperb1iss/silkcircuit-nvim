@@ -79,7 +79,7 @@ function M.highlights(colors, opts)
     NeoTreeFilterTerm = { fg = colors.pink, bold = true, italic = true },
     NeoTreeDotfile = { fg = colors.gray, italic = true },
 
-    -- Special file types with cyberpunk colors
+    -- Special file types with distinctive colors
     NeoTreeExecutable = { fg = colors.green, bold = true },
     NeoTreeHiddenFile = { fg = colors.gray, italic = true },
     NeoTreeImageFile = { fg = colors.pink },

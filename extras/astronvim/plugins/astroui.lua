@@ -33,7 +33,7 @@ return {
         TelescopePreviewBorder = { fg = "#80ffea" },
         TelescopeSelection = { bg = "#44475a", fg = "#f8f8f2", bold = true },
 
-        -- Neo-tree with femme cyberpunk vibes
+        -- Neo-tree with neon-enhanced styling
         NeoTreeNormal = { bg = "#1e1a2e" },
         NeoTreeNormalNC = { bg = "#16131f" },
         NeoTreeWinSeparator = { fg = "#6272a4", bg = "NONE" },
@@ -55,7 +55,7 @@ return {
       -- Use our custom SilkCircuit Lualine theme
       colorscheme = "silkcircuit",
 
-      -- Separator styles for maximum cyberpunk vibes
+      -- Separator styles for visual impact
       separators = {
         left = { "", "" }, -- Neon arrow separators
         right = { "", "" },

@@ -4,7 +4,7 @@
 
 ## Core Philosophy
 
-SilkCircuit embodies the aesthetic of a neon-lit digital world. Think cyberpunk meets elegance - where vibrant colors guide your code journey without overwhelming your senses.
+SilkCircuit embodies the aesthetic of a neon-lit digital world. Think electric meets elegant - where vibrant colors guide your code journey without overwhelming your senses.
 
 ## Color Palette
 
@@ -79,7 +79,7 @@ Git Deleted    → Red
 
 ## Design Principles
 
-### 1. **Contrast is King**
+### 1. **Contrast is Queen**
 
 - All color combinations meet WCAG AA standards
 - Text must pop against backgrounds
@@ -270,4 +270,4 @@ Preferred symbols for UI elements:
 
 ---
 
-*Remember: SilkCircuit is about enhancing focus through purposeful color, not creating a light show.*
+_Remember: SilkCircuit is about enhancing focus through purposeful color, not creating a light show._

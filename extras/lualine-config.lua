@@ -1,5 +1,5 @@
--- EPIC Lualine Configuration for SilkCircuit Theme
--- This creates an absolutely stunning femme cyberpunk statusline!
+-- Lualine Configuration for SilkCircuit Theme
+-- This creates a neon-enhanced statusline with electric visual flair
 
 -- Custom separators for that synthwave look
 local separators = {
@@ -109,7 +109,7 @@ local components = {
     icon = "",
   },
 
-  -- Time display (because cyberpunk)
+  -- Time display for productivity tracking
   time = {
     function()
       return os.date("%H:%M")
