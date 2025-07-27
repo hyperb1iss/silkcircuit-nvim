@@ -2,19 +2,26 @@
 
 <div align="center">
 
-[![Neovim](https://img.shields.io/badge/Neovim-0.8+-e135ff?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![Neovim](https://img.shields.io/badge/Neovim%200.8+-e135ff.svg?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![Lua](https://img.shields.io/badge/Made%20with%20Lua-80ffea.svg?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org/)
 [![License](https://img.shields.io/badge/License-MIT-ff79c6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/hyperb1iss/silkcircuit-nvim?style=for-the-badge&logo=github&logoColor=white&color=bd93f9)](https://github.com/hyperb1iss/silkcircuit-nvim/stargazers)
-[![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white&label=CI&color=50fa7b)](https://github.com/hyperb1iss/silkcircuit-nvim/actions/workflows/ci.yml)
+
+[![Theme](https://img.shields.io/badge/Theme-SilkCircuit-e135ff?style=for-the-badge&logo=paintbrush&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim)
+[![WCAG](https://img.shields.io/badge/WCAG%20AA-Compliant-50fa7b?style=for-the-badge&logo=accessibility&logoColor=white)](https://www.w3.org/WAI/WCAG21/quickref/)
+[![Load Time](https://img.shields.io/badge/Load%20Time-<5ms-f1fa8c?style=for-the-badge&logo=lightning&logoColor=black)](https://github.com/hyperb1iss/silkcircuit-nvim)
+
+[![Plugins](https://img.shields.io/badge/40+%20Plugins-Supported-bd93f9?style=for-the-badge&logo=puzzle-piece&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-plugin-support)
+[![Variants](https://img.shields.io/badge/3%20Variants-Neon%20|%20Vibrant%20|%20Soft-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
+[![Glow Mode](https://img.shields.io/badge/Glow%20Mode-⚡-ff79c6?style=for-the-badge&logo=bolt&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-glow-mode)
 
 🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents_ 🎆
 
-[Installation](#-installation) • [Features](#-features) • [Configuration](#-configuration) • [Plugin Support](#-plugin-support)
+[⚡ Installation](#-installation) • [💜 Features](#-features) • [🎨 Configuration](#-configuration) • [🔮 Plugin Support](#-plugin-support)
 
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/hyperb1iss/silkcircuit-nvim/main/assets/silkcircuit-preview.png" alt="SilkCircuit Theme Preview" width="90%">
+  <img src="assets/silkcircuit.png" alt="SilkCircuit Theme Preview" width="90%">
 </div>
 
 ## 🎭 Overview
