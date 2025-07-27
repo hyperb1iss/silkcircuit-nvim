@@ -22,11 +22,13 @@ M.colors = get_variant_colors()
 
     -- Primary syntax colors
     purple = "#e135ff", -- Keywords - NEON PURPLE
+    purple_bright = "#ff6bff", -- Bright purple
     purple_dark = "#b45bcf", -- Deep purple - More vibrant
     purple_muted = "#9580ff", -- Muted purple - Still vibrant for comments
 
     cyan = "#80ffea", -- Neon cyan - More green tinted
     cyan_bright = "#5fffff", -- Electric cyan
+    cyan_dark = "#40a8c4", -- Dark cyan
     cyan_light = "#9ffcf9", -- Light neon cyan
 
     green = "#f1fa8c", -- Strings, variables - More yellow-green
@@ -49,14 +51,19 @@ M.colors = get_variant_colors()
     orange = "#ff6ac1", -- Pink-orange for classes
     yellow = "#ffff80", -- Neon yellow
     yellow_bright = "#ffffa5", -- Electric yellow
+    yellow_dark = "#d4d464", -- Dark yellow
     yellow_light = "#ffffcc", -- Soft neon yellow
 
     -- UI colors
     selection = "#1d3b53",
-    selection_highlight = "#5f7e9779",
-    selection_inactive = "#7e57c25a",
+    selection_highlight = "#5f7e97",
+    selection_inactive = "#7e57c2",
     word_highlight = "#32374D",
     word_highlight_strong = "#2E3250",
+    white = "#ffffff",
+    black = "#000000",
+    border = "#44475a",
+    comment = "#6272a4",
 
     -- Special colors
     diff_add = "#50fa7b",
@@ -107,8 +114,8 @@ M.colors = get_variant_colors()
   }
 
 -- Update semantic mappings when colors change
-local function update_semantic()
-  local colors = M.colors
+function M.update_semantic(colors)
+  colors = colors or M.colors
   M.semantic = {
     -- Syntax (consistent across all languages)
     keyword = colors.purple,
@@ -118,10 +125,13 @@ local function update_semantic()
     boolean = colors.pink,
     constant = colors.purple_dark,
     func = colors.glow_purple,
+    ["function"] = colors.glow_purple,
+    function_builtin = colors.purple_bright,
     func_call = colors.cyan,
     method = colors.glow_purple,
     class = colors.yellow,
     type = colors.yellow,
+    type_builtin = colors.yellow_bright,
     operator = colors.cyan,
     comment = colors.purple_muted,
     punctuation = colors.fg_dark,
@@ -197,6 +207,6 @@ local function update_semantic()
 end
 
 -- Initialize semantic colors
-update_semantic()
+M.update_semantic()
 
 return M

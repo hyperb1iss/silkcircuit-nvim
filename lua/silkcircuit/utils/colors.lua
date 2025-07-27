@@ -1,7 +1,7 @@
 local M = {}
 
 -- Convert hex to RGB
-local function hex_to_rgb(hex_str)
+function M.hex_to_rgb(hex_str)
   local hex = "[abcdef0-9][abcdef0-9]"
   local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
   hex_str = string.lower(hex_str)
@@ -9,7 +9,12 @@ local function hex_to_rgb(hex_str)
   assert(string.find(hex_str, pat) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
 
   local red, green, blue = string.match(hex_str, pat)
-  return { tonumber(red, 16), tonumber(green, 16), tonumber(blue, 16) }
+  return tonumber(red, 16), tonumber(green, 16), tonumber(blue, 16)
+end
+
+-- Convert RGB to hex
+function M.rgb_to_hex(r, g, b)
+  return string.format("#%02x%02x%02x", r, g, b)
 end
 
 -- Blend two colors together
@@ -17,15 +22,20 @@ end
 -- @param bg string background color
 -- @param alpha number between 0 and 1. 0 results in bg, 1 results in fg
 function M.blend(fg, bg, alpha)
-  bg = hex_to_rgb(bg)
-  fg = hex_to_rgb(fg)
+  local bg_r, bg_g, bg_b = M.hex_to_rgb(bg)
+  local fg_r, fg_g, fg_b = M.hex_to_rgb(fg)
 
-  local blend_channel = function(i)
-    local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
+  local blend_channel = function(c1, c2)
+    local ret = (alpha * c1 + ((1 - alpha) * c2))
     return math.floor(math.min(math.max(0, ret), 255) + 0.5)
   end
 
-  return string.format("#%02X%02X%02X", blend_channel(1), blend_channel(2), blend_channel(3))
+  return string.format(
+    "#%02X%02X%02X",
+    blend_channel(fg_r, bg_r),
+    blend_channel(fg_g, bg_g),
+    blend_channel(fg_b, bg_b)
+  )
 end
 
 -- Darken a color
@@ -40,8 +50,8 @@ end
 
 -- Calculate relative luminance for WCAG compliance
 function M.get_luminance(hex)
-  local rgb = hex_to_rgb(hex)
-  local r, g, b = rgb[1] / 255, rgb[2] / 255, rgb[3] / 255
+  local r, g, b = M.hex_to_rgb(hex)
+  r, g, b = r / 255, g / 255, b / 255
 
   -- Apply gamma correction
   local function gamma_correct(c)

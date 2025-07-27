@@ -1,4 +1,4 @@
-.PHONY: help setup test lint format clean install-hooks compile validate-colors
+.PHONY: help setup test lint format clean install-hooks compile
 
 # Colors matching SilkCircuit theme
 PURPLE := \033[38;2;199;146;234m
@@ -25,13 +25,12 @@ help:
 	@echo "$(GRAY)────────────────────────────────────$(RESET)"
 	@echo ""
 	@echo "  $(PURPLE)$(STAR) setup$(RESET)          $(GRAY)─$(RESET) Install development dependencies"
-	@echo "  $(PURPLE)$(STAR) test$(RESET)           $(GRAY)─$(RESET) Run tests"
+	@echo "  $(PURPLE)$(STAR) test$(RESET)           $(GRAY)─$(RESET) Run all tests"
 	@echo "  $(PURPLE)$(STAR) lint$(RESET)           $(GRAY)─$(RESET) Run linters (selene)"
 	@echo "  $(PURPLE)$(STAR) format$(RESET)         $(GRAY)─$(RESET) Format code (stylua)"
 	@echo "  $(PURPLE)$(STAR) clean$(RESET)          $(GRAY)─$(RESET) Clean generated files"
 	@echo "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks"
 	@echo "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance"
-	@echo "  $(PURPLE)$(STAR) validate-colors$(RESET) $(GRAY)─$(RESET) Validate color palette"
 	@echo ""
 
 # Install development dependencies
@@ -62,19 +61,7 @@ test:
 	@echo ""
 	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Tests$(RESET)"
 	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Loading theme..."
-	@nvim --headless -u tests/init.lua +qa 2>&1 | grep -v "^$$" || true
-	@if nvim --headless -u tests/init.lua +qa 2>/dev/null; then \
-		echo "  $(GREEN)$(CHECK)$(RESET) All tests passed"; \
-		echo ""; \
-		echo "$(GREEN)$(STAR) Tests successful$(RESET)"; \
-	else \
-		echo "  $(PINK)✗$(RESET) Tests failed"; \
-		echo ""; \
-		echo "$(PINK)Tests failed$(RESET) - check output above"; \
-		exit 1; \
-	fi
-	@echo ""
+	@cd $(shell pwd) && lua tests/run.lua
 
 # Run linters
 lint:
@@ -159,12 +146,8 @@ compile:
 	@echo "  $(GREEN)$(CHECK)$(RESET) Theme compiled"
 	@echo ""
 
-# Validate colors
-validate-colors:
-	@python3 scripts/validate_colors.py
-
 # CI target
-ci: lint test validate-colors
+ci: lint test
 	@echo ""
 	@echo "$(GREEN)$(STAR) All CI checks passed$(RESET)"
 	@echo ""

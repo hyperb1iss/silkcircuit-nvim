@@ -66,13 +66,19 @@ jobs:
           neovim: true
           version: ${{ matrix.neovim_version }}
 
+      - name: → Install Lua
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y lua5.4
+          echo "√ Lua $(lua -v) installed"
+
       - name: → Show Neovim version
         run: nvim --version
 
-      - name: → Run theme tests
+      - name: → Run unit tests
         run: |
-          echo "» Testing theme initialization..."
-          nvim --headless -u tests/init.lua +qa
+          echo "» Running unit tests..."
+          make test
 
       - name: → Verify theme loads
         run: |
