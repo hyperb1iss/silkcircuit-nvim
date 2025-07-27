@@ -7,40 +7,49 @@ on:
     branches: [ main ]
 
 jobs:
+  # → Core linting using make lint
   lint:
-    name: Lint
+    name: » Lint Code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: → Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install selene
+      - name: → Install linting tools
         run: |
           set -e
+          # Install selene (Lua linter)
+          echo "» Installing selene..."
           SELENE_VERSION=$(curl -s https://api.github.com/repos/Kampfkarren/selene/releases/latest | grep '"tag_name"' | cut -d '"' -f 4)
-          echo "Installing selene version: ${SELENE_VERSION}"
-          wget -O selene.zip https://github.com/Kampfkarren/selene/releases/download/${SELENE_VERSION}/selene-${SELENE_VERSION}-linux.zip
-          unzip selene.zip
+          wget -qO selene.zip https://github.com/Kampfkarren/selene/releases/download/${SELENE_VERSION}/selene-${SELENE_VERSION}-linux.zip
+          unzip -q selene.zip
           chmod +x ./selene
           sudo mv ./selene /usr/local/bin/
-          selene --version
+          echo "√ selene $(selene --version) installed"
 
-      - name: Run selene
-        run: selene lua/
-
-      - name: Install stylua
-        run: |
-          set -e
-          wget -O stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux-x86_64.zip
-          unzip stylua.zip
+          # Install stylua (Lua formatter)
+          echo "» Installing stylua..."
+          wget -qO stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux-x86_64.zip
+          unzip -q stylua.zip
           chmod +x ./stylua
           sudo mv ./stylua /usr/local/bin/
-          stylua --version
+          echo "√ stylua $(stylua --version) installed"
 
-      - name: Check formatting
-        run: stylua --check lua/ colors/
+          # Install markdownlint
+          echo "» Installing markdownlint..."
+          sudo apt-get update -qq
+          sudo apt-get install -y nodejs npm
+          npm install -g markdownlint-cli --silent
+          echo "√ markdownlint installed"
 
+      - name: → Run make lint
+        run: |
+          echo "» Running comprehensive linting..."
+          make lint
+
+  # → Test theme on multiple Neovim versions
   test:
-    name: Test
+    name: » Test Theme
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -48,41 +57,43 @@ jobs:
           - stable
           - nightly
     steps:
-      - uses: actions/checkout@v4
+      - name: → Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install Neovim
+      - name: → Install Neovim ${{ matrix.neovim_version }}
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
           version: ${{ matrix.neovim_version }}
 
-      - name: Run tests
+      - name: → Show Neovim version
+        run: nvim --version
+
+      - name: → Run theme tests
         run: |
-          nvim --version
+          echo "» Testing theme initialization..."
           nvim --headless -u tests/init.lua +qa
 
-      - name: Check theme loads
+      - name: → Verify theme loads
         run: |
+          echo "» Verifying colorscheme loads..."
           nvim --headless -c "set rtp+=$(pwd)" -c "colorscheme silkcircuit" -c "qa" || exit 1
+          echo "√ Theme loads successfully"
 
+      - name: → Run checkhealth
+        run: |
+          echo "» Running :checkhealth silkcircuit..."
+          nvim --headless -c "set rtp+=$(pwd)" -c "colorscheme silkcircuit" -c "checkhealth silkcircuit" -c "qa" || true
+
+  # → Validate documentation and links
   documentation:
-    name: Documentation
+    name: » Check Documentation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: → Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install markdownlint
-        run: npm install -g markdownlint-cli
-
-      - name: Lint markdown files
-        run: markdownlint '**/*.md' --ignore node_modules
-
-      - name: Check for broken links
+      - name: → Check for broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         continue-on-error: true
         id: link-check
@@ -90,37 +101,67 @@ jobs:
           use-verbose-mode: 'yes'
           config-file: '.github/markdown-link-check.json'
 
-      - name: Report link check results
+      - name: → Report link check results
         if: steps.link-check.outcome == 'failure'
         run: |
-          echo "::warning::Broken links were found in markdown files. Please review the link check output above."
-          echo "::warning::This is not blocking the CI, but should be fixed."
+          echo "! Broken links found in markdown files"
+          echo "! Please review the link check output above"
 
+  # → Build and validate theme
   build:
-    name: Build
+    name: » Build Theme
     runs-on: ubuntu-latest
     needs: [lint, test]
     steps:
-      - uses: actions/checkout@v4
+      - name: → Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Install Neovim
+      - name: → Install Neovim
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
           version: stable
 
-      - name: Generate compiled theme
+      - name: → Compile theme
         run: |
-          nvim --headless -u scripts/compile.lua +qa
+          echo "» Compiling theme for performance..."
+          nvim --headless -c "set rtp+=$(pwd)" \
+               -c "lua require('silkcircuit').setup()" \
+               -c "lua require('silkcircuit').compile()" \
+               -c "qa"
+          echo "√ Theme compiled successfully"
 
-      - name: Validate color palette
+      - name: → Validate WCAG contrast
         run: |
-          python3 scripts/validate_colors.py
+          echo "» Checking WCAG contrast compliance..."
+          nvim --headless -c "set rtp+=$(pwd)" \
+               -c "colorscheme silkcircuit" \
+               -c "SilkCircuitContrast" \
+               -c "qa"
 
-      - name: Upload artifacts
+      - name: → Generate integration report
+        run: |
+          echo "» Generating integration support report..."
+          nvim --headless -c "set rtp+=$(pwd)" \
+               -c "colorscheme silkcircuit" \
+               -c "SilkCircuitIntegrations" \
+               -c "qa" || true
+
+      - name: → Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-theme
+          name: silkcircuit-build
           path: |
-            cache/silkcircuit_compiled.lua
             extras/
+            doc/
+
+  # → Success notification
+  success:
+    name: √ All Checks Passed
+    runs-on: ubuntu-latest
+    needs: [lint, test, documentation, build]
+    steps:
+      - name: → Success
+        run: |
+          echo "√ All CI checks passed successfully!"
+          echo "→ Ready to merge"
