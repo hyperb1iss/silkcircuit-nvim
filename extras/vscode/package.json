@@ -1,0 +1,60 @@
+{
+  "name": "silkcircuit-theme",
+  "displayName": "SilkCircuit Theme",
+  "description": "Electric dreams for VS Code - Neon purples, blazing pinks, and glowing cyan accents",
+  "version": "1.0.0",
+  "publisher": "hyperb1iss",
+  "galleryBanner": {
+    "color": "#1e1a2e",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperb1iss/silkcircuit-nvim"
+  },
+  "bugs": {
+    "url": "https://github.com/hyperb1iss/silkcircuit-nvim/issues"
+  },
+  "homepage": "https://github.com/hyperb1iss/silkcircuit-nvim#readme",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "neon",
+    "purple",
+    "pink",
+    "cyberpunk",
+    "electric",
+    "vibrant",
+    "colorful"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "SilkCircuit Neon",
+        "uiTheme": "vs-dark",
+        "path": "./silkcircuit-neon.json"
+      },
+      {
+        "label": "SilkCircuit Vibrant",
+        "uiTheme": "vs-dark",
+        "path": "./silkcircuit-vibrant.json"
+      },
+      {
+        "label": "SilkCircuit Soft",
+        "uiTheme": "vs-dark",
+        "path": "./silkcircuit-soft.json"
+      },
+      {
+        "label": "SilkCircuit Glow",
+        "uiTheme": "vs-dark",
+        "path": "./silkcircuit-glow.json"
+      }
+    ]
+  }
+}

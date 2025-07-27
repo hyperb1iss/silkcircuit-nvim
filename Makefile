@@ -1,4 +1,4 @@
-.PHONY: help setup test lint format clean install-hooks compile
+.PHONY: help setup test lint format clean install-hooks compile vscode
 
 # Colors matching SilkCircuit theme
 PURPLE := \033[38;2;199;146;234m
@@ -31,6 +31,7 @@ help:
 	@echo "  $(PURPLE)$(STAR) clean$(RESET)          $(GRAY)─$(RESET) Clean generated files"
 	@echo "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks"
 	@echo "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance"
+	@echo "  $(PURPLE)$(STAR) vscode$(RESET)         $(GRAY)─$(RESET) Build VSCode theme package"
 	@echo ""
 
 # Install development dependencies
@@ -99,6 +100,11 @@ format:
 	@find . -name "*.lua" -type f | xargs stylua
 	@echo "  $(GREEN)$(CHECK)$(RESET) Lua code formatted"
 	@echo ""
+	@echo "  $(CYAN)$(DOT)$(RESET) Running prettier..."
+	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting JSON/YAML files..."
+	@npx prettier --write "**/*.{json,yaml,yml}" --ignore-path .gitignore >/dev/null 2>&1
+	@echo "  $(GREEN)$(CHECK)$(RESET) JSON/YAML formatted"
+	@echo ""
 	@echo "  $(CYAN)$(DOT)$(RESET) Fixing file endings..."
 	@find . -name "*.lua" -o -name "*.md" -type f | xargs -I {} sh -c 'tail -c1 {} | read -r _ || echo >> {}'
 	@echo "  $(GREEN)$(CHECK)$(RESET) File endings fixed"
@@ -144,6 +150,19 @@ compile:
 	@echo "  $(CYAN)$(DOT)$(RESET) Generating optimized theme..."
 	@nvim --headless -u scripts/compile.lua +qa 2>/dev/null
 	@echo "  $(GREEN)$(CHECK)$(RESET) Theme compiled"
+	@echo ""
+
+# Build VSCode theme
+vscode:
+	@echo ""
+	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Building VSCode Theme$(RESET)"
+	@echo ""
+	@echo "  $(CYAN)$(DOT)$(RESET) Packaging extension..."
+	@cd extras/vscode && npx @vscode/vsce package --no-dependencies 2>/dev/null
+	@echo "  $(GREEN)$(CHECK)$(RESET) Theme packaged → extras/vscode/silkcircuit-theme-1.0.0.vsix"
+	@echo ""
+	@echo "$(CYAN)$(STAR) Install in VSCode/Cursor:$(RESET)"
+	@echo "  $(GRAY)Extensions → ... → Install from VSIX$(RESET)"
 	@echo ""
 
 # CI target
