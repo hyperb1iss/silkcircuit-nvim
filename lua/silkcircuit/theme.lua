@@ -108,7 +108,7 @@ function M.get_highlights(colors, opts)
   highlights.Float = { fg = sem.number }
 
   highlights.Identifier = { fg = sem.variable }
-  highlights.Function = apply_style({ fg = sem.func, bold = true, italic = true }, "functions")
+  highlights.Function = apply_style({ fg = sem.func, bold = true }, "functions")
 
   highlights.Statement = { fg = sem.keyword }
   highlights.Conditional = apply_style({ fg = sem.keyword }, "conditionals")

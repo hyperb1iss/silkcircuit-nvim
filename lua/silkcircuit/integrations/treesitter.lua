@@ -19,7 +19,7 @@ function M.get(colors, opts)
 
   -- Identifiers
   highlights["@variable"] = { fg = sem.variable }
-  highlights["@variable.builtin"] = { fg = colors.cyan }
+  highlights["@variable.builtin"] = { fg = colors.coral, italic = true }
   highlights["@variable.parameter"] = { fg = sem.parameter }
   highlights["@variable.member"] = { fg = sem.property }
 
@@ -58,18 +58,18 @@ function M.get(colors, opts)
   highlights["@property"] = { fg = sem.property }
 
   -- Functions
-  highlights["@function"] = apply_style({ fg = sem.func }, "functions")
-  highlights["@function.builtin"] = { fg = sem.func_call }
+  highlights["@function"] = apply_style({ fg = sem.func, bold = true }, "functions")
+  highlights["@function.builtin"] = { fg = sem.function_builtin }
   highlights["@function.call"] = { fg = sem.func_call }
   highlights["@function.macro"] = { fg = colors.purple }
-  highlights["@function.method"] = apply_style({ fg = sem.method }, "functions")
+  highlights["@function.method"] = apply_style({ fg = sem.method, bold = true }, "functions")
   highlights["@function.method.call"] = { fg = sem.func_call }
 
   highlights["@constructor"] = { fg = sem.type }
   highlights["@operator"] = apply_style({ fg = sem.operator }, "operators")
 
   -- Keywords
-  highlights["@keyword"] = apply_style({ fg = sem.keyword }, "keywords")
+  highlights["@keyword"] = apply_style({ fg = sem.keyword, bold = true }, "keywords")
   highlights["@keyword.coroutine"] = { fg = colors.keyword }
   highlights["@keyword.function"] = { fg = colors.purple }
   highlights["@keyword.operator"] = { fg = colors.operator }
@@ -137,6 +137,10 @@ function M.get(colors, opts)
   highlights["@diff.delta"] = { fg = colors.git_change }
 
   -- Language specific highlights
+
+  -- Python
+  highlights["@variable.parameter.builtin.python"] = { fg = colors.coral, italic = true } -- self, cls
+  highlights["@variable.builtin.python"] = { fg = colors.coral } -- __name__, __file__, etc
   -- Bash
   highlights["@function.builtin.bash"] = { fg = colors.red, italic = true }
 
