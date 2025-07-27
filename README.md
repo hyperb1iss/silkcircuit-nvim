@@ -222,16 +222,37 @@ SilkCircuit auto-detects and themes 40+ plugins:
 
 All integrations activate automatically when plugins are detected.
 
-## 🌃 Terminal Support
+## 🌃 Complete Environment Setup
 
-SilkCircuit includes matching themes for popular terminals:
+SilkCircuit includes extensive extras for a fully integrated neon development experience:
+
+### 🎯 Quick Setup
 
 ```bash
-# Copy the appropriate theme file from extras/
-cp extras/alacritty.toml ~/.config/alacritty/themes/silkcircuit.toml
+# Get the complete SilkCircuit experience
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
+cd silkcircuit-nvim
+
+# Electric git colors
+cat extras/gitconfig >> ~/.gitconfig
+
+# Terminal themes (choose your terminal)
 cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
-cp extras/wezterm.lua ~/.config/wezterm/colors/silkcircuit.lua
+cp extras/alacritty.yml ~/.config/alacritty/themes/silkcircuit.yml
+cp extras/warp.yaml ~/.warp/themes/silkcircuit.yaml
+
+# AstroNvim integration
+cp -r extras/astronvim/* ~/.config/nvim/lua/
 ```
+
+### 🚀 What's Included
+
+- **⚡ Git configuration** - Electric colors for commits, branches, and diffs
+- **🖥️ Terminal themes** - Alacritty, Kitty, Warp, Windows Terminal
+- **🚀 AstroNvim integration** - Complete setup with enhanced components
+- **🎨 Tool configs** - FZF, Lualine, and more
+
+See [extras/README.md](extras/README.md) for detailed setup instructions.
 
 ## 💜 Color Palette
 

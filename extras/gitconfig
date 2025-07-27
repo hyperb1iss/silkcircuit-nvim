@@ -1,0 +1,94 @@
+# SilkCircuit Git Configuration
+# Copy this to your ~/.gitconfig or include it with:
+# [include]
+#     path = /path/to/this/silkcircuit-gitconfig
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = 201 bold    # neon magenta - current branch
+	local = 51           # electric cyan - local branches
+	remote = 213         # bright magenta - remote branches
+
+[color "diff"]
+	meta = 201 bold      # neon magenta - meta information
+	frag = 213 bold      # bright magenta - hunk header
+	old = 197            # red - deletions
+	new = 149            # green - additions
+	whitespace = 197 reverse
+
+[color "status"]
+	added = 149          # green - added files
+	changed = 213        # bright magenta - changed files
+	untracked = 51       # electric cyan - untracked files
+	deleted = 197        # red - deleted files
+	branch = 220 bold    # yellow - branch info
+	nobranch = 197 bold  # red - detached HEAD warning
+	unmerged = 197 bold  # red - unmerged files
+
+[color "interactive"]
+	prompt = 201 bold    # neon magenta - prompts
+	header = 213         # bright magenta - headers
+	help = 51            # electric cyan - help text
+	error = 197          # red - errors
+
+[color "grep"]
+	filename = 201 bold  # neon magenta - filenames
+	linenumber = 213     # bright magenta - line numbers
+	match = 201 bold     # neon magenta - matching text
+	separator = 51       # electric cyan - separators
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	dark = true
+	syntax-theme = Dracula
+	line-numbers = true
+	side-by-side = false
+	file-style = "#e135ff bold"       # SilkCircuit purple for file names
+	file-decoration-style = "#e135ff box"
+	hunk-header-style = "#ff00ff bold"  # SilkCircuit magenta for hunk headers
+	hunk-header-decoration-style = "#ff00ff box"
+	line-numbers-left-style = "#9580ff"  # muted purple
+	line-numbers-right-style = "#9580ff"
+	line-numbers-minus-style = "#ff6363" # red for deletions
+	line-numbers-plus-style = "#50fa7b"  # green for additions
+	minus-style = syntax "#3a2a2a"       # dark red background
+	minus-emph-style = syntax "#5a2a2a"  # darker red for emphasis
+	plus-style = syntax "#2a3a2a"        # dark green background
+	plus-emph-style = syntax "#2a5a2a"   # darker green for emphasis
+
+[log]
+	# SilkCircuit-inspired log formatting
+	decorate = full
+	abbrevCommit = false
+
+[pretty]
+	# SilkCircuit full format - matches default git log but with neon colors
+	silkcircuit = %C(201 bold)commit %H%Creset%C(220)%d%Creset%n%C(white)Author: %C(213)%an <%ae>%Creset%n%C(white)Date:   %C(51)%ad%Creset%n%n%C(white)    %s%Creset%n%n%w(0,4,4)%C(white)%b%Creset
+
+[format]
+	# Use SilkCircuit format by default
+	pretty = silkcircuit
+
+[alias]
+	# Beautiful one-line log with graph
+	lg = log --graph --pretty=format:'%C(201 bold)%h%Creset %C(220)%d%Creset %C(white)%s%Creset %C(51)(%cr)%Creset %C(213)<%an>%Creset'
+
+	# Full log with SilkCircuit colors (like regular git log but styled)
+	l = log --pretty=silkcircuit
+
+	# Full log with graph
+	lgf = log --graph --pretty=silkcircuit
+
+	# Show commits from all branches with full format
+	lga = log --graph --all --pretty=silkcircuit
+
+	# Compact log for quick overview
+	lgs = log --graph --pretty=format:'%C(201)%h%Creset %C(white)%s%Creset %C(51)(%cr)%Creset' --abbrev-commit
