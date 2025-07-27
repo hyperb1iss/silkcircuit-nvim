@@ -7,29 +7,29 @@
 # 3. Select "SilkCircuit" from custom themes
 
 name: "SilkCircuit"
-accent: "#e135ff"  # Neon purple accent
-background: "#14111F"  # Deep purple background
+accent: "#e135ff" # Neon purple accent
+background: "#14111F" # Deep purple background
 details: darker
-foreground: "#FBF5F3"  # Warm light foreground
+foreground: "#FBF5F3" # Warm light foreground
 terminal_colors:
   bright:
-    black: "#6272a4"    # Purple-blue
-    blue: "#bd93f9"     # Bright purple
-    cyan: "#5fffff"     # Electric cyan
-    green: "#50fa7b"    # Bright neon green
-    magenta: "#ff79c6"  # Pink
-    red: "#ff5555"      # Bright red
-    white: "#ffffff"    # Pure white
-    yellow: "#f1fa8c"   # Yellow-green
+    black: "#6272a4" # Purple-blue
+    blue: "#bd93f9" # Bright purple
+    cyan: "#5fffff" # Electric cyan
+    green: "#50fa7b" # Bright neon green
+    magenta: "#ff79c6" # Pink
+    red: "#ff5555" # Bright red
+    white: "#ffffff" # Pure white
+    yellow: "#f1fa8c" # Yellow-green
   normal:
-    black: "#14111F"    # Background
-    blue: "#bd93f9"     # Purple
-    cyan: "#80ffea"     # Neon cyan
-    green: "#50fa7b"    # Neon green
-    magenta: "#e135ff"  # Neon purple
-    red: "#ff79c6"      # Pink
-    white: "#FBF5F3"    # Foreground (warm white)
-    yellow: "#f1fa8c"   # Yellow-green
+    black: "#14111F" # Background
+    blue: "#bd93f9" # Purple
+    cyan: "#80ffea" # Neon cyan
+    green: "#50fa7b" # Neon green
+    magenta: "#e135ff" # Neon purple
+    red: "#ff79c6" # Pink
+    white: "#FBF5F3" # Foreground (warm white)
+    yellow: "#f1fa8c" # Yellow-green
 
 # Warp-specific UI colors
 cursor: "#e135ff"

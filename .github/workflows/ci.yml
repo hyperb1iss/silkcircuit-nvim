@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   # → Core linting using make lint
@@ -104,8 +104,8 @@ jobs:
         continue-on-error: true
         id: link-check
         with:
-          use-verbose-mode: 'yes'
-          config-file: '.github/markdown-link-check.json'
+          use-verbose-mode: "yes"
+          config-file: ".github/markdown-link-check.json"
 
       - name: → Report link check results
         if: steps.link-check.outcome == 'failure'
