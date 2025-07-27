@@ -1,4 +1,4 @@
-# ⚡ SilkCircuit: A Vibrant Neovim Theme
+# 💜⚡ SilkCircuit: Electric Dreams for Neovim 🌃
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/hyperb1iss/silkcircuit-nvim?style=for-the-badge&logo=github&logoColor=white&color=bd93f9)](https://github.com/hyperb1iss/silkcircuit-nvim/stargazers)
 [![CI](https://img.shields.io/github/actions/workflow/status/hyperb1iss/silkcircuit-nvim/ci.yml?branch=main&style=for-the-badge&logo=github-actions&logoColor=white&label=CI&color=50fa7b)](https://github.com/hyperb1iss/silkcircuit-nvim/actions/workflows/ci.yml)
 
-_A high-contrast theme featuring vibrant purples, electric pinks, and glowing accents_ ✨
+🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents_ 🎆
 
 [Installation](#-installation) • [Features](#-features) • [Configuration](#-configuration) • [Plugin Support](#-plugin-support)
 
@@ -17,22 +17,23 @@ _A high-contrast theme featuring vibrant purples, electric pinks, and glowing ac
   <img src="https://raw.githubusercontent.com/hyperb1iss/silkcircuit-nvim/main/assets/silkcircuit-preview.png" alt="SilkCircuit Theme Preview" width="90%">
 </div>
 
-## 🌟 Overview
+## 🎭 Overview
 
-SilkCircuit is a carefully crafted Neovim colorscheme that combines vibrant colors with excellent readability. Featuring glowing purples, electric pinks, and bright cyans, it creates a visually striking coding environment while maintaining clarity and reducing eye strain.
+SilkCircuit pumps maximum visual voltage through your Neovim. Electric purples 💜, blazing pinks 🌸, and neon cyans 💎 create a coding environment that's both striking and readable. Engineered for speed with <5ms load times and WCAG AA contrast compliance.
 
-## ✨ Features
+## 🦄 Features
 
-- 🎨 **Vibrant Color Palette** - Eye-catching colors that make code elements distinct
-- 🌲 **Full Tree-sitter Support** - Advanced syntax highlighting with semantic tokens
-- 🔌 **40+ Plugin Integrations** - Native support for all popular Neovim plugins
-- 🚀 **Zero Configuration** - Works out of the box with sensible defaults
-- ⚙️ **Highly Customizable** - Tweak any aspect to match your preferences
-- 🖥️ **Terminal Themes Included** - Matching themes for popular terminal emulators
+- 🎪 **Electric Color System** — Vibrant palette with semantic color mappings
+- 🏎️ **<5ms Load Time** — Bytecode compilation with intelligent caching
+- 👁️ **WCAG AA Compliant** — Validated contrast ratios for extended coding sessions
+- 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), and Soft (70%) intensity modes
+- 🔮 **40+ Plugin Integrations** — Auto-detected support for your entire toolchain
+- 🌟 **Glow Mode** — Enhanced highlights for maximum visibility
+- 💾 **Persistent Preferences** — Settings survive across sessions
 
-## 📦 Installation
+## 💫 Installation
 
-### Using [lazy.nvim](https://github.com/folke/lazy.nvim) (Recommended)
+### 🎯 Using [lazy.nvim](https://github.com/folke/lazy.nvim) (Recommended)
 
 ```lua
 {
@@ -45,7 +46,7 @@ SilkCircuit is a carefully crafted Neovim colorscheme that combines vibrant colo
 }
 ```
 
-### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+### 📦 Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ```lua
 use {
@@ -56,14 +57,14 @@ use {
 }
 ```
 
-### Using [vim-plug](https://github.com/junegunn/vim-plug)
+### 🔮 Using [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
 Plug 'hyperb1iss/silkcircuit-nvim'
 colorscheme silkcircuit
 ```
 
-## 🚀 AstroNvim
+## 🛸 AstroNvim
 
 SilkCircuit integrates seamlessly with AstroNvim, just like any community colorscheme:
 
@@ -85,17 +86,17 @@ return {
 
 That's it! No additional configuration needed.
 
-## ⚙️ Configuration
+## 🎨 Configuration
 
-### Default Setup
-
-SilkCircuit works great out of the box, but you can customize it:
+### 🎪 Default Setup
 
 ```lua
 require("silkcircuit").setup({
   transparent = false,     -- Enable transparent background
   terminal_colors = true,  -- Configure terminal colors
   dim_inactive = false,    -- Dim inactive windows
+  variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft"
+  glow_mode = false,      -- Enable glow mode
 
   styles = {
     comments = { italic = true },
@@ -106,17 +107,48 @@ require("silkcircuit").setup({
   },
 
   integrations = {
-    -- All integrations are enabled by default
+    -- Auto-detected by default
     telescope = true,
     neotree = true,
     notify = true,
     cmp = true,
+    mini = true,
     -- See :h silkcircuit-integrations for full list
   },
 })
 ```
 
-### Transparent Background
+### 🌈 Theme Variants
+
+Switch between intensity levels:
+
+```lua
+-- Via setup
+require("silkcircuit").setup({
+  variant = "vibrant", -- "neon" | "vibrant" | "soft"
+})
+
+-- Or use commands
+:SilkCircuit neon     -- 100% intensity
+:SilkCircuit vibrant  -- 85% intensity
+:SilkCircuit soft     -- 70% intensity
+```
+
+### ✨ Glow Mode
+
+Enhanced highlights for maximum visibility:
+
+```lua
+-- Toggle glow mode
+:SilkCircuitGlow
+
+-- Or in setup
+require("silkcircuit").setup({
+  glow_mode = true,
+})
+```
+
+### 🌌 Transparent Background
 
 For a sleek, transparent look:
 
@@ -126,7 +158,7 @@ require("silkcircuit").setup({
 })
 ```
 
-### Custom Highlights
+### 🎯 Custom Highlights
 
 Override any highlight group:
 
@@ -139,37 +171,51 @@ require("silkcircuit").setup({
 })
 ```
 
-## 🎯 Plugin Support
+## 🌟 Plugin Support
 
-SilkCircuit includes thoughtfully designed integrations for 40+ plugins:
+SilkCircuit auto-detects and themes 40+ plugins:
 
-**Essential Plugins**
+**🎯 Core Functionality**
 
-- 🔭 Telescope
-- 🌳 Neo-tree / NvimTree
-- 💡 LSP & Diagnostics
-- 🔍 Treesitter
-- ✨ nvim-cmp
+- 🔭 Telescope → Fuzzy finder
+- 🌳 Neo-tree → File explorer
+- 💡 LSP → Language servers
+- 🌿 Treesitter → Syntax highlighting
+- 🎹 nvim-cmp → Completion
+- 📦 Mason → Package manager
 
-**UI Enhancements**
+**🏃 Navigation & Motion**
 
-- 💫 Lualine
-- 📑 BufferLine
-- 🔔 Notify
-- 🎯 Which-Key
-- 📊 Dashboard/Alpha
+- ⚡ Flash / Leap → Jump motions
+- 🎣 Harpoon → File marks
+- 🗝️ Which-Key → Keybinding hints
+- 🦘 Mini.jump → Enhanced jumps
 
-**Development Tools**
+**🔧 Git & Development**
 
-- 🔀 Gitsigns
-- 🏃 Leap/Hop
-- 🌈 Rainbow Delimiters
-- 📝 Indent Blankline
-- 🐛 DAP (Debugger)
+- 📊 Gitsigns → Git indicators
+- 🎭 Neogit → Git interface
+- 🐛 DAP → Debugging
+- 🧹 none-ls → Formatting/linting
 
-And many more! All integrations work automatically when the plugins are installed.
+**💎 UI Components**
 
-## 🎨 Terminal Support
+- 📍 Lualine → Status line
+- 📑 BufferLine → Buffer tabs
+- 🔔 Notify / Noice → Notifications
+- 🎪 Alpha → Dashboard
+- 📏 Mini.statusline → Minimal status
+
+**🎨 Editor Enhancement**
+
+- 🌈 Rainbow Delimiters → Bracket pairs
+- 📐 Indent Blankline → Indentation guides
+- 🔍 Mini.indentscope → Active indent
+- 💫 Mini.cursorword → Word highlighting
+
+All integrations activate automatically when plugins are detected.
+
+## 🌃 Terminal Support
 
 SilkCircuit includes matching themes for popular terminals:
 
@@ -180,42 +226,48 @@ cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
 cp extras/wezterm.lua ~/.config/wezterm/colors/silkcircuit.lua
 ```
 
-## 🎨 Color Palette
+## 💜 Color Palette
 
 | Color | Hex | Preview |
 |-------|-----|---------|
-| Background | `#0a0a0f` | ![#0a0a0f](https://via.placeholder.com/20/0a0a0f/0a0a0f?text=+) |
-| Foreground | `#e0e0e0` | ![#e0e0e0](https://via.placeholder.com/20/e0e0e0/e0e0e0?text=+) |
-| Purple | `#e135ff` | ![#e135ff](https://via.placeholder.com/20/e135ff/e135ff?text=+) |
-| Pink | `#ff79c6` | ![#ff79c6](https://via.placeholder.com/20/ff79c6/ff79c6?text=+) |
-| Cyan | `#80ffea` | ![#80ffea](https://via.placeholder.com/20/80ffea/80ffea?text=+) |
-| Green | `#50fa7b` | ![#50fa7b](https://via.placeholder.com/20/50fa7b/50fa7b?text=+) |
-| Yellow | `#f1fa8c` | ![#f1fa8c](https://via.placeholder.com/20/f1fa8c/f1fa8c?text=+) |
-| Orange | `#ffb86c` | ![#ffb86c](https://via.placeholder.com/20/ffb86c/ffb86c?text=+) |
+| Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) |
+| Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) |
+| Purple | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) |
+| Pink | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) |
+| Cyan | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) |
+| Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) |
+| Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) |
+| Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) |
 
-## 🔧 Troubleshooting
+## 🛠️ Troubleshooting
 
-**Theme not loading?**
+**🤔 Theme not loading?**
 
-- Ensure Neovim version is 0.8.0 or higher
-- Add `vim.opt.termguicolors = true` to your config
-- Check that the plugin is installed: `:Lazy` or `:PackerStatus`
+- ⚡ Neovim 0.8.0+ required
+- 🎨 Add `vim.opt.termguicolors = true` to config
+- 📦 Verify plugin installation: `:Lazy` or `:PackerStatus`
 
-**Colors look wrong?**
+**🎭 Colors incorrect?**
 
-- Verify your terminal supports true colors
-- Try a different terminal emulator
-- Check terminal color settings
+- 🖥️ Terminal must support true colors
+- 🔄 Test with different terminal emulator
+- ⚙️ Verify terminal color settings
 
-**Need help?**
+**🏎️ Performance issues?**
 
-- Run `:checkhealth` for diagnostics
-- Check [Issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
-- Create a new issue with your config and error messages
+- 🩺 Run `:checkhealth silkcircuit` for diagnostics
+- 🔐 Check cache directory permissions
+- 🧹 Clear cache: `:SilkCircuitClearCache`
 
-## 🤝 Contributing
+**💭 Need help?**
 
-Contributions are welcome! Please feel free to submit issues and pull requests.
+- 💜 Run `:checkhealth silkcircuit`
+- 📬 Check [Issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
+- 📝 Include config and error messages
+
+## 💖 Contributing
+
+Contributions welcome! Submit issues and pull requests.
 
 ```bash
 # Clone the repo
@@ -230,7 +282,9 @@ make test
 make lint
 ```
 
-## 📄 License
+See [STYLE_GUIDE.md](STYLE_GUIDE.md) and [CLAUDE.md](CLAUDE.md) for development guidelines.
+
+## 📜 License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
@@ -240,6 +294,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 Created by [Stefanie Jane 🌠](https://github.com/hyperb1iss)
 
-If you love SilkCircuit, [buy me a Monster Ultra Violet ⚡️](https://ko-fi.com/hyperb1iss)
+If you love SilkCircuit, [buy me a Monster Ultra Violet ⚡](https://ko-fi.com/hyperb1iss)
 
 </div>
