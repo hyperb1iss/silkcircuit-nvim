@@ -70,6 +70,13 @@ function M.load()
 
   -- Apply saved preferences
   preferences.apply()
+
+  -- Generate help tags for documentation
+  local doc_path =
+    vim.fn.expand(debug.getinfo(1, "S").source:sub(2):match("(.*/)") .. "../../../doc")
+  if vim.fn.isdirectory(doc_path) == 1 then
+    vim.cmd.helptags(doc_path)
+  end
 end
 
 -- Get color palette

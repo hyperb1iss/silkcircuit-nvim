@@ -1,0 +1,358 @@
+*silkcircuit.txt*  Electric dreams for Neovim
+*silkcircuit*
+
+                        SILKCIRCUIT THEME ~
+
+                    Electric purple meets neon dreams
+                        Performance meets beauty
+
+==============================================================================
+CONTENTS                                            *silkcircuit-contents*
+
+    1. Introduction ......................... |silkcircuit-introduction|
+    2. Installation ......................... |silkcircuit-installation|
+    3. Configuration ........................ |silkcircuit-configuration|
+    4. Commands ............................. |silkcircuit-commands|
+    5. Variants ............................. |silkcircuit-variants|
+    6. Integrations ......................... |silkcircuit-integrations|
+    7. Customization ........................ |silkcircuit-customization|
+    8. Troubleshooting ...................... |silkcircuit-troubleshooting|
+    9. Contributing ......................... |silkcircuit-contributing|
+
+==============================================================================
+1. INTRODUCTION                                     *silkcircuit-introduction*
+
+SilkCircuit is a vibrant Neovim theme featuring electric purples, hot pinks,
+and glowing cyan accents. Designed for developers who want their editor to
+match their personality - bold, expressive, and unapologetically colorful.
+
+Key features:
+- Lightning-fast performance (<5ms load time)
+- Three variants: neon (default), vibrant, soft
+- 40+ auto-detected plugin integrations
+- WCAG AA contrast compliance
+- Persistent user preferences
+- Glow mode for extra visual impact
+
+==============================================================================
+2. INSTALLATION                                     *silkcircuit-installation*
+
+Using lazy.nvim: >lua
+    {
+      "SilkCircuit/silkcircuit-nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require("silkcircuit").setup()
+        vim.cmd("colorscheme silkcircuit")
+      end,
+    }
+<
+
+Using packer.nvim: >lua
+    use {
+      "SilkCircuit/silkcircuit-nvim",
+      config = function()
+        require("silkcircuit").setup()
+        vim.cmd("colorscheme silkcircuit")
+      end
+    }
+<
+
+Manual installation:
+1. Clone the repository to your Neovim runtime path
+2. Add to your init.lua: >lua
+    require("silkcircuit").setup()
+    vim.cmd("colorscheme silkcircuit")
+<
+
+==============================================================================
+3. CONFIGURATION                                   *silkcircuit-configuration*
+
+Configure SilkCircuit by passing options to setup(): >lua
+    require("silkcircuit").setup({
+      variant = "neon",        -- "neon" | "vibrant" | "soft"
+      transparent = false,     -- Enable transparent background
+      terminal_colors = true,  -- Configure terminal colors
+      dim_inactive = false,    -- Dim inactive windows
+
+      styles = {
+        comments = { italic = true },
+        keywords = { bold = true },
+        functions = {},
+        variables = {},
+        -- See |silkcircuit-styles| for all options
+      },
+
+      integrations = {
+        -- All integrations are auto-detected by default
+        -- Disable specific integrations:
+        telescope = false,
+        -- See |silkcircuit-integrations| for full list
+      },
+
+      -- Custom highlight overrides
+      on_highlights = function(highlights, colors)
+        highlights.CursorLine = { bg = colors.bg_highlight }
+      end,
+    })
+<
+
+Configuration Options ~
+                                                    *silkcircuit-options*
+
+variant ~
+    Theme variant to use.
+    Default: "neon"
+    Options: "neon" | "vibrant" | "soft"
+
+transparent ~
+    Enable transparent background.
+    Default: false
+
+terminal_colors ~
+    Configure terminal colors (g:terminal_color_*).
+    Default: true
+
+dim_inactive ~
+    Dim inactive windows to improve focus.
+    Default: false
+
+compile ~
+    Enable bytecode compilation for faster loading.
+    Default: true
+
+glow_mode ~
+    Enable glow mode for extra visual impact.
+    Default: false
+
+styles ~
+    Customize syntax element styles.
+    See |silkcircuit-styles| for details.
+
+integrations ~
+    Configure plugin integrations.
+    See |silkcircuit-integrations| for details.
+
+on_highlights ~
+    Function to override specific highlights.
+    Receives (highlights, colors) as arguments.
+
+==============================================================================
+4. COMMANDS                                         *silkcircuit-commands*
+
+:SilkCircuit {variant}                              *:SilkCircuit*
+    Switch to a different variant (neon/vibrant/soft).
+    Without argument, shows current variant.
+
+:SilkCircuitCompile                                 *:SilkCircuitCompile*
+    Compile theme for optimal performance.
+    Creates bytecode cache for faster loading.
+
+:SilkCircuitGlow                                    *:SilkCircuitGlow*
+    Toggle glow mode on/off.
+    Adds extra visual effects to certain elements.
+
+:SilkCircuitRandom                                  *:SilkCircuitRandom*
+    Switch to a random variant.
+    Useful for trying different looks.
+
+:SilkCircuitContrast                                *:SilkCircuitContrast*
+    Run WCAG contrast validation.
+    Shows all color combinations and their contrast ratios.
+
+:SilkCircuitColors                                  *:SilkCircuitColors*
+    Display all theme colors.
+    Shows color names and hex values.
+
+:SilkCircuitIntegrations                            *:SilkCircuitIntegrations*
+    Show detected plugin integrations.
+    Lists which plugins are installed and themed.
+
+:SilkCircuitReset                                   *:SilkCircuitReset*
+    Reset to default settings.
+    Clears all preferences and custom configurations.
+
+==============================================================================
+5. VARIANTS                                         *silkcircuit-variants*
+
+SilkCircuit includes three carefully crafted variants:
+
+Neon (default) ~
+    The signature look with maximum vibrancy.
+    Features pure electric purple (#e135ff) and hot pink.
+    Best for: Dark rooms, late night coding sessions.
+
+Vibrant ~
+    Increased saturation and contrast.
+    Even more electric than neon.
+    Best for: Maximum visual impact, high-end displays.
+
+Soft ~
+    Reduced saturation for extended use.
+    Maintains the theme's personality with less intensity.
+    Best for: Long coding sessions, bright environments.
+
+Switching variants: >vim
+    :SilkCircuit neon
+    :SilkCircuit vibrant
+    :SilkCircuit soft
+<
+
+==============================================================================
+6. INTEGRATIONS                                     *silkcircuit-integrations*
+
+SilkCircuit automatically detects and themes 40+ popular plugins.
+
+Core Integrations ~
+    - Treesitter: Full syntax highlighting
+    - LSP: Diagnostics, references, semantic tokens
+    - Telescope: Consistent picker theming
+    - Neo-tree/NvimTree: File explorer styling
+    - Gitsigns: Git integration
+
+UI Integrations ~
+    - Lualine: Matching statusline theme
+    - Bufferline: Tabline styling
+    - Dashboard/Alpha: Startup screen
+    - WhichKey: Keybinding display
+    - Notify: Notification styling
+
+Editor Integrations ~
+    - Cmp: Completion menu theming
+    - IndentBlankline: Indentation guides
+    - Illuminate: Reference highlighting
+    - Hop/Leap/Flash: Motion plugin styling
+    - Rainbow Delimiters: Bracket coloring
+
+View all detected integrations: >vim
+    :SilkCircuitIntegrations
+<
+
+Disabling integrations: >lua
+    require("silkcircuit").setup({
+      integrations = {
+        telescope = false,
+        cmp = false,
+        -- etc.
+      }
+    })
+<
+
+==============================================================================
+7. CUSTOMIZATION                                   *silkcircuit-customization*
+
+Style Customization ~
+                                                    *silkcircuit-styles*
+
+Customize how syntax elements are displayed: >lua
+    styles = {
+      comments = { italic = true },
+      keywords = { bold = true },
+      functions = { bold = false },
+      variables = {},
+      operators = {},
+      booleans = {},
+      strings = {},
+      types = {},
+      constants = {},
+    }
+<
+
+Color Customization ~
+
+Access theme colors in your config: >lua
+    on_highlights = function(highlights, colors)
+      -- colors table includes:
+      -- bg, fg, purple, pink, cyan, green, yellow, etc.
+
+      highlights.CustomHighlight = {
+        fg = colors.purple,
+        bg = colors.bg_highlight,
+        bold = true
+      }
+    end
+<
+
+Creating Custom Highlights ~
+
+Example custom highlights: >lua
+    on_highlights = function(hl, c)
+      -- Custom cursor line
+      hl.CursorLine = { bg = c.bg_highlight }
+
+      -- Custom search highlighting
+      hl.Search = { fg = c.bg, bg = c.yellow }
+      hl.IncSearch = { fg = c.bg, bg = c.pink }
+
+      -- Custom diagnostic colors
+      hl.DiagnosticError = { fg = c.red }
+      hl.DiagnosticWarn = { fg = c.yellow }
+      hl.DiagnosticInfo = { fg = c.cyan }
+      hl.DiagnosticHint = { fg = c.purple }
+    end
+<
+
+==============================================================================
+8. TROUBLESHOOTING                               *silkcircuit-troubleshooting*
+
+Run health check: >vim
+    :checkhealth silkcircuit
+<
+
+Common Issues ~
+
+Theme not loading properly ~
+    1. Ensure you have Neovim 0.8.0 or later
+    2. Check that termguicolors is enabled: >vim
+        :set termguicolors
+<
+    3. Verify installation path is correct
+
+Colors look wrong ~
+    1. Your terminal must support true colors
+    2. Check terminal color settings
+    3. Try different terminal emulators
+
+Performance issues ~
+    1. Run :SilkCircuitCompile to enable caching
+    2. Check :checkhealth for warnings
+    3. Disable unused integrations
+
+Plugin not themed ~
+    1. Check if plugin is detected: >vim
+        :SilkCircuitIntegrations
+<
+    2. Ensure plugin loads before colorscheme
+    3. Report missing integrations on GitHub
+
+==============================================================================
+9. CONTRIBUTING                                     *silkcircuit-contributing*
+
+Contributions are welcome!
+
+Report issues:
+    https://github.com/your-username/silkcircuit-nvim/issues
+
+Submit pull requests:
+    https://github.com/your-username/silkcircuit-nvim/pulls
+
+Development setup:
+    1. Fork and clone the repository
+    2. Install development dependencies: >bash
+        make setup
+<
+    3. Run tests: >bash
+        make test
+<
+    4. Check code quality: >bash
+        make lint
+<
+
+Adding new integrations:
+    1. Create lua/silkcircuit/integrations/{plugin}.lua
+    2. Add detection logic to integrations/init.lua
+    3. Submit PR with screenshots
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
