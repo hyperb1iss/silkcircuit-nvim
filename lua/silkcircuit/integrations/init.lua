@@ -138,6 +138,11 @@ local plugin_mapping = {
       or pcall(require, "mini.files")
       or pcall(require, "mini.pick")
   end,
+
+  -- snacks.nvim
+  snacks = function()
+    return pcall(require, "snacks")
+  end,
 }
 
 -- Check if a plugin is installed
@@ -174,6 +179,7 @@ local all_integrations = {
   "nvimtree",
   "outline",
   "rainbow_delimiters",
+  "snacks",
   "telescope",
   "treesitter",
   "trouble",
