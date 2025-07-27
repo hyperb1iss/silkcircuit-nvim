@@ -54,6 +54,7 @@ local function create_variant(intensity)
     -- Pinks
     pink = "#ff00ff",
     pink_bright = "#ff69ff",
+    pink_soft = "#ff99ff",
 
     -- Others
     coral = "#F78C6C",

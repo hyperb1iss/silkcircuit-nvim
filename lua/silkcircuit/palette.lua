@@ -42,6 +42,7 @@ M.colors = get_variant_colors()
 
     pink = "#ff00ff", -- PURE NEON MAGENTA
     pink_bright = "#ff69ff", -- Hot pink - Maximum vibrance
+    pink_soft = "#ff99ff", -- Soft pink - like glow mode strings
 
     coral = "#F78C6C", -- Numbers
     red = "#ff6363", -- CSS selectors
@@ -120,7 +121,7 @@ function M.update_semantic(colors)
     -- Syntax (consistent across all languages)
     keyword = colors.purple,
     variable = colors.fg,
-    string = colors.pink_bright,
+    string = colors.pink_soft,
     number = colors.coral,
     boolean = colors.pink,
     constant = colors.coral,
