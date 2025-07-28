@@ -143,6 +143,11 @@ local plugin_mapping = {
   snacks = function()
     return pcall(require, "snacks")
   end,
+
+  -- render-markdown.nvim
+  ["render-markdown"] = function()
+    return pcall(require, "render-markdown")
+  end,
 }
 
 -- Check if a plugin is installed
@@ -180,6 +185,7 @@ local all_integrations = {
   "outline",
   "rainbow_delimiters",
   "snacks",
+  "render-markdown",
   "telescope",
   "treesitter",
   "trouble",
