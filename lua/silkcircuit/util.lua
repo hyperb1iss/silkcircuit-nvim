@@ -256,7 +256,8 @@ function M.compile(force)
   }
 
   -- Get all highlights
-  local highlights = theme.get_highlights(palette.colors, config.get())
+  local colors = palette.get_colors()
+  local highlights = theme.get_highlights(colors, config.get())
 
   -- Add highlight commands
   for group, opts in pairs(highlights) do
@@ -267,7 +268,7 @@ function M.compile(force)
   if config.get().terminal_colors then
     table.insert(lines, "")
     table.insert(lines, "-- Terminal colors")
-    local colors = palette.colors
+    -- colors already defined above
     table.insert(lines, string.format('vim.g.terminal_color_0 = "%s"', colors.terminal_black))
     table.insert(lines, string.format('vim.g.terminal_color_1 = "%s"', colors.terminal_red))
     table.insert(lines, string.format('vim.g.terminal_color_2 = "%s"', colors.terminal_green))

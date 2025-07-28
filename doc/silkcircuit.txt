@@ -28,7 +28,7 @@ match their personality - bold, expressive, and unapologetically colorful.
 
 Key features:
 - Lightning-fast performance (<5ms load time)
-- Three variants: neon (default), vibrant, soft
+- Four variants: neon (default), vibrant, soft, glow
 - 40+ auto-detected plugin integrations
 - WCAG AA contrast compliance
 - Persistent user preferences
@@ -71,7 +71,7 @@ Manual installation:
 
 Configure SilkCircuit by passing options to setup(): >lua
     require("silkcircuit").setup({
-      variant = "neon",        -- "neon" | "vibrant" | "soft"
+      variant = "neon",        -- "neon" | "vibrant" | "soft" | "glow"
       transparent = false,     -- Enable transparent background
       terminal_colors = true,  -- Configure terminal colors
       dim_inactive = false,    -- Dim inactive windows
@@ -104,7 +104,7 @@ Configuration Options ~
 variant ~
     Theme variant to use.
     Default: "neon"
-    Options: "neon" | "vibrant" | "soft"
+    Options: "neon" | "vibrant" | "soft" | "glow"
 
 transparent ~
     Enable transparent background.
@@ -142,7 +142,7 @@ on_highlights ~
 4. COMMANDS                                         *silkcircuit-commands*
 
 :SilkCircuit {variant}                              *:SilkCircuit*
-    Switch to a different variant (neon/vibrant/soft).
+    Switch to a different variant (neon/vibrant/soft/glow).
     Without argument, shows current variant.
 
 :SilkCircuitCompile                                 *:SilkCircuitCompile*
@@ -176,7 +176,7 @@ on_highlights ~
 ==============================================================================
 5. VARIANTS                                         *silkcircuit-variants*
 
-SilkCircuit includes three carefully crafted variants:
+SilkCircuit includes four carefully crafted variants:
 
 Neon (default) ~
     The signature look with maximum vibrancy.
@@ -193,10 +193,17 @@ Soft ~
     Maintains the theme's personality with less intensity.
     Best for: Long coding sessions, bright environments.
 
+Glow ~
+    Ultra-dark backgrounds with pure neon colors.
+    Features pitch-black (#000000) sidebar and deep purple editor.
+    Pure white text (#ffffff) for maximum contrast.
+    Best for: OLED displays, extreme contrast lovers.
+
 Switching variants: >vim
     :SilkCircuit neon
     :SilkCircuit vibrant
     :SilkCircuit soft
+    :SilkCircuit glow
 <
 
 ==============================================================================

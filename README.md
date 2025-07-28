@@ -11,7 +11,7 @@
 [![Load Time](https://img.shields.io/badge/Load%20Time-<5ms-f1fa8c?style=for-the-badge&logo=lightning&logoColor=black)](https://github.com/hyperb1iss/silkcircuit-nvim)
 
 [![Plugins](https://img.shields.io/badge/40+%20Plugins-Supported-bd93f9?style=for-the-badge&logo=puzzle-piece&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-plugin-support)
-[![Variants](https://img.shields.io/badge/3%20Variants-Neon%20|%20Vibrant%20|%20Soft-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
+[![Variants](https://img.shields.io/badge/4%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
 [![Glow Mode](https://img.shields.io/badge/Glow%20Mode-⚡-ff79c6?style=for-the-badge&logo=bolt&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-glow-mode)
 
 🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents_ 🎆
@@ -33,7 +33,7 @@ SilkCircuit pumps maximum visual voltage through your Neovim. Electric purples �
 - 🎪 **Electric Color System** — Vibrant palette with semantic color mappings
 - 🏎️ **<5ms Load Time** — Bytecode compilation with intelligent caching
 - 👁️ **WCAG AA Compliant** — Validated contrast ratios for extended coding sessions
-- 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), and Soft (70%) intensity modes
+- 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), Soft (70%), and Glow (ultra-dark) modes
 - 🔮 **40+ Plugin Integrations** — Auto-detected support for your entire toolchain
 - 🌟 **Glow Mode** — Enhanced highlights for maximum visibility
 - 💾 **Persistent Preferences** — Settings survive across sessions
@@ -102,7 +102,7 @@ require("silkcircuit").setup({
   transparent = false,     -- Enable transparent background
   terminal_colors = true,  -- Configure terminal colors
   dim_inactive = false,    -- Dim inactive windows
-  variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft"
+  variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft" | "glow"
   glow_mode = false,      -- Enable glow mode
 
   styles = {
@@ -132,13 +132,14 @@ Switch between intensity levels:
 ```lua
 -- Via setup
 require("silkcircuit").setup({
-  variant = "vibrant", -- "neon" | "vibrant" | "soft"
+  variant = "vibrant", -- "neon" | "vibrant" | "soft" | "glow"
 })
 
 -- Or use commands
 :SilkCircuit neon     -- 100% intensity
 :SilkCircuit vibrant  -- 85% intensity
 :SilkCircuit soft     -- 70% intensity
+:SilkCircuit glow     -- Ultra-dark backgrounds with pure neon colors
 ```
 
 ### ✨ Glow Mode

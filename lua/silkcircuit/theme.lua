@@ -467,7 +467,9 @@ end
 function M.apply()
   local palette = require("silkcircuit.palette")
   local opts = config.get()
-  local highlights = M.get_highlights(palette.colors, opts)
+  local colors = palette.get_colors()
+  palette.update_semantic(colors) -- Update semantic colors with variant colors
+  local highlights = M.get_highlights(colors, opts)
 
   -- Clear any existing autocmds that might interfere
   vim.api.nvim_create_augroup("SilkCircuit", { clear = true })
@@ -476,7 +478,7 @@ function M.apply()
 
   -- Load plugin integrations
   if opts.integrations then
-    require("silkcircuit.integrations").load(palette.colors, opts)
+    require("silkcircuit.integrations").load(colors, opts)
   else
     vim.notify("SilkCircuit: integrations disabled in config", vim.log.levels.WARN)
   end

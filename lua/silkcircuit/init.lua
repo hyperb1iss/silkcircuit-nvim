@@ -45,10 +45,11 @@ function M.load()
     -- Compiled theme loaded successfully, but we still need to load integrations!
     local palette = require("silkcircuit.palette")
     local opts = config.get()
+    local colors = palette.get_colors()
 
     -- Load plugin integrations (this was missing!)
     if opts.integrations then
-      require("silkcircuit.integrations").load(palette.colors, opts)
+      require("silkcircuit.integrations").load(colors, opts)
     end
   end
 

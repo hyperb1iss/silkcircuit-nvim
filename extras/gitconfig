@@ -19,11 +19,11 @@
 	whitespace = 197 reverse
 
 [color "status"]
-	added = 149          # green - added files
-	changed = 213        # bright magenta - changed files
-	untracked = 51       # electric cyan - untracked files
-	deleted = 197        # red - deleted files
-	branch = 220 bold    # yellow - branch info
+	added = 149 bold     # bright green - added files
+	changed = 213 bold   # bright magenta - changed files
+	untracked = 51 bold  # electric cyan - untracked files
+	deleted = 197 bold   # red - deleted files
+	branch = 220 bold    # neon yellow - branch info
 	nobranch = 197 bold  # red - detached HEAD warning
 	unmerged = 197 bold  # red - unmerged files
 
@@ -51,18 +51,20 @@
 	syntax-theme = Dracula
 	line-numbers = true
 	side-by-side = false
-	file-style = "#e135ff bold"       # SilkCircuit purple for file names
-	file-decoration-style = "#e135ff box"
-	hunk-header-style = "#ff00ff bold"  # SilkCircuit magenta for hunk headers
-	hunk-header-decoration-style = "#ff00ff box"
-	line-numbers-left-style = "#9580ff"  # muted purple
+	file-style = "#f1fa8c bold"         # SilkCircuit yellow for file names 🌟
+	file-decoration-style = "#f1fa8c box ul"
+	hunk-header-style = "#80ffea bold"  # SilkCircuit cyan for hunk headers
+	hunk-header-decoration-style = "#80ffea box"
+	line-numbers-left-style = "#9580ff"   # muted purple
 	line-numbers-right-style = "#9580ff"
-	line-numbers-minus-style = "#ff6363" # red for deletions
-	line-numbers-plus-style = "#50fa7b"  # green for additions
-	minus-style = syntax "#3a2a2a"       # dark red background
-	minus-emph-style = syntax "#5a2a2a"  # darker red for emphasis
-	plus-style = syntax "#2a3a2a"        # dark green background
-	plus-emph-style = syntax "#2a5a2a"   # darker green for emphasis
+	line-numbers-minus-style = "#ff6363 bold" # bright red for deletions
+	line-numbers-plus-style = "#50fa7b bold"  # bright green for additions ✨
+	minus-style = syntax "#4a2a2a"        # darker red background
+	minus-emph-style = syntax "#6a2a2a"   # emphasis red
+	plus-style = syntax "#2a4a2a"         # darker green background
+	plus-emph-style = syntax "#2a6a2a"    # emphasis green
+	commit-decoration-style = "#e135ff box ul" # purple commit decoration
+	commit-style = "#e135ff bold"         # purple commits
 
 [log]
 	# SilkCircuit-inspired log formatting
@@ -78,8 +80,8 @@
 	pretty = silkcircuit
 
 [alias]
-	# Beautiful one-line log with graph
-	lg = log --graph --pretty=format:'%C(201 bold)%h%Creset %C(220)%d%Creset %C(white)%s%Creset %C(51)(%cr)%Creset %C(213)<%an>%Creset'
+	# Beautiful one-line log with graph and enhanced conventional commit colors
+	lg = log --graph --pretty=format:'%C(201 bold)%h%Creset %C(220 bold)%d%Creset %C(white)%s%Creset %C(51)(%cr)%Creset %C(213)<%an>%Creset'
 
 	# Full log with SilkCircuit colors (like regular git log but styled)
 	l = log --pretty=silkcircuit
@@ -90,5 +92,26 @@
 	# Show commits from all branches with full format
 	lga = log --graph --all --pretty=silkcircuit
 
-	# Compact log for quick overview
+	# Compact log for quick overview with conventional commit highlights
 	lgs = log --graph --pretty=format:'%C(201)%h%Creset %C(white)%s%Creset %C(51)(%cr)%Creset' --abbrev-commit
+
+	# Enhanced commit with conventional commit prefix highlighting
+	c = "!f() { \
+		echo ''; \
+		echo '\033[38;2;225;53;255m🎨 SilkCircuit Git Commit\033[0m'; \
+		echo '\033[38;2;128;255;234m────────────────────────\033[0m'; \
+		echo ''; \
+		echo '\033[38;2;241;250;140mConventional Commit Prefixes:\033[0m'; \
+		echo '  \033[38;2;80;250;123mfeat:\033[0m     ✨ new feature'; \
+		echo '  \033[38;2;255;99;255mfix:\033[0m      🐛 bug fix'; \
+		echo '  \033[38;2;128;255;234mdocs:\033[0m     📚 documentation'; \
+		echo '  \033[38;2;241;250;140mstyle:\033[0m    💄 formatting/style'; \
+		echo '  \033[38;2;255;106;193mrefactor:\033[0m ♻️  code refactor'; \
+		echo '  \033[38;2;130;170;255mtest:\033[0m     🧪 tests'; \
+		echo '  \033[38;2;236;196;141mchore:\033[0m    🔧 maintenance'; \
+		echo ''; \
+		git commit \"$@\"; \
+	}; f"
+
+	# Quick status with enhanced colors
+	s = status --short --branch

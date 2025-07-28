@@ -28,7 +28,7 @@ function M.setup()
     if variant == "" then
       local current = variants.get_current_variant()
       vim.notify("Current variant: " .. current, vim.log.levels.INFO)
-      vim.notify("Available variants: neon (default), vibrant, soft", vim.log.levels.INFO)
+      vim.notify("Available variants: neon (default), vibrant, soft, glow", vim.log.levels.INFO)
       return
     end
 
@@ -57,7 +57,7 @@ function M.setup()
   end, {
     nargs = "?",
     complete = function()
-      return { "neon", "vibrant", "soft" }
+      return { "neon", "vibrant", "soft", "glow" }
     end,
     desc = "Switch SilkCircuit theme variant",
   })

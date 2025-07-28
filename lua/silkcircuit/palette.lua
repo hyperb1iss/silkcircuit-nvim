@@ -1,13 +1,14 @@
 local M = {}
 
 -- Get colors based on current variant
-local function get_variant_colors()
+function M.get_colors()
   local variants = require("silkcircuit.variants")
   local variant_name = variants.get_current_variant()
   return variants.get_colors(variant_name)
 end
 
-M.colors = get_variant_colors()
+-- Legacy support - will be removed in future versions
+M.colors = M.get_colors()
   or {
     -- Base colors
     bg = "#1e1a2e", -- Primary background - Deep purple base
