@@ -62,7 +62,7 @@ test:
 	@echo ""
 	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Tests$(RESET)"
 	@echo ""
-	@cd $(shell pwd) && lua tests/run.lua
+	@cd $(shell pwd) && nvim --headless -u NONE -c "luafile tests/run.lua" 2>&1
 
 # Run linters
 lint:

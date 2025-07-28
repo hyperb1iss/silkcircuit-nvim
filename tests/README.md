@@ -1,66 +1,32 @@
-# SilkCircuit Theme Tests
+# SilkCircuit Tests
 
-This directory contains the test suite for the SilkCircuit Neovim theme.
+Simple, clean test suite that runs inside actual Neovim.
 
 ## Running Tests
 
 ```bash
-# Run all tests
 make test
 ```
 
 ## Test Structure
 
-### Unit Tests
+Tests are organized in `unit/` directory:
 
-- **Color Utilities** (`unit/test_colors.lua`)
-  - Tests color conversion functions (hex/rgb)
-  - Tests color blending and manipulation
-  - Tests WCAG contrast validation
-  - Tests luminance calculations
+- `test_colors.lua` - Color utility functions
+- `test_config.lua` - Configuration system
+- `test_palette.lua` - Color palette and variants
 
-- **Palette** (`unit/test_palette.lua`)
-  - Tests variant color loading
-  - Tests semantic color mappings
-  - Tests color presence and naming
+## Writing Tests
 
-- **Configuration** (`unit/test_config.lua`)
-  - Tests default configuration values
-  - Tests setup and option merging
-  - Tests configuration getters
-
-### Test Runner
-
-The test suite uses a simple custom test runner (`run.lua`) that:
-
-- Runs in plain Lua without requiring Neovim
-- Provides minimal test framework with `describe` and `it` functions
-- Outputs colorful test results
-- Tracks pass/fail statistics
-
-## Writing New Tests
-
-Tests follow a simple structure:
+Tests use a minimal test framework built into `run.lua`:
 
 ```lua
-describe("Feature Name", function()
-  it("should do something", function()
-    local result = some_function()
-    assert(result == expected_value, "Error message if fails")
+describe("Feature", function()
+  it("does something", function()
+    assert(condition, "Error message")
   end)
 end)
 ```
 
-## Test Coverage
-
-Current test coverage includes:
-
-- ✅ Color manipulation utilities (7 tests)
-- ✅ Palette loading and variants (3 tests)
-- ✅ Configuration management (2 tests)
-
-## Notes
-
-- Tests run in isolation without user configuration
-- Mock vim API is provided for testing Neovim-specific code
-- Tests are designed to be fast and reliable
+All tests run inside Neovim with full access to the vim API.
+No mocking required!

@@ -486,7 +486,8 @@ end
 
 -- Set terminal colors
 function M.set_terminal_colors()
-  local colors = require("silkcircuit.palette").colors
+  local palette = require("silkcircuit.palette")
+  local colors = palette.get_colors()
 
   vim.g.terminal_color_0 = colors.terminal_black
   vim.g.terminal_color_1 = colors.terminal_red
