@@ -12,7 +12,6 @@
 
 [![Plugins](https://img.shields.io/badge/40+%20Plugins-Supported-bd93f9?style=for-the-badge&logo=puzzle-piece&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-plugin-support)
 [![Variants](https://img.shields.io/badge/4%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
-[![Glow Mode](https://img.shields.io/badge/Glow%20Mode-⚡-ff79c6?style=for-the-badge&logo=bolt&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-glow-mode)
 
 🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents_ 🎆
 
@@ -35,7 +34,6 @@ SilkCircuit pumps maximum visual voltage through your Neovim. Electric purples �
 - 👁️ **WCAG AA Compliant** — Validated contrast ratios for extended coding sessions
 - 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), Soft (70%), and Glow (ultra-dark) modes
 - 🔮 **40+ Plugin Integrations** — Auto-detected support for your entire toolchain
-- 🌟 **Glow Mode** — Enhanced highlights for maximum visibility
 - 💾 **Persistent Preferences** — Settings survive across sessions
 
 ## 💫 Installation
@@ -103,7 +101,6 @@ require("silkcircuit").setup({
   terminal_colors = true,  -- Configure terminal colors
   dim_inactive = false,    -- Dim inactive windows
   variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft" | "glow"
-  glow_mode = false,      -- Enable glow mode
 
   styles = {
     comments = { italic = true },
@@ -140,20 +137,6 @@ require("silkcircuit").setup({
 :SilkCircuit vibrant  -- 85% intensity
 :SilkCircuit soft     -- 70% intensity
 :SilkCircuit glow     -- Ultra-dark backgrounds with pure neon colors
-```
-
-### ✨ Glow Mode
-
-Enhanced highlights for maximum visibility:
-
-```lua
--- Toggle glow mode
-:SilkCircuitGlow
-
--- Or in setup
-require("silkcircuit").setup({
-  glow_mode = true,
-})
 ```
 
 ### 🌌 Transparent Background
@@ -225,7 +208,7 @@ All integrations activate automatically when plugins are detected.
 
 ## 🌃 Complete Environment Setup
 
-SilkCircuit includes extensive extras for a fully integrated neon development experience:
+SilkCircuit extends beyond Neovim with matching themes for your entire development environment:
 
 ### 🎯 Quick Setup
 
@@ -234,7 +217,7 @@ SilkCircuit includes extensive extras for a fully integrated neon development ex
 git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
 cd silkcircuit-nvim
 
-# Electric git colors
+# Electric git colors with conventional commit support
 cat extras/gitconfig >> ~/.gitconfig
 
 # Terminal themes (choose your terminal)
@@ -242,16 +225,25 @@ cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
 cp extras/alacritty.yml ~/.config/alacritty/themes/silkcircuit.yml
 cp extras/warp.yaml ~/.warp/themes/silkcircuit.yaml
 
+# VSCode theme (all variants included)
+cd extras/vscode && npx @vscode/vsce package
+# Install the generated .vsix file in VSCode/Cursor
+
+# System info theme
+cp extras/macchina/silkcircuit.toml ~/.config/macchina/themes/
+
 # AstroNvim integration
 cp -r extras/astronvim/* ~/.config/nvim/lua/
 ```
 
 ### 🚀 What's Included
 
-- **⚡ Git configuration** - Electric colors for commits, branches, and diffs
-- **🖥️ Terminal themes** - Alacritty, Kitty, Warp, Windows Terminal
-- **🚀 AstroNvim integration** - Complete setup with enhanced components
-- **🎨 Tool configs** - FZF, Lualine, and more
+- **🎨 VSCode Themes** - All 4 variants (Neon, Vibrant, Soft, Glow) for VSCode/Cursor
+- **⚡ Git Configuration** - Electric colors with conventional commit highlighting
+- **🖥️ Terminal Themes** - Alacritty, Kitty, Warp, Windows Terminal, iTerm2
+- **🚀 AstroNvim Integration** - Complete setup with enhanced components
+- **📊 System Tools** - Macchina theme for system info display
+- **🎨 Tool Configs** - FZF, Lualine, and more
 
 See [extras/README.md](extras/README.md) for detailed setup instructions.
 
@@ -293,6 +285,16 @@ See [extras/README.md](extras/README.md) for detailed setup instructions.
 - 💜 Run `:checkhealth silkcircuit`
 - 📬 Check [Issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
 - 📝 Include config and error messages
+
+## 🎮 Commands
+
+| Command | Description |
+|---------|-------------|
+| `:SilkCircuit {variant}` | Switch theme variant (neon/vibrant/soft/glow) |
+| `:SilkCircuitContrast` | Check WCAG contrast compliance |
+| `:SilkCircuitCompile` | Compile theme for performance |
+| `:SilkCircuitIntegrations` | Show detected plugin integrations |
+| `:checkhealth silkcircuit` | Run health check diagnostics |
 
 ## 💖 Contributing
 
