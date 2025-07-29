@@ -15,32 +15,23 @@ jobs:
       - name: → Checkout repository
         uses: actions/checkout@v4
 
-      - name: → Install linting tools
-        run: |
-          set -e
-          # Install selene (Lua linter)
-          echo "» Installing selene..."
-          SELENE_VERSION=$(curl -s https://api.github.com/repos/Kampfkarren/selene/releases/latest | grep '"tag_name"' | cut -d '"' -f 4)
-          wget -qO selene.zip https://github.com/Kampfkarren/selene/releases/download/${SELENE_VERSION}/selene-${SELENE_VERSION}-linux.zip
-          unzip -q selene.zip
-          chmod +x ./selene
-          sudo mv ./selene /usr/local/bin/
-          echo "√ selene $(selene --version) installed"
+      - name: → Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
 
-          # Install stylua (Lua formatter)
-          echo "» Installing stylua..."
-          wget -qO stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux-x86_64.zip
-          unzip -q stylua.zip
-          chmod +x ./stylua
-          sudo mv ./stylua /usr/local/bin/
-          echo "√ stylua $(stylua --version) installed"
+      - name: → Install selene
+        uses: taiki-e/install-action@v2
+        with:
+          tool: selene
 
-          # Install markdownlint
-          echo "» Installing markdownlint..."
-          sudo apt-get update -qq
-          sudo apt-get install -y nodejs npm
-          npm install -g markdownlint-cli --silent
-          echo "√ markdownlint installed"
+      - name: → Install stylua
+        uses: taiki-e/install-action@v2
+        with:
+          tool: stylua
+
+      - name: → Install markdownlint
+        run: npm install -g markdownlint-cli
 
       - name: → Run make lint
         run: |
@@ -65,12 +56,6 @@ jobs:
         with:
           neovim: true
           version: ${{ matrix.neovim_version }}
-
-      - name: → Install Lua
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y lua5.4
-          echo "√ Lua $(lua -v) installed"
 
       - name: → Show Neovim version
         run: nvim --version
