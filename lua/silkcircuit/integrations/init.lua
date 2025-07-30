@@ -148,6 +148,11 @@ local plugin_mapping = {
   ["render-markdown"] = function()
     return pcall(require, "render-markdown")
   end,
+
+  -- octo.nvim
+  octo = function()
+    return pcall(require, "octo")
+  end,
 }
 
 -- Check if a plugin is installed
@@ -182,6 +187,7 @@ local all_integrations = {
   "notify",
   "nvim_dap",
   "nvimtree",
+  "octo",
   "outline",
   "rainbow_delimiters",
   "snacks",
