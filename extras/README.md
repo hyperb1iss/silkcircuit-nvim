@@ -66,6 +66,28 @@ cp extras/warp.yaml ~/.warp/themes/silkcircuit.yaml
 # Windows Terminal - import JSON manually in settings
 ```
 
+### 🌐 Chrome Theme (`chrome-theme/`)
+
+Bring SilkCircuit's vibrant colors to your browser:
+
+- **Neon purple** frame and toolbar
+- **Electric cyan** links and accents
+- **Pure magenta** highlights
+- **Dark theme** optimized for developer tools
+
+**Setup:**
+
+```bash
+# Method 1: Developer Mode
+# 1. Open chrome://extensions/
+# 2. Enable "Developer mode"
+# 3. Click "Load unpacked"
+# 4. Select the chrome-theme directory
+
+# Method 2: Direct drag & drop
+# Drag the chrome-theme folder onto chrome://extensions/
+```
+
 ### 🎨 Enhanced Tools
 
 Additional tool configurations for the complete experience:

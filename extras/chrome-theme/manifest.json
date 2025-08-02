@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "SilkCircuit Neon",
+  "description": "A vibrant chrome theme featuring neon purples, electric pinks, and glowing cyan accents",
+  "theme": {
+    "colors": {
+      "frame": [12, 10, 20],
+      "frame_inactive": [8, 6, 15],
+      "frame_incognito": [12, 10, 20],
+      "frame_incognito_inactive": [8, 6, 15],
+
+      "toolbar": [26, 22, 42],
+
+      "tab_text": [255, 255, 255],
+      "tab_background_text": [255, 121, 198],
+
+      "bookmark_text": [255, 121, 198],
+
+      "ntp_background": [18, 16, 26],
+      "ntp_text": [248, 248, 242],
+      "ntp_link": [128, 255, 234],
+      "ntp_header": [0, 255, 255],
+      "ntp_attribution": [255, 121, 198],
+      "ntp_section": [0, 255, 255, 0.15],
+      "ntp_section_text": [128, 255, 234],
+      "ntp_section_link": [0, 255, 255],
+
+      "button_background": [58, 22, 58],
+
+      "control_background": [42, 18, 42]
+    },
+    "tints": {
+      "buttons": [0.88, 1, 0.8],
+      "frame": [0.85, 0.3, 0.5],
+      "frame_inactive": [0.85, 0.2, 0.4],
+      "frame_incognito": [-1, -1, 0.3],
+      "frame_incognito_inactive": [-1, -1, 0.25],
+      "background_tab": [0.85, 0.15, 0.5],
+      "background_tab_inactive": [0.85, 0.1, 0.45],
+      "background_tab_incognito": [-1, -1, 0.3],
+      "background_tab_incognito_inactive": [-1, -1, 0.25]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 0
+    }
+  }
+}

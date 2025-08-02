@@ -1,0 +1,156 @@
+/* SilkCircuit Chrome Internal Pages Theme
+ * Use with Stylus or similar extension to theme chrome:// pages
+ * Add URL patterns: chrome://*, chrome-extension://*
+ */
+
+@-moz-document regexp("chrome://.*"), regexp("chrome-extension://.*") {
+  :root {
+    /* Override Chrome's color variables */
+    --cr-primary-text-color: #f8f8f2 !important;
+    --cr-secondary-text-color: #9580ff !important;
+    --cr-card-background-color: #1a162a !important;
+    --cr-card-shadow-color-ambient: rgba(225, 53, 255, 0.1) !important;
+    --cr-card-shadow-color-key: rgba(225, 53, 255, 0.2) !important;
+    --cr-checked-color: #e135ff !important;
+    --cr-focused-item-color: rgba(225, 53, 255, 0.2) !important;
+    --cr-form-field-label-color: #80ffea !important;
+    --cr-link-color: #80ffea !important;
+    --cr-menu-background-color: #12101a !important;
+    --cr-menu-background-focus-color: #1a162a !important;
+    --cr-menu-shadow-color-ambient: rgba(225, 53, 255, 0.15) !important;
+    --cr-menu-shadow-color-key: rgba(225, 53, 255, 0.3) !important;
+    --cr-separator-color: rgba(225, 53, 255, 0.3) !important;
+    --cr-title-text-color: #ff00ff !important;
+    --cr-toolbar-background-color: #0a0812 !important;
+
+    /* Toggle/Switch colors */
+    --cr-toggle-color: #9580ff !important;
+    --cr-toggle-checked-bar-color: #e135ff !important;
+    --cr-toggle-checked-button-color: #ff00ff !important;
+    --cr-toggle-checked-ripple-color: rgba(255, 0, 255, 0.3) !important;
+
+    /* Button colors */
+    --cr-button-background-color: #1a162a !important;
+    --cr-button-border-color: #e135ff !important;
+    --cr-button-text-color: #f8f8f2 !important;
+    --cr-button-hover-background-color: #2a264a !important;
+
+    /* Input fields */
+    --cr-input-background-color: #1a162a !important;
+    --cr-input-border-color: #637777 !important;
+    --cr-input-border-color-focus: #e135ff !important;
+    --cr-input-border-color-hover: #80ffea !important;
+    --cr-input-error-color: #ff6363 !important;
+    --cr-input-focus-color: rgba(225, 53, 255, 0.3) !important;
+
+    /* Selection colors */
+    --cr-active-background-color: #e135ff !important;
+    --cr-focus-outline-color: #80ffea !important;
+    --cr-hover-background-color: rgba(225, 53, 255, 0.1) !important;
+    --cr-selected-background-color: rgba(225, 53, 255, 0.2) !important;
+  }
+
+  /* Background for all chrome pages */
+  body {
+    background-color: #12101a !important;
+    color: #f8f8f2 !important;
+  }
+
+  /* Settings page specific */
+  settings-ui::part(container) {
+    background-color: #12101a !important;
+  }
+
+  /* Extensions page */
+  extensions-manager {
+    --cr-toolbar-height: 56px;
+    background-color: #12101a !important;
+  }
+
+  /* Cards */
+  .cr-card,
+  extensions-item {
+    background-color: #1a162a !important;
+    border: 1px solid rgba(225, 53, 255, 0.2) !important;
+  }
+
+  /* Hover effects */
+  .cr-button:hover,
+  .cr-icon-button:hover,
+  .cr-link-button:hover {
+    background-color: rgba(225, 53, 255, 0.1) !important;
+  }
+
+  /* Downloads page */
+  downloads-manager {
+    background-color: #12101a !important;
+  }
+
+  downloads-item {
+    background-color: #1a162a !important;
+    border-bottom: 1px solid rgba(225, 53, 255, 0.2) !important;
+  }
+
+  /* History page */
+  history-app {
+    background-color: #12101a !important;
+  }
+
+  /* Bookmarks */
+  bookmarks-folder-node,
+  bookmarks-item {
+    background-color: #1a162a !important;
+  }
+
+  /* Search boxes */
+  cr-toolbar-search-field {
+    background-color: #1a162a !important;
+    border-color: #637777 !important;
+  }
+
+  cr-toolbar-search-field:focus-within {
+    border-color: #e135ff !important;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0812 !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9580ff !important;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e135ff !important;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #e135ff !important;
+    color: #12101a !important;
+  }
+
+  /* Links */
+  a {
+    color: #80ffea !important;
+  }
+
+  a:hover {
+    color: #5fffff !important;
+  }
+
+  /* Code blocks */
+  code,
+  pre {
+    background-color: #0a0812 !important;
+    color: #ff99ff !important;
+    border: 1px solid rgba(225, 53, 255, 0.3) !important;
+  }
+}

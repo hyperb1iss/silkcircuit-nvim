@@ -1,0 +1,164 @@
+/* SilkCircuit DevTools Theme
+ * To use: Open DevTools → Settings → Experiments → "Allow extensions to load custom stylesheets"
+ * Then use a DevTools theme extension to load this CSS
+ */
+
+:root {
+  /* SilkCircuit Colors */
+  --silkcircuit-bg: #12101a;
+  --silkcircuit-bg-dark: #0a0812;
+  --silkcircuit-bg-highlight: #1a162a;
+  --silkcircuit-purple: #e135ff;
+  --silkcircuit-purple-dark: #9580ff;
+  --silkcircuit-cyan: #80ffea;
+  --silkcircuit-pink: #ff00ff;
+  --silkcircuit-pink-soft: #ff99ff;
+  --silkcircuit-yellow: #f1fa8c;
+  --silkcircuit-green: #50fa7b;
+  --silkcircuit-red: #ff6363;
+  --silkcircuit-fg: #f8f8f2;
+  --silkcircuit-gray: #637777;
+}
+
+/* Main background */
+.root-view,
+.-theme-with-dark-background {
+  --color-background: var(--silkcircuit-bg) !important;
+  --color-background-elevation-0: var(--silkcircuit-bg-dark) !important;
+  --color-background-elevation-1: var(--silkcircuit-bg) !important;
+  --color-background-elevation-2: var(--silkcircuit-bg-highlight) !important;
+}
+
+/* Text colors */
+.-theme-with-dark-background {
+  --color-text-primary: var(--silkcircuit-fg) !important;
+  --color-text-secondary: var(--silkcircuit-gray) !important;
+  --color-text-disabled: var(--silkcircuit-purple-dark) !important;
+}
+
+/* Syntax highlighting */
+.cm-keyword { color: var(--silkcircuit-purple) !important; }
+.cm-string { color: var(--silkcircuit-pink-soft) !important; }
+.cm-number { color: var(--silkcircuit-yellow) !important; }
+.cm-property { color: var(--silkcircuit-cyan) !important; }
+.cm-variable { color: var(--silkcircuit-fg) !important; }
+.cm-comment { color: var(--silkcircuit-purple-dark) !important; }
+.cm-tag { color: var(--silkcircuit-pink) !important; }
+.cm-attribute { color: var(--silkcircuit-purple) !important; }
+
+/* Console */
+.console-message-text {
+  color: var(--silkcircuit-fg) !important;
+}
+
+.console-message-wrapper.console-error-level {
+  background-color: rgba(255, 99, 99, 0.1) !important;
+  border-color: var(--silkcircuit-red) !important;
+}
+
+.console-message-wrapper.console-warning-level {
+  background-color: rgba(241, 250, 140, 0.1) !important;
+  border-color: var(--silkcircuit-yellow) !important;
+}
+
+/* Network panel */
+.network-waterfall-header,
+.network-log-grid .header-container {
+  background-color: var(--silkcircuit-bg-highlight) !important;
+}
+
+.network-log-grid .data-grid-data-grid-node:nth-child(even) {
+  background-color: var(--silkcircuit-bg-dark) !important;
+}
+
+/* Elements panel */
+.elements-tree-outline li.selected {
+  background-color: var(--silkcircuit-purple) !important;
+  color: var(--silkcircuit-bg) !important;
+}
+
+.styles-section {
+  border-color: var(--silkcircuit-purple-dark) !important;
+}
+
+/* Sources panel */
+.text-editor {
+  background-color: var(--silkcircuit-bg) !important;
+}
+
+.text-editor .CodeMirror-selected {
+  background-color: var(--silkcircuit-bg-highlight) !important;
+}
+
+.text-editor .CodeMirror-linenumber {
+  color: var(--silkcircuit-gray) !important;
+}
+
+/* Toolbar */
+.toolbar {
+  background-color: var(--silkcircuit-bg-dark) !important;
+  border-bottom-color: var(--silkcircuit-purple) !important;
+}
+
+/* Buttons */
+.toolbar-button {
+  color: var(--silkcircuit-cyan) !important;
+}
+
+.toolbar-button:hover {
+  background-color: var(--silkcircuit-bg-highlight) !important;
+}
+
+/* Tabs */
+.tabbed-pane-header-tab {
+  background-color: var(--silkcircuit-bg) !important;
+  border-color: var(--silkcircuit-purple-dark) !important;
+  color: var(--silkcircuit-fg) !important;
+}
+
+.tabbed-pane-header-tab.selected {
+  background-color: var(--silkcircuit-bg-highlight) !important;
+  border-bottom-color: var(--silkcircuit-purple) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  background-color: var(--silkcircuit-bg-dark) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--silkcircuit-purple-dark) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--silkcircuit-purple) !important;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--silkcircuit-purple) !important;
+  color: var(--silkcircuit-bg) !important;
+}
+
+/* Links */
+a {
+  color: var(--silkcircuit-cyan) !important;
+}
+
+/* Breakpoints */
+.cm-breakpoint .CodeMirror-linenumber {
+  background-color: var(--silkcircuit-red) !important;
+  color: white !important;
+}
+
+/* Search highlights */
+.highlighted-search-result {
+  background-color: var(--silkcircuit-yellow) !important;
+  color: var(--silkcircuit-bg) !important;
+}
+
+/* Status bar */
+.status-bar {
+  background-color: var(--silkcircuit-bg-dark) !important;
+  border-top-color: var(--silkcircuit-purple-dark) !important;
+}
