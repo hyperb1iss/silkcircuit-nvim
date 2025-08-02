@@ -153,6 +153,11 @@ local plugin_mapping = {
   octo = function()
     return pcall(require, "octo")
   end,
+
+  -- avante.nvim
+  avante = function()
+    return pcall(require, "avante")
+  end,
 }
 
 -- Check if a plugin is installed
@@ -168,6 +173,7 @@ end
 local all_integrations = {
   "aerial",
   "alpha",
+  "avante",
   "bufferline",
   "cmp",
   "dashboard",
