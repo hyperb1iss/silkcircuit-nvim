@@ -88,6 +88,42 @@ Bring SilkCircuit's vibrant colors to your browser:
 # Drag the chrome-theme folder onto chrome://extensions/
 ```
 
+### 💬 Slack Theme (`slack-theme.txt`)
+
+Transform your Slack workspace with SilkCircuit's 4-color themes:
+
+- **Deep purple** navigation (#2E1B7A)
+- **Electric purple** for selected items (#E135FF)
+- **Neon green** presence indicators (#50FA7B)
+- **Hot pink** notifications (#FF79C6)
+
+**Setup:**
+
+```bash
+# Open Slack → Preferences → Themes
+# Copy hex values from slack-theme-simple.txt
+# Click each color circle and paste the corresponding hex value
+# Enable "Window gradient" for best effect
+```
+
+### 📊 btop Theme (`btop/`)
+
+System monitoring with SilkCircuit style:
+
+- **Electric purple** CPU graphs
+- **Neon cyan** memory meters
+- **Hot pink** network activity
+- **All 4 variants** for different vibes
+
+**Setup:**
+
+```bash
+# Copy to btop themes directory
+cp btop/silkcircuit_*.theme ~/.config/btop/themes/
+
+# In btop: Esc → Options → Color theme → Select variant
+```
+
 ### 🎨 Enhanced Tools
 
 Additional tool configurations for the complete experience:

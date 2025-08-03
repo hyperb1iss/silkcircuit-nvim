@@ -5,12 +5,12 @@
   "description": "A vibrant chrome theme featuring neon purples, electric pinks, and glowing cyan accents",
   "theme": {
     "colors": {
-      "frame": [12, 10, 20],
-      "frame_inactive": [8, 6, 15],
-      "frame_incognito": [12, 10, 20],
-      "frame_incognito_inactive": [8, 6, 15],
+      "frame": [18, 16, 30],
+      "frame_inactive": [12, 10, 20],
+      "frame_incognito": [18, 16, 30],
+      "frame_incognito_inactive": [12, 10, 20],
 
-      "toolbar": [26, 22, 42],
+      "toolbar": [32, 28, 54],
 
       "tab_text": [255, 255, 255],
       "tab_background_text": [255, 121, 198],
