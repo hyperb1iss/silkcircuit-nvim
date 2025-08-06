@@ -117,7 +117,8 @@ function M.check()
 
   -- Check contrast compliance
   start("WCAG Contrast Compliance")
-  local colors = require("silkcircuit.palette").colors
+  local palette = require("silkcircuit.palette")
+  local colors = palette.get_colors()
   local color_utils = require("silkcircuit.utils.colors")
   local issues = color_utils.validate_theme_contrast(colors)
 
