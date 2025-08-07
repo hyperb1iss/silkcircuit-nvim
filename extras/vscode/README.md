@@ -1,10 +1,35 @@
-# 🌈 SilkCircuit VSCode Themes
+# 💜⚡ SilkCircuit: Electric Dreams for VSCode 🌃
 
-Electric dreams for Visual Studio Code. Experience the full SilkCircuit aesthetic with neon purples, blazing pinks, and glowing cyan accents.
+<div align="center">
+
+[![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
+[![License](https://img.shields.io/badge/License-MIT-ff79c6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
+[![Theme](https://img.shields.io/badge/Theme-SilkCircuit-e135ff?style=for-the-badge&logo=paintbrush&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim)
+[![WCAG](https://img.shields.io/badge/WCAG%20AA-Compliant-50fa7b?style=for-the-badge&logo=accessibility&logoColor=white)](https://www.w3.org/WAI/WCAG21/quickref/)
+[![Variants](https://img.shields.io/badge/4%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](#-available-themes)
+
+🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents for Visual Studio Code_ 🎆
+
+[⚡ Installation](#-installation) • [💜 Features](#-features) • [🎨 Themes](#-available-themes) • [⚙️ Customization](#-true-glow-effects-advanced)
+
+</div>
+
+## 🎭 Overview
+
+SilkCircuit pumps maximum visual voltage through your VSCode editor. Electric purples 💜, blazing pinks 🌸, and neon cyans 💎 create a coding environment that's both striking and readable. Engineered for professional development with WCAG AA contrast compliance.
+
+## 💎 Features
+
+- ⚡ **Electric Color System** — Vibrant palette with semantic color mappings
+- 👁️ **WCAG AA Compliant** — Validated contrast ratios for extended coding sessions
+- 🎛️ **4 Theme Variants** — Neon (100%), Vibrant (85%), Soft (70%), and Glow (ultra-dark) modes
+- 💻 **Language Optimized** — Perfect for JS/TS, Python, Rust, Go, CSS, JSON, Markdown
+- 🎨 **Comprehensive Syntax** — Every token type beautifully highlighted
+- 📦 **Marketplace Ready** — One-click installation from VSCode Extensions
 
 ## 🎨 Available Themes
 
-### 🌟 SilkCircuit Neon
+### ⚡ SilkCircuit Neon
 
 Maximum intensity electric colors - the original SilkCircuit experience
 
@@ -28,7 +53,7 @@ Gentle on the eyes for all-day coding
 - Comfortable for extended use
 - Maintains the SilkCircuit aesthetic
 
-### ✨ SilkCircuit Glow
+### 🌌 SilkCircuit Glow
 
 Enhanced version with special brightness effects
 
@@ -45,16 +70,25 @@ Enhanced version with special brightness effects
 - `package.json` - VSCode extension manifest
 - `README.md` - This file
 
-## 🚀 Installation Options
+## ⚡ Installation
 
-### Option 1: VSCode Extension (Recommended)
+### 📦 From VSCode Marketplace (Recommended)
 
-If published to marketplace:
+1. Open VSCode Extensions panel (`Ctrl+Shift+X` or `Cmd+Shift+X`)
+2. Search for **"SilkCircuit Theme"**
+3. Click **Install** on the official extension by **hyperb1iss**
+4. Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+5. Type **"Preferences: Color Theme"**
+6. Select your preferred SilkCircuit variant
 
-1. Search "SilkCircuit Theme" in VSCode Extensions
-2. Install and select theme
+### ⚡ Quick Install via Command Line
 
-### Option 2: Manual Installation
+```bash
+# Once published to marketplace:
+code --install-extension hyperb1iss.silkcircuit-theme
+```
+
+### 🔧 Manual Installation
 
 1. Copy the entire `vscode/` folder to VSCode extensions directory:
    - **Windows**: `%USERPROFILE%\\.vscode\\extensions\\silkcircuit-theme\\`
@@ -72,7 +106,7 @@ Just want one theme? Copy the JSON file to:
 - **macOS**: `~/Library/Application Support/Code/User/themes/`
 - **Linux**: `~/.config/Code/User/themes/`
 
-## 🎯 True Glow Effects (Advanced)
+## ⚙️ True Glow Effects (Advanced)
 
 VSCode themes are static JSON - no real glow effects possible. For actual glowing text:
 
@@ -116,7 +150,24 @@ For full control, create a VSCode extension that:
 2. Injects custom CSS for glow effects
 3. Adds animation capabilities
 
-## 🌈 Color Palette
+## 💜 Color Palette
+
+<div align="center">
+
+| Color | Hex | Preview | Usage |
+|-------|-----|---------|-------|
+| Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) | Editor background |
+| Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) | Default text |
+| Purple | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) | Keywords, types |
+| Pink | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) | Strings, attributes |
+| Cyan | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) | Functions, methods |
+| Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) | Success, valid |
+| Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) | Variables, warnings |
+| Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) | Numbers, constants |
+
+</div>
+
+### 🎛️ Variant Intensity
 
 | Element | Neon | Vibrant | Soft | Glow |
 |---------|------|---------|------|------|
@@ -133,12 +184,74 @@ For full control, create a VSCode extension that:
 - **Languages**: Optimized for JS/TS, Python, Rust, Go, CSS, JSON, Markdown
 - **WCAG**: AA compliant contrast ratios
 
-## 🔗 Related Projects
+## 🌃 Complete Environment Setup
 
-- **Neovim**: [silkcircuit-nvim](https://github.com/hyperb1iss/silkcircuit-nvim)
-- **Terminal**: Included in main repo extras
-- **Git**: Electric git configuration
+SilkCircuit extends beyond VSCode with matching themes for your entire development environment:
+
+### 💻 Available Integrations
+
+- **🎨 Neovim** - [silkcircuit-nvim](https://github.com/hyperb1iss/silkcircuit-nvim) - Complete Neovim theme with 40+ plugin integrations
+- **⚡ Git Configuration** - Electric colors with conventional commit highlighting
+- **🖥️ Terminal Themes** - Alacritty, Kitty, Warp, Windows Terminal, iTerm2
+- **🌌 AstroNvim Integration** - Complete setup with enhanced components
+- **📊 System Tools** - Macchina theme for system info display
+
+```bash
+# Get the complete SilkCircuit experience
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
+cd silkcircuit-nvim/extras
+
+# See ../README.md for detailed setup instructions
+```
+
+## 🔧 Troubleshooting
+
+**🤔 Theme not applying?**
+
+- 🔄 Reload VSCode window (`Ctrl+Shift+P` → "Developer: Reload Window")
+- 🎨 Check color theme setting in preferences
+- 💻 Ensure your monitor supports true colors
+
+**🎭 Colors look different?**
+
+- 🖥️ Verify monitor color profile settings
+- 💡 Check display brightness and contrast
+- 📺 Test on different display if available
+
+**💭 Need help?**
+
+- 📬 Check [Issues](../../issues)
+- 💜 Include VSCode version and OS details
+- 📸 Screenshots help with visual issues
+
+## 💖 Contributing
+
+Contributions welcome! Found a bug or want to suggest improvements?
+
+1. 🔀 Fork the [main repository](../../)
+2. 🌿 Create a feature branch
+3. ⚡ Make your changes
+4. 📬 Submit a pull request
+
+For VSCode theme issues, please include:
+
+- VSCode version
+- Operating system
+- Theme variant being used
+- Screenshots of the issue
+
+## 📜 License
+
+MIT License - see [LICENSE](../../LICENSE) for details.
 
 ---
 
-*Pure electric energy for your code editor*
+<div align="center">
+
+Created by [Stefanie Jane 🌠](https://github.com/hyperb1iss)
+
+If you love SilkCircuit, [buy me a Monster Ultra Violet ⚡](https://ko-fi.com/hyperb1iss)
+
+**💜 Star the repo if SilkCircuit electrifies your code!**
+
+</div>
