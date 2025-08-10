@@ -61,6 +61,35 @@ Enhanced version with special brightness effects
 - Enhanced function and string highlighting
 - Maximum visual impact (simulated glow via brightness)
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./assets/silkcircuit-vscode-neon.png" alt="SilkCircuit Neon in VSCode" width="100%" />
+      <br/>
+      <sub><b>Neon</b> — maximum intensity</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="./assets/silkcircuit-vscode-vibrant.png" alt="SilkCircuit Vibrant in VSCode" width="100%" />
+      <br/>
+      <sub><b>Vibrant</b> — 85% intensity</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="./assets/silkcircuit-vscode-soft.png" alt="SilkCircuit Soft in VSCode" width="100%" />
+      <br/>
+      <sub><b>Soft</b> — gentle 70%</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="./assets/silkcircuit-vscode-glow.png" alt="SilkCircuit Glow in VSCode" width="100%" />
+      <br/>
+      <sub><b>Glow</b> — ultra‑dark with enhanced brightness</sub>
+    </td>
+  </tr>
+</table>
+
 ## 📁 Files
 
 - `silkcircuit-neon.json` - Main theme file
@@ -186,22 +215,43 @@ For full control, create a VSCode extension that:
 
 ## 🌃 Complete Environment Setup
 
-SilkCircuit extends beyond VSCode with matching themes for your entire development environment:
+SilkCircuit is a full ecosystem—editor, terminal, system tools, and even your browser—designed to feel cohesive everywhere.
 
-### 💻 Available Integrations
+### 💻 Ecosystem at a glance
 
-- **🎨 Neovim** - [silkcircuit-nvim](https://github.com/hyperb1iss/silkcircuit-nvim) - Complete Neovim theme with 40+ plugin integrations
-- **⚡ Git Configuration** - Electric colors with conventional commit highlighting
-- **🖥️ Terminal Themes** - Alacritty, Kitty, Warp, Windows Terminal, iTerm2
-- **🌌 AstroNvim Integration** - Complete setup with enhanced components
-- **📊 System Tools** - Macchina theme for system info display
+- **Editor themes**
+  - **Neovim**: Full theme with 40+ plugin integrations · repo: <https://github.com/hyperb1iss/silkcircuit-nvim>
+    - Integrations live in `lua/silkcircuit/integrations/`
+  - **Lualine**: `lua/lualine/themes/silkcircuit.lua` + sample config `extras/lualine-config.lua`
+- **Terminals**
+  - **Alacritty**: `extras/alacritty.yml`
+  - **Kitty**: `extras/kitty.conf`
+  - **Warp**: `extras/warp.yaml`
+  - **Windows Terminal**: `extras/windows-terminal.json`
+- **CLI & Git**
+  - **fzf** theme: `extras/fzf.sh`
+  - **gitconfig** with electric accents: `extras/gitconfig`
+- **System tools**
+  - **btop** themes: `extras/btop/silkcircuit_{glow,neon,soft,vibrant}.theme`
+  - **macchina**: `extras/macchina/silkcircuit.toml`
+- **Browsers & Apps**
+  - **Chrome DevTools + Chrome pages**: `extras/chrome-theme/` (see `extras/chrome-theme/README.md`)
+  - **Slack**: `extras/slack-theme.txt`
+- **Astronvim**
+  - Turn‑key setup in `extras/astronvim/` with `community.lua` and tailored plugins
+- **Avante.nvim**
+  - Prompt/theme config: `extras/avante-config.lua`
+
+All cross‑platform extras live in `extras/`. See `extras/README.md` for install notes and screenshots.
+
+### 🚀 Quick start
 
 ```bash
 # Get the complete SilkCircuit experience
 git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
 cd silkcircuit-nvim/extras
 
-# See ../README.md for detailed setup instructions
+# See ./README.md in this directory for detailed setup instructions per integration
 ```
 
 ## 🔧 Troubleshooting
