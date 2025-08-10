@@ -6,6 +6,7 @@
   "description": "Electric dreams for VS Code - Neon purples, blazing pinks, and glowing cyan accents",
   "version": "1.0.0",
   "publisher": "hyperb1iss",
+  "icon": "icon.png",
   "galleryBanner": {
     "color": "#1e1a2e",
     "theme": "dark"
