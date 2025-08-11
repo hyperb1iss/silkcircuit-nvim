@@ -66,24 +66,24 @@ Enhanced version with special brightness effects
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="./assets/silkcircuit-vscode-neon.png" alt="SilkCircuit Neon in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-neon.png" alt="SilkCircuit Neon in VSCode" width="100%" />
       <br/>
       <sub><b>Neon</b> — maximum intensity</sub>
     </td>
     <td align="center" width="50%">
-      <img src="./assets/silkcircuit-vscode-vibrant.png" alt="SilkCircuit Vibrant in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-vibrant.png" alt="SilkCircuit Vibrant in VSCode" width="100%" />
       <br/>
       <sub><b>Vibrant</b> — 85% intensity</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="./assets/silkcircuit-vscode-soft.png" alt="SilkCircuit Soft in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-soft.png" alt="SilkCircuit Soft in VSCode" width="100%" />
       <br/>
       <sub><b>Soft</b> — gentle 70%</sub>
     </td>
     <td align="center" width="50%">
-      <img src="./assets/silkcircuit-vscode-glow.png" alt="SilkCircuit Glow in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-glow.png" alt="SilkCircuit Glow in VSCode" width="100%" />
       <br/>
       <sub><b>Glow</b> — ultra‑dark with enhanced brightness</sub>
     </td>

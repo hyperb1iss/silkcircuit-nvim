@@ -1,4 +1,4 @@
-.PHONY: help setup test lint format clean install-hooks compile vscode
+.PHONY: help setup test lint format clean install-hooks compile vscode vscode-package vscode-publish-vsce vscode-publish-ovsx vscode-publish
 
 # Colors matching SilkCircuit theme
 PURPLE := \033[38;2;199;146;234m
@@ -32,6 +32,8 @@ help:
 	@echo "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks"
 	@echo "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance"
 	@echo "  $(PURPLE)$(STAR) vscode$(RESET)         $(GRAY)─$(RESET) Build VSCode theme package"
+	@echo "  $(PURPLE)$(STAR) vscode-package$(RESET)  $(GRAY)─$(RESET) Package VSCode extension (VSIX)"
+	@echo "  $(PURPLE)$(STAR) vscode-publish$(RESET)  $(GRAY)─$(RESET) Publish to VSCode + Open VSX (requires tokens)"
 	@echo ""
 
 # Install development dependencies
@@ -163,6 +165,36 @@ vscode:
 	@echo ""
 	@echo "$(CYAN)$(STAR) Install in VSCode/Cursor:$(RESET)"
 	@echo "  $(GRAY)Extensions → ... → Install from VSIX$(RESET)"
+	@echo ""
+
+# Explicit packaging target
+vscode-package:
+	@echo ""
+	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Packaging VSCode Extension (VSIX)$(RESET)"
+	@echo ""
+	@cd extras/vscode && npx @vscode/vsce package --no-dependencies | cat
+	@echo "  $(GREEN)$(CHECK)$(RESET) VSIX created in extras/vscode/"
+
+# Publish to VS Code Marketplace (requires VSCE_PAT)
+vscode-publish-vsce:
+	@echo ""
+	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to VS Code Marketplace$(RESET)"
+	@echo ""
+	@cd extras/vscode && npx @vscode/vsce publish --no-dependencies | cat
+	@echo "  $(GREEN)$(CHECK)$(RESET) Published to VS Code Marketplace"
+
+# Publish to Open VSX (requires OVSX_PAT)
+vscode-publish-ovsx:
+	@echo ""
+	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to Open VSX$(RESET)"
+	@echo ""
+	@cd extras/vscode && npx ovsx publish | cat
+	@echo "  $(GREEN)$(CHECK)$(RESET) Published to Open VSX"
+
+# Convenience aggregator target
+vscode-publish: vscode-publish-vsce vscode-publish-ovsx
+	@echo ""
+	@echo "$(GREEN)$(STAR) VSCode extension published to both marketplaces$(RESET)"
 	@echo ""
 
 # CI target

@@ -1,0 +1,23 @@
+# Only ship what's needed for the theme
+**/.git*
+**/.DS_Store
+**/.vscode/**
+**/node_modules/**
+**/tmp/**
+**/scripts/**
+**/tests/**
+**/*.psd
+**/*.ai
+**/*.zip
+**/*.tar
+**/*.tar.gz
+**/*.tgz
+**/*.sh
+**/*.py
+**/*.toml
+**/*.lock
+**/*.md
+!README.md
+!package.json
+!icon.png
+!silkcircuit-*.json
