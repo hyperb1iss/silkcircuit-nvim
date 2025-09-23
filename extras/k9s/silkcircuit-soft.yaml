@@ -1,0 +1,87 @@
+# SilkCircuit Soft K9s Theme
+# Softer, more comfortable variant for extended use
+# Place this file at $XDG_CONFIG_HOME/k9s/skins/silkcircuit-soft.yaml
+
+k9s:
+  # General K9s styles
+  body:
+    fgColor: "#f8f8f2"
+    bgColor: "#1a1626"
+    logoColor: "#99ffee"
+
+  # ClusterInfoView styles
+  info:
+    fgColor: "#99ffee"
+    sectionColor: "#e892ff"
+
+  # Frame styles
+  frame:
+    # Borders styles
+    border:
+      fgColor: "#99ffee"
+      focusColor: "#ff99ff"
+
+    # MenuView attributes and styles
+    menu:
+      fgColor: "#f8f8f2"
+      keyColor: "#ff99ff"
+      # Used for favorite namespaces
+      numKeyColor: "#ff99dd"
+
+    # CrumbView attributes for history navigation
+    crumbs:
+      fgColor: "#1a1626"
+      bgColor: "#e892ff"
+      activeColor: "#99ffee"
+
+    # Resource status and update styles
+    status:
+      newColor: "#7fdbca"
+      modifyColor: "#ffe699"
+      addColor: "#7fdbca"
+      errorColor: "#ff6677"
+      highlightcolor: "#ff99ff"
+      killColor: "#6272a4"
+      completedColor: "#637777"
+
+    # Border title styles
+    title:
+      fgColor: "#f8f8f2"
+      bgColor: "#1a1626"
+      highlightColor: "#99ffee"
+      counterColor: "#ff99dd"
+      filterColor: "#ffe699"
+
+  # Specific views styles
+  views:
+    # TableView attributes
+    table:
+      fgColor: "#f8f8f2"
+      bgColor: "#1a1626"
+      cursorColor: "#3e3456"
+      # Header row styles
+      header:
+        fgColor: "#99ffee"
+        bgColor: "#3e3456"
+        sorterColor: "#ffe699"
+
+    # YAML info styles
+    yaml:
+      keyColor: "#e892ff"
+      colonColor: "#637777"
+      valueColor: "#99ffee"
+
+    # Logs styles
+    logs:
+      fgColor: "#f8f8f2"
+      bgColor: "#141220"
+
+    # Charts styles
+    charts:
+      bgColor: default
+      defaultDialColors:
+        - "#ff99ff"
+        - "#99ffee"
+      defaultChartColors:
+        - "#ff99ff"
+        - "#99ffee"

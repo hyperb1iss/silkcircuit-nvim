@@ -1,0 +1,87 @@
+# SilkCircuit Dawn K9s Theme
+# Daylight-optimized light background with electric accents
+# Place this file at $XDG_CONFIG_HOME/k9s/skins/silkcircuit-dawn.yaml
+
+k9s:
+  # General K9s styles
+  body:
+    fgColor: "#2b2540"
+    bgColor: "#faf8ff"
+    logoColor: "#007f8e"
+
+  # ClusterInfoView styles
+  info:
+    fgColor: "#007f8e"
+    sectionColor: "#7e2bd5"
+
+  # Frame styles
+  frame:
+    # Borders styles
+    border:
+      fgColor: "#007f8e"
+      focusColor: "#b40077"
+
+    # MenuView attributes and styles
+    menu:
+      fgColor: "#2b2540"
+      keyColor: "#b40077"
+      # Used for favorite namespaces
+      numKeyColor: "#c04a8f"
+
+    # CrumbView attributes for history navigation
+    crumbs:
+      fgColor: "#faf8ff"
+      bgColor: "#7e2bd5"
+      activeColor: "#009fae"
+
+    # Resource status and update styles
+    status:
+      newColor: "#7fdbca"
+      modifyColor: "#a88600"
+      addColor: "#7fdbca"
+      errorColor: "#c1272d"
+      highlightcolor: "#b40077"
+      killColor: "#8e84a8"
+      completedColor: "#8e84a8"
+
+    # Border title styles
+    title:
+      fgColor: "#007f8e"
+      bgColor: "#faf8ff"
+      highlightColor: "#b40077"
+      counterColor: "#c04a8f"
+      filterColor: "#a88600"
+
+  # Specific views styles
+  views:
+    # TableView attributes
+    table:
+      fgColor: "#2b2540"
+      bgColor: "#faf8ff"
+      cursorColor: "#efeaff"
+      # Header row styles
+      header:
+        fgColor: "#b40077"
+        bgColor: "#efeaff"
+        sorterColor: "#a88600"
+
+    # YAML info styles
+    yaml:
+      keyColor: "#7e2bd5"
+      colonColor: "#8e84a8"
+      valueColor: "#007f8e"
+
+    # Logs styles
+    logs:
+      fgColor: "#2b2540"
+      bgColor: "#f1ecff"
+
+    # Charts styles
+    charts:
+      bgColor: default
+      defaultDialColors:
+        - "#b40077"
+        - "#007f8e"
+      defaultChartColors:
+        - "#b40077"
+        - "#007f8e"
