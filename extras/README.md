@@ -44,24 +44,30 @@ cat extras/gitconfig >> ~/.gitconfig
 
 ### 🖥️ Terminal Themes
 
-Native theme files for popular terminal emulators:
+Native theme files for popular terminal emulators (dark + dawn light variants):
 
-- **Alacritty** (`alacritty.yml`) - Fast GPU-accelerated terminal
-- **Kitty** (`kitty.conf`) - Feature-rich terminal emulator
-- **Warp** (`warp.yaml`) - Modern terminal with AI features
+- **Alacritty** (`alacritty.yml`, `alacritty-dawn.yml`) - Fast GPU-accelerated terminal
+- **Kitty** (`kitty.conf`, `kitty-dawn.conf`) - Feature-rich terminal emulator
+- **Warp** (`warp.yaml`, `warp-dawn.yaml`) - Modern terminal with AI features
 - **Windows Terminal** (`windows-terminal.json`) - Windows integrated terminal
 
 **Setup:**
 
 ```bash
-# Alacritty
+# Alacritty (dark)
 cp extras/alacritty.yml ~/.config/alacritty/themes/silkcircuit.yml
+# Alacritty (dawn/light)
+cp extras/alacritty-dawn.yml ~/.config/alacritty/themes/silkcircuit-dawn.yml
 
-# Kitty
+# Kitty (dark)
 cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
+# Kitty (dawn/light)
+cp extras/kitty-dawn.conf ~/.config/kitty/themes/silkcircuit-dawn.conf
 
-# Warp
+# Warp (dark)
 cp extras/warp.yaml ~/.warp/themes/silkcircuit.yaml
+# Warp (dawn/light)
+cp extras/warp-dawn.yaml ~/.warp/themes/silkcircuit-dawn.yaml
 
 # Windows Terminal - import JSON manually in settings
 ```
@@ -113,7 +119,7 @@ System monitoring with SilkCircuit style:
 - **Electric purple** CPU graphs
 - **Neon cyan** memory meters
 - **Hot pink** network activity
-- **All 4 variants** for different vibes
+- **All 5 variants** (Neon, Vibrant, Soft, Glow, Dawn) for different vibes
 
 **Setup:**
 

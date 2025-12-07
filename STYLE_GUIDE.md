@@ -73,7 +73,7 @@ SilkCircuit embodies the intersection of high-energy digital aesthetics and soph
 
 ### Variant-Specific Color Systems
 
-SilkCircuit uses four carefully crafted variants, each with precisely tuned colors:
+SilkCircuit uses five carefully crafted variants, each with precisely tuned colors:
 
 #### ⚡ Neon (100% intensity)
 
@@ -131,21 +131,41 @@ SilkCircuit uses four carefully crafted variants, each with precisely tuned colo
 - **Bright Pink** (`#ff66ff`) - High-contrast numbers
 - **Pure Yellow** (`#ffff00`) - Maximum visibility types
 
+#### 🌅 Dawn (Light theme)
+
+**Background System:**
+
+- Base: `#faf8ff` | Dark: `#f1ecff` | Highlight: `#e8e0ff`
+
+**Primary Colors:**
+
+- **Deep Purple** (`#7e2bd5`) - Keywords with strong contrast
+- **Magenta** (`#b40077`) - Tags, booleans, emphasis
+- **Teal** (`#007f8e`) - Functions, methods, interaction
+- **Coral** (`#c74a8c`) - Numbers, constants
+- **Golden Yellow** (`#a88600`) - Classes, types, warnings
+
+**Text System:**
+
+- Foreground: `#2b2540` (dark purple-gray)
+- Muted: `#8e84a8` (gray-purple for comments)
+- Emphasized: `#1a1318` (near-black)
+
 ### Universal Supporting Colors
 
-**Success Green** (`#50fa7b` / Soft: `#66ff99` / Glow: `#00ff00`)
+**Success Green** (`#50fa7b` / Soft: `#66ff99` / Glow: `#00ff00` / Dawn: `#2d8659`)
 
 - Success states, git additions, confirmations
 - Semantic: Growth, positive actions, validation
 - Applications: Success messages, add buttons, valid states
 
-**Warning Yellow** (`#f1fa8c` / Soft: `#ffe699` / Glow: `#ffff00`)
+**Warning Yellow** (`#f1fa8c` / Soft: `#ffe699` / Glow: `#ffff00` / Dawn: `#a88600`)
 
 - Caution, attention, modification
 - Semantic: Alert, change, pending
 - Applications: Warning messages, modified indicators
 
-**Error Red** (`#ff6363` / Soft: `#ff6677` / Glow: `#ff0066`)
+**Error Red** (`#ff6363` / Soft: `#ff6677` / Glow: `#ff0066` / Dawn: `#c1272d`)
 
 - Errors, deletions, danger
 - Semantic: Stop, danger, removal
@@ -530,6 +550,7 @@ All SilkCircuit color combinations meet or exceed WCAG AA standards:
 - **Vibrant**: Enhanced contrast for bright environments
 - **Soft**: Optimized for extended use, reduces eye strain
 - **Glow**: Maximum contrast for low-light conditions
+- **Dawn**: Light theme optimized for bright environments and daytime use
 
 ### Testing Tools
 
@@ -636,6 +657,22 @@ axe-cli --tags wcag2a,wcag2aa
   color: #00ffff; font-weight: bold; font-style: italic;
   text-shadow: 0 0 5px #00ffff40;
 }
+
+/* Dawn variant (light theme) */
+.silkcircuit-editor[data-variant="dawn"] {
+  background-color: #faf8ff;
+  color: #2b2540;
+}
+
+.silkcircuit-editor[data-variant="dawn"] .sc-keyword {
+  color: #7e2bd5; font-weight: bold;
+}
+.silkcircuit-editor[data-variant="dawn"] .sc-string {
+  color: #9c4a88; font-style: italic;
+}
+.silkcircuit-editor[data-variant="dawn"] .sc-function {
+  color: #007f8e; font-weight: bold; font-style: italic;
+}
 ```
 
 ### Web Dashboard with Variant Support
@@ -721,15 +758,23 @@ const variantColors = {
     background: '#0a0816',
     surface: '#1a0033',
     text: '#ffffff',
+  },
+  dawn: {
+    primary: '#7e2bd5',
+    secondary: '#9c4a88',
+    accent: '#007f8e',
+    background: '#faf8ff',
+    surface: '#f1ecff',
+    text: '#2b2540',
   }
 };
 
 export const createSilkCircuitTheme = (variant = 'neon') => ({
   colors: {
     ...variantColors[variant],
-    success: variant === 'glow' ? '#00ff00' : '#50fa7b',
-    warning: variant === 'glow' ? '#ffff00' : '#f1fa8c',
-    error: variant === 'glow' ? '#ff0066' : '#ff6363',
+    success: variant === 'glow' ? '#00ff00' : variant === 'dawn' ? '#2d8659' : '#50fa7b',
+    warning: variant === 'glow' ? '#ffff00' : variant === 'dawn' ? '#a88600' : '#f1fa8c',
+    error: variant === 'glow' ? '#ff0066' : variant === 'dawn' ? '#c1272d' : '#ff6363',
   },
   spacing: {
     xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48
@@ -791,6 +836,23 @@ export const createSilkCircuitTheme = (variant = 'neon') => ({
   "magenta": "#ff00ff",
   "cyan": "#00ffff",
   "white": "#ffffff"
+}
+
+// Dawn variant terminal theme (light)
+{
+  "name": "SilkCircuit Dawn",
+  "background": "#faf8ff",
+  "foreground": "#2b2540",
+  "cursor": "#7e2bd5",
+  "selection": "#d4c8f0",
+  "black": "#2b2540",
+  "red": "#c1272d",
+  "green": "#2d8659",
+  "yellow": "#a88600",
+  "blue": "#2563eb",
+  "magenta": "#7e2bd5",
+  "cyan": "#007f8e",
+  "white": "#faf8ff"
 }
 ```
 
@@ -871,7 +933,7 @@ export const createSilkCircuitTheme = (variant = 'neon') => ({
 - Maintain WCAG AA contrast ratios in all variants
 - Apply glow effects sparingly for maximum impact
 - Follow the 4px spacing scale for all layouts
-- Test across all four variants before shipping
+- Test across all five variants before shipping
 - Use CSS custom properties for easy variant switching
 
 ### DON'T ✗

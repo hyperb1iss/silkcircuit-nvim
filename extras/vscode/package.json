@@ -29,6 +29,7 @@
   "keywords": [
     "theme",
     "dark theme",
+    "light theme",
     "neon",
     "purple",
     "pink",
@@ -58,6 +59,11 @@
         "label": "SilkCircuit Glow",
         "uiTheme": "vs-dark",
         "path": "./silkcircuit-glow.json"
+      },
+      {
+        "label": "SilkCircuit Dawn",
+        "uiTheme": "vs",
+        "path": "./silkcircuit-dawn.json"
       }
     ]
   },

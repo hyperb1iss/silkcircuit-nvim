@@ -11,7 +11,7 @@
 [![Load Time](https://img.shields.io/badge/Load%20Time-<5ms-f1fa8c?style=for-the-badge&logo=lightning&logoColor=black)](https://github.com/hyperb1iss/silkcircuit-nvim)
 
 [![Plugins](https://img.shields.io/badge/40+%20Plugins-Supported-bd93f9?style=for-the-badge&logo=puzzle-piece&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-plugin-support)
-[![Variants](https://img.shields.io/badge/4%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
+[![Variants](https://img.shields.io/badge/5%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow%20|%20Dawn-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim#-theme-variants)
 
 🌌 _Pure electric energy with vibrant purples, blazing pinks, and neon accents_ 🎆
 
@@ -32,7 +32,7 @@ SilkCircuit pumps maximum visual voltage through your Neovim. Electric purples �
 - 🎪 **Electric Color System** — Vibrant palette with semantic color mappings
 - 🏎️ **<5ms Load Time** — Bytecode compilation with intelligent caching
 - 👁️ **WCAG AA Compliant** — Validated contrast ratios for extended coding sessions
-- 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), Soft (70%), and Glow (ultra-dark) modes
+- 🎛️ **Theme Variants** — Neon (100%), Vibrant (85%), Soft (70%), Glow (ultra-dark), and Dawn (light theme) modes
 - 🔮 **40+ Plugin Integrations** — Auto-detected support for your entire toolchain
 - 💾 **Persistent Preferences** — Settings survive across sessions
 
@@ -100,7 +100,7 @@ require("silkcircuit").setup({
   transparent = false,     -- Enable transparent background
   terminal_colors = true,  -- Configure terminal colors
   dim_inactive = false,    -- Dim inactive windows
-  variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft" | "glow"
+  variant = "neon",       -- Theme variant: "neon" | "vibrant" | "soft" | "glow" | "dawn"
 
   styles = {
     comments = { italic = true },
@@ -129,14 +129,15 @@ Switch between intensity levels:
 ```lua
 -- Via setup
 require("silkcircuit").setup({
-  variant = "vibrant", -- "neon" | "vibrant" | "soft" | "glow"
+  variant = "vibrant", -- "neon" | "vibrant" | "soft" | "glow" | "dawn"
 })
 
 -- Or use commands
-:SilkCircuit neon     -- 100% intensity
-:SilkCircuit vibrant  -- 85% intensity
-:SilkCircuit soft     -- 70% intensity
+:SilkCircuit neon     -- 100% intensity, dark theme
+:SilkCircuit vibrant  -- 85% intensity, dark theme
+:SilkCircuit soft     -- 70% intensity, dark theme
 :SilkCircuit glow     -- Ultra-dark backgrounds with pure neon colors
+:SilkCircuit dawn     -- Light theme for daytime use
 ```
 
 ### 🌌 Transparent Background
@@ -238,7 +239,7 @@ cp -r extras/astronvim/* ~/.config/nvim/lua/
 
 ### 🚀 What's Included
 
-- **🎨 VSCode Themes** - All 4 variants (Neon, Vibrant, Soft, Glow) for VSCode/Cursor
+- **🎨 VSCode Themes** - All 5 variants (Neon, Vibrant, Soft, Glow, Dawn) for VSCode/Cursor
 - **⚡ Git Configuration** - Electric colors with conventional commit highlighting
 - **🖥️ Terminal Themes** - Alacritty, Kitty, Warp, Windows Terminal, iTerm2
 - **🚀 AstroNvim Integration** - Complete setup with enhanced components
@@ -288,13 +289,13 @@ See [extras/README.md](extras/README.md) for detailed setup instructions.
 
 ## 🎮 Commands
 
-| Command                    | Description                                   |
-| -------------------------- | --------------------------------------------- |
-| `:SilkCircuit {variant}`   | Switch theme variant (neon/vibrant/soft/glow) |
-| `:SilkCircuitContrast`     | Check WCAG contrast compliance                |
-| `:SilkCircuitCompile`      | Compile theme for performance                 |
-| `:SilkCircuitIntegrations` | Show detected plugin integrations             |
-| `:checkhealth silkcircuit` | Run health check diagnostics                  |
+| Command                    | Description                                        |
+| -------------------------- | -------------------------------------------------- |
+| `:SilkCircuit {variant}`   | Switch theme variant (neon/vibrant/soft/glow/dawn) |
+| `:SilkCircuitContrast`     | Check WCAG contrast compliance                     |
+| `:SilkCircuitCompile`      | Compile theme for performance                      |
+| `:SilkCircuitIntegrations` | Show detected plugin integrations                  |
+| `:checkhealth silkcircuit` | Run health check diagnostics                       |
 
 ## 💖 Contributing
 

@@ -269,6 +269,112 @@ local function create_variant(intensity, variant_name)
   return colors
 end
 
+-- Create dawn variant - light theme for daytime use
+local function create_dawn_variant()
+  -- Dawn-specific light palette (inspired by K9s dawn theme)
+  local colors = {
+    -- Light backgrounds with subtle purple tint
+    bg = "#faf8ff", -- Main editor background (off-white)
+    bg_dark = "#f1ecff", -- Sidebar/panel background (slightly purple)
+    bg_highlight = "#e8e0ff", -- Popup/highlight background
+    bg_visual = "#d4c8f0", -- Selection background
+
+    -- Dark foregrounds for contrast on light
+    fg = "#2b2540", -- Main text (dark purple-gray)
+    fg_dark = "#5a4d6e", -- Muted text
+    fg_light = "#1a1318", -- Emphasized text (near black)
+    fg_gutter = "#8e84a8", -- Line numbers
+
+    -- Core grays (inverted for light theme)
+    gray = "#8e84a8", -- Mid gray
+    gray_light = "#c4bbd6", -- Light gray
+    gray_dark = "#6b5f80", -- Dark gray
+
+    -- Dawn neon colors - deeper/more saturated for light backgrounds
+    purple = "#7e2bd5", -- Keywords (deeper purple for contrast)
+    purple_dark = "#9654e0", -- Lighter purple variant
+    purple_muted = "#8e84a8", -- Comments
+
+    cyan = "#007f8e", -- Functions (teal)
+    cyan_bright = "#009fae", -- Brighter teal
+    cyan_light = "#00b5c5", -- Light teal
+
+    green = "#2d8659", -- Git added (forest green)
+    green_light = "#7fdbca", -- Mint green accent
+    green_bright = "#38a169", -- Bright green
+
+    blue = "#2563eb", -- Blue accent
+    blue_bright = "#3b82f6", -- Brighter blue
+    blue_light = "#60a5fa", -- Light blue
+    blue_gray = "#8e84a8", -- Blue-gray
+
+    pink = "#b40077", -- Tags/emphasis (deep magenta)
+    pink_bright = "#c04a8f", -- Brighter pink
+    pink_soft = "#9c4a88", -- Strings (softer magenta)
+
+    coral = "#c74a8c", -- Numbers/constants
+    red = "#c1272d", -- Errors
+    red_dark = "#9b1c21", -- Darker red
+    red_error = "#c1272d", -- Error color
+    orange = "#c05621", -- Orange accent
+    yellow = "#a88600", -- Classes/types (golden)
+    yellow_bright = "#d69e00", -- Brighter yellow
+    yellow_light = "#fbbf24", -- Light yellow
+
+    -- Selection and highlights for light theme
+    selection = "#d4c8f0",
+    selection_highlight = "#d4c8f088",
+    selection_inactive = "#e8e0ff",
+    word_highlight = "#d4c8f088",
+    word_highlight_strong = "#7e2bd544",
+
+    -- Diff colors for light backgrounds
+    diff_add = "#dcfce7", -- Light green background
+    diff_change = "#dbeafe", -- Light blue background
+    diff_delete = "#fee2e2", -- Light red background
+    diff_text = "#d4c8f0",
+
+    -- Glow effects (subtle on light theme)
+    glow_pink = "#b40077",
+    glow_purple = "#7e2bd5",
+    glow_cyan = "#007f8e",
+
+    -- Terminal colors (light-theme appropriate)
+    terminal_black = "#2b2540",
+    terminal_red = "#c1272d",
+    terminal_green = "#2d8659",
+    terminal_yellow = "#a88600",
+    terminal_blue = "#2563eb",
+    terminal_magenta = "#b40077",
+    terminal_cyan = "#007f8e",
+    terminal_white = "#faf8ff",
+    terminal_bright_black = "#5a4d6e",
+    terminal_bright_red = "#dc2626",
+    terminal_bright_green = "#38a169",
+    terminal_bright_yellow = "#d69e00",
+    terminal_bright_blue = "#3b82f6",
+    terminal_bright_magenta = "#c04a8f",
+    terminal_bright_cyan = "#009fae",
+    terminal_bright_white = "#ffffff",
+
+    -- Diagnostic colors (visible on light backgrounds)
+    error = "#c1272d",
+    warning = "#a88600",
+    info = "#2563eb",
+    hint = "#007f8e",
+
+    -- Git colors
+    git_add = "#2d8659",
+    git_change = "#2563eb",
+    git_delete = "#c1272d",
+
+    -- Special
+    none = "NONE",
+  }
+
+  return colors
+end
+
 -- Create glow variant with ultra-dark backgrounds and pure neon colors
 local function create_glow_variant()
   -- Exact colors from VSCode glow theme
@@ -397,6 +503,11 @@ M.variants = {
     intensity = 1.0,
     description = "Ultra-dark backgrounds with pure neon colors - maximum contrast",
   },
+  dawn = {
+    name = "dawn",
+    intensity = 1.0,
+    description = "Light theme for daytime - electric accents on soft backgrounds",
+  },
 }
 
 -- Get colors for a specific variant
@@ -410,9 +521,13 @@ function M.get_colors(variant_name)
     variant_name = "neon"
   end
 
-  -- Use special glow variant function
+  -- Use special variant functions for glow and dawn
   if variant_name == "glow" then
     return create_glow_variant()
+  end
+
+  if variant_name == "dawn" then
+    return create_dawn_variant()
   end
 
   return create_variant(variant.intensity, variant_name)

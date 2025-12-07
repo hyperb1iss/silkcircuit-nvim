@@ -136,7 +136,7 @@ function M.check()
 
   -- Commands available
   start("Available Commands")
-  ok(":SilkCircuit [variant] - Switch theme variant (neon/vibrant/soft)")
+  ok(":SilkCircuit [variant] - Switch theme variant (neon/vibrant/soft/glow/dawn)")
   ok(":SilkCircuitGlow - Toggle glow mode")
   ok(":SilkCircuitContrast - Check WCAG contrast compliance")
   ok(":SilkCircuitCompile - Compile theme for faster loading")
