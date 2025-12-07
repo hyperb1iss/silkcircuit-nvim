@@ -135,14 +135,14 @@ Additional tool configurations for the complete experience:
 
 All configurations use these colors to maintain consistency:
 
-| ANSI | Hex | Usage |
-|------|-----|-------|
-| `201` | `#ff00ff` | Neon magenta - Primary accents |
+| ANSI  | Hex       | Usage                               |
+| ----- | --------- | ----------------------------------- |
+| `201` | `#ff00ff` | Neon magenta - Primary accents      |
 | `213` | `#ff79c6` | Bright magenta - Secondary elements |
-| `51` | `#00ffff` | Electric cyan - Metadata |
-| `220` | `#ffdd00` | Bright yellow - Branch info |
-| `149` | `#50fa7b` | Green - Success/additions |
-| `197` | `#ff5555` | Red - Errors/deletions |
+| `51`  | `#00ffff` | Electric cyan - Metadata            |
+| `220` | `#ffdd00` | Bright yellow - Branch info         |
+| `149` | `#50fa7b` | Green - Success/additions           |
+| `197` | `#ff5555` | Red - Errors/deletions              |
 
 ## 🎯 Quick Setup
 
@@ -174,4 +174,4 @@ cp -r extras/astronvim/* ~/.config/nvim/lua/
 
 ---
 
-*Experience the full SilkCircuit aesthetic across your entire development workflow.*
+_Experience the full SilkCircuit aesthetic across your entire development workflow._

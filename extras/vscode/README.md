@@ -155,17 +155,24 @@ VSCode themes are static JSON - no real glow effects possible. For actual glowin
 ```css
 /* Functions with glow effect */
 .token.function {
-  text-shadow: 0 0 5px #80ffea, 0 0 10px #80ffea, 0 0 15px #80ffea;
+  text-shadow:
+    0 0 5px #80ffea,
+    0 0 10px #80ffea,
+    0 0 15px #80ffea;
 }
 
 /* Keywords with purple glow */
 .token.keyword {
-  text-shadow: 0 0 5px #e135ff, 0 0 10px #e135ff;
+  text-shadow:
+    0 0 5px #e135ff,
+    0 0 10px #e135ff;
 }
 
 /* Strings with pink glow */
 .token.string {
-  text-shadow: 0 0 5px #ff99ff, 0 0 10px #ff99ff;
+  text-shadow:
+    0 0 5px #ff99ff,
+    0 0 10px #ff99ff;
 }
 ```
 
@@ -183,27 +190,27 @@ For full control, create a VSCode extension that:
 
 <div align="center">
 
-| Color | Hex | Preview | Usage |
-|-------|-----|---------|-------|
-| Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) | Editor background |
-| Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) | Default text |
-| Purple | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) | Keywords, types |
-| Pink | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) | Strings, attributes |
-| Cyan | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) | Functions, methods |
-| Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) | Success, valid |
-| Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) | Variables, warnings |
-| Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) | Numbers, constants |
+| Color      | Hex       | Preview                                                  | Usage               |
+| ---------- | --------- | -------------------------------------------------------- | ------------------- |
+| Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) | Editor background   |
+| Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) | Default text        |
+| Purple     | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) | Keywords, types     |
+| Pink       | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) | Strings, attributes |
+| Cyan       | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) | Functions, methods  |
+| Green      | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) | Success, valid      |
+| Yellow     | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) | Variables, warnings |
+| Orange     | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) | Numbers, constants  |
 
 </div>
 
 ### 🎛️ Variant Intensity
 
-| Element | Neon | Vibrant | Soft | Glow |
-|---------|------|---------|------|------|
-| Keywords | `#e135ff` | `#bc4dd9` | `#a766b3` | `#ec69ff` |
-| Strings | `#ff99ff` | `#d9b3d9` | `#c199b3` | `#ffb3ff` |
+| Element   | Neon      | Vibrant   | Soft      | Glow      |
+| --------- | --------- | --------- | --------- | --------- |
+| Keywords  | `#e135ff` | `#bc4dd9` | `#a766b3` | `#ec69ff` |
+| Strings   | `#ff99ff` | `#d9b3d9` | `#c199b3` | `#ffb3ff` |
 | Functions | `#80ffea` | `#80d9c7` | `#80b3a1` | `#9dffed` |
-| Comments | `#9580ff` | `#9180d9` | `#8d80b3` | `#a999ff` |
+| Comments  | `#9580ff` | `#9180d9` | `#8d80b3` | `#a999ff` |
 
 ## 📝 Technical Notes
 

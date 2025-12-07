@@ -249,16 +249,16 @@ See [extras/README.md](extras/README.md) for detailed setup instructions.
 
 ## 💜 Color Palette
 
-| Color | Hex | Preview |
-|-------|-----|---------|
+| Color      | Hex       | Preview                                                  |
+| ---------- | --------- | -------------------------------------------------------- |
 | Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) |
 | Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) |
-| Purple | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) |
-| Pink | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) |
-| Cyan | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) |
-| Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) |
-| Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) |
-| Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) |
+| Purple     | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) |
+| Pink       | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) |
+| Cyan       | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) |
+| Green      | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) |
+| Yellow     | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) |
+| Orange     | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) |
 
 ## 🛠️ Troubleshooting
 
@@ -288,13 +288,13 @@ See [extras/README.md](extras/README.md) for detailed setup instructions.
 
 ## 🎮 Commands
 
-| Command | Description |
-|---------|-------------|
-| `:SilkCircuit {variant}` | Switch theme variant (neon/vibrant/soft/glow) |
-| `:SilkCircuitContrast` | Check WCAG contrast compliance |
-| `:SilkCircuitCompile` | Compile theme for performance |
-| `:SilkCircuitIntegrations` | Show detected plugin integrations |
-| `:checkhealth silkcircuit` | Run health check diagnostics |
+| Command                    | Description                                   |
+| -------------------------- | --------------------------------------------- |
+| `:SilkCircuit {variant}`   | Switch theme variant (neon/vibrant/soft/glow) |
+| `:SilkCircuitContrast`     | Check WCAG contrast compliance                |
+| `:SilkCircuitCompile`      | Compile theme for performance                 |
+| `:SilkCircuitIntegrations` | Show detected plugin integrations             |
+| `:checkhealth silkcircuit` | Run health check diagnostics                  |
 
 ## 💖 Contributing
 
