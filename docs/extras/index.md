@@ -1,0 +1,100 @@
+# Extras & Integrations
+
+Extend SilkCircuit across your entire development environment.
+
+## Overview
+
+SilkCircuit isn't just a Neovim theme—it's a complete visual identity system for your workflow. These extras bring consistent neon energy to terminals, VS Code, system monitors, and more.
+
+## Available Extras
+
+### Code Editors
+
+| Extra | Variants | Description |
+|-------|----------|-------------|
+| [VS Code](/extras/vscode) | 5 | Full VSCode theme with all variants |
+| [Neovim Plugins](/extras/plugins) | — | 40+ plugin integrations |
+
+### Terminals
+
+| Extra | Variants | Description |
+|-------|----------|-------------|
+| [Alacritty](/extras/terminals#alacritty) | 2 | GPU-accelerated terminal |
+| [Kitty](/extras/terminals#kitty) | 2 | Feature-rich terminal |
+| [Warp](/extras/terminals#warp) | 2 | Modern AI-powered terminal |
+| [Windows Terminal](/extras/terminals#windows-terminal) | 1 | Windows integrated terminal |
+
+### System Tools
+
+| Extra | Variants | Description |
+|-------|----------|-------------|
+| [btop](/extras/btop) | 5 | System monitor theme |
+| [K9s](/extras/k9s) | 5 | Kubernetes dashboard |
+| [Git](/extras/git) | — | Git config with SilkCircuit colors |
+| [FZF](/extras/fzf) | — | Fuzzy finder integration |
+
+### Applications
+
+| Extra | Variants | Description |
+|-------|----------|-------------|
+| [Chrome](/extras/chrome) | 1 | Browser theme + DevTools |
+| [Slack](/extras/slack) | 1 | Workspace theme |
+
+### Neovim Distributions
+
+| Extra | Description |
+|-------|-------------|
+| [AstroNvim](/extras/astronvim) | Complete AstroNvim configuration |
+
+## Quick Setup
+
+Get the full SilkCircuit experience:
+
+```bash
+# Clone the repository
+git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
+cd silkcircuit-nvim
+
+# Install git colors
+cat extras/gitconfig >> ~/.gitconfig
+
+# Copy terminal theme (choose your terminal)
+cp extras/kitty.conf ~/.config/kitty/themes/silkcircuit.conf
+# OR
+cp extras/alacritty.yml ~/.config/alacritty/themes/silkcircuit.yml
+
+# For AstroNvim users
+cp -r extras/astronvim/* ~/.config/nvim/lua/
+```
+
+## Color Consistency
+
+All extras use the same color palette for a cohesive experience:
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Electric Purple | `#e135ff` | Primary accents |
+| Neon Cyan | `#80ffea` | Metadata, links |
+| Hot Pink | `#ff79c6` | Secondary elements |
+| Bright Yellow | `#ffdd00` | Highlights |
+| Neon Green | `#50fa7b` | Success states |
+| Error Red | `#ff5555` | Errors, deletions |
+
+## Variant Support
+
+Most extras support multiple variants:
+
+| Variant | Available In |
+|---------|-------------|
+| Neon | VS Code, btop, K9s, Terminals |
+| Vibrant | VS Code, btop, K9s |
+| Soft | VS Code, btop, K9s |
+| Glow | VS Code, btop, K9s |
+| Dawn | VS Code, btop, K9s, Terminals |
+
+## Pro Tips
+
+1. **Enable true colors** in your terminal for best results
+2. **Use consistent variants** across tools for cohesive aesthetic
+3. **Check variant support** when switching themes
+4. **Test in your environment** — some terminals render colors differently

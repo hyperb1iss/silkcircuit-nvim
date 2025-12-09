@@ -1,0 +1,623 @@
+/**
+ * SilkCircuit Theme for VitePress
+ * Electric Dreams for Neovim Documentation
+ *
+ * A vibrant theme featuring neon purples, blazing pinks, and glowing cyan accents
+ */
+
+/* ==========================================================================
+   CSS Custom Properties - SilkCircuit Color System
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --silk-purple: #e135ff;
+  --silk-purple-dark: #9580ff;
+  --silk-purple-deep: #7e2bd5;
+  --silk-cyan: #80ffea;
+  --silk-cyan-bright: #5fffff;
+  --silk-pink: #ff79c6;
+  --silk-pink-soft: #ff99ff;
+  --silk-coral: #ff6ac1;
+  --silk-yellow: #f1fa8c;
+  --silk-green: #50fa7b;
+  --silk-red: #ff6363;
+  --silk-blue: #82AAFF;
+  --silk-muted: #6272a4;
+
+  /* Dawn (Light) Colors */
+  --silk-dawn-bg: #faf8ff;
+  --silk-dawn-fg: #2b2540;
+  --silk-dawn-purple: #7e2bd5;
+  --silk-dawn-cyan: #007f8e;
+  --silk-dawn-pink: #b40077;
+  --silk-dawn-yellow: #a88600;
+  --silk-dawn-green: #2d8659;
+
+  /* VitePress Brand Color Override */
+  --vp-c-brand-1: var(--silk-purple);
+  --vp-c-brand-2: var(--silk-pink);
+  --vp-c-brand-3: var(--silk-cyan);
+  --vp-c-brand-soft: rgba(225, 53, 255, 0.14);
+
+  /* Tip/Info Colors */
+  --vp-c-tip-1: var(--silk-cyan);
+  --vp-c-tip-2: var(--silk-cyan-bright);
+  --vp-c-tip-3: rgba(128, 255, 234, 0.16);
+  --vp-c-tip-soft: rgba(128, 255, 234, 0.1);
+
+  /* Warning Colors */
+  --vp-c-warning-1: var(--silk-yellow);
+  --vp-c-warning-2: #e6db74;
+  --vp-c-warning-3: rgba(241, 250, 140, 0.16);
+  --vp-c-warning-soft: rgba(241, 250, 140, 0.1);
+
+  /* Danger Colors */
+  --vp-c-danger-1: var(--silk-red);
+  --vp-c-danger-2: #ff5555;
+  --vp-c-danger-3: rgba(255, 99, 99, 0.16);
+  --vp-c-danger-soft: rgba(255, 99, 99, 0.1);
+
+  /* Code Colors */
+  --vp-code-color: var(--silk-pink-soft);
+  --vp-code-link-color: var(--silk-cyan);
+  --vp-code-link-hover-color: var(--silk-purple);
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --vp-c-bg: #0f0c16;
+  --vp-c-bg-alt: #12101a;
+  --vp-c-bg-elv: #1a162a;
+  --vp-c-bg-soft: #1a162a;
+
+  --vp-c-text-1: #f8f8f2;
+  --vp-c-text-2: #e9d5ff;
+  --vp-c-text-3: var(--silk-muted);
+
+  --vp-c-divider: rgba(225, 53, 255, 0.2);
+  --vp-c-divider-light: rgba(225, 53, 255, 0.1);
+
+  --vp-c-gutter: #1a162a;
+
+  --vp-code-block-bg: #0a0812;
+
+  /* Sidebar active state */
+  --vp-sidebar-bg-color: transparent;
+}
+
+/* Light Mode Overrides */
+:root:not(.dark) {
+  --vp-c-bg: var(--silk-dawn-bg);
+  --vp-c-bg-alt: #f1ecff;
+  --vp-c-bg-elv: #e8e0ff;
+  --vp-c-bg-soft: #e8e0ff;
+
+  --vp-c-text-1: var(--silk-dawn-fg);
+  --vp-c-text-2: #5a4d6e;
+  --vp-c-text-3: #8e84a8;
+
+  --vp-c-brand-1: var(--silk-dawn-purple);
+  --vp-c-brand-2: var(--silk-dawn-pink);
+  --vp-c-brand-3: var(--silk-dawn-cyan);
+
+  --vp-code-block-bg: #f1ecff;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.VPNav {
+  background: linear-gradient(180deg, var(--vp-c-bg) 0%, transparent 100%);
+  backdrop-filter: blur(12px);
+}
+
+.dark .VPNav {
+  background: linear-gradient(180deg, rgba(15, 12, 22, 0.95) 0%, rgba(15, 12, 22, 0.8) 100%);
+}
+
+.VPNavBar .title {
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--silk-purple) 0%, var(--silk-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--silk-cyan);
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+.VPSidebar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--silk-purple) transparent;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-weight: 600;
+  color: var(--silk-purple);
+}
+
+.dark .VPSidebarItem.level-0 > .item > .text {
+  color: var(--silk-cyan);
+}
+
+.VPSidebarItem.is-active > .item > .text {
+  color: var(--silk-purple) !important;
+  font-weight: 600;
+}
+
+.dark .VPSidebarItem.is-active > .item > .text {
+  color: var(--silk-cyan) !important;
+}
+
+.VPSidebarItem.is-active > .item::before {
+  content: '▸ ';
+  color: var(--silk-purple);
+}
+
+.dark .VPSidebarItem.is-active > .item::before {
+  color: var(--silk-cyan);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.VPHero .name {
+  background: linear-gradient(135deg, var(--silk-purple) 0%, var(--silk-pink) 50%, var(--silk-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(225, 53, 255, 0.5));
+}
+
+.VPHero .text {
+  color: var(--silk-cyan);
+}
+
+.VPHero .tagline {
+  color: var(--vp-c-text-2);
+}
+
+/* Blinking cursor effect */
+.VPHero .tagline::after {
+  content: '▋';
+  animation: blink 1s step-end infinite;
+  color: var(--silk-purple);
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hero image glow */
+.VPHero .image-container {
+  position: relative;
+}
+
+.VPHero .image-container::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at center,
+    rgba(225, 53, 255, 0.3) 0%,
+    rgba(128, 255, 234, 0.2) 40%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* Hero action buttons */
+.VPButton.brand {
+  background: linear-gradient(135deg, var(--silk-purple) 0%, var(--silk-pink) 100%);
+  border: none;
+  box-shadow: 0 4px 20px rgba(225, 53, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(225, 53, 255, 0.6);
+  filter: brightness(1.1);
+}
+
+.VPButton.alt {
+  border-color: var(--silk-cyan);
+  color: var(--silk-cyan);
+  background: transparent;
+}
+
+.VPButton.alt:hover {
+  background: rgba(128, 255, 234, 0.1);
+  border-color: var(--silk-cyan);
+}
+
+/* ==========================================================================
+   Feature Cards
+   ========================================================================== */
+
+.VPFeature {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid rgba(225, 53, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  border-color: var(--silk-purple);
+  box-shadow: 0 8px 30px rgba(225, 53, 255, 0.2);
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 8px 30px rgba(128, 255, 234, 0.15);
+}
+
+.VPFeature .title {
+  color: var(--silk-purple);
+}
+
+.dark .VPFeature .title {
+  color: var(--silk-cyan);
+}
+
+.VPFeature .icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(225, 53, 255, 0.5));
+}
+
+/* ==========================================================================
+   Content Styling
+   ========================================================================== */
+
+/* Headings */
+.vp-doc h1 {
+  background: linear-gradient(135deg, var(--silk-purple) 0%, var(--silk-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid var(--silk-purple);
+  padding-bottom: 0.5rem;
+}
+
+.dark .vp-doc h1 {
+  border-bottom-color: var(--silk-cyan);
+}
+
+.vp-doc h2 {
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vp-doc h2 .header-anchor::before {
+  color: var(--silk-purple);
+}
+
+.dark .vp-doc h2 .header-anchor::before {
+  color: var(--silk-cyan);
+}
+
+/* Links */
+.vp-doc a {
+  color: var(--silk-purple);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dark .vp-doc a {
+  color: var(--silk-cyan);
+}
+
+.vp-doc a:hover {
+  color: var(--silk-cyan);
+  text-shadow: 0 0 8px rgba(128, 255, 234, 0.5);
+}
+
+.dark .vp-doc a:hover {
+  color: var(--silk-pink);
+  text-shadow: 0 0 8px rgba(255, 121, 198, 0.5);
+}
+
+/* Code Blocks */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+  border: 1px solid rgba(225, 53, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .vp-doc div[class*='language-'] {
+  border-color: rgba(128, 255, 234, 0.1);
+}
+
+.vp-doc div[class*='language-']::before {
+  color: var(--silk-purple);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .vp-doc div[class*='language-']::before {
+  color: var(--silk-cyan);
+}
+
+/* Inline Code */
+.vp-doc :not(pre) > code {
+  background: rgba(225, 53, 255, 0.1);
+  color: var(--silk-pink-soft);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.dark .vp-doc :not(pre) > code {
+  background: rgba(128, 255, 234, 0.1);
+  color: var(--silk-pink-soft);
+}
+
+/* Tables */
+.vp-doc table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  color: var(--silk-purple);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--silk-purple);
+}
+
+.dark .vp-doc th {
+  color: var(--silk-cyan);
+  border-bottom-color: var(--silk-cyan);
+}
+
+.vp-doc tr {
+  transition: background 0.2s ease;
+}
+
+.vp-doc tr:nth-child(even) {
+  background: var(--vp-c-bg-soft);
+}
+
+.vp-doc tr:hover {
+  background: rgba(225, 53, 255, 0.05);
+}
+
+.dark .vp-doc tr:hover {
+  background: rgba(128, 255, 234, 0.05);
+}
+
+.vp-doc td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+/* ==========================================================================
+   Custom Containers
+   ========================================================================== */
+
+.vp-doc .custom-block.tip {
+  border-color: var(--silk-cyan);
+  background: rgba(128, 255, 234, 0.1);
+}
+
+.vp-doc .custom-block.tip .custom-block-title {
+  color: var(--silk-cyan);
+}
+
+.vp-doc .custom-block.warning {
+  border-color: var(--silk-yellow);
+  background: rgba(241, 250, 140, 0.1);
+}
+
+.vp-doc .custom-block.warning .custom-block-title {
+  color: var(--silk-yellow);
+}
+
+.vp-doc .custom-block.danger {
+  border-color: var(--silk-red);
+  background: rgba(255, 99, 99, 0.1);
+}
+
+.vp-doc .custom-block.danger .custom-block-title {
+  color: var(--silk-red);
+}
+
+.vp-doc .custom-block.info {
+  border-color: var(--silk-purple);
+  background: rgba(225, 53, 255, 0.1);
+}
+
+.vp-doc .custom-block.info .custom-block-title {
+  color: var(--silk-purple);
+}
+
+/* ==========================================================================
+   Color Swatch Component
+   ========================================================================== */
+
+.color-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  background: var(--vp-c-bg-soft);
+  border-radius: 20px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.9em;
+}
+
+.color-swatch .swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.color-swatch .hex {
+  color: var(--vp-c-text-2);
+}
+
+/* ==========================================================================
+   Variant Badge
+   ========================================================================== */
+
+.variant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.variant-badge.neon {
+  background: linear-gradient(135deg, rgba(225, 53, 255, 0.2), rgba(255, 0, 255, 0.2));
+  color: var(--silk-purple);
+  border: 1px solid var(--silk-purple);
+}
+
+.variant-badge.vibrant {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 204, 0.2));
+  color: #ff00ff;
+  border: 1px solid #ff00ff;
+}
+
+.variant-badge.soft {
+  background: linear-gradient(135deg, rgba(232, 146, 255, 0.2), rgba(153, 255, 238, 0.2));
+  color: #e892ff;
+  border: 1px solid #e892ff;
+}
+
+.variant-badge.glow {
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.3));
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.variant-badge.dawn {
+  background: linear-gradient(135deg, rgba(126, 43, 213, 0.2), rgba(0, 127, 142, 0.2));
+  color: var(--silk-dawn-purple);
+  border: 1px solid var(--silk-dawn-purple);
+}
+
+/* ==========================================================================
+   Search
+   ========================================================================== */
+
+.VPLocalSearchBox .shell {
+  border: 1px solid var(--silk-purple);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(225, 53, 255, 0.2);
+}
+
+.dark .VPLocalSearchBox .shell {
+  background: var(--vp-c-bg);
+  border-color: var(--silk-cyan);
+  box-shadow: 0 8px 40px rgba(128, 255, 234, 0.15);
+}
+
+.VPLocalSearchBox input:focus {
+  border-color: var(--silk-cyan);
+  box-shadow: 0 0 0 3px rgba(128, 255, 234, 0.2);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.VPFooter {
+  border-top: 1px solid;
+  border-image: linear-gradient(90deg, transparent, var(--silk-purple), var(--silk-cyan), transparent) 1;
+}
+
+/* ==========================================================================
+   Scrollbar
+   ========================================================================== */
+
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--vp-c-bg);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--silk-purple), var(--silk-pink));
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--silk-pink), var(--silk-cyan));
+}
+
+/* ==========================================================================
+   Special Effects
+   ========================================================================== */
+
+/* Glow Animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(225, 53, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(225, 53, 255, 0.8));
+  }
+}
+
+/* Grid background for hero */
+.VPHome::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(225, 53, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 53, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .VPHome::before {
+  background-image:
+    linear-gradient(rgba(128, 255, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 255, 234, 0.03) 1px, transparent 1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: 2.5rem;
+  }
+
+  .VPHero .tagline::after {
+    display: none;
+  }
+}
