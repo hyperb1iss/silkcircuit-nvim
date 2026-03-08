@@ -3,15 +3,15 @@ local M = {}
 function M.get(colors)
   return {
     WhichKey = { link = "NormalFloat" },
-    WhichKeyBorder = { link = "FloatBorder" },
+    WhichKeyBorder = { fg = colors.purple },
 
-    WhichKeyGroup = { fg = colors.cyan_bright },
-    WhichKeySeparator = { fg = colors.gray },
-    WhichKeyDesc = { fg = colors.pink },
-    WhichKeyValue = { fg = colors.purple_muted },
+    WhichKeyGroup = { fg = colors.pink, bold = true },
+    WhichKeySeparator = { fg = colors.purple_muted },
+    WhichKeySeperator = { fg = colors.purple_muted },
+    WhichKeyDesc = { fg = colors.cyan },
+    WhichKeyValue = { fg = colors.green },
 
-    -- Additional which-key highlights
-    WhichKeyFloat = { bg = colors.bg_highlight },
+    WhichKeyFloat = { bg = colors.bg_dark },
     WhichKeyIcon = { fg = colors.pink_bright },
   }
 end

@@ -2,11 +2,10 @@
 -- Place this in your ~/.config/nvim/lua/community.lua
 
 return {
-  -- Add the import for the community plugins
-  { import = "astrocommunity.pack.lua" }, -- Example: if you want Lua support
-  { import = "astrocommunity.pack.typescript" }, -- Example: if you want TS support
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.typescript" },
 
-  -- Import SilkCircuit theme from community (when available) or use custom
+  -- SilkCircuit theme
   {
     "hyperb1iss/silkcircuit-nvim",
     name = "silkcircuit",
@@ -14,13 +13,12 @@ return {
     priority = 1000,
   },
 
-  -- Configure rainbow brackets with SilkCircuit colors
+  -- Rainbow brackets — colors are provided by the theme's integration
   {
     "HiPhish/rainbow-delimiters.nvim",
     dependencies = { "silkcircuit" },
     config = function()
       local rainbow_delimiters = require("rainbow-delimiters")
-
       vim.g.rainbow_delimiters = {
         strategy = {
           [""] = rainbow_delimiters.strategy["global"],
@@ -43,12 +41,11 @@ return {
     end,
   },
 
-  -- Enhance Telescope with SilkCircuit theme
+  -- Telescope — layout preferences (colors handled by theme integration)
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "silkcircuit" },
     opts = function(_, opts)
-      local silkcircuit_colors = require("silkcircuit.palette").colors
       return require("astrocore").extend_tbl(opts, {
         defaults = {
           prompt_prefix = "  ",
@@ -60,9 +57,7 @@ return {
               prompt_position = "top",
               preview_width = 0.55,
             },
-            vertical = {
-              mirror = false,
-            },
+            vertical = { mirror = false },
             width = 0.87,
             height = 0.8,
             preview_cutoff = 120,
@@ -72,7 +67,7 @@ return {
     end,
   },
 
-  -- Configure Neo-tree with SilkCircuit styling
+  -- Neo-tree — behavior config (colors handled by theme integration)
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = { "silkcircuit" },
@@ -94,9 +89,7 @@ return {
       },
       window = {
         width = 30,
-        mappings = {
-          ["o"] = "open",
-        },
+        mappings = { ["o"] = "open" },
       },
       filesystem = {
         filtered_items = {
