@@ -95,23 +95,5 @@
 	# Compact log for quick overview with conventional commit highlights
 	lgs = log --graph --pretty=format:'%C(201)%h%Creset %C(white)%s%Creset %C(51)(%cr)%Creset' --abbrev-commit
 
-	# Enhanced commit with conventional commit prefix highlighting
-	c = "!f() { \
-		echo ''; \
-		echo '\033[38;2;225;53;255m🎨 SilkCircuit Git Commit\033[0m'; \
-		echo '\033[38;2;128;255;234m────────────────────────\033[0m'; \
-		echo ''; \
-		echo '\033[38;2;241;250;140mConventional Commit Prefixes:\033[0m'; \
-		echo '  \033[38;2;80;250;123mfeat:\033[0m     ✨ new feature'; \
-		echo '  \033[38;2;255;99;255mfix:\033[0m      🐛 bug fix'; \
-		echo '  \033[38;2;128;255;234mdocs:\033[0m     📚 documentation'; \
-		echo '  \033[38;2;241;250;140mstyle:\033[0m    💄 formatting/style'; \
-		echo '  \033[38;2;255;106;193mrefactor:\033[0m ♻️  code refactor'; \
-		echo '  \033[38;2;130;170;255mtest:\033[0m     🧪 tests'; \
-		echo '  \033[38;2;236;196;141mchore:\033[0m    🔧 maintenance'; \
-		echo ''; \
-		git commit \"$@\"; \
-	}; f"
-
 	# Quick status with enhanced colors
 	s = status --short --branch

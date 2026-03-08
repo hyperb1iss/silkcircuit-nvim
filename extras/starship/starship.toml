@@ -1,0 +1,254 @@
+# SilkCircuit theme for Starship
+
+# Background:       #1a1a2e  (deep space purple)
+# Segment 1:        #4a1a4a  (deep magenta) 
+# Segment 2:        #7a2d7a  (royal purple-pink)
+# Segment 3:        #a040a0  (electric magenta)
+# Segment 4:        #d060d0  (hot pink)
+# Segment 5:        #ff69b4  (cyberpunk pink)
+
+format = """
+[](bg:#1a1a2e fg:#4a1a4a)\
+$os\
+$username\
+$hostname\
+[ ](bold bg:#4a1a4a)\
+[](bg:#7a2d7a fg:#4a1a4a)\
+$directory\
+[](bg:#a040a0 fg:#7a2d7a)\
+$git_branch\
+$git_status\
+[](bg:#d060d0 fg:#a040a0)\
+$nodejs\
+$python\
+$rust\
+$golang\
+$java\
+$kotlin\
+$gradle\
+$c\
+$lua\
+$docker_context\
+$kubernetes\
+[](bg:#ff69b4 fg:#d060d0)\
+[](bg:#1a1a2e fg:#ff69b4)\
+[➤](bold fg:#ff69b4) \
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# OS module with enhanced foreground color
+[os]
+format = '[ $symbol]($style)'
+style = "bold fg:#FF99FF bg:#4a1a4a"
+disabled = false
+
+[os.symbols]
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = "🐉"
+Emscripten = "🔗"
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = ""
+Gentoo = ""
+HardenedBSD = "聯"
+Illumos = "🐦"
+Linux = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = "🌘"
+Mint = ""
+NetBSD = ""
+NixOS = ""
+OpenBSD = ""
+OpenCloudOS = "☁️"
+openEuler = ""
+openSUSE = ""
+OracleLinux = "⊂⊃"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+Redox = "🧪"
+Solus = ""
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Windows = ""
+
+# Username module with enhanced foreground color
+[username]
+style_user = "bold fg:#FF99FF bg:#4a1a4a"
+style_root = "bold fg:#FF4444 bg:#4a1a4a"
+format = '[ $user]($style)'
+disabled = false
+show_always = true
+
+
+# Hostname configuration for SSH awareness
+[hostname]
+style = "bold fg:#FF66FF bg:#4a1a4a"
+ssh_only = true
+format = '[@$hostname]($style)'
+trim_at = "."
+disabled = false
+
+# Directory module with enhanced foreground color
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "bold fg:#FF99CC bg:#7a2d7a"
+format = "[ $path ]($style)"
+
+# Git branch module with enhanced foreground color
+[git_branch]
+symbol = " "
+style = "bold fg:#FF99FF bg:#a040a0"
+format = "[ $symbol$branch ]($style)"
+
+# Git status module with enhanced foreground color
+[git_status]
+style = "bold fg:#FF99FF bg:#a040a0"
+format = "[$all_status]($style)"
+
+# Node.js module with enhanced foreground color
+[nodejs]
+symbol = " "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Python module with enhanced foreground color
+[python]
+symbol = " "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol(${virtualenv}) ]($style)"
+detect_extensions = ["py"]
+detect_files = [
+  "requirements.txt",
+  "pyproject.toml",
+  "Pipfile",
+  "tox.ini",
+  "setup.py",
+]
+disabled = false
+
+# Rust module
+[rust]
+symbol = "󱘗 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Go module
+[golang]
+symbol = "󰟓 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Java module
+[java]
+symbol = "󰬷 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Kotlin module
+[kotlin]
+symbol = "󱈙 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Gradle module
+[gradle]
+symbol = "󱎐 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# C module
+[c]
+symbol = "󰙱 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Lua module
+[lua]
+symbol = "󰢱 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol($version) ]($style)"
+disabled = false
+
+# Docker context
+[docker_context]
+symbol = "󰡨 "
+style = "bold fg:#FFEEFF bg:#d060d0"
+format = "[ $symbol$context ]($style)"
+disabled = false
+
+# Kubernetes context — shouts when on prod
+[kubernetes]
+symbol = "󱃾 "
+format = "[ $symbol$context ]($style)"
+style = "bold fg:#FFEEFF bg:#d060d0"
+disabled = false
+contexts = [
+  { context_pattern = ".*[Pp][Rr][Oo][Dd].*", context_alias = "PROD", style = "bold fg:#1a1a2e bg:#ffcc00", symbol = " " },
+  # EKS contexts — strip region (e.g., eks-us-west-2-int → eks-int)
+  { context_pattern = "eks-[a-z]+-[a-z]+-\\d+-(?P<env>.*)", context_alias = "eks-$env", style = "bold fg:#FFEEFF bg:#d060d0" },
+  # Fallback
+  { context_pattern = ".*", style = "bold fg:#FFEEFF bg:#d060d0" }
+]
+
+# Time
+[time]
+disabled = true
+format = '󱑍 [\[ $time \]]($style) '
+time_format = "%T"
+
+# Command duration
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold fg:#FF6666"
+
+# Battery
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰁽 "
+empty_symbol = "󰂎 "
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+# Package version
+[package]
+symbol = "󰏗 "
+style = "bold fg:#FF6666"
+disabled = false
+
+# Shell indicator
+[shell]
+fish_indicator = "󰈺 "
+powershell_indicator = "󰨊 "
+bash_indicator = "󱆃 "
+zsh_indicator = "󱐋 "
+unknown_indicator = "󰀣 "
+style = "cyan bold"
+disabled = true

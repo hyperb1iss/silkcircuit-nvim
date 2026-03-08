@@ -1,0 +1,29 @@
+# SilkCircuit Dawn - Ghostty Theme
+# Light theme for daytime - electric accents on soft backgrounds
+
+background = #faf8ff
+foreground = #2b2540
+cursor-color = #7e2bd5
+cursor-text = #faf8ff
+selection-background = #d4c8f0
+selection-foreground = #2b2540
+
+# Normal colors
+palette = 0=#2b2540
+palette = 1=#c1272d
+palette = 2=#2d8659
+palette = 3=#a88600
+palette = 4=#2563eb
+palette = 5=#b40077
+palette = 6=#007f8e
+palette = 7=#faf8ff
+
+# Bright colors
+palette = 8=#5a4d6e
+palette = 9=#dc2626
+palette = 10=#38a169
+palette = 11=#d69e00
+palette = 12=#3b82f6
+palette = 13=#c04a8f
+palette = 14=#009fae
+palette = 15=#ffffff

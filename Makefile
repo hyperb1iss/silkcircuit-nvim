@@ -20,185 +20,185 @@ STAR := ★
 
 # Default target
 help:
-	@echo ""
-	@echo "$(PURPLE)$(BOLD)SilkCircuit Theme$(RESET) $(GRAY)•$(RESET) $(CYAN)Development Commands$(RESET)"
-	@echo "$(GRAY)────────────────────────────────────$(RESET)"
-	@echo ""
-	@echo "  $(PURPLE)$(STAR) setup$(RESET)          $(GRAY)─$(RESET) Install development dependencies"
-	@echo "  $(PURPLE)$(STAR) test$(RESET)           $(GRAY)─$(RESET) Run all tests"
-	@echo "  $(PURPLE)$(STAR) lint$(RESET)           $(GRAY)─$(RESET) Run linters (selene)"
-	@echo "  $(PURPLE)$(STAR) format$(RESET)         $(GRAY)─$(RESET) Format code (stylua)"
-	@echo "  $(PURPLE)$(STAR) clean$(RESET)          $(GRAY)─$(RESET) Clean generated files"
-	@echo "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks"
-	@echo "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance"
-	@echo "  $(PURPLE)$(STAR) vscode$(RESET)         $(GRAY)─$(RESET) Build VSCode theme package"
-	@echo "  $(PURPLE)$(STAR) vscode-package$(RESET)  $(GRAY)─$(RESET) Package VSCode extension (VSIX)"
-	@echo "  $(PURPLE)$(STAR) vscode-publish$(RESET)  $(GRAY)─$(RESET) Publish to VSCode + Open VSX (requires tokens)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(BOLD)SilkCircuit Theme$(RESET) $(GRAY)•$(RESET) $(CYAN)Development Commands$(RESET)\n"
+	@printf "$(GRAY)────────────────────────────────────$(RESET)\n"
+	@printf "\n"
+	@printf "  $(PURPLE)$(STAR) setup$(RESET)          $(GRAY)─$(RESET) Install development dependencies\n"
+	@printf "  $(PURPLE)$(STAR) test$(RESET)           $(GRAY)─$(RESET) Run all tests\n"
+	@printf "  $(PURPLE)$(STAR) lint$(RESET)           $(GRAY)─$(RESET) Run linters (selene)\n"
+	@printf "  $(PURPLE)$(STAR) format$(RESET)         $(GRAY)─$(RESET) Format code (stylua)\n"
+	@printf "  $(PURPLE)$(STAR) clean$(RESET)          $(GRAY)─$(RESET) Clean generated files\n"
+	@printf "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks\n"
+	@printf "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance\n"
+	@printf "  $(PURPLE)$(STAR) vscode$(RESET)         $(GRAY)─$(RESET) Build VSCode theme package\n"
+	@printf "  $(PURPLE)$(STAR) vscode-package$(RESET)  $(GRAY)─$(RESET) Package VSCode extension (VSIX)\n"
+	@printf "  $(PURPLE)$(STAR) vscode-publish$(RESET)  $(GRAY)─$(RESET) Publish to VSCode + Open VSX (requires tokens)\n"
+	@printf "\n"
 
 # Install development dependencies
 setup:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Installing Development Dependencies$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Installing Development Dependencies$(RESET)\n"
+	@printf "\n"
 	@command -v selene >/dev/null 2>&1 || { \
-		echo "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)selene$(RESET)..."; \
-		cargo install selene && echo "  $(GREEN)$(CHECK)$(RESET) selene installed"; \
+		printf "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)selene$(RESET)...\n"; \
+		cargo install selene && printf "  $(GREEN)$(CHECK)$(RESET) selene installed\n"; \
 	}
 	@command -v stylua >/dev/null 2>&1 || { \
-		echo "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)stylua$(RESET)..."; \
-		cargo install stylua && echo "  $(GREEN)$(CHECK)$(RESET) stylua installed"; \
+		printf "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)stylua$(RESET)...\n"; \
+		cargo install stylua && printf "  $(GREEN)$(CHECK)$(RESET) stylua installed\n"; \
 	}
 	@command -v pre-commit >/dev/null 2>&1 || { \
-		echo "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)pre-commit$(RESET)..."; \
-		pip install --user pre-commit && echo "  $(GREEN)$(CHECK)$(RESET) pre-commit installed"; \
+		printf "  $(CYAN)$(DOT)$(RESET) Installing $(PURPLE)pre-commit$(RESET)...\n"; \
+		pip install --user pre-commit && printf "  $(GREEN)$(CHECK)$(RESET) pre-commit installed\n"; \
 	}
-	@echo "  $(CYAN)$(DOT)$(RESET) Installing pre-commit hooks..."
-	@pre-commit install >/dev/null 2>&1 && echo "  $(GREEN)$(CHECK)$(RESET) Git hooks installed"
-	@echo ""
-	@echo "$(GREEN)$(STAR) Setup complete$(RESET)"
-	@echo ""
+	@printf "  $(CYAN)$(DOT)$(RESET) Installing pre-commit hooks...\n"
+	@pre-commit install >/dev/null 2>&1 && printf "  $(GREEN)$(CHECK)$(RESET) Git hooks installed\n"
+	@printf "\n"
+	@printf "$(GREEN)$(STAR) Setup complete$(RESET)\n"
+	@printf "\n"
 
 # Run tests
 test:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Tests$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Tests$(RESET)\n"
+	@printf "\n"
 	@cd $(shell pwd) && nvim --headless -u NONE -c "luafile tests/run.lua" 2>&1
 
 # Run linters
 lint:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Linters$(RESET)"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Running selene..."
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Running Linters$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Running selene...\n"
 	@if ! selene lua/ 2>&1; then \
-		echo ""; \
-		echo "$(YELLOW)$(WARNING)$(RESET) Lua linting issues found"; \
+		printf "\n"; \
+		printf "$(YELLOW)$(WARNING)$(RESET) Lua linting issues found\n"; \
 		exit 1; \
 	else \
-		echo "  $(GREEN)$(CHECK)$(RESET) Lua code is clean"; \
+		printf "  $(GREEN)$(CHECK)$(RESET) Lua code is clean\n"; \
 	fi
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Running markdownlint..."
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Running markdownlint...\n"
 	@if ! markdownlint '**/*.md' 2>&1; then \
-		echo ""; \
-		echo "$(YELLOW)$(WARNING)$(RESET) Markdown linting issues found"; \
+		printf "\n"; \
+		printf "$(YELLOW)$(WARNING)$(RESET) Markdown linting issues found\n"; \
 		exit 1; \
 	else \
-		echo "  $(GREEN)$(CHECK)$(RESET) Markdown is clean"; \
+		printf "  $(GREEN)$(CHECK)$(RESET) Markdown is clean\n"; \
 	fi
-	@echo ""
-	@echo "$(GREEN)$(STAR) All linting checks passed$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(GREEN)$(STAR) All linting checks passed$(RESET)\n"
+	@printf "\n"
 
 # Format code
 format:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Formatting Code$(RESET)"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Running stylua..."
-	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting Lua files..."
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Formatting Code$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Running stylua...\n"
+	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting Lua files...\n"
 	@find . -name "*.lua" -type f | xargs stylua
-	@echo "  $(GREEN)$(CHECK)$(RESET) Lua code formatted"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Running prettier..."
-	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting JSON/YAML files..."
+	@printf "  $(GREEN)$(CHECK)$(RESET) Lua code formatted\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Running prettier...\n"
+	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting JSON/YAML files...\n"
 	@npx prettier --write "**/*.{json,yaml,yml}" --ignore-path .gitignore >/dev/null 2>&1
-	@echo "  $(GREEN)$(CHECK)$(RESET) JSON/YAML formatted"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Fixing file endings..."
+	@printf "  $(GREEN)$(CHECK)$(RESET) JSON/YAML formatted\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Fixing file endings...\n"
 	@find . -name "*.lua" -o -name "*.md" -type f | xargs -I {} sh -c 'tail -c1 {} | read -r _ || echo >> {}'
-	@echo "  $(GREEN)$(CHECK)$(RESET) File endings fixed"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Trimming trailing whitespace..."
+	@printf "  $(GREEN)$(CHECK)$(RESET) File endings fixed\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Trimming trailing whitespace...\n"
 	@find . -name "*.lua" -o -name "*.md" -type f | xargs sed -i '' -e 's/[[:space:]]*$$//'
-	@echo "  $(GREEN)$(CHECK)$(RESET) Trailing whitespace removed"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Running markdownlint..."
-	@echo "  $(YELLOW)$(DOT)$(RESET) Formatting markdown files..."
+	@printf "  $(GREEN)$(CHECK)$(RESET) Trailing whitespace removed\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Running markdownlint...\n"
+	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting markdown files...\n"
 	@markdownlint '**/*.md' --fix >/dev/null 2>&1 || true
-	@echo "  $(GREEN)$(CHECK)$(RESET) Markdown formatted"
-	@echo ""
-	@echo "$(GREEN)$(STAR) All code beautified$(RESET)"
-	@echo ""
+	@printf "  $(GREEN)$(CHECK)$(RESET) Markdown formatted\n"
+	@printf "\n"
+	@printf "$(GREEN)$(STAR) All code beautified$(RESET)\n"
+	@printf "\n"
 
 # Clean generated files
 clean:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Cleaning Generated Files$(RESET)"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Removing cache..."
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Cleaning Generated Files$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Removing cache...\n"
 	@rm -rf cache/
-	@echo "  $(CYAN)$(DOT)$(RESET) Removing .luarc.json..."
+	@printf "  $(CYAN)$(DOT)$(RESET) Removing .luarc.json...\n"
 	@rm -f .luarc.json
-	@echo "  $(GREEN)$(CHECK)$(RESET) Clean complete"
-	@echo ""
+	@printf "  $(GREEN)$(CHECK)$(RESET) Clean complete\n"
+	@printf "\n"
 
 # Install git hooks
 install-hooks:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Installing Git Hooks$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Installing Git Hooks$(RESET)\n"
+	@printf "\n"
 	@pre-commit install >/dev/null 2>&1
-	@echo "  $(GREEN)$(CHECK)$(RESET) Git hooks installed"
-	@echo ""
+	@printf "  $(GREEN)$(CHECK)$(RESET) Git hooks installed\n"
+	@printf "\n"
 
 # Compile theme
 compile:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Compiling Theme$(RESET)"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Generating optimized theme..."
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Compiling Theme$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Generating optimized theme...\n"
 	@nvim --headless -u scripts/compile.lua +qa 2>/dev/null
-	@echo "  $(GREEN)$(CHECK)$(RESET) Theme compiled"
-	@echo ""
+	@printf "  $(GREEN)$(CHECK)$(RESET) Theme compiled\n"
+	@printf "\n"
 
 # Build VSCode theme
 vscode:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Building VSCode Theme$(RESET)"
-	@echo ""
-	@echo "  $(CYAN)$(DOT)$(RESET) Packaging extension..."
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Building VSCode Theme$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Packaging extension...\n"
 	@cd extras/vscode && npx @vscode/vsce package --no-dependencies 2>/dev/null
-	@echo "  $(GREEN)$(CHECK)$(RESET) Theme packaged → extras/vscode/silkcircuit-theme-1.0.0.vsix"
-	@echo ""
-	@echo "$(CYAN)$(STAR) Install in VSCode/Cursor:$(RESET)"
-	@echo "  $(GRAY)Extensions → ... → Install from VSIX$(RESET)"
-	@echo ""
+	@printf "  $(GREEN)$(CHECK)$(RESET) Theme packaged → extras/vscode/silkcircuit-theme-1.0.0.vsix\n"
+	@printf "\n"
+	@printf "$(CYAN)$(STAR) Install in VSCode/Cursor:$(RESET)\n"
+	@printf "  $(GRAY)Extensions → ... → Install from VSIX$(RESET)\n"
+	@printf "\n"
 
 # Explicit packaging target
 vscode-package:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Packaging VSCode Extension (VSIX)$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Packaging VSCode Extension (VSIX)$(RESET)\n"
+	@printf "\n"
 	@cd extras/vscode && npx @vscode/vsce package --no-dependencies | cat
-	@echo "  $(GREEN)$(CHECK)$(RESET) VSIX created in extras/vscode/"
+	@printf "  $(GREEN)$(CHECK)$(RESET) VSIX created in extras/vscode/\n"
 
 # Publish to VS Code Marketplace (requires VSCE_PAT)
 vscode-publish-vsce:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to VS Code Marketplace$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to VS Code Marketplace$(RESET)\n"
+	@printf "\n"
 	@cd extras/vscode && npx @vscode/vsce publish --no-dependencies | cat
-	@echo "  $(GREEN)$(CHECK)$(RESET) Published to VS Code Marketplace"
+	@printf "  $(GREEN)$(CHECK)$(RESET) Published to VS Code Marketplace\n"
 
 # Publish to Open VSX (requires OVSX_PAT)
 vscode-publish-ovsx:
-	@echo ""
-	@echo "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to Open VSX$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Publishing to Open VSX$(RESET)\n"
+	@printf "\n"
 	@cd extras/vscode && npx ovsx publish | cat
-	@echo "  $(GREEN)$(CHECK)$(RESET) Published to Open VSX"
+	@printf "  $(GREEN)$(CHECK)$(RESET) Published to Open VSX\n"
 
 # Convenience aggregator target
 vscode-publish: vscode-publish-vsce vscode-publish-ovsx
-	@echo ""
-	@echo "$(GREEN)$(STAR) VSCode extension published to both marketplaces$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(GREEN)$(STAR) VSCode extension published to both marketplaces$(RESET)\n"
+	@printf "\n"
 
 # CI target
 ci: lint test
-	@echo ""
-	@echo "$(GREEN)$(STAR) All CI checks passed$(RESET)"
-	@echo ""
+	@printf "\n"
+	@printf "$(GREEN)$(STAR) All CI checks passed$(RESET)\n"
+	@printf "\n"
