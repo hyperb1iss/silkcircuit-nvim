@@ -53,65 +53,32 @@ function M.lighten(color, amount)
   return M.rgb_to_hex(rgb.r, rgb.g, rgb.b)
 end
 
--- Apply highlight group
+-- Apply highlight group using nvim_set_hl API
 function M.highlight(group, opts)
-  local cmd
+  local hl = {}
 
   if opts.link then
-    cmd = "hi! link " .. group .. " " .. opts.link
+    hl.link = opts.link
   else
-    -- Use hi! (with bang) to force override any existing highlights
-    cmd = "hi! " .. group
+    if opts.fg then hl.fg = opts.fg end
+    if opts.bg then hl.bg = opts.bg end
+    if opts.sp then hl.sp = opts.sp end
 
-    if opts.fg then
-      cmd = cmd .. " guifg=" .. opts.fg
-    end
-
-    if opts.bg then
-      cmd = cmd .. " guibg=" .. opts.bg
-    end
-
-    if opts.sp then
-      cmd = cmd .. " guisp=" .. opts.sp
-    end
-
-    local gui_attrs = {}
-
+    -- Collect style attributes
     if opts.style then
-      if type(opts.style) == "table" then
-        for _, style in ipairs(opts.style) do
-          table.insert(gui_attrs, style)
-        end
-      else
-        table.insert(gui_attrs, opts.style)
+      local styles = type(opts.style) == "table" and opts.style or { opts.style }
+      for _, s in ipairs(styles) do
+        hl[s] = true
       end
     end
-
-    -- Collect individual attributes
-    if opts.italic then
-      table.insert(gui_attrs, "italic")
-    end
-    if opts.bold then
-      table.insert(gui_attrs, "bold")
-    end
-    if opts.underline then
-      table.insert(gui_attrs, "underline")
-    end
-    if opts.undercurl then
-      table.insert(gui_attrs, "undercurl")
-    end
-    if opts.strikethrough then
-      table.insert(gui_attrs, "strikethrough")
-    end
-
-    if #gui_attrs > 0 then
-      cmd = cmd .. " gui=" .. table.concat(gui_attrs, ",")
-    end
+    if opts.italic then hl.italic = true end
+    if opts.bold then hl.bold = true end
+    if opts.underline then hl.underline = true end
+    if opts.undercurl then hl.undercurl = true end
+    if opts.strikethrough then hl.strikethrough = true end
   end
 
-  -- Execute highlight command with error handling
-  -- Use silent! to suppress all output and errors
-  pcall(vim.cmd, "silent! " .. cmd)
+  pcall(vim.api.nvim_set_hl, 0, group, hl)
 end
 
 -- Load highlight groups
@@ -149,40 +116,37 @@ end
 
 -- Get highlight definition for compilation
 function M.get_highlight_def(group, opts)
-  local _ = { group } -- unused, kept for potential future use
-
   if opts.link then
-    return string.format('vim.cmd("silent! hi! link %s %s")', group, opts.link)
+    return string.format('pcall(vim.api.nvim_set_hl, 0, "%s", { link = "%s" })', group, opts.link)
   end
 
-  local attrs = {}
+  local parts = {}
 
   if opts.fg then
-    table.insert(attrs, string.format("guifg=%s", opts.fg))
+    table.insert(parts, string.format('fg = "%s"', opts.fg))
   end
 
   if opts.bg then
-    table.insert(attrs, string.format("guibg=%s", opts.bg))
+    table.insert(parts, string.format('bg = "%s"', opts.bg))
   end
 
   if opts.sp then
-    table.insert(attrs, string.format("guisp=%s", opts.sp))
+    table.insert(parts, string.format('sp = "%s"', opts.sp))
   end
 
   if opts.style then
-    local styles = type(opts.style) == "table" and table.concat(opts.style, ",") or opts.style
-    table.insert(attrs, string.format("gui=%s", styles))
-  elseif opts.italic then
-    table.insert(attrs, "gui=italic")
-  elseif opts.bold then
-    table.insert(attrs, "gui=bold")
-  elseif opts.underline then
-    table.insert(attrs, "gui=underline")
-  elseif opts.undercurl then
-    table.insert(attrs, "gui=undercurl")
+    local styles = type(opts.style) == "table" and opts.style or { opts.style }
+    for _, s in ipairs(styles) do
+      table.insert(parts, s .. " = true")
+    end
   end
+  if opts.italic then table.insert(parts, "italic = true") end
+  if opts.bold then table.insert(parts, "bold = true") end
+  if opts.underline then table.insert(parts, "underline = true") end
+  if opts.undercurl then table.insert(parts, "undercurl = true") end
+  if opts.strikethrough then table.insert(parts, "strikethrough = true") end
 
-  return string.format('vim.cmd("silent! hi %s %s")', group, table.concat(attrs, " "))
+  return string.format('pcall(vim.api.nvim_set_hl, 0, "%s", { %s })', group, table.concat(parts, ", "))
 end
 
 -- Hash a string using djb2 algorithm
