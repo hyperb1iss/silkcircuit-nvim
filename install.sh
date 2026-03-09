@@ -285,6 +285,26 @@ safe_copy() {
         return 1
     fi
 
+    # Resolve the real path to detect symlinks into git repos (e.g. dotfiles)
+    local real_dst real_dir in_ext_git=false
+    real_dst="$(cd "$(dirname "$dst")" 2>/dev/null && pwd -P)/$(basename "$dst")" 2>/dev/null || real_dst="$dst"
+    real_dir="$(dirname "$real_dst")"
+
+    if [[ -d "${real_dir}" ]] && git -C "$real_dir" rev-parse --is-inside-work-tree &>/dev/null; then
+        local repo_root
+        repo_root="$(git -C "$real_dir" rev-parse --show-toplevel 2>/dev/null)"
+        # Check if target is in a different git repo than the installer
+        if [[ "$repo_root" != "$(git -C "$(dirname "$src")" rev-parse --show-toplevel 2>/dev/null)" ]]; then
+            in_ext_git=true
+            # Skip new files — don't introduce untracked files into external repos
+            if [[ ! -f "$dst" ]]; then
+                diminfo "${label}: skipped new file in git repo (${repo_root})"
+                SKIPPED+=("$label")
+                return 1
+            fi
+        fi
+    fi
+
     mkdir -p "$(dirname "$dst")"
 
     if [[ "$DRY_RUN" == true ]]; then
@@ -294,8 +314,10 @@ safe_copy() {
     fi
 
     if [[ -f "$dst" ]]; then
-        # Back up existing file
-        cp "$dst" "${dst}.silkcircuit.bak" 2>/dev/null || true
+        # Skip .bak files inside external git repos — git itself is the backup
+        if [[ "$in_ext_git" == false ]]; then
+            cp "$dst" "${dst}.silkcircuit.bak" 2>/dev/null || true
+        fi
     fi
 
     if cp "$src" "$dst" 2>/dev/null; then
