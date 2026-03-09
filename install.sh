@@ -129,8 +129,8 @@ detect_all() {
         pulse_dot "btop" "missing"
     fi
 
-    # k9s
-    if cmd_exists k9s || dir_exists "$HOME/.config/k9s"; then
+    # k9s (macOS uses ~/Library/Application Support/k9s, Linux uses ~/.config/k9s)
+    if cmd_exists k9s || dir_exists "$HOME/.config/k9s" || dir_exists "$HOME/Library/Application Support/k9s"; then
         DETECTED+=("k9s")
         pulse_dot "k9s" "found"
     else
@@ -398,10 +398,24 @@ install_btop() {
 }
 
 install_k9s() {
-    # k9s skins go in the k9s config directory
-    local skin_dir="$HOME/.config/k9s/skins"
     printf "${PURPLE}${BOLD}  >> k9s${RESET}\n"
 
+    # Resolve k9s config dir: use `k9s info` if available, else platform default
+    local k9s_dir
+    if cmd_exists k9s; then
+        local k9s_cfg
+        k9s_cfg="$(k9s info 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g' | grep -i '^Config:' | sed 's/^[^:]*:[[:space:]]*//')"
+        [[ -n "${k9s_cfg:-}" ]] && k9s_dir="$(dirname "$k9s_cfg")" || true
+    fi
+    if [[ -z "${k9s_dir:-}" ]]; then
+        if [[ "$(uname)" == "Darwin" ]]; then
+            k9s_dir="$HOME/Library/Application Support/k9s"
+        else
+            k9s_dir="$HOME/.config/k9s"
+        fi
+    fi
+
+    local skin_dir="${k9s_dir}/skins"
     local count=0
     for f in "${EXTRAS_DIR}/k9s/silkcircuit"*.yaml; do
         local name
@@ -410,8 +424,27 @@ install_k9s() {
             count=$((count + 1))
         fi
     done
+
+    # Activate the skin in k9s config
+    local config="${k9s_dir}/config.yaml"
+    if [[ "$DRY_RUN" == true ]]; then
+        diminfo "dry-run: would set skin to silkcircuit in ${config}"
+    elif [[ -f "$config" ]]; then
+        if grep -q 'skin:' "$config" 2>/dev/null; then
+            sed -i.silkcircuit.bak 's/skin:.*/skin: silkcircuit/' "$config"
+        elif grep -q 'ui:' "$config" 2>/dev/null; then
+            sed -i.silkcircuit.bak '/ui:/a\
+    skin: silkcircuit' "$config"
+        else
+            printf '\nk9s:\n  ui:\n    skin: silkcircuit\n' >> "$config"
+        fi
+    else
+        mkdir -p "$k9s_dir"
+        printf 'k9s:\n  ui:\n    skin: silkcircuit\n' > "$config"
+    fi
+
     success "Installed ${count} k9s skins"
-    diminfo "Activate: k9s --skin silkcircuit"
+    diminfo "Active skin: silkcircuit"
 }
 
 install_fzf() {
