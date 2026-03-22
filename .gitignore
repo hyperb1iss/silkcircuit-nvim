@@ -79,3 +79,4 @@ build/
 # Pre-commit
 .pre-commit-config.yaml.lock
 silkcircuit-chrome-*.zip
+Cached Theme.pak
