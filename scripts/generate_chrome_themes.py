@@ -1014,13 +1014,9 @@ def generate_chrome_pages_css(variant_key, v):
 def generate_toolbar_image(v, width=200, height=160):
     """Generate toolbar image with neon glow gradient.
 
-    Chrome aligns this from the bottom. The top portion extends into the
-    active tab area. Clean gradient — no circuit traces (those belong on
-    the NTP, not competing with toolbar text).
-
-    Layout (top to bottom):
-      - Neon accent glow (extends into active tab top edge)
-      - Smooth fade to bg_highlight (clean toolbar area)
+    Chrome aligns from the bottom. Full-height gradient from bright accent
+    at top to bg_highlight at bottom — wherever Chrome renders it, there's
+    a visible glow-to-dark transition.
     """
     try:
         from PIL import Image, ImageDraw
@@ -1034,16 +1030,15 @@ def generate_toolbar_image(v, width=200, height=160):
     img = Image.new("RGB", (width, height), bg)
     draw = ImageDraw.Draw(img)
 
-    # Neon glow at the top — becomes the active tab's top fringe
-    glow_height = 25 if is_dark else 14
-    peak_brightness = 0.6 if is_dark else 0.35
-
-    for y in range(glow_height):
-        t = y / glow_height
-        blend_factor = peak_brightness * (1 - t) ** 2.0
-        r = int(accent[0] * blend_factor + bg[0] * (1 - blend_factor))
-        g = int(accent[1] * blend_factor + bg[1] * (1 - blend_factor))
-        b = int(accent[2] * blend_factor + bg[2] * (1 - blend_factor))
+    # Full-height gradient: accent at top → bg at bottom
+    for y in range(height):
+        t = y / height  # 0 at top, 1 at bottom
+        blend = (1 - t) ** 1.5  # Stronger glow that fades gradually
+        peak = 0.5 if is_dark else 0.3
+        factor = blend * peak
+        r = int(accent[0] * factor + bg[0] * (1 - factor))
+        g = int(accent[1] * factor + bg[1] * (1 - factor))
+        b = int(accent[2] * factor + bg[2] * (1 - factor))
         draw.line([(0, y), (width, y)], fill=(r, g, b))
 
     return img
