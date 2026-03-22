@@ -1010,11 +1010,11 @@ def generate_chrome_pages_css(variant_key, v):
 
 
 def generate_toolbar_image(v, width=200, height=160):
-    """Generate toolbar image with neon glow gradient.
+    """Generate toolbar image with full neon glow gradient.
 
-    Chrome aligns from the bottom. Full-height gradient from bright accent
-    at top to bg_highlight at bottom — wherever Chrome renders it, there's
-    a visible glow-to-dark transition.
+    Chrome aligns from bottom. Bright accent at top fading to bg at bottom.
+    Chrome draws a 1px separator at the toolbar/frame boundary — unavoidable
+    on dark themes, but the gradient makes it blend in naturally.
     """
     try:
         from PIL import Image, ImageDraw
@@ -1028,10 +1028,9 @@ def generate_toolbar_image(v, width=200, height=160):
     img = Image.new("RGB", (width, height), bg)
     draw = ImageDraw.Draw(img)
 
-    # Full-height gradient: accent at top → bg at bottom
     for y in range(height):
-        t = y / height  # 0 at top, 1 at bottom
-        blend = (1 - t) ** 1.5  # Stronger glow that fades gradually
+        t = y / height
+        blend = (1 - t) ** 1.5
         peak = 0.5 if is_dark else 0.3
         factor = blend * peak
         r = int(accent[0] * factor + bg[0] * (1 - factor))
@@ -1043,7 +1042,7 @@ def generate_toolbar_image(v, width=200, height=160):
 
 
 def generate_frame_image(v):
-    """Generate 1x1 frame image — matches toolbar color to prevent separator."""
+    """Generate 1x1 frame image — matches toolbar base color."""
     try:
         from PIL import Image
     except ImportError:
