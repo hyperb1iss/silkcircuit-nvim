@@ -1,130 +1,75 @@
 # Chrome Theme
 
-SilkCircuit for Google Chrome.
+SilkCircuit for Google Chrome — all 5 variants with full browser theming.
 
-## Overview
+## Variants
 
-Bring SilkCircuit's vibrant colors to your browser with a custom Chrome theme.
+- **Neon** — The original SilkCircuit experience
+- **Vibrant** — Maximum saturation on ultra-dark canvas
+- **Soft** — Gentle glow for extended sessions
+- **Glow** — Pure neon on void-black, maximum contrast
+- **Dawn** — Light theme with electric accents on lavender
 
 ## Installation
 
-### Developer Mode
-
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable "Developer mode" (toggle in top right)
-3. Click "Load unpacked"
-4. Select the `extras/chrome-theme` directory
-
-### Drag & Drop
-
 1. Open `chrome://extensions/`
-2. Drag the `extras/chrome-theme` folder onto the page
+2. Enable **Developer mode**
+3. Click **Load unpacked**
+4. Select a variant directory: `extras/chrome-theme/silkcircuit-{variant}/`
 
-### Pre-packaged
+To switch variants, remove the current theme and load a different one.
 
-A pre-built `.zip` is available:
+## What's Included
+
+Each variant directory contains:
+
+```
+silkcircuit-{variant}/
+├── manifest.json           # Chrome theme (24 colors, 9 tab groups, NTP image)
+├── images/
+│   └── ntp_background.png  # Circuit-trace pattern (1920x1080)
+├── devtools-theme.css      # Modern DevTools theme (CM6 + --sys-color-*)
+└── chrome-pages.css        # Chrome internal pages (--cr-* overrides)
+```
+
+### Manifest Coverage
+
+All 24 Chrome theme color keys, including:
+
+- Frame (active, inactive, incognito, incognito inactive)
+- Toolbar text and button icons
+- Omnibox background and text
+- Tab text (active, inactive, incognito — all window states)
+- Background tab colors (all states)
+- NTP background, text, links, header
+- Tab group color palette (all 9 slots)
+
+### DevTools Theme
+
+Targets Chrome DevTools 2025+ with:
+
+- `--sys-color-*` custom properties for full UI theming
+- `.token-*` classes for CodeMirror 6 syntax highlighting
+- Console ANSI color overrides
+- Panel-specific styling (Console, Network, Elements, Sources)
+- CM5 fallback selectors for compatibility
+
+Setup: Install a DevTools theme extension, enable "Allow extensions to load custom stylesheets" in DevTools experiments.
+
+### Chrome Pages
+
+Themes `chrome://settings`, extensions, downloads, history, bookmarks, and flags via `--cr-*` custom property overrides.
+
+Setup: Install [Stylus](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), create a new style with `chrome://*` pattern, import the CSS.
+
+## Regenerating
 
 ```bash
-# Extract and install
-unzip extras/chrome-theme/silkcircuit-chrome-theme-1.0.2.zip
-# Then use Developer Mode installation above
+make chrome
 ```
 
-## Features
+Generates all 5 variants from the canonical palette defined in `scripts/generate_chrome_themes.py`.
 
-### Browser Frame
+## Compatibility
 
-| Element | Color |
-|---------|-------|
-| Frame | Neon Purple |
-| Toolbar | Dark background |
-| Tab background | Highlight color |
-| Active tab | Lighter accent |
-
-### DevTools
-
-The theme includes custom DevTools styling:
-
-- **Console** — SilkCircuit-styled output
-- **Elements** — Syntax highlighting matching Neovim
-- **Sources** — Code editor colors
-
-## Files
-
-```
-extras/chrome-theme/
-├── manifest.json           # Chrome extension manifest
-├── chrome-pages.css        # New tab page styling
-├── devtools-theme.css      # Developer tools styling
-├── README.md
-└── silkcircuit-chrome-theme-1.0.2.zip
-```
-
-## DevTools Customization
-
-The DevTools CSS includes:
-
-```css
-/* Console colors */
-.console-message-text {
-  color: #f8f8f2;
-}
-
-/* Error messages */
-.console-error-level .console-message-text {
-  color: #ff6363;
-}
-
-/* Network panel */
-.network-log-grid {
-  background-color: #12101a;
-}
-```
-
-## Manifest Structure
-
-```json
-{
-  "manifest_version": 3,
-  "name": "SilkCircuit",
-  "version": "1.0.2",
-  "theme": {
-    "colors": {
-      "frame": [18, 16, 26],
-      "toolbar": [26, 22, 42],
-      "tab_background_text": [248, 248, 242],
-      "ntp_background": [18, 16, 26],
-      "ntp_text": [248, 248, 242]
-    },
-    "tints": {
-      "buttons": [0.85, 0.5, 0.75]
-    }
-  }
-}
-```
-
-## Limitations
-
-- Chrome themes have limited customization options
-- Some UI elements cannot be themed
-- DevTools styling requires manual CSS injection
-
-## Updating
-
-To update the theme:
-
-1. Make changes to theme files
-2. Reload the extension in `chrome://extensions/`
-3. Or re-package and reinstall
-
-## Troubleshooting
-
-### Theme not applying
-
-1. Verify the extension is enabled
-2. Restart Chrome
-3. Check for conflicting themes
-
-### DevTools colors missing
-
-DevTools styling requires additional setup. The CSS file provides a starting point for customization.
+Chrome 88+ and Chromium-based browsers (Edge, Brave, Arc, Vivaldi).

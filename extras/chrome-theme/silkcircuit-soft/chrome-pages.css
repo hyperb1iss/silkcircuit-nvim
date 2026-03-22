@@ -1,0 +1,263 @@
+/* SilkCircuit Soft — Chrome Internal Pages Theme
+ *
+ * Themes chrome://settings, extensions, downloads, history, bookmarks, flags.
+ * Install via Stylus extension with URL pattern: chrome://*
+ *
+ * Targets Chrome's --cr-* custom properties which cascade into Shadow DOM
+ * components (cr-button, cr-toggle, cr-input, cr-toolbar, etc).
+ */
+
+@-moz-document regexp("chrome://.*"), regexp("chrome-extension://.*") {
+
+  /* ── Root variable overrides ────────────────────────────────────── */
+
+  :root {
+    /* Page backgrounds */
+    --md-background-color: #1a1626 !important;
+    --cr-card-background-color: #3e3456 !important;
+    --cr-card-border-radius: 12px !important;
+    --cr-dialog-background-color: #3e3456 !important;
+    --cr-menu-background-color: #141220 !important;
+    --cr-menu-background-focus-color: #3e3456 !important;
+
+    /* Text */
+    --cr-primary-text-color: #f8f8f2 !important;
+    --cr-secondary-text-color: #b199ff !important;
+    --cr-title-text-color: #e892ff !important;
+    --cr-form-field-label-color: #99ffee !important;
+    --cr-link-color: #99ffee !important;
+
+    /* Fallback surface colors */
+    --cr-fallback-color-surface: #1a1626 !important;
+    --cr-fallback-color-surface1: #1a1626 !important;
+    --cr-fallback-color-surface2: #3e3456 !important;
+    --cr-fallback-color-surface3: #3e3456 !important;
+    --cr-fallback-color-surface-variant: #3e3456 !important;
+    --cr-fallback-color-on-surface-rgb: 248, 248, 242 !important;
+    --cr-fallback-color-on-surface-variant: #b199ff !important;
+    --cr-fallback-color-on-surface-subtle: #637777 !important;
+    --cr-fallback-color-primary: #e892ff !important;
+    --cr-fallback-color-inverse-surface: #f8f8f2 !important;
+    --cr-fallback-color-inverse-on-surface: #1a1626 !important;
+    --cr-fallback-color-inverse-primary: #99ffee !important;
+
+    /* Buttons */
+    --cr-button-background-color: #3e3456 !important;
+    --cr-button-border-color: #e892ff !important;
+    --cr-button-text-color: #f8f8f2 !important;
+    --cr-button-hover-background-color: rgba(225, 53, 255, 0.12) !important;
+    --cr-button-ripple-color: #e892ff !important;
+    --cr-button-ripple-opacity: 0.15 !important;
+
+    /* Toggle / switch */
+    --cr-toggle-color: #b199ff !important;
+    --cr-toggle-checked-bar-color: #e892ff !important;
+    --cr-toggle-checked-button-color: #f8f8f2 !important;
+    --cr-toggle-checked-ripple-color: rgba(225, 53, 255, 0.25) !important;
+    --cr-toggle-unchecked-bar-color: #637777 !important;
+    --cr-toggle-unchecked-button-color: #b199ff !important;
+    --cr-toggle-unchecked-ripple-color: rgba(248, 248, 242, 0.1) !important;
+
+    /* Input fields */
+    --cr-input-border: 1px solid #637777 !important;
+    --cr-input-error-color: #ff6677 !important;
+    --cr-input-placeholder-color: #637777 !important;
+
+    /* Separators & borders */
+    --cr-separator-color: rgba(149, 128, 255, 0.15) !important;
+    --cr-separator-line: 1px solid rgba(149, 128, 255, 0.15) !important;
+    --cr-hairline: 1px solid rgba(149, 128, 255, 0.1) !important;
+
+    /* Shadows — purple-tinted */
+    --cr-elevation-1: 0 1px 2px rgba(225, 53, 255, 0.08) !important;
+    --cr-elevation-2: 0 2px 6px rgba(225, 53, 255, 0.12) !important;
+    --cr-elevation-3: 0 4px 12px rgba(225, 53, 255, 0.16) !important;
+    --cr-card-shadow: var(--cr-elevation-2) !important;
+    --cr-menu-shadow: var(--cr-elevation-3) !important;
+
+    /* Interaction states */
+    --cr-hover-background-color: rgba(225, 53, 255, 0.08) !important;
+    --cr-active-background-color: rgba(225, 53, 255, 0.15) !important;
+    --cr-focus-outline-color: #99ffee !important;
+    --cr-focused-item-color: rgba(225, 53, 255, 0.12) !important;
+    --cr-selected-background-color: rgba(225, 53, 255, 0.15) !important;
+    --cr-checked-color: #e892ff !important;
+
+    /* Checkbox */
+    --cr-checkbox-checked-box-color: #e892ff !important;
+    --cr-checkbox-mark-color: #1a1626 !important;
+    --cr-checkbox-ripple-checked-color: #e892ff !important;
+    --cr-checkbox-unchecked-box-color: #637777 !important;
+
+    /* Tabs */
+    --cr-tabs-selected-color: #e892ff !important;
+    --cr-tabs-unselected-color: #b199ff !important;
+
+    /* Toast notifications */
+    --cr-toast-background: #3e3456 !important;
+    --cr-toast-text-color: #f8f8f2 !important;
+    --cr-toast-button-color: #99ffee !important;
+
+    /* Slider */
+    --cr-slider-active-color: #e892ff !important;
+    --cr-slider-container-color: #637777 !important;
+    --cr-slider-knob-color-rgb: 232, 146, 255 !important;
+
+    /* Progress */
+    --cr-progress-active-color: #e892ff !important;
+    --cr-progress-container-color: #637777 !important;
+
+    /* Search field */
+    --cr-search-field-search-icon-fill: #99ffee !important;
+    --cr-search-field-clear-icon-fill: #b199ff !important;
+    --cr-search-field-placeholder-color: #637777 !important;
+
+    /* Icon colors */
+    --iron-icon-fill-color: #b199ff !important;
+
+    /* Toolbar */
+    --cr-toolbar-background-color: #141220 !important;
+  }
+
+  /* ── Base styles ────────────────────────────────────────────────── */
+
+  body {
+    background-color: #1a1626 !important;
+    color: #f8f8f2 !important;
+  }
+
+  /* ── Cards ──────────────────────────────────────────────────────── */
+
+  .cr-card,
+  extensions-item {
+    background-color: #3e3456 !important;
+    border: 1px solid rgba(225, 53, 255, 0.15) !important;
+    border-radius: 12px !important;
+  }
+
+  /* ── Settings page ──────────────────────────────────────────────── */
+
+  settings-ui::part(container) {
+    background-color: #1a1626 !important;
+  }
+
+  /* ── Extensions page ────────────────────────────────────────────── */
+
+  extensions-manager {
+    background-color: #1a1626 !important;
+  }
+
+  /* ── Downloads ──────────────────────────────────────────────────── */
+
+  downloads-manager {
+    background-color: #1a1626 !important;
+  }
+
+  downloads-item {
+    background-color: #3e3456 !important;
+    border-bottom: 1px solid rgba(225, 53, 255, 0.12) !important;
+  }
+
+  /* ── History ────────────────────────────────────────────────────── */
+
+  history-app {
+    background-color: #1a1626 !important;
+  }
+
+  /* ── Bookmarks ──────────────────────────────────────────────────── */
+
+  bookmarks-folder-node,
+  bookmarks-item {
+    background-color: #3e3456 !important;
+  }
+
+  /* ── Search boxes ───────────────────────────────────────────────── */
+
+  cr-toolbar-search-field {
+    background-color: #3e3456 !important;
+    border: 1px solid #637777 !important;
+    border-radius: 8px !important;
+  }
+
+  cr-toolbar-search-field:focus-within {
+    border-color: #e892ff !important;
+    box-shadow: 0 0 0 1px #e892ff40 !important;
+  }
+
+  /* ── Hover effects ──────────────────────────────────────────────── */
+
+  .cr-button:hover,
+  .cr-icon-button:hover,
+  .cr-link-button:hover {
+    background-color: rgba(225, 53, 255, 0.08) !important;
+  }
+
+  /* ── Scrollbars ─────────────────────────────────────────────────── */
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #141220 !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b199ff !important;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e892ff !important;
+  }
+
+  /* ── Selection ──────────────────────────────────────────────────── */
+
+  ::selection {
+    background-color: #e892ff !important;
+    color: #1a1626 !important;
+  }
+
+  /* ── Links ──────────────────────────────────────────────────────── */
+
+  a {
+    color: #99ffee !important;
+  }
+
+  a:hover {
+    color: #88ffff !important;
+  }
+
+  /* ── Code blocks ────────────────────────────────────────────────── */
+
+  code, pre {
+    background-color: #141220 !important;
+    color: #ffc2ff !important;
+    border: 1px solid rgba(225, 53, 255, 0.2) !important;
+    border-radius: 6px !important;
+  }
+
+  /* ── Flags page ─────────────────────────────────────────────────── */
+
+  .experiment {
+    background-color: #3e3456 !important;
+    border: 1px solid rgba(225, 53, 255, 0.1) !important;
+    border-radius: 8px !important;
+  }
+
+  .experiment-name {
+    color: #99ffee !important;
+  }
+
+  .experiment select {
+    background-color: #141220 !important;
+    color: #f8f8f2 !important;
+    border: 1px solid #637777 !important;
+    border-radius: 6px !important;
+  }
+
+  .experiment select:focus {
+    border-color: #e892ff !important;
+  }
+}

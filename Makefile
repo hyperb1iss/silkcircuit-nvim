@@ -1,4 +1,4 @@
-.PHONY: help setup test lint format clean install-hooks compile vscode vscode-package vscode-publish-vsce vscode-publish-ovsx vscode-publish
+.PHONY: help setup test lint format clean install-hooks compile vscode vscode-package vscode-publish-vsce vscode-publish-ovsx vscode-publish chrome
 
 # Colors matching SilkCircuit theme
 PURPLE := \033[38;2;199;146;234m
@@ -31,6 +31,7 @@ help:
 	@printf "  $(PURPLE)$(STAR) clean$(RESET)          $(GRAY)─$(RESET) Clean generated files\n"
 	@printf "  $(PURPLE)$(STAR) install-hooks$(RESET)  $(GRAY)─$(RESET) Install git pre-commit hooks\n"
 	@printf "  $(PURPLE)$(STAR) compile$(RESET)        $(GRAY)─$(RESET) Compile theme for performance\n"
+	@printf "  $(PURPLE)$(STAR) chrome$(RESET)         $(GRAY)─$(RESET) Generate Chrome theme variants\n"
 	@printf "  $(PURPLE)$(STAR) vscode$(RESET)         $(GRAY)─$(RESET) Build VSCode theme package\n"
 	@printf "  $(PURPLE)$(STAR) vscode-package$(RESET)  $(GRAY)─$(RESET) Package VSCode extension (VSIX)\n"
 	@printf "  $(PURPLE)$(STAR) vscode-publish$(RESET)  $(GRAY)─$(RESET) Publish to VSCode + Open VSX (requires tokens)\n"
@@ -195,6 +196,19 @@ vscode-publish-ovsx:
 vscode-publish: vscode-publish-vsce vscode-publish-ovsx
 	@printf "\n"
 	@printf "$(GREEN)$(STAR) VSCode extension published to both marketplaces$(RESET)\n"
+	@printf "\n"
+
+# Build Chrome themes (all 5 variants)
+chrome:
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Generating Chrome Themes$(RESET)\n"
+	@printf "\n"
+	@printf "  $(CYAN)$(DOT)$(RESET) Generating all 5 variants...\n"
+	@python3 scripts/generate_chrome_themes.py
+	@printf "  $(GREEN)$(CHECK)$(RESET) Chrome themes generated → extras/chrome-theme/silkcircuit-*/\n"
+	@printf "\n"
+	@printf "$(CYAN)$(STAR) Load in Chrome:$(RESET)\n"
+	@printf "  $(GRAY)chrome://extensions → Developer mode → Load unpacked$(RESET)\n"
 	@printf "\n"
 
 # CI target

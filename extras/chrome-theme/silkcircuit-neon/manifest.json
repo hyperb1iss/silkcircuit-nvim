@@ -1,0 +1,218 @@
+{
+  "manifest_version": 3,
+  "version": "2.0.0",
+  "name": "SilkCircuit Neon",
+  "description": "Electric dreams \u2014 the original SilkCircuit experience with neon purples and glowing cyan",
+  "theme": {
+    "colors": {
+      "frame": [
+        10,
+        8,
+        18
+      ],
+      "frame_inactive": [
+        8,
+        6,
+        14
+      ],
+      "frame_incognito": [
+        35,
+        13,
+        46
+      ],
+      "frame_incognito_inactive": [
+        29,
+        11,
+        39
+      ],
+      "toolbar": [
+        26,
+        22,
+        42
+      ],
+      "toolbar_text": [
+        248,
+        248,
+        242
+      ],
+      "toolbar_button_icon": [
+        128,
+        255,
+        234
+      ],
+      "tab_text": [
+        248,
+        248,
+        242
+      ],
+      "tab_background_text": [
+        149,
+        128,
+        255
+      ],
+      "tab_background_text_inactive": [
+        96,
+        83,
+        163
+      ],
+      "tab_background_text_incognito": [
+        149,
+        128,
+        255
+      ],
+      "tab_background_text_incognito_inactive": [
+        96,
+        83,
+        163
+      ],
+      "background_tab": [
+        14,
+        12,
+        25
+      ],
+      "background_tab_inactive": [
+        9,
+        7,
+        16
+      ],
+      "background_tab_incognito": [
+        31,
+        12,
+        41
+      ],
+      "background_tab_incognito_inactive": [
+        8,
+        6,
+        15
+      ],
+      "bookmark_text": [
+        255,
+        106,
+        193
+      ],
+      "button_background": [
+        225,
+        53,
+        255,
+        0.15
+      ],
+      "omnibox_background": [
+        22,
+        19,
+        34
+      ],
+      "omnibox_text": [
+        248,
+        248,
+        242
+      ],
+      "ntp_background": [
+        18,
+        16,
+        26
+      ],
+      "ntp_text": [
+        248,
+        248,
+        242
+      ],
+      "ntp_link": [
+        128,
+        255,
+        234
+      ],
+      "ntp_header": [
+        149,
+        128,
+        255
+      ]
+    },
+    "tints": {
+      "buttons": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_incognito": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_incognito_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "background_tab": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 1
+    },
+    "images": {
+      "theme_ntp_background": "images/ntp_background.png"
+    },
+    "tab_group_color_palette": {
+      "grey_override": [
+        99,
+        119,
+        119
+      ],
+      "blue_override": [
+        130,
+        170,
+        255
+      ],
+      "red_override": [
+        255,
+        99,
+        99
+      ],
+      "yellow_override": [
+        241,
+        250,
+        140
+      ],
+      "green_override": [
+        80,
+        250,
+        123
+      ],
+      "pink_override": [
+        255,
+        106,
+        193
+      ],
+      "purple_override": [
+        225,
+        53,
+        255
+      ],
+      "cyan_override": [
+        128,
+        255,
+        234
+      ],
+      "orange_override": [
+        255,
+        106,
+        193
+      ]
+    }
+  }
+}

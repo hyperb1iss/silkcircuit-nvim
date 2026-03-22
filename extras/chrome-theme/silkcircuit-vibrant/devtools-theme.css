@@ -1,0 +1,398 @@
+/* SilkCircuit Vibrant — DevTools Theme
+ *
+ * Targets Chrome DevTools (2025+) using modern CSS custom properties.
+ * Uses --sys-color-* tokens and .token-* classes (CodeMirror 6).
+ *
+ * Setup: DevTools > Settings > Experiments > "Allow extensions to load
+ * custom stylesheets", then load via a DevTools theme extension.
+ */
+
+/* ── Core surfaces ──────────────────────────────────────────────────── */
+
+:root,
+body,
+.theme-with-dark-background,
+.-theme-with-dark-background {
+  /* Base surfaces */
+  --sys-color-base: #0f0c1a !important;
+  --sys-color-base-container: #08060f !important;
+  --sys-color-base-container-elevated: #0a0614 !important;
+  --sys-color-cdt-base: #0f0c1a !important;
+  --sys-color-cdt-base-container: #08060f !important;
+
+  /* Elevation surfaces */
+  --sys-color-surface: #0f0c1a !important;
+  --sys-color-surface1: #0f0c1a !important;
+  --sys-color-surface2: #0a0614 !important;
+  --sys-color-surface3: #0a0614 !important;
+  --sys-color-surface4: #0a0614 !important;
+  --sys-color-surface5: #0a0614 !important;
+  --sys-color-surface-variant: #0a0614 !important;
+
+  /* Status surfaces */
+  --sys-color-surface-error: rgba(255, 99, 99, 0.08) !important;
+  --sys-color-surface-green: rgba(80, 250, 123, 0.08) !important;
+  --sys-color-surface-yellow: rgba(241, 250, 140, 0.08) !important;
+  --sys-color-surface-yellow-high: rgba(241, 250, 140, 0.15) !important;
+
+  /* ── Text colors ────────────────────────────────────────────────── */
+
+  --sys-color-on-base: #f8f8f2 !important;
+  --sys-color-on-surface: #f8f8f2 !important;
+  --sys-color-on-surface-subtle: #b366ff !important;
+  --sys-color-on-surface-secondary: #637777 !important;
+  --sys-color-on-surface-primary: #f8f8f2 !important;
+
+  /* ── Primary / accent ───────────────────────────────────────────── */
+
+  --sys-color-primary: #ff00ff !important;
+  --sys-color-primary-bright: #ff00ff !important;
+  --sys-color-on-primary: #0f0c1a !important;
+  --sys-color-secondary: #00ffcc !important;
+  --sys-color-on-secondary: #0f0c1a !important;
+  --sys-color-tertiary: #ff00cc !important;
+  --sys-color-on-tertiary: #0f0c1a !important;
+  --sys-color-tertiary-container: #0a0614 !important;
+  --sys-color-on-tertiary-container: #ff99ff !important;
+
+  /* Containers */
+  --sys-color-tonal-container: #0a0614 !important;
+  --sys-color-on-tonal-container: #f8f8f2 !important;
+  --sys-color-tonal-outline: #b366ff !important;
+  --sys-color-header-container: #08060f !important;
+  --sys-color-omnibox-container: #0a0614 !important;
+  --sys-color-neutral-container: #3a2e5a !important;
+  --sys-color-neutral-bright: #e9d5ff !important;
+  --sys-color-neutral-outline: #637777 !important;
+
+  /* ── Named semantic colors ──────────────────────────────────────── */
+
+  --sys-color-blue: #6699ff !important;
+  --sys-color-blue-bright: #6699ff !important;
+  --sys-color-cyan: #00ffcc !important;
+  --sys-color-cyan-bright: #00ffff !important;
+  --sys-color-green: #00ff66 !important;
+  --sys-color-green-bright: #00ff66 !important;
+  --sys-color-orange: #ff00aa !important;
+  --sys-color-orange-bright: #F78C6C !important;
+  --sys-color-pink: #ff00cc !important;
+  --sys-color-pink-bright: #ff99ff !important;
+  --sys-color-purple: #ff00ff !important;
+  --sys-color-purple-bright: #ff00ff !important;
+  --sys-color-yellow: #ffcc00 !important;
+  --sys-color-yellow-bright: #ffcc00 !important;
+  --sys-color-yellow-container: rgba(241, 250, 140, 0.15) !important;
+  --sys-color-yellow-outline: #ffcc00 !important;
+
+  /* Error / status */
+  --sys-color-error: #ff3366 !important;
+  --sys-color-error-bright: #ff3366 !important;
+  --sys-color-error-container: rgba(255, 99, 99, 0.12) !important;
+  --sys-color-error-outline: #ff3366 !important;
+  --sys-color-on-error: #0f0c1a !important;
+  --sys-color-on-error-container: #ff3366 !important;
+  --sys-color-on-surface-error: #ff3366 !important;
+  --sys-color-on-surface-green: #00ff66 !important;
+  --sys-color-on-surface-yellow: #ffcc00 !important;
+
+  /* ── Dividers & outlines ────────────────────────────────────────── */
+
+  --sys-color-divider: rgba(149, 128, 255, 0.15) !important;
+  --sys-color-divider-prominent: rgba(225, 53, 255, 0.3) !important;
+  --sys-color-outline: #637777 !important;
+
+  /* ── Gradients ──────────────────────────────────────────────────── */
+
+  --sys-color-gradient-primary: #ff00ff !important;
+  --sys-color-gradient-tertiary: #00ffcc !important;
+
+  /* ── Interactive states ─────────────────────────────────────────── */
+
+  --sys-color-state-hover-on-subtle: rgba(225, 53, 255, 0.08) !important;
+  --sys-color-state-hover-on-prominent: rgba(225, 53, 255, 0.12) !important;
+  --sys-color-state-focus-highlight: #ff00ff !important;
+  --sys-color-state-focus-ring: #00ffcc !important;
+  --sys-color-state-ripple-primary: rgba(225, 53, 255, 0.2) !important;
+  --sys-color-state-ripple-neutral-on-subtle: rgba(248, 248, 242, 0.08) !important;
+  --sys-color-state-text-highlight: rgba(225, 53, 255, 0.25) !important;
+
+  /* ── Syntax token colors (CodeMirror 6) ─────────────────────────── */
+
+  --sys-color-token-keyword: #ff00ff !important;
+  --sys-color-token-variable: #f8f8f2 !important;
+  --sys-color-token-definition: #00ffcc !important;
+  --sys-color-token-property: #00ffff !important;
+  --sys-color-token-property-special: #F78C6C !important;
+  --sys-color-token-type: #ffcc00 !important;
+  --sys-color-token-variable-special: #F78C6C !important;
+  --sys-color-token-builtin: #00ffff !important;
+  --sys-color-token-number: #F78C6C !important;
+  --sys-color-token-string: #ff99ff !important;
+  --sys-color-token-string-special: #00ffff !important;
+  --sys-color-token-atom: #ff00ff !important;
+  --sys-color-token-comment: #b366ff !important;
+  --sys-color-token-meta: #637777 !important;
+  --sys-color-token-tag: #ff00cc !important;
+  --sys-color-token-attribute: #ff00ff !important;
+  --sys-color-token-attribute-value: #ff99ff !important;
+  --sys-color-token-inserted: #00ff66 !important;
+  --sys-color-token-deleted: #ff3366 !important;
+  --sys-color-token-subtle: #637777 !important;
+  --sys-color-token-pseudo-element: #b366ff !important;
+
+  /* ── UI chrome overrides ────────────────────────────────────────── */
+
+  --override-toolbar-background-color: #08060f !important;
+  --override-current-search-result-background-color: rgba(241, 250, 140, 0.3) !important;
+  --app-color-toolbar-background: #08060f !important;
+
+  /* Links */
+  --text-link: #00ffcc !important;
+
+  /* Console ANSI colors */
+  --console-color-red: #ff3366 !important;
+  --console-color-green: #00ff66 !important;
+  --console-color-yellow: #ffcc00 !important;
+  --console-color-blue: #6699ff !important;
+  --console-color-magenta: #ff00cc !important;
+  --console-color-cyan: #00ffcc !important;
+  --console-color-bright-red: #ff3366 !important;
+  --console-color-bright-green: #00ff66 !important;
+  --console-color-bright-yellow: #ffcc00 !important;
+  --console-color-bright-blue: #6699ff !important;
+  --console-color-bright-magenta: #ff99ff !important;
+  --console-color-bright-cyan: #00ffff !important;
+}
+
+/* ── CM6 token classes (direct styling fallback) ────────────────────── */
+
+.token-keyword { color: #ff00ff !important; }
+.token-variable { color: #f8f8f2 !important; }
+.token-definition { color: #00ffcc !important; }
+.token-property { color: #00ffff !important; }
+.token-type { color: #ffcc00 !important; }
+.token-variable-special { color: #F78C6C !important; }
+.token-builtin { color: #00ffff !important; }
+.token-number { color: #F78C6C !important; }
+.token-string { color: #ff99ff !important; }
+.token-string-special { color: #00ffff !important; }
+.token-atom { color: #ff00ff !important; }
+.token-comment { color: #b366ff !important; font-style: italic; }
+.token-meta { color: #637777 !important; }
+.token-tag { color: #ff00cc !important; }
+.token-attribute { color: #ff00ff !important; }
+.token-attribute-value { color: #ff99ff !important; }
+.token-inserted { color: #00ff66 !important; }
+.token-deleted { color: #ff3366 !important; text-decoration: line-through; }
+
+/* ── CM5 fallback (older Chrome versions) ───────────────────────────── */
+
+.cm-keyword { color: #ff00ff !important; }
+.cm-string { color: #ff99ff !important; }
+.cm-number { color: #F78C6C !important; }
+.cm-property { color: #00ffff !important; }
+.cm-variable { color: #f8f8f2 !important; }
+.cm-comment { color: #b366ff !important; font-style: italic; }
+.cm-tag { color: #ff00cc !important; }
+.cm-attribute { color: #ff00ff !important; }
+
+/* ── Editor chrome ──────────────────────────────────────────────────── */
+
+.cm-editor {
+  background-color: #0f0c1a !important;
+}
+
+.cm-content {
+  caret-color: #00ffcc !important;
+}
+
+.cm-cursor {
+  border-left-color: #00ffcc !important;
+}
+
+.cm-selectionBackground,
+.cm-selection {
+  background-color: #3a2e5a !important;
+}
+
+.cm-selectionMatch {
+  background-color: rgba(241, 250, 140, 0.15) !important;
+}
+
+.cm-matchingBracket {
+  background-color: rgba(128, 255, 234, 0.2) !important;
+  outline: 1px solid #00ffcc !important;
+}
+
+.cm-gutters {
+  background-color: #08060f !important;
+  border-right: 1px solid rgba(149, 128, 255, 0.15) !important;
+}
+
+.cm-lineNumbers {
+  color: #637777 !important;
+}
+
+.cm-foldPlaceholder {
+  color: #b366ff !important;
+}
+
+.cm-highlightedLine {
+  background-color: rgba(225, 53, 255, 0.06) !important;
+}
+
+/* ── Console panel ──────────────────────────────────────────────────── */
+
+.console-message-wrapper.console-error-level {
+  background-color: rgba(255, 99, 99, 0.08) !important;
+  border-left-color: #ff3366 !important;
+}
+
+.console-message-wrapper.console-warning-level {
+  background-color: rgba(241, 250, 140, 0.08) !important;
+  border-left-color: #ffcc00 !important;
+}
+
+#console-prompt .console-prompt-icon {
+  color: #00ffcc !important;
+}
+
+.console-eager-inner-preview {
+  color: #637777 !important;
+}
+
+/* ── Network panel ──────────────────────────────────────────────────── */
+
+.network-log-grid.data-grid thead {
+  background-color: #0a0614 !important;
+}
+
+.network-error-row {
+  color: #ff3366 !important;
+}
+
+.network-warning-row {
+  color: #ffcc00 !important;
+}
+
+.network-summary-bar {
+  background-color: #08060f !important;
+  border-top: 1px solid rgba(149, 128, 255, 0.15) !important;
+}
+
+/* ── Elements panel ─────────────────────────────────────────────────── */
+
+.elements-disclosure li.selected .selection {
+  background-color: rgba(225, 53, 255, 0.15) !important;
+}
+
+.webkit-css-property {
+  color: #00ffcc !important;
+}
+
+/* ── Sources panel ──────────────────────────────────────────────────── */
+
+.breakpoint-item.hit {
+  background-color: rgba(241, 250, 140, 0.15) !important;
+}
+
+.paused-message {
+  background-color: rgba(241, 250, 140, 0.1) !important;
+  color: #ffcc00 !important;
+}
+
+/* ── Shared data grid ───────────────────────────────────────────────── */
+
+.data-grid tbody tr.selected {
+  background-color: rgba(225, 53, 255, 0.12) !important;
+}
+
+.data-grid th {
+  background-color: #0a0614 !important;
+  border-bottom: 1px solid rgba(149, 128, 255, 0.2) !important;
+}
+
+.striped-data-grid .data-grid-data-grid-node:nth-child(even) {
+  background-color: #08060f !important;
+}
+
+/* ── Tabs ───────────────────────────────────────────────────────────── */
+
+.tabbed-pane-header {
+  background-color: #08060f !important;
+  border-bottom: 1px solid rgba(149, 128, 255, 0.15) !important;
+}
+
+.tabbed-pane-header-tab.selected {
+  background-color: #0f0c1a !important;
+}
+
+.tab-slider {
+  background-color: #ff00ff !important;
+}
+
+/* ── Toolbar ────────────────────────────────────────────────────────── */
+
+.toolbar {
+  background-color: #08060f !important;
+  border-bottom: 1px solid rgba(149, 128, 255, 0.15) !important;
+}
+
+.toolbar-button {
+  color: #00ffcc !important;
+}
+
+.toolbar-button:hover {
+  background-color: #0a0614 !important;
+}
+
+/* ── Status bar ─────────────────────────────────────────────────────── */
+
+.status-bar {
+  background-color: #08060f !important;
+  border-top: 1px solid rgba(149, 128, 255, 0.15) !important;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08060f !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b366ff !important;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff00ff !important;
+}
+
+/* ── Selection ──────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: #ff00ff !important;
+  color: #0f0c1a !important;
+}
+
+/* ── Links ──────────────────────────────────────────────────────────── */
+
+a {
+  color: #00ffcc !important;
+}
+
+a:hover {
+  color: #00ffff !important;
+}
+
+/* ── Search highlights ──────────────────────────────────────────────── */
+
+.highlighted-search-result {
+  background-color: #ffcc00 !important;
+  color: #0f0c1a !important;
+}

@@ -1,0 +1,218 @@
+{
+  "manifest_version": 3,
+  "version": "2.0.0",
+  "name": "SilkCircuit Vibrant",
+  "description": "Pure electric intensity \u2014 maximum saturation on ultra-dark canvas",
+  "theme": {
+    "colors": {
+      "frame": [
+        8,
+        6,
+        15
+      ],
+      "frame_inactive": [
+        6,
+        4,
+        12
+      ],
+      "frame_incognito": [
+        37,
+        5,
+        43
+      ],
+      "frame_incognito_inactive": [
+        31,
+        4,
+        36
+      ],
+      "toolbar": [
+        10,
+        6,
+        20
+      ],
+      "toolbar_text": [
+        248,
+        248,
+        242
+      ],
+      "toolbar_button_icon": [
+        0,
+        255,
+        204
+      ],
+      "tab_text": [
+        248,
+        248,
+        242
+      ],
+      "tab_background_text": [
+        179,
+        102,
+        255
+      ],
+      "tab_background_text_inactive": [
+        113,
+        66,
+        163
+      ],
+      "tab_background_text_incognito": [
+        179,
+        102,
+        255
+      ],
+      "tab_background_text_incognito_inactive": [
+        113,
+        66,
+        163
+      ],
+      "background_tab": [
+        8,
+        6,
+        16
+      ],
+      "background_tab_inactive": [
+        7,
+        5,
+        13
+      ],
+      "background_tab_incognito": [
+        32,
+        5,
+        38
+      ],
+      "background_tab_incognito_inactive": [
+        6,
+        5,
+        12
+      ],
+      "bookmark_text": [
+        247,
+        140,
+        108
+      ],
+      "button_background": [
+        255,
+        0,
+        255,
+        0.15
+      ],
+      "omnibox_background": [
+        12,
+        9,
+        23
+      ],
+      "omnibox_text": [
+        248,
+        248,
+        242
+      ],
+      "ntp_background": [
+        15,
+        12,
+        26
+      ],
+      "ntp_text": [
+        248,
+        248,
+        242
+      ],
+      "ntp_link": [
+        0,
+        255,
+        204
+      ],
+      "ntp_header": [
+        179,
+        102,
+        255
+      ]
+    },
+    "tints": {
+      "buttons": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_incognito": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_incognito_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "background_tab": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 1
+    },
+    "images": {
+      "theme_ntp_background": "images/ntp_background.png"
+    },
+    "tab_group_color_palette": {
+      "grey_override": [
+        99,
+        119,
+        119
+      ],
+      "blue_override": [
+        102,
+        153,
+        255
+      ],
+      "red_override": [
+        255,
+        51,
+        102
+      ],
+      "yellow_override": [
+        255,
+        204,
+        0
+      ],
+      "green_override": [
+        0,
+        255,
+        102
+      ],
+      "pink_override": [
+        247,
+        140,
+        108
+      ],
+      "purple_override": [
+        255,
+        0,
+        255
+      ],
+      "cyan_override": [
+        0,
+        255,
+        204
+      ],
+      "orange_override": [
+        255,
+        0,
+        170
+      ]
+    }
+  }
+}

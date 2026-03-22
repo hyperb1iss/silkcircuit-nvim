@@ -74,24 +74,22 @@ cp extras/warp-dawn.yaml ~/.warp/themes/silkcircuit-dawn.yaml
 
 ### 🌐 Chrome Theme (`chrome-theme/`)
 
-Bring SilkCircuit's vibrant colors to your browser:
+Full SilkCircuit browser theming — all 5 variants:
 
-- **Neon purple** frame and toolbar
-- **Electric cyan** links and accents
-- **Pure magenta** highlights
-- **Dark theme** optimized for developer tools
+- **5 variants** — Neon, Vibrant, Soft, Glow, Dawn
+- **24 theme color keys** — frame, toolbar, omnibox, tabs, NTP, tab groups
+- **Circuit-trace NTP backgrounds** — unique per variant
+- **DevTools CSS** — modern CM6 + `--sys-color-*` tokens
+- **Chrome pages CSS** — `--cr-*` overrides for internal pages
 
 **Setup:**
 
 ```bash
-# Method 1: Developer Mode
-# 1. Open chrome://extensions/
-# 2. Enable "Developer mode"
-# 3. Click "Load unpacked"
-# 4. Select the chrome-theme directory
+# Generate all variants
+make chrome
 
-# Method 2: Direct drag & drop
-# Drag the chrome-theme folder onto chrome://extensions/
+# Install: chrome://extensions/ → Developer mode → Load unpacked
+# Select: extras/chrome-theme/silkcircuit-{neon,vibrant,soft,glow,dawn}/
 ```
 
 ### 💬 Slack Theme (`slack-theme.txt`)
