@@ -1057,7 +1057,11 @@ def generate_frame_image(v):
 
 
 def generate_tab_background_image(v):
-    """Generate 1x1 inactive tab background — matches frame color."""
+    """Generate 1x1 RGBA inactive tab background.
+
+    Using RGBA with slight transparency (matching Pink Triangles approach)
+    lets the frame show through and may soften Chrome's tab stroke rendering.
+    """
     try:
         from PIL import Image
     except ImportError:
@@ -1065,7 +1069,7 @@ def generate_tab_background_image(v):
 
     is_dark = v["is_dark"]
     bg = tuple(lighten(v["bg_highlight"], 0.06)) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
-    return Image.new("RGB", (1, 1), bg)
+    return Image.new("RGBA", (1, 1), bg + (230,))
 
 
 # ---------------------------------------------------------------------------
