@@ -1033,7 +1033,9 @@ def generate_ntp_background(variant_key, v, width=1920, height=1080):
 
     import random
 
-    random.seed(hash(variant_key) + 42)  # Deterministic per variant
+    # Fixed seeds per variant for deterministic output
+    variant_seeds = {"neon": 1001, "vibrant": 2002, "soft": 3003, "glow": 4004, "dawn": 5005}
+    random.seed(variant_seeds.get(variant_key, 9999))
 
     # Draw circuit traces — horizontal and vertical lines with nodes
     num_traces = 35
