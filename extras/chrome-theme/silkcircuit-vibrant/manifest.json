@@ -26,9 +26,9 @@
         36
       ],
       "toolbar": [
-        10,
-        6,
-        20
+        71,
+        68,
+        78
       ],
       "toolbar_text": [
         248,
@@ -68,22 +68,22 @@
       "background_tab": [
         8,
         6,
-        16
+        15
       ],
       "background_tab_inactive": [
-        7,
-        5,
-        13
+        6,
+        4,
+        12
       ],
       "background_tab_incognito": [
-        32,
+        37,
         5,
-        38
+        43
       ],
       "background_tab_incognito_inactive": [
-        6,
-        5,
-        12
+        31,
+        4,
+        36
       ],
       "bookmark_text": [
         247,

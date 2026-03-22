@@ -215,8 +215,14 @@ def generate_manifest(variant_key, v):
         incognito_frame = blend(v["bg_dark"], v["purple"], 0.92)
         incognito_frame_inactive = blend(v["bg_dark"], v["purple"], 0.95)
 
-    # Toolbar: slightly lighter than frame, the active tab blends into this
-    toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
+    # Toolbar: must be significantly lighter than frame for active tab contrast.
+    # Active tab bg = toolbar color (hardcoded in Chrome). Target: 1.3:1+ contrast
+    # ratio against frame, which means ~15-20pp HSL lightness gap.
+    if is_dark:
+        # Lighten bg_highlight toward fg to guarantee contrast
+        toolbar = lighten(v["bg_highlight"], 0.25)
+    else:
+        toolbar = hex_to_rgb(v["bg"])
 
     # Tab text colors — active is brightest, inactive fades
     tab_text = hex_to_rgb(v["fg"])
@@ -227,15 +233,14 @@ def generate_manifest(variant_key, v):
     tab_bg_text_incognito = tab_bg_text
     tab_bg_text_incognito_inactive = tab_bg_text_inactive
 
-    # Background tabs — blend between frame and toolbar
-    bg_tab = blend(v["bg_dark"], v["bg_highlight"], 0.7) if is_dark else hex_to_rgb(v["bg_dark"])
-    bg_tab_inactive = darken(v["bg_dark"], 0.1) if is_dark else lighten(v["bg_dark"], 0.03)
-    bg_tab_incognito = (
-        blend(v["bg_dark"], v["purple"], 0.9) if is_dark else blend(v["bg_dark"], v["purple"], 0.95)
-    )
-    bg_tab_incognito_inactive = darken(v["bg_dark"], 0.15) if is_dark else hex_to_rgb(v["bg_dark"])
+    # Background tabs — match frame so inactive tabs merge into the strip.
+    # This makes the active tab (toolbar color) the sole visual pop.
+    bg_tab = frame
+    bg_tab_inactive = frame_inactive
+    bg_tab_incognito = incognito_frame
+    bg_tab_incognito_inactive = incognito_frame_inactive
 
-    # Omnibox — slightly distinct from toolbar
+    # Omnibox — slightly darker than toolbar to visually nest inside it
     omnibox_bg = blend(v["bg"], v["bg_highlight"], 0.5) if is_dark else hex_to_rgb(v["bg_highlight"])
 
     # Button — subtle accent with transparency

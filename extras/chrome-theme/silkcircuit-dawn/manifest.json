@@ -76,14 +76,14 @@
         255
       ],
       "background_tab_incognito": [
+        231,
+        220,
+        251
+      ],
+      "background_tab_incognito_inactive": [
         235,
         226,
         252
-      ],
-      "background_tab_incognito_inactive": [
-        241,
-        236,
-        255
       ],
       "bookmark_text": [
         199,

@@ -26,9 +26,9 @@
         25
       ],
       "toolbar": [
-        26,
-        0,
-        51
+        83,
+        63,
+        102
       ],
       "toolbar_text": [
         255,
@@ -66,9 +66,9 @@
         161
       ],
       "background_tab": [
-        7,
         0,
-        15
+        0,
+        0
       ],
       "background_tab_inactive": [
         0,
@@ -76,14 +76,14 @@
         0
       ],
       "background_tab_incognito": [
+        30,
+        0,
+        30
+      ],
+      "background_tab_incognito_inactive": [
         25,
         0,
         25
-      ],
-      "background_tab_incognito_inactive": [
-        0,
-        0,
-        0
       ],
       "bookmark_text": [
         255,
