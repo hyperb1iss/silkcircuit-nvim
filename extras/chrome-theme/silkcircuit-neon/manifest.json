@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0.0",
   "name": "SilkCircuit Neon",
-  "description": "A dark Chrome theme with electric purple gradients, glowing cyan accents, and circuit-trace patterns. Features neon-lit toolbar, custom New Tab background, themed tab groups, and pink-tinted controls. Part of the SilkCircuit design system.",
+  "description": "A dark Chrome theme with electric purple gradients, glowing cyan accents, and circuit-trace patterns. Features neon-lit toolbar, custom New Tab background, themed tab groups, and pink-tinted controls. Electric meets elegant \u2014 part of the SilkCircuit design system.",
   "theme": {
     "colors": {
       "frame": [

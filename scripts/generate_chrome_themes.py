@@ -22,7 +22,7 @@ from pathlib import Path
 VARIANTS = {
     "neon": {
         "name": "SilkCircuit Neon",
-        "description": "A dark Chrome theme with electric purple gradients, glowing cyan accents, and circuit-trace patterns. Features neon-lit toolbar, custom New Tab background, themed tab groups, and pink-tinted controls. Part of the SilkCircuit design system.",
+        "description": "A dark Chrome theme with electric purple gradients, glowing cyan accents, and circuit-trace patterns. Features neon-lit toolbar, custom New Tab background, themed tab groups, and pink-tinted controls. Electric meets elegant — part of the SilkCircuit design system.",
         "is_dark": True,
         # Backgrounds
         "bg": "#12101a",
@@ -50,7 +50,7 @@ VARIANTS = {
     },
     "vibrant": {
         "name": "SilkCircuit Vibrant",
-        "description": "Ultra-dark Chrome theme with maximum neon saturation. Pure magenta, electric cyan accents, and vivid circuit-trace patterns on a void-dark canvas. Features gradient toolbar, custom New Tab background, and themed tab groups. Part of the SilkCircuit design system.",
+        "description": "Ultra-dark Chrome theme with maximum neon saturation. Pure magenta, electric cyan accents, and vivid circuit-trace patterns on a void-dark canvas. Features gradient toolbar, custom New Tab background, and themed tab groups. Electric meets elegant — part of the SilkCircuit design system.",
         "is_dark": True,
         "bg": "#0f0c1a",
         "bg_dark": "#08060f",
@@ -75,7 +75,7 @@ VARIANTS = {
     },
     "soft": {
         "name": "SilkCircuit Soft",
-        "description": "A gentle dark Chrome theme with softened neon colors for comfortable extended browsing. Muted purple gradients, pastel cyan accents, and subtle circuit-trace patterns. Features gradient toolbar, custom New Tab background, and themed tab groups. Part of the SilkCircuit design system.",
+        "description": "A gentle dark Chrome theme with softened neon colors for comfortable extended browsing. Muted purple gradients, pastel cyan accents, and subtle circuit-trace patterns. Features gradient toolbar, custom New Tab background, and themed tab groups. Electric meets elegant — part of the SilkCircuit design system.",
         "is_dark": True,
         "bg": "#1a1626",
         "bg_dark": "#141220",
@@ -100,7 +100,7 @@ VARIANTS = {
     },
     "glow": {
         "name": "SilkCircuit Glow",
-        "description": "Maximum contrast dark Chrome theme — pure neon colors on void-black backgrounds. Blazing magenta gradients, vivid cyan nodes, and bold circuit-trace patterns. Features gradient toolbar, custom New Tab background, and themed tab groups. Part of the SilkCircuit design system.",
+        "description": "Maximum contrast dark Chrome theme — pure neon colors on void-black backgrounds. Blazing magenta gradients, vivid cyan nodes, and bold circuit-trace patterns. Features gradient toolbar, custom New Tab background, and themed tab groups. Electric meets elegant — part of the SilkCircuit design system.",
         "is_dark": True,
         "bg": "#0a0816",
         "bg_dark": "#000000",
@@ -125,7 +125,7 @@ VARIANTS = {
     },
     "dawn": {
         "name": "SilkCircuit Dawn",
-        "description": "A light Chrome theme with electric purple accents on soft lavender backgrounds. Ideal for daytime browsing with vibrant teal highlights, subtle circuit-trace patterns, and warm purple gradients. Features custom New Tab background and themed tab groups. Part of the SilkCircuit design system.",
+        "description": "A light Chrome theme with electric purple accents on soft lavender backgrounds. Ideal for daytime browsing with vibrant teal highlights, subtle circuit-trace patterns, and warm purple gradients. Features custom New Tab background and themed tab groups. Electric meets elegant — part of the SilkCircuit design system.",
         "is_dark": False,
         "bg": "#faf8ff",
         "bg_dark": "#f1ecff",
