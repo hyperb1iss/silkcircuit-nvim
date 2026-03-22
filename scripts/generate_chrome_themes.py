@@ -256,7 +256,7 @@ def generate_manifest(variant_key, v):
                 # Toolbar
                 "toolbar": toolbar,
                 "toolbar_text": hex_to_rgb(v["fg"]),
-                "toolbar_button_icon": hex_to_rgb(v["cyan"]),
+                "toolbar_button_icon": hex_to_rgb(v["coral"]),
                 # Active tab
                 "tab_text": tab_text,
                 # Inactive tabs
