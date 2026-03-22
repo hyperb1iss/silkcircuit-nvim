@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0.0",
   "name": "SilkCircuit Neon",
-  "description": "Electric dreams \u2014 the original SilkCircuit experience with neon purples and glowing cyan",
+  "description": "A dark Chrome theme with electric purple gradients, glowing cyan accents, and circuit-trace patterns. Features neon-lit toolbar, custom New Tab background, themed tab groups, and pink-tinted controls. Part of the SilkCircuit design system.",
   "theme": {
     "colors": {
       "frame": [

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0.0",
   "name": "SilkCircuit Dawn",
-  "description": "Light theme for daytime \u2014 electric accents on soft lavender backgrounds",
+  "description": "A light Chrome theme with electric purple accents on soft lavender backgrounds. Ideal for daytime browsing with vibrant teal highlights, subtle circuit-trace patterns, and warm purple gradients. Features custom New Tab background and themed tab groups. Part of the SilkCircuit design system.",
   "theme": {
     "colors": {
       "frame": [
