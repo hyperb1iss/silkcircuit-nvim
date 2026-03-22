@@ -1,0 +1,14 @@
+# SilkCircuit Neon — dmesg color scheme
+# Install: cp to ~/.config/terminal-colors.d/dmesg.scheme
+#
+# Colors from SilkCircuit Neon variant
+# https://github.com/hyperb1iss/silkcircuit-nvim
+
+subsys    38;2;128;255;234
+time      38;2;149;128;255
+timebreak 38;2;149;128;255
+alert     1;38;2;255;106;193
+crit      1;38;2;255;99;99
+err       38;2;255;99;99
+warn      38;2;149;128;255
+segfault  1;4;38;2;255;99;99

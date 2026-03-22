@@ -1,0 +1,14 @@
+# SilkCircuit Dawn (light) — dmesg color scheme
+# Install: cp to ~/.config/terminal-colors.d/dmesg.scheme
+#
+# Colors from SilkCircuit Dawn variant
+# https://github.com/hyperb1iss/silkcircuit-nvim
+
+subsys    38;2;0;127;142
+time      38;2;142;132;168
+timebreak 38;2;142;132;168
+alert     1;38;2;199;74;140
+crit      1;38;2;193;39;45
+err       38;2;193;39;45
+warn      38;2;142;132;168
+segfault  1;4;38;2;193;39;45
