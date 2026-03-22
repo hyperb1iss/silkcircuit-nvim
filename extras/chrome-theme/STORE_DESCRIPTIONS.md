@@ -4,12 +4,12 @@ Plain text, ready to paste into each variant's store listing.
 
 
 ═══════════════════════════════════════════════════════════════
-💜⚡ SilkCircuit Neon
+🦋⚡ SilkCircuit Neon
 ═══════════════════════════════════════════════════════════════
 
 Electric meets elegant.
 
-Transform your browser into a neon-lit command center. SilkCircuit Neon wraps Chrome in electric purple gradients, glowing cyan accents, and a signature circuit-trace New Tab background — like browsing inside a cyberpunk motherboard. 🌃
+Transform your browser into a neon-lit command center. SilkCircuit Neon wraps Chrome in electric purple gradients, glowing cyan accents, and a signature circuit-trace New Tab background — like browsing inside a cyberpunk motherboard. 🌃🦋
 
 ✨ What you get:
 
@@ -26,12 +26,12 @@ Part of the SilkCircuit design system — a unified visual identity spanning Neo
 
 
 ═══════════════════════════════════════════════════════════════
-💜✴️ SilkCircuit Vibrant
+🦋✴️ SilkCircuit Vibrant
 ═══════════════════════════════════════════════════════════════
 
 Maximum voltage. Zero compromise.
 
-Turn the saturation up to 11. SilkCircuit Vibrant pushes pure magenta, electric cyan, and blazing neon onto an ultra-dark canvas — the most intense variant in the SilkCircuit lineup. Not for the faint of heart. 🌃
+Turn the saturation up to 11. SilkCircuit Vibrant pushes pure magenta, electric cyan, and blazing neon onto an ultra-dark canvas — the most intense variant in the SilkCircuit lineup. Not for the faint of heart. 🌃🦋
 
 ✨ What you get:
 
@@ -48,7 +48,7 @@ For developers who want their browser to match their energy. Electric meets eleg
 
 
 ═══════════════════════════════════════════════════════════════
-💜🌸 SilkCircuit Soft
+🦋🌸 SilkCircuit Soft
 ═══════════════════════════════════════════════════════════════
 
 All the vibe, none of the eye strain.
@@ -70,7 +70,7 @@ Your eyes will thank you at 2am. Electric meets elegant — part of the SilkCirc
 
 
 ═══════════════════════════════════════════════════════════════
-💜🖤 SilkCircuit Glow
+🦋🌃 SilkCircuit Glow
 ═══════════════════════════════════════════════════════════════
 
 Pure neon. Absolute darkness.
@@ -92,7 +92,7 @@ For night owls, dark rooms, and anyone who believes in the glow. Electric meets 
 
 
 ═══════════════════════════════════════════════════════════════
-💜🌅 SilkCircuit Dawn
+🦋🌅 SilkCircuit Dawn
 ═══════════════════════════════════════════════════════════════
 
 Neon energy, daytime edition.
