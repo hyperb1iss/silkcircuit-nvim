@@ -1011,115 +1011,42 @@ def generate_chrome_pages_css(variant_key, v):
 # ---------------------------------------------------------------------------
 
 
-def generate_toolbar_image(v, width=800, height=160):
-    """Generate toolbar image with circuit-trace pattern.
+def generate_toolbar_image(v, width=200, height=160):
+    """Generate toolbar image with neon glow gradient.
 
-    Chrome's toolbar image extends UPWARD into the active tab area when
-    tall enough. This makes the circuit pattern visible in both the toolbar
-    and the active tab — the signature SilkCircuit glow.
+    Chrome aligns this from the bottom. The top portion extends into the
+    active tab area. Clean gradient — no circuit traces (those belong on
+    the NTP, not competing with toolbar text).
+
+    Layout (top to bottom):
+      - Neon accent glow (extends into active tab top edge)
+      - Smooth fade to bg_highlight (clean toolbar area)
     """
     try:
-        from PIL import Image, ImageDraw, ImageFilter
-        import random
+        from PIL import Image, ImageDraw
     except ImportError:
         return None
 
     is_dark = v["is_dark"]
     bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
     accent = tuple(hex_to_rgb(v["purple"]))
-    secondary = tuple(hex_to_rgb(v["cyan"]))
 
     img = Image.new("RGB", (width, height), bg)
-    trace_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(trace_layer)
+    draw = ImageDraw.Draw(img)
 
-    random.seed(8888)  # Deterministic
+    # Neon glow at the top — becomes the active tab's top fringe
+    glow_height = 25 if is_dark else 14
+    peak_brightness = 0.6 if is_dark else 0.35
 
-    trace_alpha = 50 if is_dark else 28
+    for y in range(glow_height):
+        t = y / glow_height
+        blend_factor = peak_brightness * (1 - t) ** 2.0
+        r = int(accent[0] * blend_factor + bg[0] * (1 - blend_factor))
+        g = int(accent[1] * blend_factor + bg[1] * (1 - blend_factor))
+        b = int(accent[2] * blend_factor + bg[2] * (1 - blend_factor))
+        draw.line([(0, y), (width, y)], fill=(r, g, b))
 
-    # Dense circuit routing — lots of traces
-    for i in range(55):
-        color = accent if i % 3 != 0 else secondary
-        alpha = trace_alpha + random.randint(-10, 18)
-        line_color = color + (max(12, min(75, alpha)),)
-
-        x = random.randint(-50, width + 50)
-        y = random.randint(0, height)
-
-        segments = random.randint(3, 8)
-        points = [(x, y)]
-        for _ in range(segments):
-            if random.random() > 0.4:
-                dx = random.randint(20, 180) * random.choice([-1, 1])
-                points.append((max(-20, min(width + 20, points[-1][0] + dx)), points[-1][1]))
-            else:
-                dy = random.randint(8, 45) * random.choice([-1, 1])
-                points.append((points[-1][0], max(0, min(height, points[-1][1] + dy))))
-
-        lw = random.choice([1, 1, 1, 2])
-        for j in range(len(points) - 1):
-            draw.line([points[j], points[j + 1]], fill=line_color, width=lw)
-
-        node_color = color + (max(20, min(85, alpha + 18)),)
-        for px, py in points:
-            r = random.choice([2, 2, 3, 3, 4])
-            draw.ellipse([px - r, py - r, px + r, py + r], fill=node_color)
-
-    # Via marks — small bright dots scattered along traces
-    for _ in range(40):
-        vx = random.randint(0, width)
-        vy = random.randint(0, height)
-        via_color = secondary + (random.randint(25, 55),)
-        draw.ellipse([vx - 1, vy - 1, vx + 1, vy + 1], fill=via_color)
-
-    # Chip packages — IC outlines with pin marks
-    for _ in range(8):
-        cx = random.randint(30, width - 30)
-        cy = random.randint(8, height - 8)
-        cw = random.randint(12, 50)
-        ch = random.randint(6, 22)
-        chip_color = accent + (max(14, trace_alpha + 2),)
-        draw.rectangle([cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2],
-                        outline=chip_color, width=1)
-        # Pin marks along edges
-        pin_color = secondary + (max(16, trace_alpha),)
-        pin_spacing = max(4, cw // 6)
-        for px in range(cx - cw // 2 + 3, cx + cw // 2 - 2, pin_spacing):
-            draw.line([(px, cy - ch // 2), (px, cy - ch // 2 - 3)], fill=pin_color, width=1)
-            draw.line([(px, cy + ch // 2), (px, cy + ch // 2 + 3)], fill=pin_color, width=1)
-        # Inner die mark
-        inner = secondary + (max(20, trace_alpha + 8),)
-        draw.ellipse([cx - 2, cy - 2, cx + 2, cy + 2], fill=inner)
-
-    # Fine grid dots — subtle background texture
-    grid_color = accent + (8 if is_dark else 5,)
-    for gx in range(0, width, 16):
-        for gy in range(0, height, 16):
-            draw.point((gx, gy), fill=grid_color)
-
-    trace_layer = trace_layer.filter(ImageFilter.GaussianBlur(radius=0.5))
-
-    img_rgba = img.convert("RGBA")
-    img_rgba = Image.alpha_composite(img_rgba, trace_layer)
-
-    # Neon fringe at the top — this becomes the active tab's top edge glow.
-    # Bright accent line that fades into the circuit pattern below.
-    glow_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow_layer)
-
-    fringe_height = 18 if is_dark else 10
-    peak_alpha = 140 if is_dark else 80
-
-    for y in range(fringe_height):
-        t = y / fringe_height
-        # Bright line at y=0, quadratic fade below
-        a = int(peak_alpha * (1 - t) ** 2.5)
-        if a > 0:
-            glow_draw.line([(0, y), (width, y)], fill=accent + (a,))
-
-    img_rgba = Image.alpha_composite(img_rgba, glow_layer)
-
-    return img_rgba.convert("RGB")
+    return img
 
 
 def generate_frame_image(v):
