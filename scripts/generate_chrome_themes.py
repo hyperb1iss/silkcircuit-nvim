@@ -215,19 +215,16 @@ def generate_manifest(variant_key, v):
         incognito_frame = blend(v["bg_dark"], v["purple"], 0.92)
         incognito_frame_inactive = blend(v["bg_dark"], v["purple"], 0.95)
 
-    # Toolbar = active tab bg (Chrome hardcoded). Lighten moderately for contrast
-    # without washing out the dark aesthetic. The toolbar image accent line
-    # adds a bonus purple separator between tabs and address bar.
-    if is_dark:
-        toolbar = lighten(v["bg_highlight"], 0.12)
-    else:
-        toolbar = hex_to_rgb(v["bg"])
+    # Toolbar = active tab bg (Chrome hardcoded). Keep dark to match aesthetic.
+    # Tab distinction comes from text brightness contrast, not background color.
+    toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
 
-    # Tab text colors — active is brightest, inactive fades
-    tab_text = hex_to_rgb(v["fg"])
-    tab_bg_text = hex_to_rgb(v["fg_muted"]) if is_dark else hex_to_rgb(v["fg_dark"])
+    # Tab text colors — strong brightness gap between active and inactive.
+    # Active: pure bright white. Inactive: very dim, almost ghostly.
+    tab_text = [255, 255, 255] if is_dark else hex_to_rgb(v["fg"])
+    tab_bg_text = hex_to_rgb(v["gray"]) if is_dark else hex_to_rgb(v["fg_muted"])
     tab_bg_text_inactive = (
-        blend(v["fg_muted"], v["bg"], 0.6) if is_dark else blend(v["fg_dark"], v["bg"], 0.6)
+        darken(v["gray"], 0.3) if is_dark else blend(v["fg_dark"], v["bg"], 0.5)
     )
     tab_bg_text_incognito = tab_bg_text
     tab_bg_text_incognito_inactive = tab_bg_text_inactive
@@ -1027,11 +1024,7 @@ def generate_toolbar_image(v, width=200, height=120):
         return None
 
     is_dark = v["is_dark"]
-    # Match the actual toolbar color (lightened bg_highlight)
-    if is_dark:
-        bg = tuple(lighten(v["bg_highlight"], 0.12))
-    else:
-        bg = tuple(hex_to_rgb(v["bg"]))
+    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
     accent = tuple(hex_to_rgb(v["purple"]))
 
     img = Image.new("RGB", (width, height), bg)

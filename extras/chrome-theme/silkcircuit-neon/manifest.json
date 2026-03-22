@@ -26,9 +26,9 @@
         39
       ],
       "toolbar": [
-        53,
-        49,
-        67
+        26,
+        22,
+        42
       ],
       "toolbar_text": [
         248,
@@ -41,29 +41,29 @@
         193
       ],
       "tab_text": [
-        248,
-        248,
-        242
+        255,
+        255,
+        255
       ],
       "tab_background_text": [
-        149,
-        128,
-        255
+        99,
+        119,
+        119
       ],
       "tab_background_text_inactive": [
-        96,
+        69,
         83,
-        163
+        83
       ],
       "tab_background_text_incognito": [
-        149,
-        128,
-        255
+        99,
+        119,
+        119
       ],
       "tab_background_text_incognito_inactive": [
-        96,
+        69,
         83,
-        163
+        83
       ],
       "background_tab": [
         9,
