@@ -215,9 +215,13 @@ def generate_manifest(variant_key, v):
         incognito_frame = blend(v["bg_dark"], v["purple"], 0.92)
         incognito_frame_inactive = blend(v["bg_dark"], v["purple"], 0.95)
 
-    # Toolbar: use bg_highlight (dark, matching the aesthetic the user prefers).
-    # Tab contrast comes from frame/toolbar images, not flat color gap.
-    toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
+    # Toolbar = active tab bg (Chrome hardcoded). Lighten moderately for contrast
+    # without washing out the dark aesthetic. The toolbar image accent line
+    # adds a bonus purple separator between tabs and address bar.
+    if is_dark:
+        toolbar = lighten(v["bg_highlight"], 0.12)
+    else:
+        toolbar = hex_to_rgb(v["bg"])
 
     # Tab text colors — active is brightest, inactive fades
     tab_text = hex_to_rgb(v["fg"])
@@ -1023,7 +1027,11 @@ def generate_toolbar_image(v, width=200, height=120):
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
+    # Match the actual toolbar color (lightened bg_highlight)
+    if is_dark:
+        bg = tuple(lighten(v["bg_highlight"], 0.12))
+    else:
+        bg = tuple(hex_to_rgb(v["bg"]))
     accent = tuple(hex_to_rgb(v["purple"]))
 
     img = Image.new("RGB", (width, height), bg)
