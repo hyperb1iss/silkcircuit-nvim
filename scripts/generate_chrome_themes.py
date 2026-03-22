@@ -219,12 +219,11 @@ def generate_manifest(variant_key, v):
     # Tab distinction comes from text brightness contrast, not background color.
     toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
 
-    # Tab text colors — strong brightness gap between active and inactive.
-    # Active: pure bright white. Inactive: very dim, almost ghostly.
+    # Tab text colors — bright active vs muted-purple inactive.
     tab_text = [255, 255, 255] if is_dark else hex_to_rgb(v["fg"])
-    tab_bg_text = hex_to_rgb(v["gray"]) if is_dark else hex_to_rgb(v["fg_muted"])
+    tab_bg_text = hex_to_rgb(v["fg_muted"]) if is_dark else hex_to_rgb(v["fg_dark"])
     tab_bg_text_inactive = (
-        darken(v["gray"], 0.3) if is_dark else blend(v["fg_dark"], v["bg"], 0.5)
+        blend(v["fg_muted"], v["bg"], 0.55) if is_dark else blend(v["fg_dark"], v["bg"], 0.5)
     )
     tab_bg_text_incognito = tab_bg_text
     tab_bg_text_incognito_inactive = tab_bg_text_inactive
@@ -283,8 +282,9 @@ def generate_manifest(variant_key, v):
                 "ntp_header": hex_to_rgb(v["purple_dark"]),
             },
             "tints": {
-                # Use -1 for "no change" since we're setting colors directly
-                "buttons": [-1, -1, -1],
+                # Buttons tint: shift toolbar/tab buttons toward pink/coral
+                # [hue 0-1, saturation 0-1, lightness 0-1], -1 = no change
+                "buttons": [0.92, 0.7, 0.7] if is_dark else [0.83, 0.6, 0.4],
                 "frame": [-1, -1, -1],
                 "frame_inactive": [-1, -1, -1],
                 "frame_incognito": [-1, -1, -1],
@@ -1054,41 +1054,79 @@ def generate_toolbar_image(v, width=200, height=120):
     return img
 
 
-def generate_frame_image(v, width=200, height=80):
-    """Generate frame image with subtle vertical gradient.
+def generate_frame_image(v, width=800, height=120):
+    """Generate frame image with circuit-trace pattern.
 
-    Slightly lighter at the bottom edge (where it meets the toolbar) to create
-    depth. The tab strip sits in this area, so the gradient provides natural
-    visual layering.
+    The frame fills the entire tab strip area. A visible pattern here means
+    inactive tabs show the texture while the active tab (flat toolbar color)
+    punches through as the clean/distinct surface.
     """
     try:
-        from PIL import Image, ImageDraw
+        from PIL import Image, ImageDraw, ImageFilter
+        import random
     except ImportError:
         return None
 
     is_dark = v["is_dark"]
-    bg_top = tuple(hex_to_rgb(v["bg_dark"]))
+    bg = tuple(hex_to_rgb(v["bg_dark"]))
+    accent = tuple(hex_to_rgb(v["purple"]))
+    secondary = tuple(hex_to_rgb(v["cyan"]))
 
-    if is_dark:
-        # Lighten slightly at bottom for depth
-        bg_bottom = tuple(min(255, c + 12) for c in bg_top)
-    else:
-        # Darken slightly at bottom for light theme
-        bg_bottom = tuple(max(0, c - 8) for c in bg_top)
+    img = Image.new("RGB", (width, height), bg)
+    trace_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(trace_layer)
 
-    img = Image.new("RGB", (width, height), bg_top)
-    draw = ImageDraw.Draw(img)
+    random.seed(7777)  # Deterministic
 
-    for y in range(height):
-        t = y / height  # 0 at top, 1 at bottom
-        # Ease-in: most of the change happens toward the bottom
-        t = t * t
-        r = int(bg_top[0] * (1 - t) + bg_bottom[0] * t)
-        g = int(bg_top[1] * (1 - t) + bg_bottom[1] * t)
-        b = int(bg_top[2] * (1 - t) + bg_bottom[2] * t)
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
+    # Trace opacity — visible but not overwhelming
+    trace_alpha = 45 if is_dark else 25
 
-    return img
+    # Draw circuit traces
+    for i in range(20):
+        color = accent if i % 3 != 0 else secondary
+        alpha = trace_alpha + random.randint(-8, 12)
+        line_color = color + (max(10, min(65, alpha)),)
+
+        x = random.randint(0, width)
+        y = random.randint(0, height)
+
+        segments = random.randint(2, 5)
+        points = [(x, y)]
+        for _ in range(segments):
+            if random.random() > 0.5:
+                dx = random.randint(30, 200) * random.choice([-1, 1])
+                points.append((max(0, min(width, points[-1][0] + dx)), points[-1][1]))
+            else:
+                dy = random.randint(10, 50) * random.choice([-1, 1])
+                points.append((points[-1][0], max(0, min(height, points[-1][1] + dy))))
+
+        lw = random.choice([1, 1, 2])
+        for j in range(len(points) - 1):
+            draw.line([points[j], points[j + 1]], fill=line_color, width=lw)
+
+        node_color = color + (max(15, min(75, alpha + 15)),)
+        for px, py in points:
+            r = random.choice([2, 3])
+            draw.ellipse([px - r, py - r, px + r, py + r], fill=node_color)
+
+    # A few chip rectangles
+    for _ in range(3):
+        cx = random.randint(50, width - 50)
+        cy = random.randint(10, height - 10)
+        cw = random.randint(15, 40)
+        ch = random.randint(8, 20)
+        chip_color = accent + (max(12, trace_alpha),)
+        draw.rectangle([cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2],
+                        outline=chip_color, width=1)
+
+    trace_layer = trace_layer.filter(ImageFilter.GaussianBlur(radius=0.5))
+
+    # Composite
+    img_rgba = img.convert("RGBA")
+    img_rgba = Image.alpha_composite(img_rgba, trace_layer)
+    final = img_rgba.convert("RGB")
+
+    return final
 
 
 def generate_frame_overlay(v, width=200, height=80):

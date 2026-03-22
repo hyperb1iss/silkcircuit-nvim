@@ -46,9 +46,9 @@
         64
       ],
       "tab_background_text": [
-        142,
-        132,
-        168
+        90,
+        77,
+        110
       ],
       "tab_background_text_inactive": [
         170,
@@ -56,9 +56,9 @@
         182
       ],
       "tab_background_text_incognito": [
-        142,
-        132,
-        168
+        90,
+        77,
+        110
       ],
       "tab_background_text_incognito_inactive": [
         170,
@@ -129,9 +129,9 @@
     },
     "tints": {
       "buttons": [
-        -1,
-        -1,
-        -1
+        0.83,
+        0.6,
+        0.4
       ],
       "frame": [
         -1,
