@@ -211,6 +211,23 @@ chrome:
 	@printf "  $(GRAY)chrome://extensions → Developer mode → Load unpacked$(RESET)\n"
 	@printf "\n"
 
+# Package Chrome themes as .zip files for Chrome Web Store
+chrome-package:
+	@printf "\n"
+	@printf "$(PURPLE)$(ARROW)$(RESET) $(PINK)$(BOLD)Packaging Chrome Themes$(RESET)\n"
+	@printf "\n"
+	@for variant in neon vibrant soft glow dawn; do \
+		cd extras/chrome-theme && \
+		zip -r "../../silkcircuit-chrome-$$variant.zip" "silkcircuit-$$variant/" \
+			-x "*.DS_Store" 2>/dev/null && \
+		cd ../.. && \
+		printf "  $(GREEN)$(CHECK)$(RESET) silkcircuit-chrome-$$variant.zip\n"; \
+	done
+	@printf "\n"
+	@printf "$(CYAN)$(STAR) Upload to Chrome Web Store:$(RESET)\n"
+	@printf "  $(GRAY)https://chrome.google.com/webstore/devconsole$(RESET)\n"
+	@printf "\n"
+
 # CI target
 ci: lint test
 	@printf "\n"
