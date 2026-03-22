@@ -168,7 +168,6 @@
       "theme_ntp_background": "images/ntp_background.png",
       "theme_toolbar": "images/toolbar.png",
       "theme_frame": "images/frame.png",
-      "theme_frame_overlay": "images/frame_overlay.png",
       "theme_tab_background": "images/tab_background.png"
     },
     "tab_group_color_palette": {

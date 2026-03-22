@@ -301,7 +301,6 @@ def generate_manifest(variant_key, v):
                 "theme_ntp_background": "images/ntp_background.png",
                 "theme_toolbar": "images/toolbar.png",
                 "theme_frame": "images/frame.png",
-                "theme_frame_overlay": "images/frame_overlay.png",
                 "theme_tab_background": "images/tab_background.png",
             },
             # Tab group colors — SilkCircuit-branded
@@ -1012,54 +1011,12 @@ def generate_chrome_pages_css(variant_key, v):
 # ---------------------------------------------------------------------------
 
 
-def generate_toolbar_image(v, width=200, height=120):
-    """Generate toolbar image with accent line at top edge.
+def generate_toolbar_image(v, width=800, height=160):
+    """Generate toolbar image with circuit-trace pattern.
 
-    The toolbar image becomes the active tab background (Chrome hardcoded).
-    A thin gradient accent line at the top edge acts as the active tab indicator,
-    giving visual distinction without needing a lighter base color.
-    """
-    try:
-        from PIL import Image, ImageDraw, ImageFilter
-    except ImportError:
-        return None
-
-    is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
-    accent = tuple(hex_to_rgb(v["purple"]))
-
-    img = Image.new("RGB", (width, height), bg)
-    draw = ImageDraw.Draw(img)
-
-    # Accent line at top: 2px bright, then 3px gradient fade
-    accent_height = 2
-    fade_height = 4
-
-    # Bright accent line
-    draw.rectangle([0, 0, width, accent_height - 1], fill=accent)
-
-    # Gradient fade from accent into background
-    for y in range(fade_height):
-        t = y / fade_height  # 0 at top of fade, 1 at bottom
-        r = int(accent[0] * (1 - t) + bg[0] * t)
-        g = int(accent[1] * (1 - t) + bg[1] * t)
-        b = int(accent[2] * (1 - t) + bg[2] * t)
-        # Reduce opacity as we fade
-        alpha = 1.0 - (t * t)  # Quadratic fade
-        r = int(r * alpha + bg[0] * (1 - alpha))
-        g = int(g * alpha + bg[1] * (1 - alpha))
-        b = int(b * alpha + bg[2] * (1 - alpha))
-        draw.line([(0, accent_height + y), (width, accent_height + y)], fill=(r, g, b))
-
-    return img
-
-
-def generate_frame_image(v, width=800, height=120):
-    """Generate frame image with circuit-trace pattern.
-
-    The frame fills the entire tab strip area. A visible pattern here means
-    inactive tabs show the texture while the active tab (flat toolbar color)
-    punches through as the clean/distinct surface.
+    Chrome's toolbar image extends UPWARD into the active tab area when
+    tall enough. This makes the circuit pattern visible in both the toolbar
+    and the active tab — the signature SilkCircuit glow.
     """
     try:
         from PIL import Image, ImageDraw, ImageFilter
@@ -1068,7 +1025,7 @@ def generate_frame_image(v, width=800, height=120):
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_dark"]))
+    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
     accent = tuple(hex_to_rgb(v["purple"]))
     secondary = tuple(hex_to_rgb(v["cyan"]))
 
@@ -1076,89 +1033,64 @@ def generate_frame_image(v, width=800, height=120):
     trace_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(trace_layer)
 
-    random.seed(7777)  # Deterministic
+    random.seed(8888)  # Deterministic
 
-    # Trace opacity — visible but not overwhelming
-    trace_alpha = 45 if is_dark else 25
+    trace_alpha = 50 if is_dark else 28
 
-    # Draw circuit traces
-    for i in range(20):
+    for i in range(25):
         color = accent if i % 3 != 0 else secondary
-        alpha = trace_alpha + random.randint(-8, 12)
-        line_color = color + (max(10, min(65, alpha)),)
+        alpha = trace_alpha + random.randint(-8, 15)
+        line_color = color + (max(12, min(70, alpha)),)
 
         x = random.randint(0, width)
         y = random.randint(0, height)
 
-        segments = random.randint(2, 5)
+        segments = random.randint(2, 6)
         points = [(x, y)]
         for _ in range(segments):
             if random.random() > 0.5:
-                dx = random.randint(30, 200) * random.choice([-1, 1])
+                dx = random.randint(30, 250) * random.choice([-1, 1])
                 points.append((max(0, min(width, points[-1][0] + dx)), points[-1][1]))
             else:
-                dy = random.randint(10, 50) * random.choice([-1, 1])
+                dy = random.randint(10, 60) * random.choice([-1, 1])
                 points.append((points[-1][0], max(0, min(height, points[-1][1] + dy))))
 
         lw = random.choice([1, 1, 2])
         for j in range(len(points) - 1):
             draw.line([points[j], points[j + 1]], fill=line_color, width=lw)
 
-        node_color = color + (max(15, min(75, alpha + 15)),)
+        node_color = color + (max(18, min(80, alpha + 15)),)
         for px, py in points:
-            r = random.choice([2, 3])
+            r = random.choice([2, 3, 4])
             draw.ellipse([px - r, py - r, px + r, py + r], fill=node_color)
 
-    # A few chip rectangles
-    for _ in range(3):
+    for _ in range(4):
         cx = random.randint(50, width - 50)
         cy = random.randint(10, height - 10)
-        cw = random.randint(15, 40)
-        ch = random.randint(8, 20)
-        chip_color = accent + (max(12, trace_alpha),)
+        cw = random.randint(15, 45)
+        ch = random.randint(8, 25)
+        chip_color = accent + (max(14, trace_alpha),)
         draw.rectangle([cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2],
                         outline=chip_color, width=1)
+        inner = secondary + (max(18, trace_alpha + 5),)
+        draw.ellipse([cx - 2, cy - 2, cx + 2, cy + 2], fill=inner)
 
     trace_layer = trace_layer.filter(ImageFilter.GaussianBlur(radius=0.5))
 
-    # Composite
     img_rgba = img.convert("RGBA")
     img_rgba = Image.alpha_composite(img_rgba, trace_layer)
-    final = img_rgba.convert("RGB")
-
-    return final
+    return img_rgba.convert("RGB")
 
 
-def generate_frame_overlay(v, width=200, height=80):
-    """Generate a frame overlay with a neon glow at the top edge.
-
-    Composited on top of the frame with alpha transparency. Creates a
-    subtle accent glow that radiates down from the top of the browser
-    into the tab strip area.
-    """
+def generate_frame_image(v):
+    """Generate 1x1 frame image — flat color, inactive tabs blend into this."""
     try:
-        from PIL import Image, ImageDraw
+        from PIL import Image
     except ImportError:
         return None
 
-    is_dark = v["is_dark"]
-    accent = tuple(hex_to_rgb(v["purple"]))
-
-    # RGBA image — transparent base
-    img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(img)
-
-    # Glow from top: bright accent fading to transparent
-    glow_height = 20 if is_dark else 12
-    peak_alpha = 50 if is_dark else 30
-
-    for y in range(glow_height):
-        t = y / glow_height  # 0 at top, 1 at bottom of glow
-        alpha = int(peak_alpha * (1 - t) ** 2)  # Quadratic fade
-        if alpha > 0:
-            draw.line([(0, y), (width, y)], fill=accent + (alpha,))
-
-    return img
+    bg = tuple(hex_to_rgb(v["bg_dark"]))
+    return Image.new("RGB", (1, 1), bg)
 
 
 def generate_tab_background_image(v, width=200, height=65):
@@ -1351,7 +1283,6 @@ def generate_variant(variant_key, v):
     for name, generator in [
         ("toolbar.png", lambda: generate_toolbar_image(v)),
         ("frame.png", lambda: generate_frame_image(v)),
-        ("frame_overlay.png", lambda: generate_frame_overlay(v)),
         ("tab_background.png", lambda: generate_tab_background_image(v)),
         ("ntp_background.png", lambda: generate_ntp_background(variant_key, v)),
     ]:
