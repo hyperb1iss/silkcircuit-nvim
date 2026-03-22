@@ -60,9 +60,15 @@ function M.highlight(group, opts)
   if opts.link then
     hl.link = opts.link
   else
-    if opts.fg then hl.fg = opts.fg end
-    if opts.bg then hl.bg = opts.bg end
-    if opts.sp then hl.sp = opts.sp end
+    if opts.fg then
+      hl.fg = opts.fg
+    end
+    if opts.bg then
+      hl.bg = opts.bg
+    end
+    if opts.sp then
+      hl.sp = opts.sp
+    end
 
     -- Collect style attributes
     if opts.style then
@@ -71,11 +77,21 @@ function M.highlight(group, opts)
         hl[s] = true
       end
     end
-    if opts.italic then hl.italic = true end
-    if opts.bold then hl.bold = true end
-    if opts.underline then hl.underline = true end
-    if opts.undercurl then hl.undercurl = true end
-    if opts.strikethrough then hl.strikethrough = true end
+    if opts.italic then
+      hl.italic = true
+    end
+    if opts.bold then
+      hl.bold = true
+    end
+    if opts.underline then
+      hl.underline = true
+    end
+    if opts.undercurl then
+      hl.undercurl = true
+    end
+    if opts.strikethrough then
+      hl.strikethrough = true
+    end
   end
 
   pcall(vim.api.nvim_set_hl, 0, group, hl)
@@ -140,11 +156,21 @@ function M.get_highlight_def(group, opts)
       table.insert(parts, s .. " = true")
     end
   end
-  if opts.italic then table.insert(parts, "italic = true") end
-  if opts.bold then table.insert(parts, "bold = true") end
-  if opts.underline then table.insert(parts, "underline = true") end
-  if opts.undercurl then table.insert(parts, "undercurl = true") end
-  if opts.strikethrough then table.insert(parts, "strikethrough = true") end
+  if opts.italic then
+    table.insert(parts, "italic = true")
+  end
+  if opts.bold then
+    table.insert(parts, "bold = true")
+  end
+  if opts.underline then
+    table.insert(parts, "underline = true")
+  end
+  if opts.undercurl then
+    table.insert(parts, "undercurl = true")
+  end
+  if opts.strikethrough then
+    table.insert(parts, "strikethrough = true")
+  end
 
   return string.format('pcall(vim.api.nvim_set_hl, 0, "%s", { %s })', group, table.concat(parts, ", "))
 end
