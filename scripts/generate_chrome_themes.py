@@ -1060,7 +1060,6 @@ def generate_toolbar_image(v, width=800, height=160):
         for j in range(len(points) - 1):
             draw.line([points[j], points[j + 1]], fill=line_color, width=lw)
 
-        # Nodes at every junction
         node_color = color + (max(20, min(85, alpha + 18)),)
         for px, py in points:
             r = random.choice([2, 2, 3, 3, 4])
@@ -1102,6 +1101,24 @@ def generate_toolbar_image(v, width=800, height=160):
 
     img_rgba = img.convert("RGBA")
     img_rgba = Image.alpha_composite(img_rgba, trace_layer)
+
+    # Neon fringe at the top — this becomes the active tab's top edge glow.
+    # Bright accent line that fades into the circuit pattern below.
+    glow_layer = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    glow_draw = ImageDraw.Draw(glow_layer)
+
+    fringe_height = 18 if is_dark else 10
+    peak_alpha = 140 if is_dark else 80
+
+    for y in range(fringe_height):
+        t = y / fringe_height
+        # Bright line at y=0, quadratic fade below
+        a = int(peak_alpha * (1 - t) ** 2.5)
+        if a > 0:
+            glow_draw.line([(0, y), (width, y)], fill=accent + (a,))
+
+    img_rgba = Image.alpha_composite(img_rgba, glow_layer)
+
     return img_rgba.convert("RGB")
 
 
