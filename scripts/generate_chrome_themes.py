@@ -301,6 +301,7 @@ def generate_manifest(variant_key, v):
                 "theme_ntp_background": "images/ntp_background.png",
                 "theme_toolbar": "images/toolbar.png",
                 "theme_frame": "images/frame.png",
+                "theme_frame_overlay": "images/frame_overlay.png",
                 "theme_tab_background": "images/tab_background.png",
             },
             # Tab group colors — SilkCircuit-branded
@@ -1090,6 +1091,38 @@ def generate_frame_image(v, width=200, height=80):
     return img
 
 
+def generate_frame_overlay(v, width=200, height=80):
+    """Generate a frame overlay with a neon glow at the top edge.
+
+    Composited on top of the frame with alpha transparency. Creates a
+    subtle accent glow that radiates down from the top of the browser
+    into the tab strip area.
+    """
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return None
+
+    is_dark = v["is_dark"]
+    accent = tuple(hex_to_rgb(v["purple"]))
+
+    # RGBA image — transparent base
+    img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+
+    # Glow from top: bright accent fading to transparent
+    glow_height = 20 if is_dark else 12
+    peak_alpha = 50 if is_dark else 30
+
+    for y in range(glow_height):
+        t = y / glow_height  # 0 at top, 1 at bottom of glow
+        alpha = int(peak_alpha * (1 - t) ** 2)  # Quadratic fade
+        if alpha > 0:
+            draw.line([(0, y), (width, y)], fill=accent + (alpha,))
+
+    return img
+
+
 def generate_tab_background_image(v, width=200, height=65):
     """Generate inactive tab background.
 
@@ -1280,6 +1313,7 @@ def generate_variant(variant_key, v):
     for name, generator in [
         ("toolbar.png", lambda: generate_toolbar_image(v)),
         ("frame.png", lambda: generate_frame_image(v)),
+        ("frame_overlay.png", lambda: generate_frame_overlay(v)),
         ("tab_background.png", lambda: generate_tab_background_image(v)),
         ("ntp_background.png", lambda: generate_ntp_background(variant_key, v)),
     ]:
