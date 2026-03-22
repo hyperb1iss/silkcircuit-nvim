@@ -82,7 +82,7 @@ lint:
 	fi
 	@printf "\n"
 	@printf "  $(CYAN)$(DOT)$(RESET) Running markdownlint...\n"
-	@if ! markdownlint '**/*.md' 2>&1; then \
+	@if ! markdownlint '**/*.md' --ignore node_modules --ignore docs/node_modules 2>&1; then \
 		printf "\n"; \
 		printf "$(YELLOW)$(WARNING)$(RESET) Markdown linting issues found\n"; \
 		exit 1; \
