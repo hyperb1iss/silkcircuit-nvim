@@ -26,9 +26,9 @@
         39
       ],
       "toolbar": [
-        83,
-        80,
-        95
+        26,
+        22,
+        42
       ],
       "toolbar_text": [
         248,
@@ -66,14 +66,14 @@
         163
       ],
       "background_tab": [
-        10,
-        8,
-        18
+        9,
+        7,
+        17
       ],
       "background_tab_inactive": [
-        8,
-        6,
-        14
+        9,
+        7,
+        16
       ],
       "background_tab_incognito": [
         35,
@@ -165,7 +165,10 @@
       "ntp_logo_alternate": 1
     },
     "images": {
-      "theme_ntp_background": "images/ntp_background.png"
+      "theme_ntp_background": "images/ntp_background.png",
+      "theme_toolbar": "images/toolbar.png",
+      "theme_frame": "images/frame.png",
+      "theme_tab_background": "images/tab_background.png"
     },
     "tab_group_color_palette": {
       "grey_override": [

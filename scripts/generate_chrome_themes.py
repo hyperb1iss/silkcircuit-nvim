@@ -215,14 +215,9 @@ def generate_manifest(variant_key, v):
         incognito_frame = blend(v["bg_dark"], v["purple"], 0.92)
         incognito_frame_inactive = blend(v["bg_dark"], v["purple"], 0.95)
 
-    # Toolbar: must be significantly lighter than frame for active tab contrast.
-    # Active tab bg = toolbar color (hardcoded in Chrome). Target: 1.3:1+ contrast
-    # ratio against frame, which means ~15-20pp HSL lightness gap.
-    if is_dark:
-        # Lighten bg_highlight toward fg to guarantee contrast
-        toolbar = lighten(v["bg_highlight"], 0.25)
-    else:
-        toolbar = hex_to_rgb(v["bg"])
+    # Toolbar: use bg_highlight (dark, matching the aesthetic the user prefers).
+    # Tab contrast comes from frame/toolbar images, not flat color gap.
+    toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
 
     # Tab text colors — active is brightest, inactive fades
     tab_text = hex_to_rgb(v["fg"])
@@ -233,14 +228,13 @@ def generate_manifest(variant_key, v):
     tab_bg_text_incognito = tab_bg_text
     tab_bg_text_incognito_inactive = tab_bg_text_inactive
 
-    # Background tabs — match frame so inactive tabs merge into the strip.
-    # This makes the active tab (toolbar color) the sole visual pop.
-    bg_tab = frame
-    bg_tab_inactive = frame_inactive
+    # Background tabs — slightly darker than frame for subtle differentiation
+    bg_tab = darken(v["bg_dark"], 0.05) if is_dark else lighten(v["bg_dark"], 0.02)
+    bg_tab_inactive = darken(v["bg_dark"], 0.1) if is_dark else hex_to_rgb(v["bg_dark"])
     bg_tab_incognito = incognito_frame
     bg_tab_incognito_inactive = incognito_frame_inactive
 
-    # Omnibox — slightly darker than toolbar to visually nest inside it
+    # Omnibox — slightly distinct from toolbar
     omnibox_bg = blend(v["bg"], v["bg_highlight"], 0.5) if is_dark else hex_to_rgb(v["bg_highlight"])
 
     # Button — subtle accent with transparency
@@ -304,6 +298,9 @@ def generate_manifest(variant_key, v):
             },
             "images": {
                 "theme_ntp_background": "images/ntp_background.png",
+                "theme_toolbar": "images/toolbar.png",
+                "theme_frame": "images/frame.png",
+                "theme_tab_background": "images/tab_background.png",
             },
             # Tab group colors — SilkCircuit-branded
             "tab_group_color_palette": {
@@ -1009,6 +1006,107 @@ def generate_chrome_pages_css(variant_key, v):
 
 
 # ---------------------------------------------------------------------------
+# Chrome UI images (toolbar, frame, tab backgrounds)
+# ---------------------------------------------------------------------------
+
+
+def generate_toolbar_image(v, width=200, height=120):
+    """Generate toolbar image with accent line at top edge.
+
+    The toolbar image becomes the active tab background (Chrome hardcoded).
+    A thin gradient accent line at the top edge acts as the active tab indicator,
+    giving visual distinction without needing a lighter base color.
+    """
+    try:
+        from PIL import Image, ImageDraw, ImageFilter
+    except ImportError:
+        return None
+
+    is_dark = v["is_dark"]
+    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
+    accent = tuple(hex_to_rgb(v["purple"]))
+
+    img = Image.new("RGB", (width, height), bg)
+    draw = ImageDraw.Draw(img)
+
+    # Accent line at top: 2px bright, then 3px gradient fade
+    accent_height = 2
+    fade_height = 4
+
+    # Bright accent line
+    draw.rectangle([0, 0, width, accent_height - 1], fill=accent)
+
+    # Gradient fade from accent into background
+    for y in range(fade_height):
+        t = y / fade_height  # 0 at top of fade, 1 at bottom
+        r = int(accent[0] * (1 - t) + bg[0] * t)
+        g = int(accent[1] * (1 - t) + bg[1] * t)
+        b = int(accent[2] * (1 - t) + bg[2] * t)
+        # Reduce opacity as we fade
+        alpha = 1.0 - (t * t)  # Quadratic fade
+        r = int(r * alpha + bg[0] * (1 - alpha))
+        g = int(g * alpha + bg[1] * (1 - alpha))
+        b = int(b * alpha + bg[2] * (1 - alpha))
+        draw.line([(0, accent_height + y), (width, accent_height + y)], fill=(r, g, b))
+
+    return img
+
+
+def generate_frame_image(v, width=200, height=80):
+    """Generate frame image with subtle vertical gradient.
+
+    Slightly lighter at the bottom edge (where it meets the toolbar) to create
+    depth. The tab strip sits in this area, so the gradient provides natural
+    visual layering.
+    """
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return None
+
+    is_dark = v["is_dark"]
+    bg_top = tuple(hex_to_rgb(v["bg_dark"]))
+
+    if is_dark:
+        # Lighten slightly at bottom for depth
+        bg_bottom = tuple(min(255, c + 12) for c in bg_top)
+    else:
+        # Darken slightly at bottom for light theme
+        bg_bottom = tuple(max(0, c - 8) for c in bg_top)
+
+    img = Image.new("RGB", (width, height), bg_top)
+    draw = ImageDraw.Draw(img)
+
+    for y in range(height):
+        t = y / height  # 0 at top, 1 at bottom
+        # Ease-in: most of the change happens toward the bottom
+        t = t * t
+        r = int(bg_top[0] * (1 - t) + bg_bottom[0] * t)
+        g = int(bg_top[1] * (1 - t) + bg_bottom[1] * t)
+        b = int(bg_top[2] * (1 - t) + bg_bottom[2] * t)
+        draw.line([(0, y), (width, y)], fill=(r, g, b))
+
+    return img
+
+
+def generate_tab_background_image(v, width=200, height=65):
+    """Generate inactive tab background.
+
+    Flat color matching the frame — inactive tabs blend into the frame area.
+    No accent line (that's the toolbar/active tab's differentiator).
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        return None
+
+    is_dark = v["is_dark"]
+    bg = tuple(hex_to_rgb(v["bg_dark"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
+
+    return Image.new("RGB", (width, height), bg)
+
+
+# ---------------------------------------------------------------------------
 # NTP background image generation (circuit-trace pattern)
 # ---------------------------------------------------------------------------
 
@@ -1177,12 +1275,17 @@ def generate_variant(variant_key, v):
         f.write(pages_css)
     print(f"  {variant_key}: chrome-pages.css")
 
-    # NTP background
-    ntp_img = generate_ntp_background(variant_key, v)
-    if ntp_img:
-        ntp_path = images_dir / "ntp_background.png"
-        ntp_img.save(ntp_path, "PNG", optimize=True)
-        print(f"  {variant_key}: images/ntp_background.png")
+    # Chrome UI images
+    for name, generator in [
+        ("toolbar.png", lambda: generate_toolbar_image(v)),
+        ("frame.png", lambda: generate_frame_image(v)),
+        ("tab_background.png", lambda: generate_tab_background_image(v)),
+        ("ntp_background.png", lambda: generate_ntp_background(variant_key, v)),
+    ]:
+        img = generator()
+        if img:
+            img.save(images_dir / name, "PNG", optimize=True)
+            print(f"  {variant_key}: images/{name}")
 
 
 def main():
