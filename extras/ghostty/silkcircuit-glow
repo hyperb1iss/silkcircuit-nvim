@@ -2,10 +2,10 @@
 # Ultra-dark backgrounds with pure neon colors - maximum contrast
 
 background = #0a0816
-foreground = #ffffff
+foreground = #d0a0f0
 cursor-color = #ff00ff
 cursor-text = #0a0816
-selection-background = #ff00ff44
+selection-background = #4a1a4a
 selection-foreground = #ffffff
 
 # Normal colors
@@ -16,7 +16,7 @@ palette = 3=#ffff00
 palette = 4=#0099ff
 palette = 5=#ff00ff
 palette = 6=#00ffff
-palette = 7=#ffffff
+palette = 7=#b888e0
 
 # Bright colors
 palette = 8=#666666
@@ -26,4 +26,4 @@ palette = 11=#ffff66
 palette = 12=#66ccff
 palette = 13=#ff66ff
 palette = 14=#66ffff
-palette = 15=#ffffff
+palette = 15=#e8c0ff

@@ -2,7 +2,7 @@
 # Softer colors - comfortable for extended coding
 
 background = #1a1626
-foreground = #f8f8f2
+foreground = #d8b8f0
 cursor-color = #e892ff
 cursor-text = #1a1626
 selection-background = #44475a
@@ -16,7 +16,7 @@ palette = 3=#ffe699
 palette = 4=#92aaff
 palette = 5=#ff99ff
 palette = 6=#99ffee
-palette = 7=#f8f8f2
+palette = 7=#c0a0e0
 
 # Bright colors
 palette = 8=#6272a4
@@ -26,4 +26,4 @@ palette = 11=#ffffa5
 palette = 12=#a2bbff
 palette = 13=#ffb3ff
 palette = 14=#b3ffea
-palette = 15=#ffffff
+palette = 15=#e8d0ff

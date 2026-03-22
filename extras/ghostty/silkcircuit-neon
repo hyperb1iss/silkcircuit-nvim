@@ -2,7 +2,7 @@
 # Maximum neon intensity - the original SilkCircuit experience
 
 background = #12101a
-foreground = #f8f8f2
+foreground = #d0b0f0
 cursor-color = #e135ff
 cursor-text = #12101a
 selection-background = #44475a
@@ -16,7 +16,7 @@ palette = 3=#f1fa8c
 palette = 4=#e135ff
 palette = 5=#ff00ff
 palette = 6=#80ffea
-palette = 7=#f8f8f2
+palette = 7=#b898d8
 
 # Bright colors
 palette = 8=#637777
@@ -26,4 +26,4 @@ palette = 11=#ffffa5
 palette = 12=#82b1ff
 palette = 13=#ff69ff
 palette = 14=#5fffff
-palette = 15=#ffffff
+palette = 15=#e0c8ff
