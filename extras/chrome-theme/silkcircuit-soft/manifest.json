@@ -6,14 +6,14 @@
   "theme": {
     "colors": {
       "frame": [
-        20,
-        18,
-        32
+        62,
+        52,
+        86
       ],
       "frame_inactive": [
-        16,
-        14,
-        25
+        55,
+        46,
+        77
       ],
       "frame_incognito": [
         45,

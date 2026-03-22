@@ -201,9 +201,11 @@ def generate_manifest(variant_key, v):
     """Generate a complete Chrome theme manifest.json."""
     is_dark = v["is_dark"]
 
-    # Frame: darkest background for the window chrome
-    frame = hex_to_rgb(v["bg_dark"])
-    frame_inactive = darken(v["bg_dark"], 0.2) if is_dark else lighten(v["bg_dark"], 0.05)
+    # Frame: match toolbar color to avoid Chrome drawing a separator line
+    # between the tab strip and toolbar. The toolbar gradient image provides
+    # the visual distinction instead.
+    frame = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg_dark"])
+    frame_inactive = darken(v["bg_highlight"], 0.1) if is_dark else lighten(v["bg_dark"], 0.05)
 
     # Incognito: subtle purple tint on the frame
     if is_dark:
@@ -1045,13 +1047,14 @@ def generate_toolbar_image(v, width=200, height=160):
 
 
 def generate_frame_image(v):
-    """Generate 1x1 frame image — flat color, inactive tabs blend into this."""
+    """Generate 1x1 frame image — matches toolbar color to prevent separator."""
     try:
         from PIL import Image
     except ImportError:
         return None
 
-    bg = tuple(hex_to_rgb(v["bg_dark"]))
+    is_dark = v["is_dark"]
+    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
     return Image.new("RGB", (1, 1), bg)
 
 
