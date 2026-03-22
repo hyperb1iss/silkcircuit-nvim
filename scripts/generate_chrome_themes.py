@@ -1021,8 +1021,8 @@ def generate_ntp_background(variant_key, v, width=1920, height=1080):
     accent_rgb = tuple(hex_to_rgb(v["purple"]))
     secondary_rgb = tuple(hex_to_rgb(v["cyan"]))
 
-    # Base opacity for traces — very subtle
-    trace_alpha = 18 if is_dark else 12
+    # Base opacity for traces
+    trace_alpha = 35 if is_dark else 20
 
     img = Image.new("RGBA", (width, height), bg_rgb + (255,))
     draw = ImageDraw.Draw(img)
@@ -1042,8 +1042,8 @@ def generate_ntp_background(variant_key, v, width=1920, height=1080):
     for i in range(num_traces):
         # Alternate between accent and secondary colors
         color = accent_rgb if i % 3 != 0 else secondary_rgb
-        alpha = trace_alpha + random.randint(-4, 8)
-        line_color = color + (max(4, min(30, alpha)),)
+        alpha = trace_alpha + random.randint(-6, 15)
+        line_color = color + (max(8, min(55, alpha)),)
 
         # Random start point
         x = random.randint(0, width)
@@ -1070,7 +1070,7 @@ def generate_ntp_background(variant_key, v, width=1920, height=1080):
             )
 
         # Draw nodes at intersections
-        node_color = color + (max(6, min(40, alpha + 10)),)
+        node_color = color + (max(12, min(65, alpha + 15)),)
         for px, py in points:
             r = random.choice([2, 3, 3, 4])
             trace_draw.ellipse(
@@ -1083,14 +1083,14 @@ def generate_ntp_background(variant_key, v, width=1920, height=1080):
         cy = random.randint(100, height - 100)
         cw = random.randint(20, 60)
         ch = random.randint(15, 40)
-        chip_color = accent_rgb + (max(4, trace_alpha - 4),)
+        chip_color = accent_rgb + (max(10, trace_alpha + 5),)
         trace_draw.rectangle(
             [cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2],
             outline=chip_color,
             width=1,
         )
         # Inner dot
-        inner_color = secondary_rgb + (max(4, trace_alpha - 2),)
+        inner_color = secondary_rgb + (max(15, trace_alpha + 8),)
         trace_draw.ellipse(
             [cx - 2, cy - 2, cx + 2, cy + 2], fill=inner_color
         )
