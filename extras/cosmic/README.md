@@ -42,16 +42,21 @@ Visit [cosmic-themes.org](https://cosmic-themes.org/) to browse and install comm
 ## Theme Preview Colors
 
 ### Neon (Dark)
+
 - Background: `#12101a` | Accent: `#e135ff` | Cyan: `#80ffea`
 
 ### Vibrant (Dark)
+
 - Background: `#0f0c1a` | Accent: `#ff00ff` | Cyan: `#00ffcc`
 
 ### Soft (Dark)
+
 - Background: `#1a1626` | Accent: `#e892ff` | Cyan: `#99ffee`
 
 ### Glow (Dark)
+
 - Background: `#0a0816` | Accent: `#ff00ff` | Cyan: `#00ffff`
 
 ### Dawn (Light)
+
 - Background: `#faf8ff` | Accent: `#7e2bd5` | Cyan: `#007f8e`
