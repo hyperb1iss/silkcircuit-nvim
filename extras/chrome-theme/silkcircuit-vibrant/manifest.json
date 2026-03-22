@@ -66,14 +66,14 @@
         151
       ],
       "background_tab": [
-        7,
-        5,
-        14
+        10,
+        6,
+        20
       ],
       "background_tab_inactive": [
-        7,
+        9,
         5,
-        13
+        18
       ],
       "background_tab_incognito": [
         37,

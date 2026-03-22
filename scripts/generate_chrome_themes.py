@@ -230,9 +230,9 @@ def generate_manifest(variant_key, v):
     tab_bg_text_incognito = tab_bg_text
     tab_bg_text_incognito_inactive = tab_bg_text_inactive
 
-    # Background tabs — slightly darker than frame for subtle differentiation
-    bg_tab = darken(v["bg_dark"], 0.05) if is_dark else lighten(v["bg_dark"], 0.02)
-    bg_tab_inactive = darken(v["bg_dark"], 0.1) if is_dark else hex_to_rgb(v["bg_dark"])
+    # Background tabs — match frame exactly to prevent any separator lines
+    bg_tab = frame
+    bg_tab_inactive = frame_inactive
     bg_tab_incognito = incognito_frame
     bg_tab_incognito_inactive = incognito_frame_inactive
 
@@ -1058,21 +1058,16 @@ def generate_frame_image(v):
     return Image.new("RGB", (1, 1), bg)
 
 
-def generate_tab_background_image(v, width=200, height=65):
-    """Generate inactive tab background.
-
-    Flat color matching the frame — inactive tabs blend into the frame area.
-    No accent line (that's the toolbar/active tab's differentiator).
-    """
+def generate_tab_background_image(v):
+    """Generate 1x1 inactive tab background — matches frame color."""
     try:
         from PIL import Image
     except ImportError:
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_dark"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
-
-    return Image.new("RGB", (width, height), bg)
+    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
+    return Image.new("RGB", (1, 1), bg)
 
 
 # ---------------------------------------------------------------------------
