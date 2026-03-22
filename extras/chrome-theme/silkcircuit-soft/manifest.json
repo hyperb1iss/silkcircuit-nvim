@@ -6,14 +6,14 @@
   "theme": {
     "colors": {
       "frame": [
-        62,
-        52,
-        86
+        73,
+        64,
+        96
       ],
       "frame_inactive": [
-        55,
-        46,
-        77
+        58,
+        49,
+        81
       ],
       "frame_incognito": [
         45,
@@ -26,9 +26,9 @@
         49
       ],
       "toolbar": [
-        62,
-        52,
-        86
+        73,
+        64,
+        96
       ],
       "toolbar_text": [
         248,
@@ -66,14 +66,14 @@
         157
       ],
       "background_tab": [
-        62,
-        52,
-        86
+        73,
+        64,
+        96
       ],
       "background_tab_inactive": [
-        55,
-        46,
-        77
+        58,
+        49,
+        81
       ],
       "background_tab_incognito": [
         45,

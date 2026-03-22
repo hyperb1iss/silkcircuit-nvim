@@ -201,11 +201,9 @@ def generate_manifest(variant_key, v):
     """Generate a complete Chrome theme manifest.json."""
     is_dark = v["is_dark"]
 
-    # Frame: match toolbar color to avoid Chrome drawing a separator line
-    # between the tab strip and toolbar. The toolbar gradient image provides
-    # the visual distinction instead.
-    frame = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg_dark"])
-    frame_inactive = darken(v["bg_highlight"], 0.1) if is_dark else lighten(v["bg_dark"], 0.05)
+    # Frame: match toolbar exactly to prevent separator lines
+    frame = lighten(v["bg_highlight"], 0.06) if is_dark else hex_to_rgb(v["bg_dark"])
+    frame_inactive = darken(v["bg_highlight"], 0.05) if is_dark else lighten(v["bg_dark"], 0.05)
 
     # Incognito: subtle purple tint on the frame
     if is_dark:
@@ -217,9 +215,9 @@ def generate_manifest(variant_key, v):
         incognito_frame = blend(v["bg_dark"], v["purple"], 0.92)
         incognito_frame_inactive = blend(v["bg_dark"], v["purple"], 0.95)
 
-    # Toolbar = active tab bg (Chrome hardcoded). Keep dark to match aesthetic.
-    # Tab distinction comes from text brightness contrast, not background color.
-    toolbar = hex_to_rgb(v["bg_highlight"]) if is_dark else hex_to_rgb(v["bg"])
+    # Toolbar = active tab bg (Chrome hardcoded). Slight lighten so Chrome's
+    # derived tab stroke blends into the gradient instead of reading as black.
+    toolbar = lighten(v["bg_highlight"], 0.06) if is_dark else hex_to_rgb(v["bg"])
 
     # Tab text colors — bright active vs muted-purple inactive.
     tab_text = [255, 255, 255] if is_dark else hex_to_rgb(v["fg"])
@@ -1026,7 +1024,7 @@ def generate_toolbar_image(v, width=200, height=160):
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg"]))
+    bg = tuple(lighten(v["bg_highlight"], 0.06)) if is_dark else tuple(hex_to_rgb(v["bg"]))
     accent = tuple(hex_to_rgb(v["purple"]))
 
     img = Image.new("RGB", (width, height), bg)
@@ -1054,7 +1052,7 @@ def generate_frame_image(v):
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
+    bg = tuple(lighten(v["bg_highlight"], 0.06)) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
     return Image.new("RGB", (1, 1), bg)
 
 
@@ -1066,7 +1064,7 @@ def generate_tab_background_image(v):
         return None
 
     is_dark = v["is_dark"]
-    bg = tuple(hex_to_rgb(v["bg_highlight"])) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
+    bg = tuple(lighten(v["bg_highlight"], 0.06)) if is_dark else tuple(hex_to_rgb(v["bg_dark"]))
     return Image.new("RGB", (1, 1), bg)
 
 
