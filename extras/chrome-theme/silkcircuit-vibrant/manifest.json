@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0.0",
   "name": "SilkCircuit Vibrant",
-  "description": "Ultra-dark Chrome theme with maximum neon saturation. Pure magenta, electric cyan accents, and vivid circuit-trace patterns on a void-dark canvas. Features gradient toolbar, custom New Tab background, and themed tab groups. Electric meets elegant \u2014 part of the SilkCircuit design system.",
+  "description": "Electric meets elegant. Ultra-dark with maximum neon saturation \u2014 pure magenta and cyan on void-black.",
   "theme": {
     "colors": {
       "frame": [

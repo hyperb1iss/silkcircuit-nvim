@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "2.0.0",
   "name": "SilkCircuit Glow",
-  "description": "Maximum contrast dark Chrome theme \u2014 pure neon colors on void-black backgrounds. Blazing magenta gradients, vivid cyan nodes, and bold circuit-trace patterns. Features gradient toolbar, custom New Tab background, and themed tab groups. Electric meets elegant \u2014 part of the SilkCircuit design system.",
+  "description": "Electric meets elegant. Pure neon on void-black \u2014 maximum contrast for the ultimate dark experience.",
   "theme": {
     "colors": {
       "frame": [
