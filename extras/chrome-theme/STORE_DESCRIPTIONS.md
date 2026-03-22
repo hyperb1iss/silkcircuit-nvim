@@ -2,7 +2,6 @@
 
 Plain text, ready to paste into each variant's store listing.
 
-
 ═══════════════════════════════════════════════════════════════
 🦋⚡ SilkCircuit Neon
 ═══════════════════════════════════════════════════════════════
@@ -23,7 +22,6 @@ Transform your browser into a neon-lit command center. SilkCircuit Neon wraps Ch
 Part of the SilkCircuit design system — a unified visual identity spanning Neovim, VS Code, terminals, and now your browser. One aesthetic, everywhere you code. ⚡
 
 🔗 More at github.com/hyperb1iss/silkcircuit-nvim
-
 
 ═══════════════════════════════════════════════════════════════
 🦋✴️ SilkCircuit Vibrant
@@ -46,7 +44,6 @@ For developers who want their browser to match their energy. Electric meets eleg
 
 🔗 More at github.com/hyperb1iss/silkcircuit-nvim
 
-
 ═══════════════════════════════════════════════════════════════
 🦋🌸 SilkCircuit Soft
 ═══════════════════════════════════════════════════════════════
@@ -68,7 +65,6 @@ Your eyes will thank you at 2am. Electric meets elegant — part of the SilkCirc
 
 🔗 More at github.com/hyperb1iss/silkcircuit-nvim
 
-
 ═══════════════════════════════════════════════════════════════
 🦋🌃 SilkCircuit Glow
 ═══════════════════════════════════════════════════════════════
@@ -89,7 +85,6 @@ The darkest variant in the SilkCircuit family. Void-black backgrounds with blazi
 For night owls, dark rooms, and anyone who believes in the glow. Electric meets elegant — part of the SilkCircuit design system. ⚡
 
 🔗 More at github.com/hyperb1iss/silkcircuit-nvim
-
 
 ═══════════════════════════════════════════════════════════════
 🦋🌅 SilkCircuit Dawn
