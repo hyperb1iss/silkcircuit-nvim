@@ -300,8 +300,6 @@ def generate_manifest(variant_key, v):
             "images": {
                 "theme_ntp_background": "images/ntp_background.png",
                 "theme_toolbar": "images/toolbar.png",
-                "theme_frame": "images/frame.png",
-                "theme_tab_background": "images/tab_background.png",
             },
             # Tab group colors — SilkCircuit-branded
             "tab_group_color_palette": {
