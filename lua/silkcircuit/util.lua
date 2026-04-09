@@ -172,7 +172,11 @@ function M.get_highlight_def(group, opts)
     table.insert(parts, "strikethrough = true")
   end
 
-  return string.format('pcall(vim.api.nvim_set_hl, 0, "%s", { %s })', group, table.concat(parts, ", "))
+  return string.format(
+    'pcall(vim.api.nvim_set_hl, 0, "%s", { %s })',
+    group,
+    table.concat(parts, ", ")
+  )
 end
 
 -- Hash a string using djb2 algorithm

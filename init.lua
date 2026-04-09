@@ -1,5 +1,5 @@
 return {
-  "silkcircuit/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   name = "silkcircuit",
   lazy = true,
   opts = {

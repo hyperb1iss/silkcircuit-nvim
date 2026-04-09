@@ -4,7 +4,7 @@
 
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "silkcircuit-nvim" },
+  dependencies = { "silkcircuit" },
   event = "VeryLazy",
   opts = function()
     local silkcircuit_colors = require("silkcircuit.palette").colors

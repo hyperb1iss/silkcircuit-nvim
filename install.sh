@@ -683,7 +683,7 @@ install_neovim() {
         success "SilkCircuit already installed in Neovim"
     else
         info "Add to your plugin manager:"
-        diminfo "{ \"AstroBliss/silkcircuit-nvim\", lazy = false, priority = 1000 }"
+        diminfo "{ \"hyperb1iss/silkcircuit\", lazy = false, priority = 1000 }"
         SKIPPED+=("neovim")
     fi
 }

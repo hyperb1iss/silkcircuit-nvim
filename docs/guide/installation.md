@@ -16,7 +16,7 @@ vim.opt.termguicolors = true
 
 ```lua
 {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   lazy = false,
   priority = 1000,
   config = function()
@@ -32,7 +32,7 @@ vim.opt.termguicolors = true
 
 ```lua
 use {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   config = function()
     require("silkcircuit").setup({})
     vim.cmd("colorscheme silkcircuit")
@@ -43,7 +43,7 @@ use {
 ### vim-plug
 
 ```vim
-Plug 'hyperb1iss/silkcircuit-nvim'
+Plug 'hyperb1iss/silkcircuit'
 
 " In your config:
 lua require("silkcircuit").setup({})
@@ -58,7 +58,7 @@ SilkCircuit integrates seamlessly with AstroNvim:
 -- In your lua/community.lua file:
 return {
   "AstroNvim/astrocommunity",
-  { "hyperb1iss/silkcircuit-nvim", name = "silkcircuit" },
+  { "hyperb1iss/silkcircuit", name = "silkcircuit" },
 }
 
 -- In your lua/plugins/astroui.lua file:

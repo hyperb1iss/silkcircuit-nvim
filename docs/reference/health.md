@@ -178,7 +178,7 @@ Then restart Neovim.
 ```lua
 -- In lazy.nvim, set priority
 {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   priority = 1000,
   lazy = false,
 }
@@ -229,7 +229,7 @@ View debug output:
 ## Getting Help
 
 1. Run `:checkhealth silkcircuit`
-2. Check the [GitHub Issues](https://github.com/hyperb1iss/silkcircuit-nvim/issues)
+2. Check the [GitHub Issues](https://github.com/hyperb1iss/silkcircuit/issues)
 3. Include health check output in bug reports
 
 ## Health Check Output Example

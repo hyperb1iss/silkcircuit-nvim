@@ -154,8 +154,8 @@ Get the full SilkCircuit experience instantly:
 
 ```bash
 # Clone the theme
-git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
-cd silkcircuit-nvim
+git clone https://github.com/hyperb1iss/silkcircuit.git
+cd silkcircuit
 
 # Install git colors
 cat extras/gitconfig >> ~/.gitconfig

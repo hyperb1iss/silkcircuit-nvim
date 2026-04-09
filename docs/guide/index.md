@@ -1,16 +1,16 @@
 # Introduction
 
-SilkCircuit pumps maximum visual voltage through your Neovim. Electric purples 💜, blazing pinks 🌸, and neon cyans 💎 create a coding environment that's both striking and readable.
+SilkCircuit is a unified color system for your entire development environment. One palette, consistent semantics, WCAG AA compliant — from Neovim to VS Code to your terminal to your browser.
 
 ## Why SilkCircuit?
 
-### Electric Color System
+### One Theme, Everywhere
 
-Every color in SilkCircuit has semantic meaning. Keywords are always purple, functions are always cyan, strings are always pink. Once you learn the language, you can read any codebase faster.
+SilkCircuit themes 20+ tools with the same palette and semantic mappings. Keywords are always purple, functions are always cyan, strings are always pink — whether you're in Neovim, VS Code, or reading a diff in your terminal.
 
 ### Performance First
 
-Theme loads in under 5ms with bytecode compilation. No lag, no delays—just instant electric energy.
+The Neovim theme loads in under 5ms with bytecode compilation. No lag, no delays — just instant electric energy.
 
 ### Accessibility Built-In
 
@@ -39,7 +39,7 @@ All color combinations meet WCAG AA standards (4.5:1 contrast ratio minimum). Co
 ```lua
 -- lazy.nvim
 {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   lazy = false,
   priority = 1000,
   config = function()

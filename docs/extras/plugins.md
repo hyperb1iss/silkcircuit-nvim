@@ -166,4 +166,4 @@ require("bufferline").setup({
 ### Missing highlight groups
 
 Report missing highlights on GitHub:
-<https://github.com/hyperb1iss/silkcircuit-nvim/issues>
+<https://github.com/hyperb1iss/silkcircuit/issues>

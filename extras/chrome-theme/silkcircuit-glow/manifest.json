@@ -5,159 +5,38 @@
   "description": "Electric meets elegant. Pure neon on void-black \u2014 maximum contrast for the ultimate dark experience.",
   "theme": {
     "colors": {
-      "frame": [
-        39,
-        15,
-        63
-      ],
-      "frame_inactive": [
-        24,
-        0,
-        48
-      ],
-      "frame_incognito": [
-        30,
-        0,
-        30
-      ],
-      "frame_incognito_inactive": [
-        25,
-        0,
-        25
-      ],
-      "toolbar": [
-        39,
-        15,
-        63
-      ],
-      "toolbar_text": [
-        255,
-        255,
-        255
-      ],
-      "toolbar_button_icon": [
-        255,
-        102,
-        255
-      ],
-      "tab_text": [
-        255,
-        255,
-        255
-      ],
-      "tab_background_text": [
-        204,
-        102,
-        255
-      ],
-      "tab_background_text_inactive": [
-        116,
-        59,
-        150
-      ],
-      "tab_background_text_incognito": [
-        204,
-        102,
-        255
-      ],
-      "tab_background_text_incognito_inactive": [
-        116,
-        59,
-        150
-      ],
-      "background_tab": [
-        39,
-        15,
-        63
-      ],
-      "background_tab_inactive": [
-        24,
-        0,
-        48
-      ],
-      "background_tab_incognito": [
-        30,
-        0,
-        30
-      ],
-      "background_tab_incognito_inactive": [
-        25,
-        0,
-        25
-      ],
-      "bookmark_text": [
-        255,
-        102,
-        255
-      ],
-      "button_background": [
-        255,
-        0,
-        255,
-        0.15
-      ],
-      "omnibox_background": [
-        18,
-        4,
-        36
-      ],
-      "omnibox_text": [
-        255,
-        255,
-        255
-      ],
-      "ntp_background": [
-        10,
-        8,
-        22
-      ],
-      "ntp_text": [
-        255,
-        255,
-        255
-      ],
-      "ntp_link": [
-        0,
-        255,
-        255
-      ],
-      "ntp_header": [
-        204,
-        102,
-        255
-      ]
+      "frame": [39, 15, 63],
+      "frame_inactive": [24, 0, 48],
+      "frame_incognito": [30, 0, 30],
+      "frame_incognito_inactive": [25, 0, 25],
+      "toolbar": [39, 15, 63],
+      "toolbar_text": [255, 255, 255],
+      "toolbar_button_icon": [255, 102, 255],
+      "tab_text": [255, 255, 255],
+      "tab_background_text": [204, 102, 255],
+      "tab_background_text_inactive": [116, 59, 150],
+      "tab_background_text_incognito": [204, 102, 255],
+      "tab_background_text_incognito_inactive": [116, 59, 150],
+      "background_tab": [39, 15, 63],
+      "background_tab_inactive": [24, 0, 48],
+      "background_tab_incognito": [30, 0, 30],
+      "background_tab_incognito_inactive": [25, 0, 25],
+      "bookmark_text": [255, 102, 255],
+      "button_background": [255, 0, 255, 0.15],
+      "omnibox_background": [18, 4, 36],
+      "omnibox_text": [255, 255, 255],
+      "ntp_background": [10, 8, 22],
+      "ntp_text": [255, 255, 255],
+      "ntp_link": [0, 255, 255],
+      "ntp_header": [204, 102, 255]
     },
     "tints": {
-      "buttons": [
-        0.92,
-        0.7,
-        0.7
-      ],
-      "frame": [
-        -1,
-        -1,
-        -1
-      ],
-      "frame_inactive": [
-        -1,
-        -1,
-        -1
-      ],
-      "frame_incognito": [
-        -1,
-        -1,
-        -1
-      ],
-      "frame_incognito_inactive": [
-        -1,
-        -1,
-        -1
-      ],
-      "background_tab": [
-        -1,
-        -1,
-        -1
-      ]
+      "buttons": [0.92, 0.7, 0.7],
+      "frame": [-1, -1, -1],
+      "frame_inactive": [-1, -1, -1],
+      "frame_incognito": [-1, -1, -1],
+      "frame_incognito_inactive": [-1, -1, -1],
+      "background_tab": [-1, -1, -1]
     },
     "properties": {
       "ntp_background_alignment": "center",
@@ -169,51 +48,15 @@
       "theme_toolbar": "images/toolbar.png"
     },
     "tab_group_color_palette": {
-      "grey_override": [
-        102,
-        102,
-        102
-      ],
-      "blue_override": [
-        0,
-        153,
-        255
-      ],
-      "red_override": [
-        255,
-        0,
-        102
-      ],
-      "yellow_override": [
-        255,
-        255,
-        0
-      ],
-      "green_override": [
-        0,
-        255,
-        0
-      ],
-      "pink_override": [
-        255,
-        102,
-        255
-      ],
-      "purple_override": [
-        255,
-        0,
-        255
-      ],
-      "cyan_override": [
-        0,
-        255,
-        255
-      ],
-      "orange_override": [
-        255,
-        102,
-        255
-      ]
+      "grey_override": [102, 102, 102],
+      "blue_override": [0, 153, 255],
+      "red_override": [255, 0, 102],
+      "yellow_override": [255, 255, 0],
+      "green_override": [0, 255, 0],
+      "pink_override": [255, 102, 255],
+      "purple_override": [255, 0, 255],
+      "cyan_override": [0, 255, 255],
+      "orange_override": [255, 102, 255]
     }
   }
 }

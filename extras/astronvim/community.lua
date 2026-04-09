@@ -7,7 +7,7 @@ return {
 
   -- SilkCircuit theme
   {
-    "hyperb1iss/silkcircuit-nvim",
+    "hyperb1iss/silkcircuit",
     name = "silkcircuit",
     lazy = false,
     priority = 1000,

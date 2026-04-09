@@ -8,7 +8,7 @@ Source the FZF configuration in your shell:
 
 ```bash
 # Add to .bashrc or .zshrc
-source /path/to/silkcircuit-nvim/extras/fzf.sh
+source /path/to/silkcircuit/extras/fzf.sh
 ```
 
 ## Configuration
@@ -89,7 +89,7 @@ ps aux | fzf
 
 ```bash
 # Add to .bashrc
-source /path/to/silkcircuit-nvim/extras/fzf.sh
+source /path/to/silkcircuit/extras/fzf.sh
 
 # Key bindings (if using fzf package)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -99,7 +99,7 @@ source /path/to/silkcircuit-nvim/extras/fzf.sh
 
 ```zsh
 # Add to .zshrc
-source /path/to/silkcircuit-nvim/extras/fzf.sh
+source /path/to/silkcircuit/extras/fzf.sh
 
 # Key bindings (if using fzf package)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

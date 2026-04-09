@@ -21,7 +21,7 @@ Transform your browser into a neon-lit command center. SilkCircuit Neon wraps Ch
 
 Part of the SilkCircuit design system — a unified visual identity spanning Neovim, VS Code, terminals, and now your browser. One aesthetic, everywhere you code. ⚡
 
-🔗 More at github.com/hyperb1iss/silkcircuit-nvim
+🔗 More at github.com/hyperb1iss/silkcircuit
 
 ═══════════════════════════════════════════════════════════════
 🦋✴️ SilkCircuit Vibrant
@@ -42,7 +42,7 @@ Turn the saturation up to 11. SilkCircuit Vibrant pushes pure magenta, electric 
 
 For developers who want their browser to match their energy. Electric meets elegant — part of the SilkCircuit design system. ⚡
 
-🔗 More at github.com/hyperb1iss/silkcircuit-nvim
+🔗 More at github.com/hyperb1iss/silkcircuit
 
 ═══════════════════════════════════════════════════════════════
 🦋🌸 SilkCircuit Soft
@@ -63,7 +63,7 @@ SilkCircuit Soft keeps the neon soul alive but dials back the intensity for thos
 
 Your eyes will thank you at 2am. Electric meets elegant — part of the SilkCircuit design system. ⚡
 
-🔗 More at github.com/hyperb1iss/silkcircuit-nvim
+🔗 More at github.com/hyperb1iss/silkcircuit
 
 ═══════════════════════════════════════════════════════════════
 🦋🌃 SilkCircuit Glow
@@ -84,7 +84,7 @@ The darkest variant in the SilkCircuit family. Void-black backgrounds with blazi
 
 For night owls, dark rooms, and anyone who believes in the glow. Electric meets elegant — part of the SilkCircuit design system. ⚡
 
-🔗 More at github.com/hyperb1iss/silkcircuit-nvim
+🔗 More at github.com/hyperb1iss/silkcircuit
 
 ═══════════════════════════════════════════════════════════════
 🦋🌅 SilkCircuit Dawn
@@ -105,4 +105,4 @@ Who says light themes can't have personality? SilkCircuit Dawn brings electric p
 
 For those sunlit coding sessions when dark mode isn't the vibe. Electric meets elegant — part of the SilkCircuit design system. ⚡
 
-🔗 More at github.com/hyperb1iss/silkcircuit-nvim
+🔗 More at github.com/hyperb1iss/silkcircuit

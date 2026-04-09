@@ -4,7 +4,7 @@
 
 [![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
 [![License](https://img.shields.io/badge/License-MIT-ff79c6?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
-[![Theme](https://img.shields.io/badge/Theme-SilkCircuit-e135ff?style=for-the-badge&logo=paintbrush&logoColor=white)](https://github.com/hyperb1iss/silkcircuit-nvim)
+[![Theme](https://img.shields.io/badge/Theme-SilkCircuit-e135ff?style=for-the-badge&logo=paintbrush&logoColor=white)](https://github.com/hyperb1iss/silkcircuit)
 [![WCAG](https://img.shields.io/badge/WCAG%20AA-Compliant-50fa7b?style=for-the-badge&logo=accessibility&logoColor=white)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![Variants](https://img.shields.io/badge/4%20Variants-Neon%20|%20Vibrant%20|%20Soft%20|%20Glow-ffb86c?style=for-the-badge&logo=swatchbook&logoColor=white)](#-available-themes)
 
@@ -66,24 +66,24 @@ Enhanced version with special brightness effects
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-neon.png" alt="SilkCircuit Neon in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-neon.png" alt="SilkCircuit Neon in VSCode" width="100%" />
       <br/>
       <sub><b>Neon</b> — maximum intensity</sub>
     </td>
     <td align="center" width="50%">
-      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-vibrant.png" alt="SilkCircuit Vibrant in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-vibrant.png" alt="SilkCircuit Vibrant in VSCode" width="100%" />
       <br/>
       <sub><b>Vibrant</b> — 85% intensity</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-soft.png" alt="SilkCircuit Soft in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-soft.png" alt="SilkCircuit Soft in VSCode" width="100%" />
       <br/>
       <sub><b>Soft</b> — gentle 70%</sub>
     </td>
     <td align="center" width="50%">
-      <img src="https://github.com/hyperb1iss/silkcircuit-nvim/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-glow.png" alt="SilkCircuit Glow in VSCode" width="100%" />
+      <img src="https://github.com/hyperb1iss/silkcircuit/raw/HEAD/extras/vscode/assets/silkcircuit-vscode-glow.png" alt="SilkCircuit Glow in VSCode" width="100%" />
       <br/>
       <sub><b>Glow</b> — ultra‑dark with enhanced brightness</sub>
     </td>
@@ -227,7 +227,7 @@ SilkCircuit is a full ecosystem—editor, terminal, system tools, and even your 
 ### 💻 Ecosystem at a glance
 
 - **Editor themes**
-  - **Neovim**: Full theme with 40+ plugin integrations · repo: <https://github.com/hyperb1iss/silkcircuit-nvim>
+  - **Neovim**: Full theme with 40+ plugin integrations · repo: <https://github.com/hyperb1iss/silkcircuit>
     - Integrations live in `lua/silkcircuit/integrations/`
   - **Lualine**: `lua/lualine/themes/silkcircuit.lua` + sample config `extras/lualine-config.lua`
 - **Terminals**
@@ -255,8 +255,8 @@ All cross‑platform extras live in `extras/`. See `extras/README.md` for instal
 
 ```bash
 # Get the complete SilkCircuit experience
-git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
-cd silkcircuit-nvim/extras
+git clone https://github.com/hyperb1iss/silkcircuit.git
+cd silkcircuit/extras
 
 # See ./README.md in this directory for detailed setup instructions per integration
 ```

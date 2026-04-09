@@ -82,7 +82,7 @@ You can customize any color by editing the YAML file. The main sections are:
 
 ## Screenshots
 
-![SilkCircuit K9s Theme](https://github.com/yourusername/silkcircuit-nvim/blob/main/extras/k9s/screenshot.png)
+![SilkCircuit K9s Theme](https://github.com/hyperb1iss/silkcircuit/blob/main/extras/k9s/screenshot.png)
 
 ## License
 

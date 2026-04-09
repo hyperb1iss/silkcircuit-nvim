@@ -16,8 +16,8 @@ SilkCircuit for Visual Studio Code with all five variants.
 
 ```bash
 # Clone the repository
-git clone https://github.com/hyperb1iss/silkcircuit-nvim.git
-cd silkcircuit-nvim/extras/vscode
+git clone https://github.com/hyperb1iss/silkcircuit.git
+cd silkcircuit/extras/vscode
 
 # Install vsce if needed
 npm install -g @vscode/vsce

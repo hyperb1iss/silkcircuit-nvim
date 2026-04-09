@@ -1,10 +1,10 @@
-*silkcircuit.txt*  Electric dreams for Neovim
+*silkcircuit.txt*  One theme for your entire dev environment
 *silkcircuit*
 
-                        SILKCIRCUIT THEME ~
+                        SILKCIRCUIT ~
 
                     Electric purple meets neon dreams
-                        Performance meets beauty
+                    One theme. Every tool. WCAG AA.
 
 ==============================================================================
 CONTENTS                                            *silkcircuit-contents*
@@ -39,7 +39,7 @@ Key features:
 
 Using lazy.nvim: >lua
     {
-      "SilkCircuit/silkcircuit-nvim",
+      "hyperb1iss/silkcircuit",
       lazy = false,
       priority = 1000,
       config = function()
@@ -51,7 +51,7 @@ Using lazy.nvim: >lua
 
 Using packer.nvim: >lua
     use {
-      "SilkCircuit/silkcircuit-nvim",
+      "hyperb1iss/silkcircuit",
       config = function()
         require("silkcircuit").setup()
         vim.cmd("colorscheme silkcircuit")
@@ -339,10 +339,10 @@ Plugin not themed ~
 Contributions are welcome!
 
 Report issues:
-    https://github.com/your-username/silkcircuit-nvim/issues
+    https://github.com/hyperb1iss/silkcircuit/issues
 
 Submit pull requests:
-    https://github.com/your-username/silkcircuit-nvim/pulls
+    https://github.com/hyperb1iss/silkcircuit/pulls
 
 Development setup:
     1. Fork and clone the repository

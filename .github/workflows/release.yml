@@ -54,7 +54,7 @@ jobs:
           tar -czf release/silkcircuit-extras.tar.gz extras/
 
           # Create source archive
-          git archive --format=tar.gz --prefix=silkcircuit-nvim/ -o release/silkcircuit-nvim-${{ github.ref_name }}.tar.gz HEAD
+          git archive --format=tar.gz --prefix=silkcircuit/ -o release/silkcircuit-${{ github.ref_name }}.tar.gz HEAD
 
       - name: Generate changelog
         id: changelog
@@ -68,7 +68,7 @@ jobs:
         with:
           body_path: CHANGELOG_RELEASE.md
           files: |
-            release/silkcircuit-nvim-${{ github.ref_name }}.tar.gz
+            release/silkcircuit-${{ github.ref_name }}.tar.gz
             release/silkcircuit-extras.tar.gz
             release/silkcircuit_compiled.lua
           draft: false

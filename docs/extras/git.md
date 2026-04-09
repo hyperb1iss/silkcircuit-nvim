@@ -7,7 +7,7 @@ Transform your git experience with SilkCircuit colors.
 ```bash
 # Option 1: Include in existing .gitconfig
 echo "[include]" >> ~/.gitconfig
-echo "    path = /path/to/silkcircuit-nvim/extras/gitconfig" >> ~/.gitconfig
+echo "    path = /path/to/silkcircuit/extras/gitconfig" >> ~/.gitconfig
 
 # Option 2: Append directly
 cat extras/gitconfig >> ~/.gitconfig

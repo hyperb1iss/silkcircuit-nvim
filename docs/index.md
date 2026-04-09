@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: SilkCircuit
-  text: Electric Dreams for Neovim
-  tagline: Pure electric energy with vibrant purples, blazing pinks, and neon accents
+  text: One Theme. Every Tool.
+  tagline: A unified design system for Neovim, VS Code, terminals, browsers, and 20+ developer tools
   image:
     src: /logo.svg
     alt: SilkCircuit
@@ -14,7 +14,7 @@ hero:
       link: /guide/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/hyperb1iss/silkcircuit-nvim
+      link: https://github.com/hyperb1iss/silkcircuit
 
 features:
   - icon: ⚡

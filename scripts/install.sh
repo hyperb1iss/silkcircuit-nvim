@@ -135,7 +135,7 @@ install_with_plugin_manager() {
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
     {
-      "hyperb1iss/silkcircuit-nvim",
+      "hyperb1iss/silkcircuit",
       lazy = false,
       priority = 1000,
       config = function()
@@ -151,7 +151,7 @@ EOF
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
     use {
-      "hyperb1iss/silkcircuit-nvim",
+      "hyperb1iss/silkcircuit",
       config = function()
         require("silkcircuit").setup()
         vim.cmd.colorscheme("silkcircuit")
@@ -164,7 +164,7 @@ EOF
                 echo -e "  ${CYAN}${DOT}${RESET} Add to your ${PURPLE}init.vim${RESET}:\n"
                 echo -e "${DIM}${WHITE}"
                 cat <<'EOF'
-    Plug 'hyperb1iss/silkcircuit-nvim'
+    Plug 'hyperb1iss/silkcircuit'
     colorscheme silkcircuit
 EOF
                 echo -e "${RESET}"
@@ -172,8 +172,8 @@ EOF
         *)
                 echo -e "  ${CYAN}${DOT}${RESET} Manual installation:\n"
                 echo -e "  ${GRAY}1. Clone the repository:${RESET}"
-                echo -e "     ${DIM}git clone https://github.com/hyperb1iss/silkcircuit-nvim.git \\${RESET}"
-                echo -e "     ${DIM}  ~/.local/share/nvim/site/pack/silkcircuit/start/silkcircuit-nvim${RESET}\n"
+                echo -e "     ${DIM}git clone https://github.com/hyperb1iss/silkcircuit.git \\${RESET}"
+                echo -e "     ${DIM}  ~/.local/share/nvim/site/pack/silkcircuit/start/silkcircuit${RESET}\n"
                 echo -e "  ${GRAY}2. Add to your config:${RESET}"
                 echo -e "     ${DIM}vim.cmd.colorscheme('silkcircuit')${RESET}"
                 ;;
@@ -264,7 +264,7 @@ main() {
         echo -e "${GRAY}  Quick tips:${RESET}"
         echo -e "  ${PURPLE}${DOT}${RESET} Run ${CYAN}:checkhealth${RESET} in Neovim to verify installation"
         echo -e "  ${PURPLE}${DOT}${RESET} Use ${CYAN}:SilkCircuit compile${RESET} for faster loading"
-        echo -e "  ${PURPLE}${DOT}${RESET} Visit ${BLUE}github.com/hyperb1iss/silkcircuit-nvim${RESET} for docs\n"
+        echo -e "  ${PURPLE}${DOT}${RESET} Visit ${BLUE}github.com/hyperb1iss/silkcircuit${RESET} for docs\n"
 }
 
 # Run the installer

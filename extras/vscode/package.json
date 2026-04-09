@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperb1iss/silkcircuit-nvim"
+    "url": "https://github.com/hyperb1iss/silkcircuit"
   },
   "bugs": {
-    "url": "https://github.com/hyperb1iss/silkcircuit-nvim/issues"
+    "url": "https://github.com/hyperb1iss/silkcircuit/issues"
   },
-  "homepage": "https://github.com/hyperb1iss/silkcircuit-nvim#readme",
+  "homepage": "https://github.com/hyperb1iss/silkcircuit#readme",
   "private": true,
   "engines": {
     "vscode": "^1.60.0"

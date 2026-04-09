@@ -50,7 +50,7 @@ extras/astronvim/
 ```lua
 return {
   "AstroNvim/astrocommunity",
-  { "hyperb1iss/silkcircuit-nvim", name = "silkcircuit" },
+  { "hyperb1iss/silkcircuit", name = "silkcircuit" },
 }
 ```
 
@@ -69,7 +69,7 @@ return {
 
 ```lua
 return {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   lazy = false,
   priority = 1000,
   opts = {
@@ -137,7 +137,7 @@ Override settings in your AstroNvim config:
 ```lua
 -- In user config
 return {
-  "hyperb1iss/silkcircuit-nvim",
+  "hyperb1iss/silkcircuit",
   opts = function(_, opts)
     opts.styles.comments = { italic = true, bold = true }
     return opts
