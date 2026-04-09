@@ -1,0 +1,205 @@
+/* SilkCircuit Soft — Ghostty GTK Chrome
+ * Muted tones for comfortable extended sessions
+ */
+
+@define-color sc_bg #1a1626;
+@define-color sc_bg_dark #12101e;
+@define-color sc_bg_elevated #241e38;
+@define-color sc_fg #f8f8f2;
+@define-color sc_fg_muted #c0a0e0;
+@define-color sc_accent #e892ff;
+@define-color sc_accent_hover #f0b0ff;
+@define-color sc_cyan #99ffee;
+@define-color sc_green #66ff99;
+@define-color sc_red #ff7788;
+@define-color sc_yellow #ffe699;
+
+/* ── Headerbar ─────────────────────────────────────────────── */
+
+headerbar {
+  background: @sc_bg_dark;
+  border-bottom: 1px solid alpha(@sc_accent, 0.2);
+  color: @sc_fg;
+}
+
+headerbar:backdrop {
+  background: @sc_bg_dark;
+  color: @sc_fg_muted;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────── */
+
+tabbar {
+  background: @sc_bg_dark;
+}
+
+tabbar tab {
+  color: @sc_fg_muted;
+}
+
+tabbar tab:checked {
+  color: @sc_fg;
+  background: @sc_bg;
+  box-shadow: inset 0 2px 0 @sc_accent;
+}
+
+tabbar tab:hover:not(:checked) {
+  color: @sc_fg;
+  background: alpha(@sc_accent, 0.08);
+}
+
+tabbar tab button:hover {
+  color: @sc_red;
+}
+
+/* ── Splits ────────────────────────────────────────────────── */
+
+.window .split paned > separator {
+  background: alpha(@sc_accent, 0.4);
+  background-clip: content-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── URL Overlay ───────────────────────────────────────────── */
+
+label.url-overlay {
+  background: alpha(@sc_bg_elevated, 0.95);
+  color: @sc_cyan;
+  outline-color: alpha(@sc_accent, 0.4);
+  outline-width: 1px;
+  outline-style: solid;
+  padding: 4px 8px;
+}
+
+label.url-overlay:hover {
+  opacity: 0;
+}
+
+label.url-overlay.left {
+  border-radius: 0 6px 0 0;
+}
+
+label.url-overlay.right {
+  border-radius: 6px 0 0 0;
+}
+
+/* ── Search ────────────────────────────────────────────────── */
+
+.search-overlay {
+  background: @sc_bg_elevated;
+  outline-color: alpha(@sc_accent, 0.4);
+  outline-width: 1px;
+  outline-style: solid;
+  padding: 6px 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+/* ── Key State ─────────────────────────────────────────────── */
+
+.key-state-overlay {
+  background: @sc_bg_elevated;
+  color: @sc_accent;
+  outline-color: alpha(@sc_accent, 0.4);
+  outline-width: 1px;
+  outline-style: solid;
+  padding: 6px 10px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+/* ── Resize ────────────────────────────────────────────────── */
+
+label.resize-overlay {
+  background: alpha(@sc_bg_elevated, 0.9);
+  color: @sc_accent;
+  outline-color: alpha(@sc_accent, 0.3);
+  outline-width: 1px;
+  outline-style: solid;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ── Command Palette ───────────────────────────────────────── */
+
+.command-palette-search {
+  background: @sc_bg_elevated;
+  color: @sc_fg;
+}
+
+.command-palette-search > image:first-child {
+  color: @sc_accent;
+  margin-left: 8px;
+  margin-right: 4px;
+}
+
+.command-palette-search > image:last-child {
+  color: @sc_fg_muted;
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+/* ── Bell ──────────────────────────────────────────────────── */
+
+.surface .bell-overlay {
+  border-color: alpha(@sc_accent, 0.5);
+  border-width: 3px;
+  border-style: solid;
+}
+
+/* ── Process Exit ──────────────────────────────────────────── */
+
+.child-exited.normal revealer widget {
+  background-color: alpha(@sc_green, 0.3);
+}
+
+.child-exited.abnormal revealer widget {
+  background-color: alpha(@sc_red, 0.3);
+}
+
+.surface progressbar.error trough progress {
+  background-color: alpha(@sc_red, 0.4);
+}
+
+/* ── Read-Only ─────────────────────────────────────────────── */
+
+.surface .readonly_overlay {
+  color: @sc_yellow;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 6px;
+  outline-color: alpha(@sc_yellow, 0.3);
+  outline-width: 1px;
+  outline-style: solid;
+}
+
+/* ── Clipboard Confirmation ────────────────────────────────── */
+
+.clipboard-confirmation-dialog list {
+  background: none;
+}
+
+.clipboard-confirmation-dialog list > row {
+  border: none;
+  margin-bottom: 12px;
+}
+
+.clipboard-confirmation-dialog list > row:last-child {
+  margin-bottom: 0;
+}
+
+.clipboard-confirmation-dialog .clipboard-overlay {
+  border-radius: 10px;
+}
+
+.clipboard-confirmation-dialog .clipboard-contents {
+  filter: blur(0px);
+  transition: filter 0.3s ease;
+  border-radius: 10px;
+  background: @sc_bg_elevated;
+}
+
+.clipboard-confirmation-dialog .clipboard-contents.blurred {
+  filter: blur(5px);
+}
