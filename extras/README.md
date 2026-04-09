@@ -74,13 +74,13 @@ cp extras/warp-dawn.yaml ~/.warp/themes/silkcircuit-dawn.yaml
 
 ### 🌐 Chrome Theme (`chrome-theme/`)
 
-Full SilkCircuit browser theming — all 5 variants:
+Full SilkCircuit browser theming:all 5 variants:
 
-- **5 variants** — Neon, Vibrant, Soft, Glow, Dawn
-- **24 theme color keys** — frame, toolbar, omnibox, tabs, NTP, tab groups
-- **Circuit-trace NTP backgrounds** — unique per variant
-- **DevTools CSS** — modern CM6 + `--sys-color-*` tokens
-- **Chrome pages CSS** — `--cr-*` overrides for internal pages
+- **5 variants**:Neon, Vibrant, Soft, Glow, Dawn
+- **24 theme color keys**:frame, toolbar, omnibox, tabs, NTP, tab groups
+- **Circuit-trace NTP backgrounds**:unique per variant
+- **DevTools CSS**:modern CM6 + `--sys-color-*` tokens
+- **Chrome pages CSS**:`--cr-*` overrides for internal pages
 
 **Setup:**
 

@@ -4,7 +4,7 @@ A beautiful light theme for daytime coding with electric accents.
 
 ## Overview
 
-**Dawn** inverts the SilkCircuit palette for bright environments—soft purple-tinted backgrounds with deep, saturated accent colors. Perfect for well-lit rooms and daytime work.
+**Dawn** inverts the SilkCircuit palette for bright environments: soft purple-tinted backgrounds with deep, saturated accent colors. Perfect for well-lit rooms and daytime work.
 
 | Property | Value |
 |----------|-------|
@@ -95,10 +95,10 @@ Or switch at runtime:
 
 Dawn maintains SilkCircuit's semantic color system while adapting for light backgrounds:
 
-- **Deeper accents** — Colors are more saturated to maintain contrast
-- **Purple-tinted backgrounds** — Keeps the signature aesthetic
-- **Same semantic meanings** — Keywords are still purple, functions still cyan
-- **WCAG AA compliant** — All combinations meet accessibility standards
+- **Deeper accents**:Colors are more saturated to maintain contrast
+- **Purple-tinted backgrounds**:Keeps the signature aesthetic
+- **Same semantic meanings**:Keywords are still purple, functions still cyan
+- **WCAG AA compliant**:All combinations meet accessibility standards
 
 ## Comparison
 

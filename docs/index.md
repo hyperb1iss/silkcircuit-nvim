@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: SilkCircuit
-  text: One Theme. Every Tool.
-  tagline: A unified design system for Neovim, VS Code, terminals, browsers, and 20+ developer tools
+  text: Electric Meets Elegant
+  tagline: One theme for Neovim, VS Code, terminals, browsers, and 20+ developer tools
   image:
     src: /logo.svg
     alt: SilkCircuit

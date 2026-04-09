@@ -27,7 +27,7 @@ Enhanced contrast for work in various lighting conditions.
 
 ### Soft
 
-Optimized for extended use—reduces eye strain while maintaining readability.
+Optimized for extended use. Reduces eye strain while maintaining readability.
 
 ### Glow
 
@@ -78,10 +78,10 @@ axe-cli --tags wcag2a,wcag2aa
 
 All SilkCircuit implementations should support:
 
-- **Focus indicators** — Cyan glow (`#80ffea`) clearly shows focus state
-- **Tab order** — Logical flow through interactive elements
-- **Skip links** — Available for screen reader users
-- **No keyboard traps** — Users can always navigate away
+- **Focus indicators**:Cyan glow (`#80ffea`) clearly shows focus state
+- **Tab order**:Logical flow through interactive elements
+- **Skip links**:Available for screen reader users
+- **No keyboard traps**:Users can always navigate away
 
 ### Focus Indicator Style
 

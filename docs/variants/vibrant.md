@@ -4,7 +4,7 @@ Balanced energy with slightly toned-down saturation for everyday coding.
 
 ## Overview
 
-**Vibrant** offers 85% intensity—still electric, but easier on the eyes for longer sessions. The perfect middle ground between Neon's intensity and Soft's gentleness.
+**Vibrant** offers 85% intensity: still electric, but easier on the eyes for longer sessions. The perfect middle ground between Neon's intensity and Soft's gentleness.
 
 | Property | Value |
 |----------|-------|

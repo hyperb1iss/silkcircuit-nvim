@@ -79,10 +79,10 @@ require("silkcircuit").setup({
 
 Available style options:
 
-- `italic` — Render in italic
-- `bold` — Render in bold
-- `underline` — Add underline
-- `strikethrough` — Add strikethrough
+- `italic`:Render in italic
+- `bold`:Render in bold
+- `underline`:Add underline
+- `strikethrough`:Add strikethrough
 
 ## Plugin Integrations
 
@@ -101,7 +101,7 @@ require("silkcircuit").setup({
 })
 ```
 
-Most integrations are auto-detected—you only need to configure them if you want to disable one.
+Most integrations are auto-detected. You only need to configure them if you want to disable one.
 
 ## Custom Highlights
 

@@ -10,7 +10,7 @@
 [![VSCode](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=hyperb1iss.silkcircuit-theme)
 [![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/)
 
-🌌 _One theme for your entire dev environment. Electric purples, blazing pinks, neon cyans — consistent from editor to terminal to browser._ 🎆
+🌌 _Electric meets elegant. One theme for your entire dev environment._ 🎆
 
 [⚡ Quick Start](#-quick-start) · [💜 Neovim](#-neovim) · [🎨 Variants](#-variants) · [🌃 Full Ecosystem](#-full-ecosystem)
 
@@ -22,7 +22,7 @@
 
 ## 🎭 What Is SilkCircuit?
 
-SilkCircuit is a unified color system that themes your entire workflow — editors, terminals, browsers, system monitors, and CLI tools. Every target shares the same palette, the same semantic color mappings, and the same five intensity variants. WCAG AA compliant across the board.
+SilkCircuit is a unified color system that themes your entire workflow: editors, terminals, browsers, system monitors, and CLI tools. Every target shares the same palette, the same semantic color mappings, and the same five intensity variants. WCAG AA compliant across the board.
 
 ### 🌐 Platforms
 
@@ -131,7 +131,7 @@ make chrome
 <summary><b>🖥️ Terminals</b></summary>
 
 ```bash
-# Ghostty — copy variant config to ~/.config/ghostty/
+# Ghostty: copy variant config to ~/.config/ghostty/
 cp extras/ghostty/silkcircuit-neon ~/.config/ghostty/themes/
 
 # Kitty
@@ -143,7 +143,7 @@ cp extras/alacritty.yml ~/.config/alacritty/themes/silkcircuit.yml
 # Warp
 cp extras/warp.yaml ~/.warp/themes/silkcircuit.yaml
 
-# Windows Terminal — import extras/windows-terminal.json in settings
+# Windows Terminal: import extras/windows-terminal.json in settings
 ```
 
 </details>
@@ -205,10 +205,10 @@ require("silkcircuit").setup({
 
 All integrations activate automatically when plugins are detected.
 
-- 🎯 **Core** — Telescope, Neo-tree, LSP, Treesitter, nvim-cmp, Mason
-- 🏃 **Navigation** — Flash, Harpoon, Which-Key, Mini.jump
-- 🔧 **Git & Dev** — Gitsigns, Neogit, DAP
-- 💎 **UI** — Lualine, BufferLine, Notify, Noice, Alpha, Indent Blankline, Rainbow Delimiters
+- 🎯 **Core**: Telescope, Neo-tree, LSP, Treesitter, nvim-cmp, Mason
+- 🏃 **Navigation**: Flash, Harpoon, Which-Key, Mini.jump
+- 🔧 **Git & Dev**: Gitsigns, Neogit, DAP
+- 💎 **UI**: Lualine, BufferLine, Notify, Noice, Alpha, Indent Blankline, Rainbow Delimiters
 
 ### 🛸 AstroNvim
 
@@ -248,13 +248,13 @@ See [extras/README.md](extras/README.md) for detailed setup instructions for eve
 
 ## 🛠️ Troubleshooting
 
-**🤔 Neovim theme not loading?** — Requires Neovim 0.8.0+ with `vim.opt.termguicolors = true`. Run `:checkhealth silkcircuit`.
+**🤔 Neovim theme not loading?** Requires Neovim 0.8.0+ with `vim.opt.termguicolors = true`. Run `:checkhealth silkcircuit`.
 
-**🎭 Colors look wrong?** — Your terminal must support true colors (24-bit). Try a different terminal emulator if unsure.
+**🎭 Colors look wrong?** Your terminal must support true colors (24-bit). Try a different terminal emulator if unsure.
 
-**🏎️ Performance issues?** — Run `:SilkCircuitCompile` to regenerate the bytecode cache.
+**🏎️ Performance issues?** Run `:SilkCircuitCompile` to regenerate the bytecode cache.
 
-**💭 Need help?** — [Open an issue](https://github.com/hyperb1iss/silkcircuit/issues) with your config and error output.
+**💭 Need help?** [Open an issue](https://github.com/hyperb1iss/silkcircuit/issues) with your config and error output.
 
 ## 💖 Contributing
 
@@ -270,7 +270,7 @@ See [STYLE_GUIDE.md](STYLE_GUIDE.md) for development conventions.
 
 ## 📜 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 

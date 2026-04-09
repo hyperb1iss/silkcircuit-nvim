@@ -52,7 +52,7 @@ colorscheme silkcircuit
 
 ## AstroNvim Integration
 
-SilkCircuit integrates seamlessly with AstroNvim:
+SilkCircuit works with AstroNvim out of the box:
 
 ```lua
 -- In your lua/community.lua file:
@@ -108,5 +108,5 @@ This will verify:
 
 ## Next Steps
 
-- [Configuration](/guide/configuration) — Customize the theme
-- [Theme Variants](/guide/variants) — Switch between variants
+- [Configuration](/guide/configuration):Customize the theme
+- [Theme Variants](/guide/variants):Switch between variants

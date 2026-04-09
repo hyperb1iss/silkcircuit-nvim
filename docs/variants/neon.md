@@ -1,6 +1,6 @@
 # Neon Variant
 
-The original SilkCircuit experience—maximum vibrancy and electric energy.
+The original SilkCircuit experience. Maximum vibrancy and electric energy.
 
 ## Overview
 

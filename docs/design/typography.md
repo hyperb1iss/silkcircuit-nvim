@@ -72,7 +72,7 @@ Each syntax element has specific typographic treatment:
 }
 ```
 
-Bold purple—commands attention for control flow.
+Bold purple. Commands attention for control flow.
 
 ### Functions
 
@@ -84,7 +84,7 @@ Bold purple—commands attention for control flow.
 }
 ```
 
-Bold italic cyan—distinguishes callable elements.
+Bold italic cyan. Distinguishes callable elements.
 
 ### Strings
 
@@ -95,7 +95,7 @@ Bold italic cyan—distinguishes callable elements.
 }
 ```
 
-Italic pink—clearly identifies text content.
+Italic pink. Clearly identifies text content.
 
 ### Comments
 
@@ -107,7 +107,7 @@ Italic pink—clearly identifies text content.
 }
 ```
 
-Muted italic—readable but receded.
+Muted italic. Readable but receded.
 
 ### Variables
 
@@ -117,7 +117,7 @@ Muted italic—readable but receded.
 }
 ```
 
-Standard weight foreground—clean and neutral.
+Standard weight foreground. Clean and neutral.
 
 ## Neovim Configuration
 

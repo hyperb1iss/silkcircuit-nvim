@@ -4,7 +4,7 @@ Extend SilkCircuit across your entire development environment.
 
 ## Overview
 
-SilkCircuit isn't just a Neovim theme—it's a complete visual identity system for your workflow. These extras bring consistent neon energy to terminals, VS Code, system monitors, and more.
+SilkCircuit is a complete visual identity system for your workflow. These extras bring consistent neon energy to terminals, VS Code, system monitors, and more.
 
 ## Available Extras
 
@@ -97,4 +97,4 @@ Most extras support multiple variants:
 1. **Enable true colors** in your terminal for best results
 2. **Use consistent variants** across tools for cohesive aesthetic
 3. **Check variant support** when switching themes
-4. **Test in your environment** — some terminals render colors differently
+4. **Test in your environment**: some terminals render colors differently

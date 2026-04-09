@@ -4,7 +4,7 @@ Gentle colors for marathon coding sessions and late-night work.
 
 ## Overview
 
-**Soft** reduces intensity to 70%—still distinctly SilkCircuit, but gentle enough for all-day coding without eye strain. Perfect for extended sessions.
+**Soft** reduces intensity to 70%, still distinctly SilkCircuit but gentle enough for all-day coding without eye strain. Perfect for extended sessions.
 
 | Property | Value |
 |----------|-------|
