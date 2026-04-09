@@ -4,7 +4,7 @@ layout: home
 hero:
   name: SilkCircuit
   text: Electric Meets Elegant
-  tagline: One theme for Neovim, VS Code, terminals, browsers, and 20+ developer tools
+  tagline: A vibrant cyberpunk color system for Neovim, VS Code, terminals, browsers, and 20+ tools
   image:
     src: /logo.svg
     alt: SilkCircuit

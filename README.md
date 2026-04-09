@@ -1,4 +1,4 @@
-# 💜⚡ SilkCircuit: One Theme. Every Tool. 🌃
+# 💜⚡ SilkCircuit: Electric Meets Elegant
 
 <div align="center">
 
@@ -10,7 +10,7 @@
 [![VSCode](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=hyperb1iss.silkcircuit-theme)
 [![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/)
 
-🌌 _Electric meets elegant. One theme for your entire dev environment._ 🎆
+🌌 _A vibrant cyberpunk color system for your entire dev environment._ 🎆
 
 [⚡ Quick Start](#-quick-start) · [💜 Neovim](#-neovim) · [🎨 Variants](#-variants) · [🌃 Full Ecosystem](#-full-ecosystem)
 
@@ -19,6 +19,9 @@
 <div align="center">
   <img src="assets/silkcircuit.png" alt="SilkCircuit Theme Preview" width="90%">
 </div>
+
+> [!TIP]
+> 🤖 Building a SilkCircuit integration with AI? Point your agent at [STYLE_GUIDE.md](STYLE_GUIDE.md).
 
 ## 🎭 What Is SilkCircuit?
 
@@ -47,9 +50,9 @@ Five intensity levels, all using the same underlying palette:
 | 🌌 **Glow** | Ultra-dark bg, pure neon fg | Low-light / OLED |
 | 🌅 **Dawn** | Light theme | Daytime & bright rooms |
 
-## 💫 Quick Start
+## 🪄 Quick Start
 
-### 🚀 Universal Installer
+### ⚡ Universal Installer
 
 The fastest way to theme everything at once. Detects your installed tools and applies matching SilkCircuit configs with backups:
 
@@ -276,8 +279,8 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-Created by [Stefanie Jane 🌠](https://github.com/hyperb1iss)
-
 If you love SilkCircuit, [buy me a Monster Ultra Violet ⚡](https://ko-fi.com/hyperb1iss)
+
+✦ Built with obsession by <a href="https://hyperbliss.tech"><strong>Hyperbliss Technologies</strong></a> ✦
 
 </div>

@@ -4,7 +4,7 @@ SilkCircuit is a unified color system for your entire development environment. O
 
 ## Why SilkCircuit?
 
-### One Theme, Everywhere
+### Electric Meets Elegant
 
 SilkCircuit themes 20+ tools with the same palette and semantic mappings. Keywords are always purple, functions are always cyan, strings are always pink:whether you're in Neovim, VS Code, or reading a diff in your terminal.
 
