@@ -20,6 +20,10 @@
   <img src="assets/silkcircuit-lockup-banner.png" alt="SilkCircuit" width="80%">
 </div>
 
+<div align="center">
+  <img src="assets/screenshots/nvim-neotree.png" alt="SilkCircuit in Neovim with Neo-tree" width="90%">
+</div>
+
 > [!TIP]
 > 🤖 Building a SilkCircuit integration with AI? Point your agent at [STYLE_GUIDE.md](STYLE_GUIDE.md).
 
@@ -213,6 +217,10 @@ All integrations activate automatically when plugins are detected.
 - 🔧 **Git & Dev**: Gitsigns, Neogit, DAP
 - 💎 **UI**: Lualine, BufferLine, Notify, Noice, Alpha, Indent Blankline, Rainbow Delimiters
 
+<div align="center">
+  <img src="assets/screenshots/nvim-telescope.png" alt="Telescope integration" width="85%">
+</div>
+
 ### 🛸 AstroNvim
 
 ```lua
@@ -248,6 +256,44 @@ See [extras/README.md](extras/README.md) for detailed setup instructions for eve
 | ✅ Success Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) Success states |
 | ⚡ Electric Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) Warnings, variables |
 | 🔥 Warm Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) Numbers, constants |
+
+## 📸 Screenshot Gallery
+
+<details>
+<summary><b>Neovim</b></summary>
+<br>
+
+| Syntax Highlighting | Theme Highlights |
+|:---:|:---:|
+| <img src="assets/screenshots/nvim-lua.png" alt="Lua syntax highlighting" width="400"> | <img src="assets/screenshots/nvim-theme-highlights.png" alt="Theme highlight groups" width="400"> |
+
+</details>
+
+<details>
+<summary><b>Terminal & CLI Tools</b></summary>
+<br>
+
+| lazygit | btop |
+|:---:|:---:|
+| <img src="assets/screenshots/lazygit.png" alt="lazygit" width="400"> | <img src="assets/screenshots/btop.png" alt="btop system monitor" width="400"> |
+
+| bat | fzf |
+|:---:|:---:|
+| <img src="assets/screenshots/bat.png" alt="bat syntax viewer" width="400"> | <img src="assets/screenshots/fzf.png" alt="fzf with bat preview" width="400"> |
+
+| git log | delta |
+|:---:|:---:|
+| <img src="assets/screenshots/git-log.png" alt="git log" width="400"> | <img src="assets/screenshots/delta.png" alt="delta diff viewer" width="400"> |
+
+| lsd | procs |
+|:---:|:---:|
+| <img src="assets/screenshots/lsd.png" alt="lsd directory listing" width="400"> | <img src="assets/screenshots/procs.png" alt="procs process viewer" width="400"> |
+
+| fastfetch |
+|:---:|
+| <img src="assets/screenshots/fastfetch.png" alt="fastfetch system info" width="400"> |
+
+</details>
 
 ## 🛠️ Troubleshooting
 
