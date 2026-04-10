@@ -20,16 +20,15 @@
   <img src="assets/silkcircuit-lockup-banner.png" alt="SilkCircuit" width="80%">
 </div>
 
+<br>
+
 <div align="center">
   <img src="assets/screenshots/nvim-neotree.png" alt="SilkCircuit in Neovim with Neo-tree" width="90%">
 </div>
 
-> [!TIP]
-> 🤖 Building a SilkCircuit integration with AI? Point your agent at [STYLE_GUIDE.md](STYLE_GUIDE.md).
-
 ## 🎭 What Is SilkCircuit?
 
-SilkCircuit is a unified color system that themes your entire workflow: editors, terminals, browsers, system monitors, and CLI tools. Every target shares the same palette, the same semantic color mappings, and the same five intensity variants. WCAG AA compliant across the board.
+One palette, one semantic system, five intensity variants, every tool in your workflow. SilkCircuit themes editors, terminals, browsers, system monitors, and CLI tools with consistent colors and WCAG AA contrast ratios across the board.
 
 ### 🌐 Platforms
 
@@ -70,7 +69,7 @@ cd silkcircuit
 
 Pick what you need:
 
-<details>
+<details open>
 <summary><b>🔮 Neovim</b> (lazy.nvim)</summary>
 
 ```lua
@@ -181,6 +180,10 @@ cp extras/starship/silkcircuit.toml ~/.config/starship.toml
 
 The Neovim theme is the most feature-rich target: bytecode-compiled for <5ms load times, 40+ auto-detected plugin integrations, and persistent preferences.
 
+<div align="center">
+  <img src="assets/screenshots/nvim-telescope.png" alt="Telescope integration" width="85%">
+</div>
+
 ### 🎪 Configuration
 
 ```lua
@@ -217,10 +220,6 @@ All integrations activate automatically when plugins are detected.
 - 🔧 **Git & Dev**: Gitsigns, Neogit, DAP
 - 💎 **UI**: Lualine, BufferLine, Notify, Noice, Alpha, Indent Blankline, Rainbow Delimiters
 
-<div align="center">
-  <img src="assets/screenshots/nvim-telescope.png" alt="Telescope integration" width="85%">
-</div>
-
 ### 🛸 AstroNvim
 
 ```lua
@@ -242,7 +241,7 @@ return {
 
 ## 🌃 Full Ecosystem
 
-See [extras/README.md](extras/README.md) for detailed setup instructions for every supported tool.
+SilkCircuit extends far beyond your editor. See [extras/README.md](extras/README.md) for setup instructions for every supported tool.
 
 ### 🎨 Color Palette
 
@@ -259,7 +258,7 @@ See [extras/README.md](extras/README.md) for detailed setup instructions for eve
 
 ## 📸 Screenshot Gallery
 
-<details>
+<details open>
 <summary><b>Neovim</b></summary>
 <br>
 
@@ -269,7 +268,7 @@ See [extras/README.md](extras/README.md) for detailed setup instructions for eve
 
 </details>
 
-<details>
+<details open>
 <summary><b>Terminal & CLI Tools</b></summary>
 <br>
 
@@ -315,7 +314,7 @@ make test     # run unit tests
 make lint     # check code quality
 ```
 
-See [STYLE_GUIDE.md](STYLE_GUIDE.md) for development conventions.
+See [STYLE_GUIDE.md](STYLE_GUIDE.md) for the entire SilkCircuit design language.
 
 ## 📜 License
 
