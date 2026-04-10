@@ -17,7 +17,7 @@
 </div>
 
 <div align="center">
-  <img src="assets/silkcircuit.png" alt="SilkCircuit Theme Preview" width="90%">
+  <img src="assets/silkcircuit-lockup-banner.png" alt="SilkCircuit" width="80%">
 </div>
 
 > [!TIP]

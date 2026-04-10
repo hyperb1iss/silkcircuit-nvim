@@ -6,7 +6,7 @@ hero:
   text: Electric Meets Elegant
   tagline: A vibrant cyberpunk color system for Neovim, VS Code, terminals, browsers, and 20+ tools
   image:
-    src: /logo.svg
+    src: /logo.png
     alt: SilkCircuit
   actions:
     - theme: brand
