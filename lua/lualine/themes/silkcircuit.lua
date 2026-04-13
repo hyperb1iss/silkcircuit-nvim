@@ -1,7 +1,7 @@
 -- Lualine theme for Silkcircuit colorscheme
 -- Neon-enhanced statusline with electric visual elements
 
-local colors = require("silkcircuit.palette").colors
+local colors = require("silkcircuit.palette").get_colors()
 
 local silkcircuit = {}
 
