@@ -15,12 +15,12 @@ Slack allows custom sidebar themes using hex colors. SilkCircuit provides a four
 
 ## Color Values
 
-| Element | Hex | Description |
-|---------|-----|-------------|
-| Column BG | `#2E1B7A` | Deep purple navigation |
-| Active Item | `#E135FF` | Electric purple highlight |
+| Element         | Hex       | Description                 |
+| --------------- | --------- | --------------------------- |
+| Column BG       | `#2E1B7A` | Deep purple navigation      |
+| Active Item     | `#E135FF` | Electric purple highlight   |
 | Active Presence | `#50FA7B` | Neon green online indicator |
-| Mentions | `#FF79C6` | Hot pink notifications |
+| Mentions        | `#FF79C6` | Hot pink notifications      |
 
 ## One-Line Theme
 
@@ -32,13 +32,13 @@ Copy this to quickly apply the theme:
 
 ## Visual Effect
 
-| Element | Appearance |
-|---------|-----------|
-| Sidebar | Deep purple background |
+| Element          | Appearance                |
+| ---------------- | ------------------------- |
+| Sidebar          | Deep purple background    |
 | Selected channel | Electric purple highlight |
-| Online users | Neon green dot |
-| Unread mentions | Hot pink badge |
-| Text | Light foreground |
+| Online users     | Neon green dot            |
+| Unread mentions  | Hot pink badge            |
+| Text             | Light foreground          |
 
 ## Pro Tips
 

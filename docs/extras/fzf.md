@@ -26,18 +26,18 @@ export FZF_DEFAULT_OPTS="
 
 ## Color Mapping
 
-| Element | Color | Hex |
-|---------|-------|-----|
-| Background | Dark | `#12101a` |
-| Foreground | Light | `#f8f8f2` |
+| Element      | Color     | Hex       |
+| ------------ | --------- | --------- |
+| Background   | Dark      | `#12101a` |
+| Foreground   | Light     | `#f8f8f2` |
 | Selection bg | Highlight | `#1a162a` |
-| Spinner | Purple | `#e135ff` |
-| Highlight | Pink | `#ff79c6` |
-| Info | Yellow | `#f1fa8c` |
-| Pointer | Purple | `#e135ff` |
-| Marker | Green | `#50fa7b` |
-| Prompt | Purple | `#e135ff` |
-| Border | Cyan | `#80ffea` |
+| Spinner      | Purple    | `#e135ff` |
+| Highlight    | Pink      | `#ff79c6` |
+| Info         | Yellow    | `#f1fa8c` |
+| Pointer      | Purple    | `#e135ff` |
+| Marker       | Green     | `#50fa7b` |
+| Prompt       | Purple    | `#e135ff` |
+| Border       | Cyan      | `#80ffea` |
 
 ## Neovim Integration
 

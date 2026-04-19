@@ -204,21 +204,32 @@ Properties   → Cyan Bright
 **Primary (UI Text):**
 
 ```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-             'Helvetica Neue', Arial, sans-serif;
+font-family:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 ```
 
 **Code/Monospace:**
 
 ```css
-font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code',
-             'Monaco', 'Menlo', 'Roboto Mono', monospace;
+font-family:
+  "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Monaco", "Menlo", "Roboto Mono",
+  monospace;
 ```
 
 **Display (Headlines):**
 
 ```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+font-family:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  sans-serif;
 ```
 
 ### Type Scale
@@ -226,28 +237,17 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 #### Mobile (320px+)
 
 ```css
---sc-text-xs:    0.75rem  (12px)
---sc-text-sm:    0.875rem (14px)
---sc-text-base:  1rem     (16px)
---sc-text-lg:    1.125rem (18px)
---sc-text-xl:    1.25rem  (20px)
---sc-text-2xl:   1.5rem   (24px)
---sc-text-3xl:   1.875rem (30px)
---sc-text-4xl:   2.25rem  (36px)
+--sc-text-xs: 0.75rem (12px) --sc-text-sm: 0.875rem (14px) --sc-text-base: 1rem (16px)
+  --sc-text-lg: 1.125rem (18px) --sc-text-xl: 1.25rem (20px) --sc-text-2xl: 1.5rem (24px)
+  --sc-text-3xl: 1.875rem (30px) --sc-text-4xl: 2.25rem (36px);
 ```
 
 #### Desktop (1024px+)
 
 ```css
---sc-text-xs:    0.75rem  (12px)
---sc-text-sm:    0.875rem (14px)
---sc-text-base:  1rem     (16px)
---sc-text-lg:    1.125rem (18px)
---sc-text-xl:    1.25rem  (20px)
---sc-text-2xl:   1.5rem   (24px)
---sc-text-3xl:   2rem     (32px)
---sc-text-4xl:   2.5rem   (40px)
---sc-text-5xl:   3rem     (48px)
+--sc-text-xs: 0.75rem (12px) --sc-text-sm: 0.875rem (14px) --sc-text-base: 1rem (16px)
+  --sc-text-lg: 1.125rem (18px) --sc-text-xl: 1.25rem (20px) --sc-text-2xl: 1.5rem (24px)
+  --sc-text-3xl: 2rem (32px) --sc-text-4xl: 2.5rem (40px) --sc-text-5xl: 3rem (48px);
 ```
 
 ### Code Typography
@@ -290,13 +290,10 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 ```css
 /* SilkCircuit spacing tokens */
---sc-space-xs:  4px   (0.25rem)  /* Micro spacing */
---sc-space-sm:  8px   (0.5rem)   /* Small gaps */
---sc-space-md:  16px  (1rem)     /* Base spacing */
---sc-space-lg:  24px  (1.5rem)   /* Section spacing */
---sc-space-xl:  32px  (2rem)     /* Large gaps */
---sc-space-2xl: 48px  (3rem)     /* Major sections */
---sc-space-3xl: 64px  (4rem)     /* Page sections */
+--sc-space-xs: 4px (0.25rem) /* Micro spacing */ --sc-space-sm: 8px (0.5rem) /* Small gaps */
+  --sc-space-md: 16px (1rem) /* Base spacing */ --sc-space-lg: 24px (1.5rem) /* Section spacing */
+  --sc-space-xl: 32px (2rem) /* Large gaps */ --sc-space-2xl: 48px (3rem) /* Major sections */
+  --sc-space-3xl: 64px (4rem) /* Page sections */;
 ```
 
 **Grid Layout:**
@@ -310,22 +307,24 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @media (min-width: 768px) {
-  .sc-grid { grid-template-columns: repeat(8, 1fr); } /* Tablet */
+  .sc-grid {
+    grid-template-columns: repeat(8, 1fr);
+  } /* Tablet */
 }
 
 @media (min-width: 1024px) {
-  .sc-grid { grid-template-columns: repeat(12, 1fr); } /* Desktop */
+  .sc-grid {
+    grid-template-columns: repeat(12, 1fr);
+  } /* Desktop */
 }
 ```
 
 **Responsive Breakpoints:**
 
 ```css
---sc-breakpoint-xs:  320px   /* Mobile portrait */
---sc-breakpoint-sm:  768px   /* Tablet portrait */
---sc-breakpoint-md:  1024px  /* Tablet landscape/Small desktop */
---sc-breakpoint-lg:  1440px  /* Desktop */
---sc-breakpoint-xl:  1920px  /* Large desktop */
+--sc-breakpoint-xs: 320px /* Mobile portrait */ --sc-breakpoint-sm: 768px /* Tablet portrait */
+  --sc-breakpoint-md: 1024px /* Tablet landscape/Small desktop */ --sc-breakpoint-lg: 1440px
+  /* Desktop */ --sc-breakpoint-xl: 1920px /* Large desktop */;
 ```
 
 ---
@@ -335,21 +334,17 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 ### Timing Functions
 
 ```css
---sc-ease-linear:     linear
---sc-ease-in:         cubic-bezier(0.4, 0, 1, 1)
---sc-ease-out:        cubic-bezier(0, 0, 0.2, 1)
---sc-ease-in-out:     cubic-bezier(0.4, 0, 0.2, 1)
---sc-ease-back:       cubic-bezier(0.34, 1.56, 0.64, 1)
---sc-ease-elastic:    cubic-bezier(0.68, -0.55, 0.265, 1.55)
+--sc-ease-linear: linear --sc-ease-in: cubic-bezier(0.4, 0, 1, 1)
+  --sc-ease-out: cubic-bezier(0, 0, 0.2, 1) --sc-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1)
+  --sc-ease-back: cubic-bezier(0.34, 1.56, 0.64, 1)
+  --sc-ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 ```
 
 ### Duration Scale
 
 ```css
---sc-duration-fast:    150ms
---sc-duration-normal:  250ms
---sc-duration-slow:    350ms
---sc-duration-slower:  500ms
+--sc-duration-fast: 150ms --sc-duration-normal: 250ms --sc-duration-slow: 350ms
+  --sc-duration-slower: 500ms;
 ```
 
 ### Signature Animations
@@ -358,8 +353,12 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 ```css
 @keyframes neonGlow {
-  from { filter: drop-shadow(0 0 10px var(--sc-purple)40); }
-  to { filter: drop-shadow(0 0 20px var(--sc-purple)80); }
+  from {
+    filter: drop-shadow(0 0 10px var(--sc-purple) 40);
+  }
+  to {
+    filter: drop-shadow(0 0 20px var(--sc-purple) 80);
+  }
 }
 ```
 
@@ -367,8 +366,15 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 ```css
 @keyframes electricPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 ```
 
@@ -376,8 +382,12 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 ```css
 @keyframes cyberSlide {
-  from { transform: translateX(-100%) skewX(25deg); }
-  to { transform: translateX(0) skewX(0); }
+  from {
+    transform: translateX(-100%) skewX(25deg);
+  }
+  to {
+    transform: translateX(0) skewX(0);
+  }
 }
 ```
 
@@ -403,7 +413,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 .sc-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--sc-purple)40;
+  box-shadow: 0 6px 20px var(--sc-purple) 40;
   filter: brightness(1.1);
 }
 ```
@@ -425,7 +435,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 .sc-btn-ghost:hover {
   background: var(--sc-cyan);
   color: var(--sc-bg);
-  box-shadow: 0 0 20px var(--sc-cyan)30;
+  box-shadow: 0 0 20px var(--sc-cyan) 30;
 }
 ```
 
@@ -434,15 +444,15 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 ```css
 .sc-card {
   background: var(--sc-bg-highlight);
-  border: 1px solid var(--sc-cyan)20;
+  border: 1px solid var(--sc-cyan) 20;
   border-radius: 8px;
   padding: var(--sc-space-lg);
   transition: all var(--sc-duration-normal) var(--sc-ease-out);
 }
 
 .sc-card:hover {
-  border-color: var(--sc-cyan)60;
-  box-shadow: 0 4px 20px var(--sc-cyan)10;
+  border-color: var(--sc-cyan) 60;
+  box-shadow: 0 4px 20px var(--sc-cyan) 10;
   transform: translateY(-2px);
 }
 ```
@@ -452,7 +462,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 ```css
 .sc-input {
   background: var(--sc-bg-dark);
-  border: 1px solid var(--sc-purple)30;
+  border: 1px solid var(--sc-purple) 30;
   color: var(--sc-fg);
   padding: var(--sc-space-sm);
   border-radius: 4px;
@@ -463,7 +473,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 .sc-input:focus {
   outline: none;
   border-color: var(--sc-cyan);
-  box-shadow: 0 0 0 2px var(--sc-cyan)20;
+  box-shadow: 0 0 0 2px var(--sc-cyan) 20;
 }
 ```
 
@@ -586,7 +596,7 @@ axe-cli --tags wcag2a,wcag2aa
 ```css
 /* SilkCircuit base editor styles */
 .silkcircuit-editor {
-  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  font-family: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
   font-size: 14px;
   line-height: 1.5;
   transition: all 0.2s ease;
@@ -599,13 +609,17 @@ axe-cli --tags wcag2a,wcag2aa
 }
 
 .silkcircuit-editor[data-variant="neon"] .sc-keyword {
-  color: #e135ff; font-weight: bold;
+  color: #e135ff;
+  font-weight: bold;
 }
 .silkcircuit-editor[data-variant="neon"] .sc-string {
-  color: #ff99ff; font-style: italic;
+  color: #ff99ff;
+  font-style: italic;
 }
 .silkcircuit-editor[data-variant="neon"] .sc-function {
-  color: #80ffea; font-weight: bold; font-style: italic;
+  color: #80ffea;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Vibrant variant */
@@ -615,13 +629,17 @@ axe-cli --tags wcag2a,wcag2aa
 }
 
 .silkcircuit-editor[data-variant="vibrant"] .sc-keyword {
-  color: #ff00ff; font-weight: bold;
+  color: #ff00ff;
+  font-weight: bold;
 }
 .silkcircuit-editor[data-variant="vibrant"] .sc-string {
-  color: #ff99ff; font-style: italic;
+  color: #ff99ff;
+  font-style: italic;
 }
 .silkcircuit-editor[data-variant="vibrant"] .sc-function {
-  color: #00ffcc; font-weight: bold; font-style: italic;
+  color: #00ffcc;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Soft variant */
@@ -631,13 +649,17 @@ axe-cli --tags wcag2a,wcag2aa
 }
 
 .silkcircuit-editor[data-variant="soft"] .sc-keyword {
-  color: #e892ff; font-weight: bold;
+  color: #e892ff;
+  font-weight: bold;
 }
 .silkcircuit-editor[data-variant="soft"] .sc-string {
-  color: #ffc2ff; font-style: italic;
+  color: #ffc2ff;
+  font-style: italic;
 }
 .silkcircuit-editor[data-variant="soft"] .sc-function {
-  color: #99ffee; font-weight: bold; font-style: italic;
+  color: #99ffee;
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Glow variant */
@@ -647,14 +669,18 @@ axe-cli --tags wcag2a,wcag2aa
 }
 
 .silkcircuit-editor[data-variant="glow"] .sc-keyword {
-  color: #ff00ff; font-weight: bold;
+  color: #ff00ff;
+  font-weight: bold;
   text-shadow: 0 0 5px #ff00ff40;
 }
 .silkcircuit-editor[data-variant="glow"] .sc-string {
-  color: #ff99ff; font-style: italic;
+  color: #ff99ff;
+  font-style: italic;
 }
 .silkcircuit-editor[data-variant="glow"] .sc-function {
-  color: #00ffff; font-weight: bold; font-style: italic;
+  color: #00ffff;
+  font-weight: bold;
+  font-style: italic;
   text-shadow: 0 0 5px #00ffff40;
 }
 
@@ -665,13 +691,17 @@ axe-cli --tags wcag2a,wcag2aa
 }
 
 .silkcircuit-editor[data-variant="dawn"] .sc-keyword {
-  color: #7e2bd5; font-weight: bold;
+  color: #7e2bd5;
+  font-weight: bold;
 }
 .silkcircuit-editor[data-variant="dawn"] .sc-string {
-  color: #9c4a88; font-style: italic;
+  color: #9c4a88;
+  font-style: italic;
 }
 .silkcircuit-editor[data-variant="dawn"] .sc-function {
-  color: #007f8e; font-weight: bold; font-style: italic;
+  color: #007f8e;
+  font-weight: bold;
+  font-style: italic;
 }
 ```
 
@@ -681,7 +711,11 @@ axe-cli --tags wcag2a,wcag2aa
 .silkcircuit-dashboard {
   min-height: 100vh;
   color: #f8f8f2;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* Neon variant dashboard */
@@ -717,7 +751,9 @@ axe-cli --tags wcag2a,wcag2aa
 
 .silkcircuit-dashboard[data-variant="glow"] .sc-card:hover {
   border-color: #00ffff;
-  box-shadow: 0 0 20px #ff00ff40, 0 4px 20px #00ffff20;
+  box-shadow:
+    0 0 20px #ff00ff40,
+    0 4px 20px #00ffff20;
   transform: translateY(-2px);
 }
 ```
@@ -728,77 +764,82 @@ axe-cli --tags wcag2a,wcag2aa
 // SilkCircuit React Native theme system
 const variantColors = {
   neon: {
-    primary: '#e135ff',
-    secondary: '#ff99ff',
-    accent: '#80ffea',
-    background: '#12101a',
-    surface: '#1a162a',
-    text: '#f8f8f2',
+    primary: "#e135ff",
+    secondary: "#ff99ff",
+    accent: "#80ffea",
+    background: "#12101a",
+    surface: "#1a162a",
+    text: "#f8f8f2"
   },
   vibrant: {
-    primary: '#ff00ff',
-    secondary: '#ff99ff',
-    accent: '#00ffcc',
-    background: '#0f0c1a',
-    surface: '#0a0614',
-    text: '#f8f8f2',
+    primary: "#ff00ff",
+    secondary: "#ff99ff",
+    accent: "#00ffcc",
+    background: "#0f0c1a",
+    surface: "#0a0614",
+    text: "#f8f8f2"
   },
   soft: {
-    primary: '#e892ff',
-    secondary: '#ffc2ff',
-    accent: '#99ffee',
-    background: '#1a1626',
-    surface: '#3e3456',
-    text: '#f8f8f2',
+    primary: "#e892ff",
+    secondary: "#ffc2ff",
+    accent: "#99ffee",
+    background: "#1a1626",
+    surface: "#3e3456",
+    text: "#f8f8f2"
   },
   glow: {
-    primary: '#ff00ff',
-    secondary: '#ff99ff',
-    accent: '#00ffff',
-    background: '#0a0816',
-    surface: '#1a0033',
-    text: '#ffffff',
+    primary: "#ff00ff",
+    secondary: "#ff99ff",
+    accent: "#00ffff",
+    background: "#0a0816",
+    surface: "#1a0033",
+    text: "#ffffff"
   },
   dawn: {
-    primary: '#7e2bd5',
-    secondary: '#9c4a88',
-    accent: '#007f8e',
-    background: '#faf8ff',
-    surface: '#f1ecff',
-    text: '#2b2540',
+    primary: "#7e2bd5",
+    secondary: "#9c4a88",
+    accent: "#007f8e",
+    background: "#faf8ff",
+    surface: "#f1ecff",
+    text: "#2b2540"
   }
-};
+}
 
-export const createSilkCircuitTheme = (variant = 'neon') => ({
+export const createSilkCircuitTheme = (variant = "neon") => ({
   colors: {
     ...variantColors[variant],
-    success: variant === 'glow' ? '#00ff00' : variant === 'dawn' ? '#2d8659' : '#50fa7b',
-    warning: variant === 'glow' ? '#ffff00' : variant === 'dawn' ? '#a88600' : '#f1fa8c',
-    error: variant === 'glow' ? '#ff0066' : variant === 'dawn' ? '#c1272d' : '#ff6363',
+    success: variant === "glow" ? "#00ff00" : variant === "dawn" ? "#2d8659" : "#50fa7b",
+    warning: variant === "glow" ? "#ffff00" : variant === "dawn" ? "#a88600" : "#f1fa8c",
+    error: variant === "glow" ? "#ff0066" : variant === "dawn" ? "#c1272d" : "#ff6363"
   },
   spacing: {
-    xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48
+    xs: 4,
+    sm: 8,
+    md: 16,
+    lg: 24,
+    xl: 32,
+    xxl: 48
   },
   typography: {
     h1: {
       fontSize: 28,
-      fontWeight: '700',
+      fontWeight: "700",
       color: variantColors[variant].primary,
-      lineHeight: 32,
+      lineHeight: 32
     },
     body: {
       fontSize: 16,
-      fontWeight: '400',
+      fontWeight: "400",
       color: variantColors[variant].text,
-      lineHeight: 22,
+      lineHeight: 22
     },
     code: {
-      fontFamily: Platform.OS === 'ios' ? 'SF Mono' : 'monospace',
+      fontFamily: Platform.OS === "ios" ? "SF Mono" : "monospace",
       fontSize: 14,
-      color: variantColors[variant].accent,
+      color: variantColors[variant].accent
     }
   }
-});
+})
 ```
 
 ### Terminal Configuration (All Variants)
@@ -868,13 +909,18 @@ export const createSilkCircuitTheme = (variant = 'neon') => ({
   text-align: center;
   position: relative;
   overflow: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 /* Neon variant hero */
 .silkcircuit-hero[data-variant="neon"] {
-  background: radial-gradient(circle at center, #e135ff20 0%, transparent 50%),
-              linear-gradient(135deg, #12101a 0%, #0a0812 100%);
+  background:
+    radial-gradient(circle at center, #e135ff20 0%, transparent 50%),
+    linear-gradient(135deg, #12101a 0%, #0a0812 100%);
 }
 
 .silkcircuit-hero[data-variant="neon"] .hero-title {
@@ -886,14 +932,19 @@ export const createSilkCircuitTheme = (variant = 'neon') => ({
 }
 
 @keyframes neonGlow {
-  from { filter: drop-shadow(0 0 20px #e135ff40); }
-  to { filter: drop-shadow(0 0 40px #e135ff80); }
+  from {
+    filter: drop-shadow(0 0 20px #e135ff40);
+  }
+  to {
+    filter: drop-shadow(0 0 40px #e135ff80);
+  }
 }
 
 /* Glow variant hero */
 .silkcircuit-hero[data-variant="glow"] {
-  background: radial-gradient(circle at center, #ff00ff30 0%, transparent 50%),
-              linear-gradient(135deg, #0a0816 0%, #000000 100%);
+  background:
+    radial-gradient(circle at center, #ff00ff30 0%, transparent 50%),
+    linear-gradient(135deg, #0a0816 0%, #000000 100%);
 }
 
 .silkcircuit-hero[data-variant="glow"] .hero-title {
@@ -982,4 +1033,4 @@ When creating new SilkCircuit implementations:
 
 ---
 
-*Remember: SilkCircuit is about enhancing focus through purposeful electric energy. Every glow should serve the user's workflow.*
+_Remember: SilkCircuit is about enhancing focus through purposeful electric energy. Every glow should serve the user's workflow._

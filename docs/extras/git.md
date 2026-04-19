@@ -17,14 +17,14 @@ cat extras/gitconfig >> ~/.gitconfig
 
 ### Colored Output
 
-| Element | Color |
-|---------|-------|
-| Commit hashes | Neon Magenta |
-| Dates | Electric Cyan |
-| Author names | Bright Yellow |
-| Branch names | Green |
-| Additions | Green |
-| Deletions | Red |
+| Element       | Color         |
+| ------------- | ------------- |
+| Commit hashes | Neon Magenta  |
+| Dates         | Electric Cyan |
+| Author names  | Bright Yellow |
+| Branch names  | Green         |
+| Additions     | Green         |
+| Deletions     | Red           |
 
 ### Git Log Format
 
@@ -43,21 +43,21 @@ git lg --all
 
 ### Git Status Colors
 
-| Status | Color |
-|--------|-------|
-| Untracked | Red |
-| Modified | Yellow |
-| Staged | Green |
-| Branch | Cyan |
+| Status    | Color  |
+| --------- | ------ |
+| Untracked | Red    |
+| Modified  | Yellow |
+| Staged    | Green  |
+| Branch    | Cyan   |
 
 ### Git Diff Colors
 
-| Element | Color |
-|---------|-------|
-| Old (deleted) | Red |
-| New (added) | Green |
-| Meta info | Cyan |
-| Frag info | Magenta |
+| Element       | Color   |
+| ------------- | ------- |
+| Old (deleted) | Red     |
+| New (added)   | Green   |
+| Meta info     | Cyan    |
+| Frag info     | Magenta |
 
 ## Delta Integration
 
@@ -106,14 +106,14 @@ If you use [delta](https://github.com/dandavison/delta) for git diffs, the confi
 
 ## Color Reference
 
-| ANSI Code | Color | Usage |
-|-----------|-------|-------|
-| `201` | Neon Magenta | Commit hashes |
-| `213` | Bright Magenta | Author names |
-| `51` | Electric Cyan | Dates |
-| `220` | Bright Yellow | Branch refs |
-| `149` | Green | Additions |
-| `197` | Red | Deletions |
+| ANSI Code | Color          | Usage         |
+| --------- | -------------- | ------------- |
+| `201`     | Neon Magenta   | Commit hashes |
+| `213`     | Bright Magenta | Author names  |
+| `51`      | Electric Cyan  | Dates         |
+| `220`     | Bright Yellow  | Branch refs   |
+| `149`     | Green          | Additions     |
+| `197`     | Red            | Deletions     |
 
 ## Git Aliases
 

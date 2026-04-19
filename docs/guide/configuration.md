@@ -124,19 +124,19 @@ require("silkcircuit").setup({
 
 The `colors` table includes:
 
-| Color | Description |
-|-------|-------------|
-| `purple` | Keywords, control flow |
-| `cyan` | Functions, methods |
-| `pink` | Tags, booleans |
-| `pink_soft` | Strings |
-| `coral` | Numbers, constants |
-| `yellow` | Classes, types |
-| `green` | Success, git add |
-| `red` | Errors, git delete |
-| `gray` | Comments, muted text |
-| `bg` | Background |
-| `fg` | Foreground |
+| Color       | Description            |
+| ----------- | ---------------------- |
+| `purple`    | Keywords, control flow |
+| `cyan`      | Functions, methods     |
+| `pink`      | Tags, booleans         |
+| `pink_soft` | Strings                |
+| `coral`     | Numbers, constants     |
+| `yellow`    | Classes, types         |
+| `green`     | Success, git add       |
+| `red`       | Errors, git delete     |
+| `gray`      | Comments, muted text   |
+| `bg`        | Background             |
+| `fg`        | Foreground             |
 
 ## Persistent Preferences
 

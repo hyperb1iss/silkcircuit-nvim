@@ -32,26 +32,26 @@ One palette, one semantic system, five intensity variants, every tool in your wo
 
 ### 🌐 Platforms
 
-| Category | Targets |
-|----------|---------|
-| 💻 **Editors** | Neovim (40+ plugin integrations), VS Code (Marketplace), AstroNvim |
-| 🖥️ **Terminals** | Ghostty, Kitty, Alacritty, Warp, Windows Terminal |
-| 🌐 **Browsers** | Chrome (Web Store, 5 variants + DevTools CSS) |
-| 🔧 **CLI Tools** | btop, K9s, lazygit, bat, fzf, lsd, procs, atuin, Starship |
-| ⚙️ **System** | COSMIC Desktop, fastfetch, dmesg, tmux |
-| 🎯 **Other** | Git (delta integration), Slack, Lualine |
+| Category         | Targets                                                            |
+| ---------------- | ------------------------------------------------------------------ |
+| 💻 **Editors**   | Neovim (40+ plugin integrations), VS Code (Marketplace), AstroNvim |
+| 🖥️ **Terminals** | Ghostty, Kitty, Alacritty, Warp, Windows Terminal                  |
+| 🌐 **Browsers**  | Chrome (Web Store, 5 variants + DevTools CSS)                      |
+| 🔧 **CLI Tools** | btop, K9s, lazygit, bat, fzf, lsd, procs, atuin, Starship          |
+| ⚙️ **System**    | COSMIC Desktop, fastfetch, dmesg, tmux                             |
+| 🎯 **Other**     | Git (delta integration), Slack, Lualine                            |
 
 ### 🎛️ Variants
 
 Five intensity levels, all using the same underlying palette:
 
-| Variant | Style | Best For |
-|---------|-------|----------|
-| ⚡ **Neon** | 100% saturated | Maximum vibrancy |
-| 🔮 **Vibrant** | 85% intensity | Balanced energy |
-| 🌸 **Soft** | 70% intensity | Extended sessions |
-| 🌌 **Glow** | Ultra-dark bg, pure neon fg | Low-light / OLED |
-| 🌅 **Dawn** | Light theme | Daytime & bright rooms |
+| Variant        | Style                       | Best For               |
+| -------------- | --------------------------- | ---------------------- |
+| ⚡ **Neon**    | 100% saturated              | Maximum vibrancy       |
+| 🔮 **Vibrant** | 85% intensity               | Balanced energy        |
+| 🌸 **Soft**    | 70% intensity               | Extended sessions      |
+| 🌌 **Glow**    | Ultra-dark bg, pure neon fg | Low-light / OLED       |
+| 🌅 **Dawn**    | Light theme                 | Daytime & bright rooms |
 
 ## 🪄 Quick Start
 
@@ -231,13 +231,13 @@ return {
 
 ### 🎮 Commands
 
-| Command | Description |
-|---------|-------------|
-| `:SilkCircuit {variant}` | Switch variant (neon/vibrant/soft/glow/dawn) |
-| `:SilkCircuitContrast` | Check WCAG contrast compliance |
-| `:SilkCircuitCompile` | Compile theme for performance |
-| `:SilkCircuitIntegrations` | Show detected plugin integrations |
-| `:checkhealth silkcircuit` | Run diagnostics |
+| Command                    | Description                                  |
+| -------------------------- | -------------------------------------------- |
+| `:SilkCircuit {variant}`   | Switch variant (neon/vibrant/soft/glow/dawn) |
+| `:SilkCircuitContrast`     | Check WCAG contrast compliance               |
+| `:SilkCircuitCompile`      | Compile theme for performance                |
+| `:SilkCircuitIntegrations` | Show detected plugin integrations            |
+| `:checkhealth silkcircuit` | Run diagnostics                              |
 
 ## 🌃 Full Ecosystem
 
@@ -245,16 +245,16 @@ SilkCircuit extends far beyond your editor. See [extras/README.md](extras/README
 
 ### 🎨 Color Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Background | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png) |
-| Foreground | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png) |
+| Color              | Hex       | Usage                                                                              |
+| ------------------ | --------- | ---------------------------------------------------------------------------------- |
+| Background         | `#0a0a0f` | ![#0a0a0f](https://placehold.co/20x20/0a0a0f/0a0a0f.png)                           |
+| Foreground         | `#e0e0e0` | ![#e0e0e0](https://placehold.co/20x20/e0e0e0/e0e0e0.png)                           |
 | 💜 Electric Purple | `#e135ff` | ![#e135ff](https://placehold.co/20x20/e135ff/e135ff.png) Keywords, primary accents |
-| 🌸 Hot Pink | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) Strings, secondary |
-| 💎 Neon Cyan | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) Functions, links |
-| ✅ Success Green | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) Success states |
-| ⚡ Electric Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) Warnings, variables |
-| 🔥 Warm Orange | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) Numbers, constants |
+| 🌸 Hot Pink        | `#ff79c6` | ![#ff79c6](https://placehold.co/20x20/ff79c6/ff79c6.png) Strings, secondary        |
+| 💎 Neon Cyan       | `#80ffea` | ![#80ffea](https://placehold.co/20x20/80ffea/80ffea.png) Functions, links          |
+| ✅ Success Green   | `#50fa7b` | ![#50fa7b](https://placehold.co/20x20/50fa7b/50fa7b.png) Success states            |
+| ⚡ Electric Yellow | `#f1fa8c` | ![#f1fa8c](https://placehold.co/20x20/f1fa8c/f1fa8c.png) Warnings, variables       |
+| 🔥 Warm Orange     | `#ffb86c` | ![#ffb86c](https://placehold.co/20x20/ffb86c/ffb86c.png) Numbers, constants        |
 
 ## 📸 Screenshot Gallery
 
@@ -262,8 +262,8 @@ SilkCircuit extends far beyond your editor. See [extras/README.md](extras/README
 <summary><b>Neovim</b></summary>
 <br>
 
-| Syntax Highlighting | Theme Highlights |
-|:---:|:---:|
+|                                  Syntax Highlighting                                  |                                         Theme Highlights                                          |
+| :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
 | <img src="assets/screenshots/nvim-lua.png" alt="Lua syntax highlighting" width="400"> | <img src="assets/screenshots/nvim-theme-highlights.png" alt="Theme highlight groups" width="400"> |
 
 </details>
@@ -272,24 +272,24 @@ SilkCircuit extends far beyond your editor. See [extras/README.md](extras/README
 <summary><b>Terminal & CLI Tools</b></summary>
 <br>
 
-| lazygit | btop |
-|:---:|:---:|
+|                               lazygit                                |                                     btop                                      |
+| :------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
 | <img src="assets/screenshots/lazygit.png" alt="lazygit" width="400"> | <img src="assets/screenshots/btop.png" alt="btop system monitor" width="400"> |
 
-| bat | fzf |
-|:---:|:---:|
+|                                    bat                                     |                                      fzf                                      |
+| :------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
 | <img src="assets/screenshots/bat.png" alt="bat syntax viewer" width="400"> | <img src="assets/screenshots/fzf.png" alt="fzf with bat preview" width="400"> |
 
-| git log | delta |
-|:---:|:---:|
+|                               git log                                |                                    delta                                     |
+| :------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
 | <img src="assets/screenshots/git-log.png" alt="git log" width="400"> | <img src="assets/screenshots/delta.png" alt="delta diff viewer" width="400"> |
 
-| lsd | procs |
-|:---:|:---:|
+|                                      lsd                                       |                                      procs                                      |
+| :----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
 | <img src="assets/screenshots/lsd.png" alt="lsd directory listing" width="400"> | <img src="assets/screenshots/procs.png" alt="procs process viewer" width="400"> |
 
-| fastfetch |
-|:---:|
+|                                      fastfetch                                       |
+| :----------------------------------------------------------------------------------: |
 | <img src="assets/screenshots/fastfetch.png" alt="fastfetch system info" width="400"> |
 
 </details>

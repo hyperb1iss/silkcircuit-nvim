@@ -7,8 +7,14 @@ SilkCircuit uses carefully selected font stacks for optimal readability.
 ### Primary (UI Text)
 
 ```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-             'Helvetica Neue', Arial, sans-serif;
+font-family:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 ```
 
 Clean, modern sans-serif for interface elements, documentation, and general text.
@@ -16,8 +22,9 @@ Clean, modern sans-serif for interface elements, documentation, and general text
 ### Code/Monospace
 
 ```css
-font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code',
-             'Monaco', 'Menlo', 'Roboto Mono', monospace;
+font-family:
+  "JetBrains Mono", "Fira Code", "SF Mono", "Cascadia Code", "Monaco", "Menlo", "Roboto Mono",
+  monospace;
 ```
 
 Optimized for code readability with ligature support.
@@ -25,7 +32,11 @@ Optimized for code readability with ligature support.
 ### Display (Headlines)
 
 ```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+font-family:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  sans-serif;
 ```
 
 Same as primary for consistency, with adjusted weights.
@@ -34,30 +45,30 @@ Same as primary for consistency, with adjusted weights.
 
 ### Mobile (320px+)
 
-| Token | Size | Pixels |
-|-------|------|--------|
-| `--sc-text-xs` | 0.75rem | 12px |
-| `--sc-text-sm` | 0.875rem | 14px |
-| `--sc-text-base` | 1rem | 16px |
-| `--sc-text-lg` | 1.125rem | 18px |
-| `--sc-text-xl` | 1.25rem | 20px |
-| `--sc-text-2xl` | 1.5rem | 24px |
-| `--sc-text-3xl` | 1.875rem | 30px |
-| `--sc-text-4xl` | 2.25rem | 36px |
+| Token            | Size     | Pixels |
+| ---------------- | -------- | ------ |
+| `--sc-text-xs`   | 0.75rem  | 12px   |
+| `--sc-text-sm`   | 0.875rem | 14px   |
+| `--sc-text-base` | 1rem     | 16px   |
+| `--sc-text-lg`   | 1.125rem | 18px   |
+| `--sc-text-xl`   | 1.25rem  | 20px   |
+| `--sc-text-2xl`  | 1.5rem   | 24px   |
+| `--sc-text-3xl`  | 1.875rem | 30px   |
+| `--sc-text-4xl`  | 2.25rem  | 36px   |
 
 ### Desktop (1024px+)
 
-| Token | Size | Pixels |
-|-------|------|--------|
-| `--sc-text-xs` | 0.75rem | 12px |
-| `--sc-text-sm` | 0.875rem | 14px |
-| `--sc-text-base` | 1rem | 16px |
-| `--sc-text-lg` | 1.125rem | 18px |
-| `--sc-text-xl` | 1.25rem | 20px |
-| `--sc-text-2xl` | 1.5rem | 24px |
-| `--sc-text-3xl` | 2rem | 32px |
-| `--sc-text-4xl` | 2.5rem | 40px |
-| `--sc-text-5xl` | 3rem | 48px |
+| Token            | Size     | Pixels |
+| ---------------- | -------- | ------ |
+| `--sc-text-xs`   | 0.75rem  | 12px   |
+| `--sc-text-sm`   | 0.875rem | 14px   |
+| `--sc-text-base` | 1rem     | 16px   |
+| `--sc-text-lg`   | 1.125rem | 18px   |
+| `--sc-text-xl`   | 1.25rem  | 20px   |
+| `--sc-text-2xl`  | 1.5rem   | 24px   |
+| `--sc-text-3xl`  | 2rem     | 32px   |
+| `--sc-text-4xl`  | 2.5rem   | 40px   |
+| `--sc-text-5xl`  | 3rem     | 48px   |
 
 ## Code Syntax Styling
 
@@ -135,18 +146,18 @@ require("silkcircuit").setup({
 
 ## Line Height
 
-| Context | Line Height |
-|---------|-------------|
-| Code | 1.5 |
-| Body text | 1.6 |
-| Headlines | 1.1–1.2 |
-| Compact UI | 1.25 |
+| Context    | Line Height |
+| ---------- | ----------- |
+| Code       | 1.5         |
+| Body text  | 1.6         |
+| Headlines  | 1.1–1.2     |
+| Compact UI | 1.25        |
 
 ## Letter Spacing
 
-| Context | Letter Spacing |
-|---------|----------------|
-| Headlines | -0.02em |
-| Body text | 0 |
-| All caps | 0.05em |
-| Code | 0 |
+| Context   | Letter Spacing |
+| --------- | -------------- |
+| Headlines | -0.02em        |
+| Body text | 0              |
+| All caps  | 0.05em         |
+| Code      | 0              |

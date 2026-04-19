@@ -6,57 +6,57 @@ The original SilkCircuit experience. Maximum vibrancy and electric energy.
 
 **Neon** delivers 100% color intensity with the signature SilkCircuit palette. Perfect for dark rooms where you want maximum visual impact.
 
-| Property | Value |
-|----------|-------|
+| Property   | Value     |
+| ---------- | --------- |
 | Background | `#12101a` |
 | Foreground | `#f8f8f2` |
-| Intensity | 100% |
-| Type | Dark |
+| Intensity  | 100%      |
+| Type       | Dark      |
 
 ## Color Palette
 
 ### Primary Colors
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Purple | `#e135ff` | Keywords, control flow |
-| Cyan | `#80ffea` | Functions, methods |
-| Pink | `#ff00ff` | Tags, booleans |
-| Pink Soft | `#ff99ff` | Strings |
-| Coral | `#ff6ac1` | Numbers, constants |
-| Yellow | `#f1fa8c` | Classes, types |
+| Color     | Hex       | Usage                  |
+| --------- | --------- | ---------------------- |
+| Purple    | `#e135ff` | Keywords, control flow |
+| Cyan      | `#80ffea` | Functions, methods     |
+| Pink      | `#ff00ff` | Tags, booleans         |
+| Pink Soft | `#ff99ff` | Strings                |
+| Coral     | `#ff6ac1` | Numbers, constants     |
+| Yellow    | `#f1fa8c` | Classes, types         |
 
 ### Supporting Colors
 
-| Color | Hex | Usage |
-|-------|-----|-------|
+| Color | Hex       | Usage                  |
+| ----- | --------- | ---------------------- |
 | Green | `#50fa7b` | Success, git additions |
-| Red | `#ff6363` | Errors, git deletions |
-| Blue | `#82AAFF` | Links, info |
-| Gray | `#6272a4` | Comments, muted text |
+| Red   | `#ff6363` | Errors, git deletions  |
+| Blue  | `#82AAFF` | Links, info            |
+| Gray  | `#6272a4` | Comments, muted text   |
 
 ## Terminal Colors
 
 ```yaml
 # ANSI Colors
-black:   "#12101a"
-red:     "#ff69ff"
-green:   "#50fa7b"
-yellow:  "#f1fa8c"
-blue:    "#e135ff"
+black: "#12101a"
+red: "#ff69ff"
+green: "#50fa7b"
+yellow: "#f1fa8c"
+blue: "#e135ff"
 magenta: "#ff00ff"
-cyan:    "#80ffea"
-white:   "#f8f8f2"
+cyan: "#80ffea"
+white: "#f8f8f2"
 
 # Bright variants
-bright_black:   "#637777"
-bright_red:     "#ff6363"
-bright_green:   "#50fa7b"
-bright_yellow:  "#ffffa5"
-bright_blue:    "#82b1ff"
+bright_black: "#637777"
+bright_red: "#ff6363"
+bright_green: "#50fa7b"
+bright_yellow: "#ffffa5"
+bright_blue: "#82b1ff"
 bright_magenta: "#ff69ff"
-bright_cyan:    "#5fffff"
-bright_white:   "#ffffff"
+bright_cyan: "#5fffff"
+bright_white: "#ffffff"
 ```
 
 ## When to Use
@@ -85,7 +85,7 @@ Or switch at runtime:
 
 Neon is the most vibrant of the dark variants:
 
-| vs Vibrant | Neon has more saturated colors |
-|------------|-------------------------------|
-| vs Soft | Neon has higher intensity |
-| vs Glow | Similar intensity, lighter backgrounds |
+| vs Vibrant | Neon has more saturated colors         |
+| ---------- | -------------------------------------- |
+| vs Soft    | Neon has higher intensity              |
+| vs Glow    | Similar intensity, lighter backgrounds |

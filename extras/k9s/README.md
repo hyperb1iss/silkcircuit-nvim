@@ -23,7 +23,7 @@ cp silkcircuit-dawn.yaml ~/.config/k9s/skins/     # Light theme
 ```yaml
 k9s:
   ui:
-    skin: silkcircuit  # Or silkcircuit-vibrant, silkcircuit-soft, etc.
+    skin: silkcircuit # Or silkcircuit-vibrant, silkcircuit-soft, etc.
 ```
 
 3. Alternatively, set the theme via environment variable:

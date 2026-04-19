@@ -14,13 +14,13 @@ Switch theme variant.
 
 **Arguments:**
 
-| Variant | Description |
-|---------|-------------|
-| `neon` | 100% intensity (default) |
-| `vibrant` | 85% intensity |
-| `soft` | 70% intensity |
-| `glow` | Ultra-dark with pure neon |
-| `dawn` | Light theme |
+| Variant   | Description               |
+| --------- | ------------------------- |
+| `neon`    | 100% intensity (default)  |
+| `vibrant` | 85% intensity             |
+| `soft`    | 70% intensity             |
+| `glow`    | Ultra-dark with pure neon |
+| `dawn`    | Light theme               |
 
 **Examples:**
 

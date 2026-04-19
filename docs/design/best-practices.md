@@ -10,8 +10,12 @@ Every color should carry the same meaning across your entire application.
 
 ```css
 /* Always use keywords = purple, functions = cyan */
-.keyword { color: var(--sc-purple); }
-.function { color: var(--sc-cyan); }
+.keyword {
+  color: var(--sc-purple);
+}
+.function {
+  color: var(--sc-cyan);
+}
 ```
 
 ### Maintain WCAG AA contrast ratios
@@ -20,7 +24,7 @@ Never sacrifice accessibility for aesthetics.
 
 ```css
 /* Test all color combinations */
-:SilkCircuitContrast
+:silkcircuitcontrast;
 ```
 
 ### Apply glow effects sparingly
@@ -40,8 +44,8 @@ Consistent spacing creates visual harmony.
 
 ```css
 /* Use spacing tokens */
-padding: var(--sc-space-md);  /* 16px */
-gap: var(--sc-space-lg);      /* 24px */
+padding: var(--sc-space-md); /* 16px */
+gap: var(--sc-space-lg); /* 24px */
 ```
 
 ### Test across all variants
@@ -63,8 +67,12 @@ Enable easy variant switching.
 
 ```css
 /* Define once, use everywhere */
-:root { --sc-purple: #e135ff; }
-.keyword { color: var(--sc-purple); }
+:root {
+  --sc-purple: #e135ff;
+}
+.keyword {
+  color: var(--sc-purple);
+}
 ```
 
 ## Don't
@@ -75,10 +83,14 @@ Don't use purple for functions or cyan for keywords.
 
 ```css
 /* Wrong */
-.function { color: var(--sc-purple); }
+.function {
+  color: var(--sc-purple);
+}
 
 /* Right */
-.function { color: var(--sc-cyan); }
+.function {
+  color: var(--sc-cyan);
+}
 ```
 
 ### Use more than 3 electric colors per section
@@ -88,7 +100,7 @@ Too many neon colors create visual noise.
 ```css
 /* Keep it focused */
 .card {
-  border-color: var(--sc-cyan);  /* One accent */
+  border-color: var(--sc-cyan); /* One accent */
   /* Not: purple border, pink shadow, yellow glow */
 }
 ```
@@ -99,11 +111,17 @@ Dark backgrounds with electric accents, not the reverse.
 
 ```css
 /* Wrong */
-.main-content { background: var(--sc-purple); }
+.main-content {
+  background: var(--sc-purple);
+}
 
 /* Right */
-.main-content { background: var(--sc-bg); }
-.accent { color: var(--sc-purple); }
+.main-content {
+  background: var(--sc-bg);
+}
+.accent {
+  color: var(--sc-purple);
+}
 ```
 
 ### Override contrast ratios
@@ -121,7 +139,9 @@ Motion should enhance, not overwhelm.
 
 ```css
 /* Wrong */
-.element { animation: rainbow-pulse 0.5s infinite; }
+.element {
+  animation: rainbow-pulse 0.5s infinite;
+}
 
 /* Right */
 .element:hover {

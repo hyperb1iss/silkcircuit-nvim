@@ -48,7 +48,7 @@ Complete guide for integrating the SilkCircuit theme with AstroNvim for a neon-e
 - 🌈 **StatusLine** with SilkCircuit color scheme and neon mode indicators
 - 📁 **Neo-tree** with modern, colorful styling
 - 🔍 **Telescope** with neon borders
-- ⌨️  **Which-Key** popup styling
+- ⌨️ **Which-Key** popup styling
 - 📊 **Dashboard/Alpha** custom colors
 - 🌟 **LSP** and diagnostic styling
 

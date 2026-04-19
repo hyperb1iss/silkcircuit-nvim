@@ -6,12 +6,12 @@ SilkCircuit is designed with accessibility as a core principle.
 
 All SilkCircuit color combinations meet or exceed WCAG AA standards:
 
-| Criterion | Requirement | SilkCircuit |
-|-----------|-------------|-------------|
-| Normal text | 4.5:1 minimum | Verified |
-| Large text (18pt+) | 3:1 minimum | Verified |
-| UI elements | 3:1 minimum | Verified |
-| Graphics | 3:1 minimum | Verified |
+| Criterion          | Requirement   | SilkCircuit |
+| ------------------ | ------------- | ----------- |
+| Normal text        | 4.5:1 minimum | Verified    |
+| Large text (18pt+) | 3:1 minimum   | Verified    |
+| UI elements        | 3:1 minimum   | Verified    |
+| Graphics           | 3:1 minimum   | Verified    |
 
 ## Variant Accessibility
 
@@ -68,11 +68,11 @@ axe-cli --tags wcag2a,wcag2aa
 
 ### Manual Testing
 
-| Tool | Purpose |
-|------|---------|
-| [Contrast Checker](https://webaim.org/resources/contrastchecker/) | Verify specific color pairs |
+| Tool                                                                                      | Purpose                        |
+| ----------------------------------------------------------------------------------------- | ------------------------------ |
+| [Contrast Checker](https://webaim.org/resources/contrastchecker/)                         | Verify specific color pairs    |
 | [Colorblind Simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/) | Test color blindness scenarios |
-| Screen reader | Verify content accessibility |
+| Screen reader                                                                             | Verify content accessibility   |
 
 ## Keyboard Navigation
 
@@ -92,8 +92,9 @@ All SilkCircuit implementations should support:
 }
 
 .sc-focusable:focus-visible {
-  box-shadow: 0 0 0 2px var(--sc-cyan),
-              0 0 8px var(--sc-cyan);
+  box-shadow:
+    0 0 0 2px var(--sc-cyan),
+    0 0 8px var(--sc-cyan);
 }
 ```
 
@@ -110,13 +111,13 @@ All SilkCircuit implementations should support:
 
 SilkCircuit uses shapes and patterns alongside color:
 
-| Indicator | Color | Additional Cue |
-|-----------|-------|----------------|
-| Error | Red | Warning icon, text label |
-| Success | Green | Checkmark, text label |
-| Warning | Yellow | Caution icon, text label |
-| Git add | Green | `+` prefix |
-| Git delete | Red | `-` prefix |
+| Indicator  | Color  | Additional Cue           |
+| ---------- | ------ | ------------------------ |
+| Error      | Red    | Warning icon, text label |
+| Success    | Green  | Checkmark, text label    |
+| Warning    | Yellow | Caution icon, text label |
+| Git add    | Green  | `+` prefix               |
+| Git delete | Red    | `-` prefix               |
 
 ## Motion Sensitivity
 

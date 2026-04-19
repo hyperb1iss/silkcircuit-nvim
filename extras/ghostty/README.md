@@ -4,13 +4,13 @@ Terminal color themes and GTK chrome styling for [Ghostty](https://ghostty.org/)
 
 ## Variants
 
-| Theme File | GTK CSS | Description |
-|---|---|---|
-| `silkcircuit-neon` | `silkcircuit-neon.css` | Maximum neon intensity - the original experience |
-| `silkcircuit-vibrant` | `silkcircuit-vibrant.css` | Slightly toned down - easier on the eyes |
-| `silkcircuit-soft` | `silkcircuit-soft.css` | Softer colors - comfortable for extended use |
-| `silkcircuit-glow` | `silkcircuit-glow.css` | Ultra-dark with pure neon - maximum contrast |
-| `silkcircuit-dawn` | `silkcircuit-dawn.css` | Light theme for daytime use |
+| Theme File            | GTK CSS                   | Description                                      |
+| --------------------- | ------------------------- | ------------------------------------------------ |
+| `silkcircuit-neon`    | `silkcircuit-neon.css`    | Maximum neon intensity - the original experience |
+| `silkcircuit-vibrant` | `silkcircuit-vibrant.css` | Slightly toned down - easier on the eyes         |
+| `silkcircuit-soft`    | `silkcircuit-soft.css`    | Softer colors - comfortable for extended use     |
+| `silkcircuit-glow`    | `silkcircuit-glow.css`    | Ultra-dark with pure neon - maximum contrast     |
+| `silkcircuit-dawn`    | `silkcircuit-dawn.css`    | Light theme for daytime use                      |
 
 ## Installation
 

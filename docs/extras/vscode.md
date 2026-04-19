@@ -29,13 +29,13 @@ code --install-extension silkcircuit-*.vsix
 
 ## Available Themes
 
-| Theme | Type | Description |
-|-------|------|-------------|
-| SilkCircuit Neon | Dark | 100% intensity, maximum vibrancy |
-| SilkCircuit Vibrant | Dark | 85% intensity, balanced energy |
-| SilkCircuit Soft | Dark | 70% intensity, gentle on eyes |
-| SilkCircuit Glow | Dark | Ultra-dark with pure neon |
-| SilkCircuit Dawn | Light | Bright theme for daytime |
+| Theme               | Type  | Description                      |
+| ------------------- | ----- | -------------------------------- |
+| SilkCircuit Neon    | Dark  | 100% intensity, maximum vibrancy |
+| SilkCircuit Vibrant | Dark  | 85% intensity, balanced energy   |
+| SilkCircuit Soft    | Dark  | 70% intensity, gentle on eyes    |
+| SilkCircuit Glow    | Dark  | Ultra-dark with pure neon        |
+| SilkCircuit Dawn    | Light | Bright theme for daytime         |
 
 ## Switching Themes
 
@@ -57,15 +57,15 @@ Each variant provides a unique visual experience:
 
 The VS Code theme maps SilkCircuit's semantic colors:
 
-| Syntax Element | Token | Color |
-|---------------|-------|-------|
-| Keywords | `keyword` | Purple |
-| Functions | `entity.name.function` | Cyan |
-| Strings | `string` | Pink Soft |
-| Numbers | `constant.numeric` | Coral |
-| Booleans | `constant.language` | Pink |
-| Types | `entity.name.type` | Yellow |
-| Comments | `comment` | Purple Muted |
+| Syntax Element | Token                  | Color        |
+| -------------- | ---------------------- | ------------ |
+| Keywords       | `keyword`              | Purple       |
+| Functions      | `entity.name.function` | Cyan         |
+| Strings        | `string`               | Pink Soft    |
+| Numbers        | `constant.numeric`     | Coral        |
+| Booleans       | `constant.language`    | Pink         |
+| Types          | `entity.name.type`     | Yellow       |
+| Comments       | `comment`              | Purple Muted |
 
 ## Customization
 
@@ -93,14 +93,14 @@ Adjust colors in your `settings.json`:
 
 The theme styles the entire VS Code interface:
 
-| Element | Color |
-|---------|-------|
-| Editor background | Variant-specific |
-| Sidebar | Slightly darker |
-| Activity bar | Dark with accent icons |
-| Status bar | Purple accent |
-| Tabs | Highlighted active tab |
-| Terminal | Full ANSI color support |
+| Element           | Color                   |
+| ----------------- | ----------------------- |
+| Editor background | Variant-specific        |
+| Sidebar           | Slightly darker         |
+| Activity bar      | Dark with accent icons  |
+| Status bar        | Purple accent           |
+| Tabs              | Highlighted active tab  |
+| Terminal          | Full ANSI color support |
 
 ## Files
 

@@ -6,32 +6,32 @@ Complete color palette for all SilkCircuit variants.
 
 ### Primary Colors by Variant
 
-| Color | Neon | Vibrant | Soft | Glow | Dawn |
-|-------|------|---------|------|------|------|
-| Purple | `#e135ff` | `#ff00ff` | `#e892ff` | `#ff00ff` | `#7e2bd5` |
-| Cyan | `#80ffea` | `#00ffcc` | `#99ffee` | `#00ffff` | `#007f8e` |
-| Pink | `#ff00ff` | `#ff00cc` | `#ff99ff` | `#ff00ff` | `#b40077` |
+| Color     | Neon      | Vibrant   | Soft      | Glow      | Dawn      |
+| --------- | --------- | --------- | --------- | --------- | --------- |
+| Purple    | `#e135ff` | `#ff00ff` | `#e892ff` | `#ff00ff` | `#7e2bd5` |
+| Cyan      | `#80ffea` | `#00ffcc` | `#99ffee` | `#00ffff` | `#007f8e` |
+| Pink      | `#ff00ff` | `#ff00cc` | `#ff99ff` | `#ff00ff` | `#b40077` |
 | Pink Soft | `#ff99ff` | `#ff99ff` | `#ffc2ff` | `#ff99ff` | `#9c4a88` |
-| Coral | `#ff6ac1` | `#F78C6C` | `#ff99dd` | `#ff66ff` | `#c74a8c` |
-| Yellow | `#f1fa8c` | `#ffcc00` | `#ffe699` | `#ffff00` | `#a88600` |
+| Coral     | `#ff6ac1` | `#F78C6C` | `#ff99dd` | `#ff66ff` | `#c74a8c` |
+| Yellow    | `#f1fa8c` | `#ffcc00` | `#ffe699` | `#ffff00` | `#a88600` |
 
 ### Background Colors
 
-| Element | Neon | Vibrant | Soft | Glow | Dawn |
-|---------|------|---------|------|------|------|
-| Base | `#12101a` | `#0f0c1a` | `#1a1626` | `#0a0816` | `#faf8ff` |
-| Dark | `#0a0812` | `#08060f` | `#141220` | `#000000` | `#f1ecff` |
-| Highlight | `#1a162a` | `#0a0614` | `#3e3456` | `#1a0033` | `#e8e0ff` |
-| Visual | `#44475a` | `#3a2e5a` | `#44475a` | `#ff00ff44` | `#d4c8f0` |
+| Element   | Neon      | Vibrant   | Soft      | Glow        | Dawn      |
+| --------- | --------- | --------- | --------- | ----------- | --------- |
+| Base      | `#12101a` | `#0f0c1a` | `#1a1626` | `#0a0816`   | `#faf8ff` |
+| Dark      | `#0a0812` | `#08060f` | `#141220` | `#000000`   | `#f1ecff` |
+| Highlight | `#1a162a` | `#0a0614` | `#3e3456` | `#1a0033`   | `#e8e0ff` |
+| Visual    | `#44475a` | `#3a2e5a` | `#44475a` | `#ff00ff44` | `#d4c8f0` |
 
 ### Status Colors
 
-| Status | Neon | Soft | Glow | Dawn |
-|--------|------|------|------|------|
+| Status  | Neon      | Soft      | Glow      | Dawn      |
+| ------- | --------- | --------- | --------- | --------- |
 | Success | `#50fa7b` | `#66ff99` | `#00ff00` | `#2d8659` |
 | Warning | `#f1fa8c` | `#ffe699` | `#ffff00` | `#a88600` |
-| Error | `#ff6363` | `#ff6677` | `#ff0066` | `#c1272d` |
-| Info | `#82AAFF` | `#92aaff` | `#0099ff` | `#2563eb` |
+| Error   | `#ff6363` | `#ff6677` | `#ff0066` | `#c1272d` |
+| Info    | `#82AAFF` | `#92aaff` | `#0099ff` | `#2563eb` |
 
 ## Neon Palette
 
@@ -213,7 +213,7 @@ terminal_bright_white = "#ffffff"
   --sc-yellow: #f1fa8c;
   --sc-green: #50fa7b;
   --sc-red: #ff6363;
-  --sc-blue: #82AAFF;
+  --sc-blue: #82aaff;
   --sc-gray: #6272a4;
   --sc-bg: #12101a;
   --sc-bg-dark: #0a0812;

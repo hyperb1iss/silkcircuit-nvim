@@ -17,17 +17,17 @@ cp -r extras/astronvim/* ~/.config/nvim/lua/
 
 ### Core Setup
 
-| File | Purpose |
-|------|---------|
-| `community.lua` | AstroCommunity integration |
-| `plugins/silkcircuit.lua` | Theme configuration |
-| `plugins/astroui.lua` | UI customization |
+| File                      | Purpose                    |
+| ------------------------- | -------------------------- |
+| `community.lua`           | AstroCommunity integration |
+| `plugins/silkcircuit.lua` | Theme configuration        |
+| `plugins/astroui.lua`     | UI customization           |
 
 ### Component Styling
 
-| File | Purpose |
-|------|---------|
-| `plugins/neo-tree.lua` | File explorer styling |
+| File                             | Purpose                   |
+| -------------------------------- | ------------------------- |
+| `plugins/neo-tree.lua`           | File explorer styling     |
 | `plugins/lualine-max-effect.lua` | Maximum effect statusline |
 
 ## Files Structure

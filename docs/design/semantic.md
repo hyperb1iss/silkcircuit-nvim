@@ -4,17 +4,17 @@ Every color in SilkCircuit carries consistent meaning across all contexts.
 
 ## Code Syntax Mapping
 
-| Element | Color | Style |
-|---------|-------|-------|
-| Keywords | Purple | Bold |
-| Functions | Cyan | Bold + Italic |
-| Strings | Pink Soft | Italic |
-| Numbers | Coral | Normal |
-| Booleans | Pink | Normal |
-| Types/Classes | Yellow | Normal |
-| Comments | Purple Muted | Italic |
-| Operators | Foreground Dark | Normal |
-| Properties | Cyan Bright | Normal |
+| Element       | Color           | Style         |
+| ------------- | --------------- | ------------- |
+| Keywords      | Purple          | Bold          |
+| Functions     | Cyan            | Bold + Italic |
+| Strings       | Pink Soft       | Italic        |
+| Numbers       | Coral           | Normal        |
+| Booleans      | Pink            | Normal        |
+| Types/Classes | Yellow          | Normal        |
+| Comments      | Purple Muted    | Italic        |
+| Operators     | Foreground Dark | Normal        |
+| Properties    | Cyan Bright     | Normal        |
 
 ## Why Semantic Colors Matter
 
@@ -33,19 +33,19 @@ This consistency reduces cognitive load and accelerates comprehension.
 
 ```javascript
 // Purple: const, if, return, function
-const greeting = "Hello";  // Pink soft: string
+const greeting = "Hello" // Pink soft: string
 
 // Cyan: function name
 function sayHello(name) {
   // Yellow: template literal type expression
-  return `Hello, ${name}!`;
+  return `Hello, ${name}!`
 }
 
 // Pink: true/false
-const isValid = true;
+const isValid = true
 
 // Coral: numbers
-const count = 42;
+const count = 42
 ```
 
 ### Python
@@ -94,30 +94,30 @@ end
 
 ### Status Colors
 
-| Status | Color | Usage |
-|--------|-------|-------|
-| Success | Green | Confirmations, git additions, valid states |
-| Warning | Yellow | Caution, modifications, pending actions |
-| Error | Red | Errors, deletions, invalid states |
-| Info | Cyan | Informational, links, interactive |
+| Status  | Color  | Usage                                      |
+| ------- | ------ | ------------------------------------------ |
+| Success | Green  | Confirmations, git additions, valid states |
+| Warning | Yellow | Caution, modifications, pending actions    |
+| Error   | Red    | Errors, deletions, invalid states          |
+| Info    | Cyan   | Informational, links, interactive          |
 
 ### Git Colors
 
-| Action | Color | Meaning |
-|--------|-------|---------|
-| Added | Green | New content, insertions |
-| Modified | Blue/Cyan | Changed content |
-| Deleted | Red | Removed content |
-| Renamed | Yellow | Moved/renamed files |
+| Action   | Color     | Meaning                 |
+| -------- | --------- | ----------------------- |
+| Added    | Green     | New content, insertions |
+| Modified | Blue/Cyan | Changed content         |
+| Deleted  | Red       | Removed content         |
+| Renamed  | Yellow    | Moved/renamed files     |
 
 ### Diagnostic Colors
 
-| Level | Color | Usage |
-|-------|-------|-------|
-| Error | Red | Compilation errors, crashes |
+| Level   | Color  | Usage                          |
+| ------- | ------ | ------------------------------ |
+| Error   | Red    | Compilation errors, crashes    |
 | Warning | Yellow | Potential issues, deprecations |
-| Info | Blue | Informational notes |
-| Hint | Cyan | Suggestions, improvements |
+| Info    | Blue   | Informational notes            |
+| Hint    | Cyan   | Suggestions, improvements      |
 
 ## Consistency Rules
 

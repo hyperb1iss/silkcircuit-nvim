@@ -32,13 +32,13 @@ Reduces cognitive load, enhances productivity, maintains flow state.
 
 ## Design Pillars
 
-| Pillar | Description |
-|--------|-------------|
-| **Color System** | Semantic colors with consistent meanings |
-| **Typography** | Clean monospace for code, readable sans-serif for UI |
-| **Spacing** | 4px base unit with consistent scale |
-| **Motion** | Purposeful animations that enhance, not distract |
-| **Accessibility** | WCAG AA compliance across all variants |
+| Pillar            | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| **Color System**  | Semantic colors with consistent meanings             |
+| **Typography**    | Clean monospace for code, readable sans-serif for UI |
+| **Spacing**       | 4px base unit with consistent scale                  |
+| **Motion**        | Purposeful animations that enhance, not distract     |
+| **Accessibility** | WCAG AA compliance across all variants               |
 
 ## Quick Links
 
@@ -50,21 +50,21 @@ Reduces cognitive load, enhances productivity, maintains flow state.
 
 ## Brand Personality
 
-| Trait | Expression |
-|-------|-----------|
-| **Electric** | Vibrant, energetic, forward-looking |
-| **Elegant** | Refined, purposeful, sophisticated |
-| **Purposeful** | Functional, semantic, intentional |
-| **Future-forward** | Modern, progressive, innovative |
-| **Focused** | Clear, direct, uncluttered |
+| Trait              | Expression                          |
+| ------------------ | ----------------------------------- |
+| **Electric**       | Vibrant, energetic, forward-looking |
+| **Elegant**        | Refined, purposeful, sophisticated  |
+| **Purposeful**     | Functional, semantic, intentional   |
+| **Future-forward** | Modern, progressive, innovative     |
+| **Focused**        | Clear, direct, uncluttered          |
 
 ## Voice & Tone
 
 **Voice:** Confident yet approachable, technical yet accessible
 
-| Context | Tone |
-|---------|------|
-| Documentation | Clear, precise, helpful |
-| Error Messages | Direct but supportive |
-| Success States | Celebratory but professional |
-| Marketing | Electric energy with substance |
+| Context        | Tone                           |
+| -------------- | ------------------------------ |
+| Documentation  | Clear, precise, helpful        |
+| Error Messages | Direct but supportive          |
+| Success States | Celebratory but professional   |
+| Marketing      | Electric energy with substance |

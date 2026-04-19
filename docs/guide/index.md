@@ -18,13 +18,13 @@ All color combinations meet WCAG AA standards (4.5:1 contrast ratio minimum). Co
 
 ### 5 Variants for Every Mood
 
-| Variant | Style | Best For |
-|---------|-------|----------|
-| **Neon** | 100% intensity | Maximum vibrancy |
-| **Vibrant** | 85% intensity | Balanced energy |
-| **Soft** | 70% intensity | Extended sessions |
-| **Glow** | Ultra-dark | Low-light coding |
-| **Dawn** | Light theme | Daytime & bright rooms |
+| Variant     | Style          | Best For               |
+| ----------- | -------------- | ---------------------- |
+| **Neon**    | 100% intensity | Maximum vibrancy       |
+| **Vibrant** | 85% intensity  | Balanced energy        |
+| **Soft**    | 70% intensity  | Extended sessions      |
+| **Glow**    | Ultra-dark     | Low-light coding       |
+| **Dawn**    | Light theme    | Daytime & bright rooms |
 
 ## Features at a Glance
 

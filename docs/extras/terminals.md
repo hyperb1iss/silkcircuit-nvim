@@ -31,12 +31,12 @@ import:
 
 ### Colors
 
-| Color | Dark | Dawn |
-|-------|------|------|
+| Color      | Dark      | Dawn      |
+| ---------- | --------- | --------- |
 | Background | `#12101a` | `#faf8ff` |
 | Foreground | `#f8f8f2` | `#2b2540` |
-| Cursor | `#80ffea` | `#7e2bd5` |
-| Selection | `#44475a` | `#d4c8f0` |
+| Cursor     | `#80ffea` | `#7e2bd5` |
+| Selection  | `#44475a` | `#d4c8f0` |
 
 ---
 
@@ -141,16 +141,16 @@ Windows integrated terminal.
 
 All terminal themes use these ANSI mappings:
 
-| ANSI | Color | Neon Hex | Dawn Hex |
-|------|-------|----------|----------|
-| 0 (Black) | Background | `#12101a` | `#2b2540` |
-| 1 (Red) | Error/Delete | `#ff79c6` | `#c1272d` |
-| 2 (Green) | Success/Add | `#50fa7b` | `#2d8659` |
-| 3 (Yellow) | Warning | `#f1fa8c` | `#a88600` |
-| 4 (Blue) | Purple accent | `#e135ff` | `#2563eb` |
-| 5 (Magenta) | Pink | `#ff00ff` | `#b40077` |
-| 6 (Cyan) | Functions | `#80ffea` | `#007f8e` |
-| 7 (White) | Foreground | `#f8f8f2` | `#faf8ff` |
+| ANSI        | Color         | Neon Hex  | Dawn Hex  |
+| ----------- | ------------- | --------- | --------- |
+| 0 (Black)   | Background    | `#12101a` | `#2b2540` |
+| 1 (Red)     | Error/Delete  | `#ff79c6` | `#c1272d` |
+| 2 (Green)   | Success/Add   | `#50fa7b` | `#2d8659` |
+| 3 (Yellow)  | Warning       | `#f1fa8c` | `#a88600` |
+| 4 (Blue)    | Purple accent | `#e135ff` | `#2563eb` |
+| 5 (Magenta) | Pink          | `#ff00ff` | `#b40077` |
+| 6 (Cyan)    | Functions     | `#80ffea` | `#007f8e` |
+| 7 (White)   | Foreground    | `#f8f8f2` | `#faf8ff` |
 
 ## True Color Support
 

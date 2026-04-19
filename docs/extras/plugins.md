@@ -10,76 +10,76 @@ SilkCircuit detects installed plugins and applies matching styles automatically.
 
 ### File Explorers
 
-| Plugin | Status |
-|--------|--------|
+| Plugin        | Status        |
+| ------------- | ------------- |
 | neo-tree.nvim | Auto-detected |
 | nvim-tree.lua | Auto-detected |
-| oil.nvim | Auto-detected |
+| oil.nvim      | Auto-detected |
 
 ### Fuzzy Finders
 
-| Plugin | Status |
-|--------|--------|
+| Plugin         | Status        |
+| -------------- | ------------- |
 | telescope.nvim | Auto-detected |
-| fzf-lua | Auto-detected |
+| fzf-lua        | Auto-detected |
 
 ### Git Integration
 
-| Plugin | Status |
-|--------|--------|
+| Plugin        | Status        |
+| ------------- | ------------- |
 | gitsigns.nvim | Auto-detected |
-| vim-fugitive | Auto-detected |
+| vim-fugitive  | Auto-detected |
 | diffview.nvim | Auto-detected |
-| neogit | Auto-detected |
+| neogit        | Auto-detected |
 
 ### LSP & Completion
 
-| Plugin | Status |
-|--------|--------|
-| nvim-lspconfig | Auto-detected |
-| nvim-cmp | Auto-detected |
-| mason.nvim | Auto-detected |
-| trouble.nvim | Auto-detected |
+| Plugin             | Status        |
+| ------------------ | ------------- |
+| nvim-lspconfig     | Auto-detected |
+| nvim-cmp           | Auto-detected |
+| mason.nvim         | Auto-detected |
+| trouble.nvim       | Auto-detected |
 | lsp_signature.nvim | Auto-detected |
 
 ### UI Components
 
-| Plugin | Status |
-|--------|--------|
-| lualine.nvim | Auto-detected |
-| bufferline.nvim | Auto-detected |
-| nvim-notify | Auto-detected |
-| noice.nvim | Auto-detected |
+| Plugin                | Status        |
+| --------------------- | ------------- |
+| lualine.nvim          | Auto-detected |
+| bufferline.nvim       | Auto-detected |
+| nvim-notify           | Auto-detected |
+| noice.nvim            | Auto-detected |
 | indent-blankline.nvim | Auto-detected |
-| which-key.nvim | Auto-detected |
-| dashboard-nvim | Auto-detected |
-| alpha-nvim | Auto-detected |
+| which-key.nvim        | Auto-detected |
+| dashboard-nvim        | Auto-detected |
+| alpha-nvim            | Auto-detected |
 
 ### Editing
 
-| Plugin | Status |
-|--------|--------|
+| Plugin          | Status        |
+| --------------- | ------------- |
 | nvim-treesitter | Auto-detected |
-| nvim-surround | Auto-detected |
-| flash.nvim | Auto-detected |
-| leap.nvim | Auto-detected |
-| mini.nvim | Auto-detected |
+| nvim-surround   | Auto-detected |
+| flash.nvim      | Auto-detected |
+| leap.nvim       | Auto-detected |
+| mini.nvim       | Auto-detected |
 
 ### Debugging
 
-| Plugin | Status |
-|--------|--------|
-| nvim-dap | Auto-detected |
+| Plugin      | Status        |
+| ----------- | ------------- |
+| nvim-dap    | Auto-detected |
 | nvim-dap-ui | Auto-detected |
 
 ### Other
 
-| Plugin | Status |
-|--------|--------|
-| lazy.nvim | Auto-detected |
-| aerial.nvim | Auto-detected |
-| symbols-outline.nvim | Auto-detected |
-| todo-comments.nvim | Auto-detected |
+| Plugin                | Status        |
+| --------------------- | ------------- |
+| lazy.nvim             | Auto-detected |
+| aerial.nvim           | Auto-detected |
+| symbols-outline.nvim  | Auto-detected |
+| todo-comments.nvim    | Auto-detected |
 | markdown-preview.nvim | Auto-detected |
 
 ## Check Integrations

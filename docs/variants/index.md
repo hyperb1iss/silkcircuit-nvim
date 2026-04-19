@@ -4,13 +4,13 @@ SilkCircuit offers five distinct variants, each crafted for different environmen
 
 ## At a Glance
 
-| Variant | Background | Intensity | Best For |
-|---------|-----------|-----------|----------|
-| **Neon** | `#12101a` | 100% | Maximum vibrancy, dark rooms |
-| **Vibrant** | `#0f0c1a` | 85% | Balanced energy, everyday use |
-| **Soft** | `#1a1626` | 70% | Extended coding sessions |
-| **Glow** | `#0a0816` | 100%+ | Ultra-dark, low-light environments |
-| **Dawn** | `#faf8ff` | Light | Daytime, bright rooms |
+| Variant     | Background | Intensity | Best For                           |
+| ----------- | ---------- | --------- | ---------------------------------- |
+| **Neon**    | `#12101a`  | 100%      | Maximum vibrancy, dark rooms       |
+| **Vibrant** | `#0f0c1a`  | 85%       | Balanced energy, everyday use      |
+| **Soft**    | `#1a1626`  | 70%       | Extended coding sessions           |
+| **Glow**    | `#0a0816`  | 100%+     | Ultra-dark, low-light environments |
+| **Dawn**    | `#faf8ff`  | Light     | Daytime, bright rooms              |
 
 ## Switching Variants
 

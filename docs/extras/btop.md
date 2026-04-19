@@ -18,13 +18,13 @@ cp extras/btop/silkcircuit_neon.theme ~/.config/btop/themes/
 
 ## Available Themes
 
-| File | Variant |
-|------|---------|
-| `silkcircuit_neon.theme` | Neon (100% intensity) |
+| File                        | Variant                 |
+| --------------------------- | ----------------------- |
+| `silkcircuit_neon.theme`    | Neon (100% intensity)   |
 | `silkcircuit_vibrant.theme` | Vibrant (85% intensity) |
-| `silkcircuit_soft.theme` | Soft (70% intensity) |
-| `silkcircuit_glow.theme` | Glow (maximum contrast) |
-| `silkcircuit_dawn.theme` | Dawn (light theme) |
+| `silkcircuit_soft.theme`    | Soft (70% intensity)    |
+| `silkcircuit_glow.theme`    | Glow (maximum contrast) |
+| `silkcircuit_dawn.theme`    | Dawn (light theme)      |
 
 ## Activation
 
@@ -36,14 +36,14 @@ cp extras/btop/silkcircuit_neon.theme ~/.config/btop/themes/
 
 ## Color Mapping
 
-| Element | Color |
-|---------|-------|
-| CPU graphs | Electric Purple |
-| Memory meters | Neon Cyan |
-| Network activity | Hot Pink |
-| Disk usage | Yellow |
-| Process list | Foreground |
-| Highlighted | Selection color |
+| Element          | Color           |
+| ---------------- | --------------- |
+| CPU graphs       | Electric Purple |
+| Memory meters    | Neon Cyan       |
+| Network activity | Hot Pink        |
+| Disk usage       | Yellow          |
+| Process list     | Foreground      |
+| Highlighted      | Selection color |
 
 ## Configuration
 

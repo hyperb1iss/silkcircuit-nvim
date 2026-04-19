@@ -4,13 +4,13 @@ Theme files for the [COSMIC Desktop Environment](https://system76.com/cosmic) by
 
 ## Variants
 
-| File | Description |
-|------|-------------|
-| `silkcircuit-neon.ron` | Maximum neon intensity - the original experience |
-| `silkcircuit-vibrant.ron` | Slightly toned down - easier on the eyes |
-| `silkcircuit-soft.ron` | Softer colors - comfortable for extended use |
-| `silkcircuit-glow.ron` | Ultra-dark with pure neon - maximum contrast |
-| `silkcircuit-dawn.ron` | Light theme for daytime use |
+| File                      | Description                                      |
+| ------------------------- | ------------------------------------------------ |
+| `silkcircuit-neon.ron`    | Maximum neon intensity - the original experience |
+| `silkcircuit-vibrant.ron` | Slightly toned down - easier on the eyes         |
+| `silkcircuit-soft.ron`    | Softer colors - comfortable for extended use     |
+| `silkcircuit-glow.ron`    | Ultra-dark with pure neon - maximum contrast     |
+| `silkcircuit-dawn.ron`    | Light theme for daytime use                      |
 
 ## Installation
 

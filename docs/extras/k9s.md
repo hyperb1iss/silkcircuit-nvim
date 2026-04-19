@@ -21,13 +21,13 @@ cp extras/k9s/silkcircuit.yaml ~/.config/k9s/skins/
 
 ## Available Themes
 
-| File | Variant |
-|------|---------|
-| `silkcircuit.yaml` | Neon (default) |
-| `silkcircuit-vibrant.yaml` | Vibrant |
-| `silkcircuit-soft.yaml` | Soft |
-| `silkcircuit-glow.yaml` | Glow |
-| `silkcircuit-dawn.yaml` | Dawn (light) |
+| File                       | Variant        |
+| -------------------------- | -------------- |
+| `silkcircuit.yaml`         | Neon (default) |
+| `silkcircuit-vibrant.yaml` | Vibrant        |
+| `silkcircuit-soft.yaml`    | Soft           |
+| `silkcircuit-glow.yaml`    | Glow           |
+| `silkcircuit-dawn.yaml`    | Dawn (light)   |
 
 ## Activation
 
@@ -48,25 +48,25 @@ Or press `:skin` in K9s and type the skin name.
 
 ## Color Mapping
 
-| Element | Color |
-|---------|-------|
-| Headers | Electric Purple |
-| Selected row | Cyan highlight |
-| Running pods | Green |
-| Pending pods | Yellow |
-| Failed pods | Red |
-| Info text | Foreground |
-| Help menu | Purple accents |
+| Element      | Color           |
+| ------------ | --------------- |
+| Headers      | Electric Purple |
+| Selected row | Cyan highlight  |
+| Running pods | Green           |
+| Pending pods | Yellow          |
+| Failed pods  | Red             |
+| Info text    | Foreground      |
+| Help menu    | Purple accents  |
 
 ## Kubernetes Status Colors
 
-| Status | Color | Meaning |
-|--------|-------|---------|
-| Running | Green | Healthy, operational |
-| Pending | Yellow | Starting or waiting |
-| Succeeded | Cyan | Completed successfully |
-| Failed | Red | Error state |
-| Unknown | Gray | Status unavailable |
+| Status    | Color  | Meaning                |
+| --------- | ------ | ---------------------- |
+| Running   | Green  | Healthy, operational   |
+| Pending   | Yellow | Starting or waiting    |
+| Succeeded | Cyan   | Completed successfully |
+| Failed    | Red    | Error state            |
+| Unknown   | Gray   | Status unavailable     |
 
 ## Screenshots
 
