@@ -1,0 +1,26 @@
+# Symlinks (prettier doesn't handle them)
+AGENTS.md
+
+# Helm templates contain Go templating syntax
+charts/*/templates/
+
+# Node modules
+node_modules/
+web/node_modules/
+
+# Lock files
+web/pnpm-lock.yaml
+pnpm-lock.yaml
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Python
+__pycache__/
+.venv/
+*.egg-info/
+
+# Moon
+.moon/cache/

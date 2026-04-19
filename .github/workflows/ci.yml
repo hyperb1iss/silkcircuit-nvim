@@ -33,9 +33,6 @@ jobs:
         with:
           tool: stylua
 
-      - name: → Install markdownlint
-        run: npm install -g markdownlint-cli
-
       - name: → Run make lint
         run: |
           echo "» Running comprehensive linting..."

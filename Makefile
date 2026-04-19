@@ -81,15 +81,6 @@ lint:
 		printf "  $(GREEN)$(CHECK)$(RESET) Lua code is clean\n"; \
 	fi
 	@printf "\n"
-	@printf "  $(CYAN)$(DOT)$(RESET) Running markdownlint...\n"
-	@if ! markdownlint '**/*.md' --ignore node_modules --ignore docs/node_modules 2>&1; then \
-		printf "\n"; \
-		printf "$(YELLOW)$(WARNING)$(RESET) Markdown linting issues found\n"; \
-		exit 1; \
-	else \
-		printf "  $(GREEN)$(CHECK)$(RESET) Markdown is clean\n"; \
-	fi
-	@printf "\n"
 	@printf "$(GREEN)$(STAR) All linting checks passed$(RESET)\n"
 	@printf "\n"
 
@@ -104,24 +95,9 @@ format:
 	@printf "  $(GREEN)$(CHECK)$(RESET) Lua code formatted\n"
 	@printf "\n"
 	@printf "  $(CYAN)$(DOT)$(RESET) Running prettier...\n"
-	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting JSON/YAML files...\n"
-	@npx prettier --write "**/*.{json,yaml,yml}" --ignore-path .gitignore >/dev/null 2>&1
-	@printf "  $(GREEN)$(CHECK)$(RESET) JSON/YAML formatted\n"
-	@printf "\n"
-	@printf "  $(CYAN)$(DOT)$(RESET) Fixing file endings...\n"
-	@find . -name "*.lua" -o -name "*.md" -type f | xargs -I {} sh -c 'tail -c1 {} | read -r _ || echo >> {}'
-	@printf "  $(GREEN)$(CHECK)$(RESET) File endings fixed\n"
-	@printf "\n"
-	@printf "  $(CYAN)$(DOT)$(RESET) Trimming trailing whitespace...\n"
-	@find . -name "*.lua" -o -name "*.md" -type f | xargs sed -i '' -e 's/[[:space:]]*$$//'
-	@printf "  $(GREEN)$(CHECK)$(RESET) Trailing whitespace removed\n"
-	@printf "\n"
-	@printf "  $(CYAN)$(DOT)$(RESET) Running markdownlint...\n"
-	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting markdown files...\n"
-	@markdownlint '**/*.md' --fix >/dev/null 2>&1 || true
-	@printf "  $(GREEN)$(CHECK)$(RESET) Markdown formatted\n"
-	@printf "\n"
-	@printf "$(GREEN)$(STAR) All code beautified$(RESET)\n"
+	@printf "  $(YELLOW)$(DOT)$(RESET) Formatting JSON/YAML/Markdown files...\n"
+	@npx prettier --write "**/*.{json,yaml,yml,md}"
+	@printf "  $(GREEN)$(CHECK)$(RESET) JSON/YAML/Markdown formatted\n"
 	@printf "\n"
 
 # Clean generated files

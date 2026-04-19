@@ -138,7 +138,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024 Stefanie Jane'
+      copyright: '✦ Built with obsession by <a href="https://hyperbliss.tech" target="_blank" rel="noopener"><strong>Hyperbliss Technologies</strong></a> ✦'
     }
   },
 

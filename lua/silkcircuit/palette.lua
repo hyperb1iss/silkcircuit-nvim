@@ -4,7 +4,9 @@ local M = {}
 function M.get_colors()
   local variants = require("silkcircuit.variants")
   local variant_name = variants.get_current_variant()
-  return variants.get_colors(variant_name)
+  local colors = variants.get_colors(variant_name)
+  M.colors = colors
+  return colors
 end
 
 -- Get current colors (delegated to variants)
@@ -17,6 +19,7 @@ function M.update_semantic(colors)
     -- Can't create semantic mappings without colors
     return
   end
+  M.colors = colors
   M.semantic = {
     -- Syntax (consistent across all languages)
     keyword = colors.purple,

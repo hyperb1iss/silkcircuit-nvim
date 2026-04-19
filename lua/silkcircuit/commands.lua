@@ -4,7 +4,7 @@ local preferences = require("silkcircuit.preferences")
 function M.setup()
   -- Check contrast command
   vim.api.nvim_create_user_command("SilkCircuitContrast", function()
-    local colors = require("silkcircuit.palette").colors
+    local colors = require("silkcircuit.palette").get_colors()
     local color_utils = require("silkcircuit.utils.colors")
 
     local issues = color_utils.validate_theme_contrast(colors)
